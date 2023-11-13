@@ -1,18 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=2 format=3 uid="uid://b71656ykcqicn"]
 
-[ext_resource type="Script" path="res://Scripts/TestSubject.gd" id="1_my5p2"]
-[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_1c4fd"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_e5wiq"]
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_s5wt2"]
 
 [node name="Main" type="Node2D"]
 
-[node name="TestSubject" type="CharacterBody2D" parent="."]
-script = ExtResource("1_my5p2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestSubject"]
-shape = SubResource("CircleShape2D_e5wiq")
-
-[node name="Sprite2D" type="Sprite2D" parent="TestSubject"]
-position = Vector2(557, 315)
-texture = ExtResource("2_1c4fd")
+[node name="Player" parent="." instance=ExtResource("1_s5wt2")]
+position = Vector2(338, 158)
