@@ -10,7 +10,7 @@ signal closed_window
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	popup()
+	popup() #causes an error, but for now seems to work as intented 
 	popup_test_.show()
 	
 
