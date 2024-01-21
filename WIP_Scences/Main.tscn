@@ -1155,6 +1155,7 @@ sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 script = ExtResource("1_px50l")
 
 [node name="PopUpTest" parent="." instance=ExtResource("7_k6ay1")]
+visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1183,4 +1184,6 @@ position = Vector2(605, 733)
 [node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
 position = Vector2(0, -9)
 
+[connection signal="about_to_popup" from="PopUpTest" to="Player" method="_on_pop_up_test_about_to_popup"]
+[connection signal="closed_window" from="PopUpTest" to="Player" method="_on_pop_up_test_closed_window"]
 [connection signal="hallway_button" from="PopUpTest" to="." method="_on_pop_up_test_hallway_button"]

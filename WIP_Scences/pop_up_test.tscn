@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj433kl8wxcbq"]
+[gd_scene load_steps=4 format=3 uid="uid://cj433kl8wxcbq"]
 
 [ext_resource type="Script" path="res://Scripts/PopUpTest.gd" id="1_jwqi8"]
-[ext_resource type="Texture2D" uid="uid://chcsncji4hk4r" path="res://Backgrounds/cell_temp.png" id="2_7ymiy"]
+
+[sub_resource type="Gradient" id="Gradient_wx7a6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e3v2f"]
+gradient = SubResource("Gradient_wx7a6")
+fill = 2
+fill_from = Vector2(0.341463, 0.280488)
+fill_to = Vector2(0, 0)
+repeat = 2
 
 [node name="PopUpTest" type="Window"]
 mode = 1
@@ -18,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
-texture = ExtResource("2_7ymiy")
+texture = SubResource("GradientTexture2D_e3v2f")
 expand_mode = 1
 stretch_mode = 5
 
@@ -27,5 +35,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "BUTTON"
 
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
