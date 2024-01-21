@@ -9,10 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://dvesv3en4hyvs" path="res://Scenes_Puzzles/Logic_Puzzle_Sidney.tscn" id="5_6t8bp"]
 [ext_resource type="PackedScene" uid="uid://cj433kl8wxcbq" path="res://WIP_Scences/pop_up_test.tscn" id="7_k6ay1"]
 
-[sub_resource type="Gradient" id="Gradient_k53bg"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bshme"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sh3ys"]
-gradient = SubResource("Gradient_k53bg")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hxabj"]
+width = 100
+height = 100
+generate_mipmaps = false
+seamless = true
+seamless_blend_skirt = 0.135
+as_normal_map = true
+bump_strength = 0.0
+noise = SubResource("FastNoiseLite_bshme")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("1_pquhi")
@@ -1153,6 +1160,7 @@ sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_px50l")
+metadata/_edit_horizontal_guides_ = [-3815.0]
 
 [node name="PopUpTest" parent="." instance=ExtResource("7_k6ay1")]
 visible = false
@@ -1162,9 +1170,11 @@ visible = false
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-2126, 733)
-scale = Vector2(92, 9.04688)
-texture = SubResource("GradientTexture2D_sh3ys")
+position = Vector2(22.7013, -2173.56)
+rotation = -0.631809
+scale = Vector2(48.402, 57.9972)
+skew = 0.921534
+texture = SubResource("NoiseTexture2D_hxabj")
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1182,7 +1192,7 @@ position = Vector2(605, 733)
 [node name="Loops_Puzzle_Sarah" parent="." instance=ExtResource("4_v6v6d")]
 
 [node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
-position = Vector2(0, -9)
+position = Vector2(10, 77)
 
 [connection signal="about_to_popup" from="PopUpTest" to="Player" method="_on_pop_up_test_about_to_popup"]
 [connection signal="closed_window" from="PopUpTest" to="Player" method="_on_pop_up_test_closed_window"]
