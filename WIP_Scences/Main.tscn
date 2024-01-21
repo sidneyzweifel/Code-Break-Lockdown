@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://b71656ykcqicn"]
 
-[ext_resource type="Script" path="res://PopUpTest.gd" id="1_2wwfd"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="1_pquhi"]
-[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player.tscn" id="1_s5wt2"]
-[ext_resource type="Texture2D" uid="uid://chcsncji4hk4r" path="res://Backgrounds/cell_temp.png" id="2_b8nu2"]
-[ext_resource type="PackedScene" uid="uid://dyfhchq7oa1qt" path="res://Scenes/Variables_Puzzle_Gretta.tscn" id="2_cj08n"]
-[ext_resource type="PackedScene" uid="uid://bpaog0c6omgxl" path="res://Scenes/If_Else_Puzzle_Yaxin.tscn" id="3_2dkm1"]
-[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes/Loops_Puzzle_Sarah.tscn" id="4_v6v6d"]
-[ext_resource type="PackedScene" uid="uid://dvesv3en4hyvs" path="res://Scenes/Logic_Puzzle_Sidney.tscn" id="5_6t8bp"]
+[ext_resource type="Script" path="res://WIP_Scences/Main.gd" id="1_px50l"]
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://WIP_Scences/Player.tscn" id="1_s5wt2"]
+[ext_resource type="PackedScene" uid="uid://dyfhchq7oa1qt" path="res://Scenes_Puzzles/Variables_Puzzle_Gretta.tscn" id="2_cj08n"]
+[ext_resource type="PackedScene" uid="uid://bpaog0c6omgxl" path="res://Scenes_Puzzles/If_Else_Puzzle_Yaxin.tscn" id="3_2dkm1"]
+[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes_Puzzles/Loops_Puzzle_Sarah.tscn" id="4_v6v6d"]
+[ext_resource type="PackedScene" uid="uid://dvesv3en4hyvs" path="res://Scenes_Puzzles/Logic_Puzzle_Sidney.tscn" id="5_6t8bp"]
+[ext_resource type="PackedScene" uid="uid://cj433kl8wxcbq" path="res://WIP_Scences/pop_up_test.tscn" id="7_k6ay1"]
 
 [sub_resource type="Gradient" id="Gradient_k53bg"]
 
@@ -1152,47 +1152,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_px50l")
 
-[node name="PopUpTest" type="Window" parent="."]
-gui_disable_input = true
-mode = 1
-title = "PopUpTest"
-initial_position = 3
-size = Vector2i(1152, 648)
-current_screen = 0
-wrap_controls = true
-exclusive = true
-unresizable = true
-popup_window = true
-min_size = Vector2i(1152, 648)
-max_size = Vector2i(1152, 648)
-script = ExtResource("1_2wwfd")
-
-[node name="TextureRect" type="TextureRect" parent="PopUpTest"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 8
-texture = ExtResource("2_b8nu2")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="BoxContainer" type="MarginContainer" parent="PopUpTest/TextureRect"]
-layout_mode = 0
-offset_right = 70.0
-offset_bottom = 40.0
-rotation = 0.390954
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PopUpTest/TextureRect/BoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Hallway" type="Button" parent="PopUpTest/TextureRect/BoxContainer/VBoxContainer"]
-top_level = true
-layout_mode = 2
-text = "Hallway"
+[node name="PopUpTest" parent="." instance=ExtResource("7_k6ay1")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1221,4 +1183,4 @@ position = Vector2(605, 733)
 [node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
 position = Vector2(0, -9)
 
-[connection signal="close_requested" from="PopUpTest" to="PopUpTest" method="_on_close_requested"]
+[connection signal="hallway_button" from="PopUpTest" to="." method="_on_pop_up_test_hallway_button"]

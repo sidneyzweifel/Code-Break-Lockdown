@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj433kl8wxcbq"]
+
+[ext_resource type="Script" path="res://Scripts/PopUpTest.gd" id="1_jwqi8"]
+[ext_resource type="Texture2D" uid="uid://chcsncji4hk4r" path="res://Backgrounds/cell_temp.png" id="2_7ymiy"]
+
+[node name="PopUpTest" type="Window"]
+mode = 1
+initial_position = 2
+size = Vector2i(1152, 648)
+transparent = true
+min_size = Vector2i(1152, 648)
+script = ExtResource("1_jwqi8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+texture = ExtResource("2_7ymiy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BUTTON"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
