@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=10 format=3 uid="uid://b71656ykcqicn"]
 
+[ext_resource type="Texture2D" uid="uid://byj7p4v0dbspv" path="res://Sprites/Idles/Player/Side/_Idle_Side_1.png" id="1_8x6gg"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="1_pquhi"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_s5wt2"]
 [ext_resource type="PackedScene" uid="uid://dyfhchq7oa1qt" path="res://Scenes/Variables_Puzzle_Gretta.tscn" id="2_cj08n"]
@@ -1152,6 +1153,7 @@ sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(2.99479, 2.675)
+texture = ExtResource("1_8x6gg")
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
