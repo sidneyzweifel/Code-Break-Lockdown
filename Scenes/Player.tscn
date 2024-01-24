@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgd4ovv7nkstl"]
+[gd_scene load_steps=30 format=3 uid="uid://dgd4ovv7nkstl"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_j2ui2"]
 [ext_resource type="Texture2D" uid="uid://byj7p4v0dbspv" path="res://Sprites/Idles/Player/Side/_Idle_Side_1.png" id="2_q56w2"]
@@ -8,13 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://1534t4ynl40c" path="res://Sprites/Idles/Player/Back/back_idle_1.png" id="6_haqay"]
 [ext_resource type="Texture2D" uid="uid://brj2aigm53cy4" path="res://Sprites/Idles/Player/Back/back_idle_2.png" id="7_7b24s"]
 [ext_resource type="Texture2D" uid="uid://cob30b28qk2y0" path="res://Sprites/Walking/Player/Side/Walking_side_1.png" id="8_higqh"]
+[ext_resource type="Texture2D" uid="uid://dcxhrudetadyj" path="res://Sprites/Walking/Player/Front/front_walking 1.png" id="8_orohm"]
+[ext_resource type="Texture2D" uid="uid://bcrdpdr1i4oli" path="res://Sprites/Walking/Player/Front/front_walking 2.png" id="9_7ady4"]
 [ext_resource type="Texture2D" uid="uid://gxuf0l6tnc1" path="res://Sprites/Walking/Player/Side/Walking_side_2.png" id="9_27csu"]
+[ext_resource type="Texture2D" uid="uid://bxrhiojoudvdh" path="res://Sprites/Walking/Player/Front/front_walking 3.png" id="10_c0f2x"]
 [ext_resource type="Texture2D" uid="uid://dxsre7y2wtdxy" path="res://Sprites/Walking/Player/Side/Walking_side_3.png" id="10_nls76"]
+[ext_resource type="Texture2D" uid="uid://ca1qcssytigdh" path="res://Sprites/Walking/Player/Front/front_walking 4.png" id="11_v5ne1"]
 [ext_resource type="Texture2D" uid="uid://cw2wyp3yygnhq" path="res://Sprites/Walking/Player/Side/Walking_side_4.png" id="11_yw8yc"]
+[ext_resource type="Texture2D" uid="uid://d0wswyfmbhtb2" path="res://Sprites/Walking/Player/Front/front_walking 5.png" id="12_fodg7"]
 [ext_resource type="Texture2D" uid="uid://dc7vspmctq3mw" path="res://Sprites/Walking/Player/Side/Walking_side_5.png" id="12_xnb0h"]
 [ext_resource type="Texture2D" uid="uid://cvmokc3678k5d" path="res://Sprites/Walking/Player/Side/Walking_side_6.png" id="13_0c7oh"]
+[ext_resource type="Texture2D" uid="uid://6r52ups2gjwh" path="res://Sprites/Walking/Player/Front/front_walking 6.png" id="13_s5ma1"]
+[ext_resource type="Texture2D" uid="uid://ctxjum3mbikg5" path="res://Sprites/Walking/Player/Front/front_walking 7.png" id="14_fbdy7"]
 [ext_resource type="Texture2D" uid="uid://dfljrci6tdkox" path="res://Sprites/Walking/Player/Side/Walking_side_7.png" id="14_pexgj"]
 [ext_resource type="Texture2D" uid="uid://dgfsuuvc7nyf7" path="res://Sprites/Walking/Player/Side/Walking_side_8.png" id="15_74uop"]
+[ext_resource type="Texture2D" uid="uid://5lt8hi70kwoo" path="res://Sprites/Walking/Player/Front/front_walking 8.png" id="15_fqkhy"]
 [ext_resource type="Texture2D" uid="uid://douj37xhln8aw" path="res://Sprites/Walking/Player/Side/Walking_side_9.png" id="16_vu43i"]
 [ext_resource type="Texture2D" uid="uid://cndxqkjkv1k5f" path="res://Sprites/Walking/Player/Side/Walking_side_10.png" id="17_eoa44"]
 [ext_resource type="Texture2D" uid="uid://qfv6utqrv44m" path="res://Sprites/Walking/Player/Side/Walking_side_11.png" id="18_2yas7"]
@@ -57,6 +65,40 @@ animations = [{
 "loop": true,
 "name": &"idle_up",
 "speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_orohm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ady4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c0f2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v5ne1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fodg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s5ma1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fbdy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fqkhy")
+}],
+"loop": true,
+"name": &"walking_front",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,7 +153,7 @@ shape = SubResource("RectangleShape2D_pcqgd")
 position = Vector2(424, 165)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_82v0r")
-animation = &"idle_side"
+animation = &"walking_front"
 autoplay = "idle_side"
 
 [node name="Camera2D" type="Camera2D" parent="."]
