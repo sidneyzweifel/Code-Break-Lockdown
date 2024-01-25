@@ -45,5 +45,5 @@ script = ExtResource("2_uy27t")
 
 [connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="close_popup_alt" from="Button" to="." method="_on_button_close_popup_alt"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_pressed"]
