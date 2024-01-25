@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://dyfhchq7oa1qt"]
+[gd_scene load_steps=4 format=3 uid="uid://dyfhchq7oa1qt"]
+
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_8m0fm"]
+[ext_resource type="Script" path="res://Scripts/Variables_Puzzle_Exit.gd" id="2_d5i3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clpdq"]
+size = Vector2(259, 77)
 
 [node name="Variables_Puzzle_Gretta" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8m0fm")]
+position = Vector2(-15, 65)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 87.0
+offset_right = 759.0
+offset_bottom = 166.0
+text = "We are in Gretta's variables puzzle"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_d5i3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(184, 378)
+shape = SubResource("RectangleShape2D_clpdq")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

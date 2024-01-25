@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://2hmmxr8mx06t"]
+[gd_scene load_steps=4 format=3 uid="uid://2hmmxr8mx06t"]
+
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_gc6t3"]
+[ext_resource type="Script" path="res://Scripts/Loops_Puzzle_Exit.gd" id="2_8k08e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vi42"]
+size = Vector2(283, 84)
 
 [node name="Loops_Puzzle_Sarah" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_gc6t3")]
+position = Vector2(-31, 53)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 385.0
+offset_top = 81.0
+offset_right = 618.0
+offset_bottom = 107.0
+text = "We are in Sarah's loops puzzle"
+
+[node name="Loops_Puzzle_Exit" type="Area2D" parent="."]
+script = ExtResource("2_8k08e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loops_Puzzle_Exit"]
+position = Vector2(171.5, 375)
+shape = SubResource("RectangleShape2D_1vi42")
+
+[connection signal="body_entered" from="Loops_Puzzle_Exit" to="Loops_Puzzle_Exit" method="_on_body_entered"]
