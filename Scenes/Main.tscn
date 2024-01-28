@@ -1,12 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=11 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="1_pquhi"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_s5wt2"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_y2ptj"]
-[ext_resource type="PackedScene" uid="uid://dyfhchq7oa1qt" path="res://Scenes/Variables_Puzzle_Gretta.tscn" id="2_cj08n"]
-[ext_resource type="PackedScene" uid="uid://bpaog0c6omgxl" path="res://Scenes/If_Else_Puzzle_Yaxin.tscn" id="3_2dkm1"]
-[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes/Loops_Puzzle_Sarah.tscn" id="4_v6v6d"]
-[ext_resource type="PackedScene" uid="uid://dvesv3en4hyvs" path="res://Scenes/Logic_Puzzle_Sidney.tscn" id="5_6t8bp"]
 [ext_resource type="Script" path="res://Scripts/Variables_Puzzle_Entrance.gd" id="5_c3htk"]
 [ext_resource type="Script" path="res://Scripts/If_Else_Puzzle_Entrance.gd" id="7_f2cbn"]
 [ext_resource type="Script" path="res://Scripts/Loops_Puzzle_Entrance.gd" id="9_cj0ff"]
@@ -1171,9 +1167,6 @@ layer_0/tile_data = PackedInt32Array(2752527, 786432, 0, 2818063, 786432, 0, 288
 [node name="Player" parent="." instance=ExtResource("1_s5wt2")]
 position = Vector2(-583, 1054)
 
-[node name="Variables_Puzzle_Gretta" parent="." instance=ExtResource("2_cj08n")]
-position = Vector2(6581, 2655)
-
 [node name="Variables_Puzzle_Entrance" type="Area2D" parent="."]
 script = ExtResource("5_c3htk")
 
@@ -1181,9 +1174,6 @@ script = ExtResource("5_c3htk")
 position = Vector2(1358, 1036)
 shape = SubResource("RectangleShape2D_hl8uv")
 one_way_collision_margin = 0.0
-
-[node name="If_Else_Puzzle_Yaxin" parent="." instance=ExtResource("3_2dkm1")]
-position = Vector2(-5028, 2741)
 
 [node name="If_Else_Puzzle_Entrance" type="Area2D" parent="."]
 script = ExtResource("7_f2cbn")
@@ -1193,9 +1183,6 @@ position = Vector2(3458, 392)
 shape = SubResource("RectangleShape2D_hl8uv")
 one_way_collision_margin = 0.0
 
-[node name="Loops_Puzzle_Sarah" parent="." instance=ExtResource("4_v6v6d")]
-position = Vector2(5541, -5186)
-
 [node name="Loops_Puzzle_Entrance" type="Area2D" parent="."]
 script = ExtResource("9_cj0ff")
 
@@ -1203,9 +1190,6 @@ script = ExtResource("9_cj0ff")
 position = Vector2(2870, -924)
 shape = SubResource("RectangleShape2D_hl8uv")
 one_way_collision_margin = 0.0
-
-[node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
-position = Vector2(-4631, -5163)
 
 [node name="Logic_Puzzle_Entrance" type="Area2D" parent="."]
 script = ExtResource("9_eku06")
