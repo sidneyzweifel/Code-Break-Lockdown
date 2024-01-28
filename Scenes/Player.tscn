@@ -16,3 +16,7 @@ shape = SubResource("RectangleShape2D_pcqgd")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(203, 157)
 texture = ExtResource("1_ipm5b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.5, 1.5)
