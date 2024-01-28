@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=12 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="1_pquhi"]
 [ext_resource type="Script" path="res://WIP_Scences/Main.gd" id="1_px50l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2l48m1y1q3qj" path="res://Backgrounds/back.png" id="3_6r0k8"]
 [ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes_Puzzles/Loops_Puzzle_Sarah.tscn" id="4_v6v6d"]
 [ext_resource type="PackedScene" uid="uid://dvesv3en4hyvs" path="res://Scenes_Puzzles/Logic_Puzzle_Sidney.tscn" id="5_6t8bp"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://WIP_Scences/door.tscn" id="8_8hhfd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("1_pquhi")
@@ -1172,7 +1173,10 @@ position = Vector2(794, -1120)
 [node name="If_Else_Puzzle_Yaxin" parent="." instance=ExtResource("3_2dkm1")]
 
 [node name="Loops_Puzzle_Sarah" parent="." instance=ExtResource("4_v6v6d")]
-metadata/_edit_lock_ = true
+position = Vector2(1123, -1010)
+
+[node name="Node2D" parent="Loops_Puzzle_Sarah" instance=ExtResource("8_8hhfd")]
+position = Vector2(-712, -47)
 
 [node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
 position = Vector2(10, 77)
