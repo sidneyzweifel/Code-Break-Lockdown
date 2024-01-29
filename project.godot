@@ -15,6 +15,10 @@ run/main_scene="res://WIP_Scences/Main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+GlodalDoorUnlock="*res://glodal_door_unlock.gd"
+
 [display]
 
 window/size/viewport_width=1280

@@ -79,5 +79,6 @@ theme_override_font_sizes/font_size = 90
 text = "ACCESS GRANTED"
 horizontal_alignment = 1
 
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

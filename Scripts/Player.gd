@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 800 #was going too slow for me so I changed speed
 
-var door_passcode = "res://WIP_Scences/passcode_enter.tscn"
+@onready var door_passcode = "res://WIP_Scences/passcode_enter.tscn"
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
