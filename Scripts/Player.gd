@@ -18,7 +18,7 @@ func get_input():
 		direction = "r"
 	
 	elif Input.is_action_pressed("up"):
-		animated_sprite.play("idle_up")
+		animated_sprite.play("walking_back")
 		direction = "u"
 	
 	elif Input.is_action_pressed("down"):
