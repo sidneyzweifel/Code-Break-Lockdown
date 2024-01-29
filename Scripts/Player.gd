@@ -2,31 +2,33 @@ extends CharacterBody2D
 
 @export var speed = 800 #was going too slow for me so I changed speed
 
-@export var is_in_popup = false
+var door_passcode = "res://WIP_Scences/passcode_enter.tscn"
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 
 
-
-
 func _physics_process(delta):
-	if is_in_popup == false:
-		get_input()
-		move_and_slide()
+	get_input()
+	move_and_slide()
+	get_collision()
+
+	
+func get_collision():
+	#https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_2d.html
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		#get that the player collied with door and open the passcode entering scene
+		print("I collided with ", collision.get_collider().name, i)
+		if collision.get_collider().is_in_group("door"):
+			get_tree().change_scene_to_file(door_passcode)
+			pass
 
 
 
 
 
-func _on_pop_up_test_about_to_popup():
-	print("I RAN")
-	is_in_popup = true
 
 
 
-
-func _on_pop_up_test_closed_window():
-	print("MEMMEM")
-	is_in_popup = false

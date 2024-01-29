@@ -1175,8 +1175,8 @@ position = Vector2(794, -1120)
 [node name="Loops_Puzzle_Sarah" parent="." instance=ExtResource("4_v6v6d")]
 position = Vector2(1123, -1010)
 
-[node name="Node2D" parent="Loops_Puzzle_Sarah" instance=ExtResource("8_8hhfd")]
-position = Vector2(-712, -47)
+[node name="Door" parent="Loops_Puzzle_Sarah" instance=ExtResource("8_8hhfd")]
+position = Vector2(-722, -40)
 
 [node name="Logic_Puzzle_Sidney" parent="." instance=ExtResource("5_6t8bp")]
 position = Vector2(10, 77)

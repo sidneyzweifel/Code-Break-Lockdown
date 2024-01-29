@@ -16,7 +16,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of82y"]
 size = Vector2(149, 308)
 
-[node name="Node2D" type="RigidBody2D"]
+[node name="Door" type="StaticBody2D" groups=["door"]]
+position = Vector2(99, 113)
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(136.875, 233)

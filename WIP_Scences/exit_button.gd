@@ -1,4 +1,4 @@
-extends Node2D
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,12 +11,5 @@ func _process(delta):
 	pass
 
 
-
-
-func _on_pop_up_test_hallway_button():
-	var vel = $Player.get_real_velocity()
-	print(vel)
-	
-
-
-
+func _on_pressed():
+	get_tree().change_scene_to_file("res://WIP_Scences/Main.tscn")
