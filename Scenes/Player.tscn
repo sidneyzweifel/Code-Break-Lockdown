@@ -177,7 +177,7 @@ shape = SubResource("RectangleShape2D_pcqgd")
 position = Vector2(234, 130)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_lphgn")
-animation = &"walking_side"
+animation = &"idle_up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
