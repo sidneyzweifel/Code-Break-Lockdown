@@ -9,7 +9,7 @@ size = Vector2(259, 77)
 [node name="Variables_Puzzle_Gretta" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8m0fm")]
-position = Vector2(-15, 65)
+position = Vector2(-371, -29)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 329.0

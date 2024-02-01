@@ -11,7 +11,7 @@ size = Vector2(295, 87)
 script = ExtResource("1_uu2nc")
 
 [node name="Player" parent="." instance=ExtResource("2_amfoc")]
-position = Vector2(-115, 139)
+position = Vector2(-459, 87)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -139.0

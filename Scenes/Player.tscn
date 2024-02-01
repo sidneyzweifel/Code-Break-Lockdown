@@ -170,11 +170,11 @@ animations = [{
 script = ExtResource("1_j2ui2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(233.5, 129)
+position = Vector2(558, 229)
 shape = SubResource("RectangleShape2D_pcqgd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(234, 130)
+position = Vector2(551, 234)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_lphgn")
 animation = &"idle_up"

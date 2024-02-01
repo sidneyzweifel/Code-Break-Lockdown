@@ -9,7 +9,7 @@ size = Vector2(236.5, 65)
 [node name="If_Else_Puzzle_Yaxin" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_0b41o")]
-position = Vector2(-34, 62)
+position = Vector2(-382, -19)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 343.0

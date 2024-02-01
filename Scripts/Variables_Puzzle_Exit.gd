@@ -5,4 +5,4 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		
 		# Scene name and position (x,y)
-		Global.changeStage(Global.MAIN, 907, 888)
+		Global.changeStage(Global.MAIN, 526, 817)
