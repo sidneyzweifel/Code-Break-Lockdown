@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi8x2wvn0x1vx"]
+[gd_scene load_steps=5 format=3 uid="uid://bi8x2wvn0x1vx"]
 
 [ext_resource type="Texture2D" uid="uid://b3rtswt7kiel1" path="res://Sprites/door_temp.png" id="1_hxm0i"]
+[ext_resource type="Script" path="res://WIP_Scences/door.gd" id="1_usjy0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awmda"]
 animations = [{
@@ -18,6 +19,7 @@ size = Vector2(149, 308)
 
 [node name="Door" type="StaticBody2D" groups=["door"]]
 position = Vector2(99, 113)
+script = ExtResource("1_usjy0")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

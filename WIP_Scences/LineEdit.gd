@@ -4,7 +4,6 @@ var dummy_ID = "77777"
 @onready var label = $"../Label"
 @onready var access_label = $"../AcessLabel"
 
-signal access_granted
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	access_label.hide()
@@ -25,14 +24,19 @@ func _on_text_submitted(new_text):
 		access_label.text = "ACCESS GRANTED"
 		access_label.show()
 		print("access granted")
-		access_granted.emit()
+		open_door()
 	else:
 		var red =  Color(1.0,0.0,0.0,1.0)
 		set("theme_override_colors/font_color", red)
 		label.show()
-		print("access denied")
+		print("denied")
 
 
 func _on_text_changed(new_text):
 	var blue =  Color(0.0,0.0,1.0,1.0)
 	set("theme_override_colors/font_color", blue)
+	
+	
+func open_door():
+	print("OPEN DOOR!!")
+	get_tree().call_group("door", "access_granted")
