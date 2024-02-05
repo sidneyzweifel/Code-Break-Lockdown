@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgd4ovv7nkstl"]
 
-[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_ipm5b"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_j2ui2"]
+[ext_resource type="Texture2D" uid="uid://0ynawcm5ubpp" path="res://Sprites/Walking/Player/Front/front_walking 1.png" id="2_euqih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcqgd"]
 size = Vector2(123, 119)
@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_pcqgd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(203, 157)
-texture = ExtResource("1_ipm5b")
+texture = ExtResource("2_euqih")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
