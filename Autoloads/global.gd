@@ -2,14 +2,15 @@
 extends Node
 
 
-var door_path = preload("res://WIP_Scences/passcode_enter.tscn")
-
-
 
 func handle_door():
 	print("door interaction")
-	var _current_scene = get_tree().current_scene
-	print(_current_scene)
-	get_tree().change_scene_to_file(door_path)
+	#get_tree().change_scene_to_file(puzzle_path)
+	#var all_doors = get_tree().get_nodes_in_group("door")
+	print("I am printing")
+	#get_tree().call_group("door", "get_next_puzzle")
 	return
 
+
+func next_door(puzzle_path:String)-> void:
+	get_tree().change_scene_to_file(puzzle_path)

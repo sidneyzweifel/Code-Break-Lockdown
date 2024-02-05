@@ -43,8 +43,8 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	get_collision()
-	player_position = global_position
-	print(player_position)
+	#player_position = global_position
+	#print(player_position)
 
 	
 func get_collision():
@@ -52,10 +52,10 @@ func get_collision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		#get that the player collied with door and open the passcode entering scene
-		print("I collided with ", collision.get_collider().name, i)
+		#print("I collided with ", collision.get_collider().name, i)
 		if collision.get_collider().is_in_group("door"):
-			#Global.handle_door()
-			get_tree().change_scene_to_file(door_passcode)
+			Global.handle_door()
+			#get_tree().change_scene_to_file(door_passcode)
 			pass
 
 

@@ -13,9 +13,6 @@ func _process(delta):
 
 
 
-func _on_pop_up_test_hallway_button():
-	var vel = $Player.get_real_velocity()
-	print(vel)
 	
 
 

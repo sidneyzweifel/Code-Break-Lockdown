@@ -1,20 +1,11 @@
-extends RigidBody2D
+class_name Door extends StaticBody2D
 
+signal player_tries_door(door:Door)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var path_to_new_scene:String
+@export var entry_door_name:String
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func access_granted():
-	print("I RAN")
-	#queue_free()
-
-
-func _on_body_entered(body):
-	print(body)
+func get_next_puzzle():
+	print("in next puzzle")
+	Global.next_door(path_to_new_scene)
+	return
