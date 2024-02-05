@@ -58,4 +58,5 @@ click={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.482353, 0.313726, 0.65098, 1)

@@ -54,8 +54,8 @@ func get_collision():
 		#get that the player collied with door and open the passcode entering scene
 		print("I collided with ", collision.get_collider().name, i)
 		if collision.get_collider().is_in_group("door"):
-			Global.handle_door()
-			#get_tree().change_scene_to_file(door_passcode)
+			#Global.handle_door()
+			get_tree().change_scene_to_file(door_passcode)
 			pass
 
 

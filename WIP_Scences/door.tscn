@@ -17,8 +17,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of82y"]
 size = Vector2(149, 308)
 
-[node name="Door" type="StaticBody2D" groups=["door"]]
+[node name="Door" type="RigidBody2D" groups=["door"]]
 position = Vector2(99, 113)
+disable_mode = 1
+lock_rotation = true
 script = ExtResource("1_usjy0")
 metadata/_edit_group_ = true
 
