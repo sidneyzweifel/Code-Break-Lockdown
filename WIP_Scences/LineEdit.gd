@@ -5,10 +5,12 @@ var dummy_ID = "77777"
 @onready var access_label = $"../AcessLabel"
 
 var door_access:bool = false
+var cur_puzz:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	access_label.hide()
+	cur_puzz = Global.get_current_puzzle()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,12 +28,15 @@ func _on_text_submitted(new_text):
 		access_label.text = "ACCESS GRANTED"
 		access_label.show()
 		print("access granted")
-		open_door()
+		var access = true
+		open_door(access)
 	else:
 		var red =  Color(1.0,0.0,0.0,1.0)
 		set("theme_override_colors/font_color", red)
 		label.show()
 		print("denied")
+		var denied = false
+		open_door(false)
 
 
 func _on_text_changed(new_text):
@@ -39,7 +44,7 @@ func _on_text_changed(new_text):
 	set("theme_override_colors/font_color", blue)
 	
 	
-func open_door():
-	print("OPEN DOOR!!")
-	door_access = true
+func open_door(door_access):
 	Global.handle_door(door_access)
+	
+	

@@ -1169,7 +1169,6 @@ position = Vector2(805, -980)
 [node name="Door" parent="." instance=ExtResource("5_2uc6i")]
 position = Vector2(401, -1050)
 path_to_new_scene = "res://WIP_Scences/Puzzle1_TEST.tscn"
-entry_door_name = "Puzzle2"
 door_passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_3g1eq")]
