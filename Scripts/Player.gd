@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 @export var speed = 800 #was going too slow for me so I changed speed
+@export var has_door_access:bool = false
 
-@onready var door_passcode = "res://WIP_Scences/passcode_enter.tscn"
+
+var player_position
+
 @onready var animated_sprite = $AnimatedSprite2D
 var direction = ""
 
-var player_position
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -38,7 +40,6 @@ func get_input():
 		elif direction == "u":
 			animated_sprite.play("idle_up")
 
-
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
@@ -54,7 +55,7 @@ func get_collision():
 		#get that the player collied with door and open the passcode entering scene
 		#print("I collided with ", collision.get_collider().name, i)
 		if collision.get_collider().is_in_group("door"):
-			Global.handle_door()
+			Global.handle_door(has_door_access)
 			#get_tree().change_scene_to_file(door_passcode)
 			pass
 

@@ -14,5 +14,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://WIP_Scences/Main.tscn")
+	get_tree().current_scene.queue_free()
 

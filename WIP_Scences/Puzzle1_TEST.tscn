@@ -1144,7 +1144,7 @@ texture = ExtResource("3_lshwt")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
-[node name="Puzzle1" type="Node2D"]
+[node name="Puzzle1" type="Node2D" groups=["puzzle"]]
 script = ExtResource("1_6byn3")
 metadata/_edit_horizontal_guides_ = [-3815.0]
 
@@ -1167,8 +1167,10 @@ layer_0/tile_data = PackedInt32Array(2752527, 786432, 0, 2818063, 786432, 0, 288
 position = Vector2(805, -980)
 
 [node name="Door" parent="." instance=ExtResource("5_xkmdw")]
-position = Vector2(410, -1044)
+position = Vector2(400, -1059)
 path_to_new_scene = "res://Puzzle2_TEST.tscn"
+entry_door_name = "Puzzle1"
+door_passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
 position = Vector2(1148, -982)

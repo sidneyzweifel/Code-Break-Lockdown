@@ -4,6 +4,8 @@ var dummy_ID = "77777"
 @onready var label = $"../Label"
 @onready var access_label = $"../AcessLabel"
 
+var door_access:bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	access_label.hide()
@@ -39,4 +41,5 @@ func _on_text_changed(new_text):
 	
 func open_door():
 	print("OPEN DOOR!!")
-	get_tree().call_group("door", "access_granted")
+	door_access = true
+	Global.handle_door(door_access)
