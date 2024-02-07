@@ -4,7 +4,7 @@ extends Node
 var next_puzz:String 
 var current_puzz:String
 
-func handle_door(has_door_acess):
+func handle_door(has_door_acess)-> void:
 	print("in handle door()")
 	var cur = get_tree().current_scene
 	#get_tree().call_group("door", "handle_access", has_door_acess)
@@ -20,7 +20,6 @@ func handle_door(has_door_acess):
 #		get_tree().call_group("door", "go_to_next_puzzle")
 	else:
 		get_tree().call_group("door", "handle_access", has_door_acess)
-	return
 
 
 func next_puzzle(puzzle_path:String)-> void:

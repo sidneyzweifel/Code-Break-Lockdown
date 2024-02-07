@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_lshwt"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://WIP_Scences/Player.tscn" id="4_sk8yy"]
 [ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://WIP_Scences/door.tscn" id="5_xkmdw"]
-[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes_Puzzles/Loops_Puzzle_Sarah.tscn" id="6_6xh31"]
+[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes_Puzzles/popup.tscn" id="6_6xh31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("3_lshwt")
@@ -1173,4 +1173,4 @@ door_passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
 current_puzzle = "res://WIP_Scences/Puzzle1_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
-position = Vector2(1148, -982)
+position = Vector2(1202, -992)

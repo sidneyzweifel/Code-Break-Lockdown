@@ -5,6 +5,7 @@
 [node name="PopUp" type="Window"]
 gui_embed_subwindows = true
 mode = 1
+title = "TITLE"
 initial_position = 1
 size = Vector2i(1152, 648)
 transparent = true
@@ -13,6 +14,7 @@ min_size = Vector2i(500, 500)
 content_scale_mode = 1
 content_scale_aspect = 1
 script = ExtResource("1_jwqi8")
+passcode = "PASSCODE: 12345"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -36,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.454902, 0.25098, 1)
 theme_override_font_sizes/font_size = 90
-text = "PASSCODE:  77777"
+text = "PASSCODE: 12345"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,7 +1,6 @@
 extends Button
 
 
-signal open_popup
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +12,5 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
-	open_popup.emit()
+
 

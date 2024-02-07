@@ -1,6 +1,5 @@
 extends Button
 
-signal close_passcode
 
 
 # Called when the node enters the scene tree for the first time.
