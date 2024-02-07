@@ -16,8 +16,8 @@ text = "Click to open popup
 "
 
 [node name="PopUp" parent="." instance=ExtResource("2_hdutc")]
+title = ""
 visible = false
 script = ExtResource("3_6xfye")
-text = ""
 
 [connection signal="pressed" from="Button" to="PopUp" method="_on_pressed"]

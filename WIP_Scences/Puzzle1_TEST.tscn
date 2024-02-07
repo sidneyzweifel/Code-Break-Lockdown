@@ -1173,4 +1173,4 @@ door_passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
 current_puzzle = "res://WIP_Scences/Puzzle1_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
-position = Vector2(1202, -992)
+position = Vector2(1175, -972)

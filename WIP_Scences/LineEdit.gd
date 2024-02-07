@@ -1,6 +1,6 @@
 extends LineEdit
 
-var dummy_ID = "77777"
+@onready var dummy_ID:String
 @onready var label = $"../Label"
 @onready var access_label = $"../AcessLabel"
 
@@ -24,6 +24,8 @@ func _process(delta):
 
 func _on_text_submitted(new_text):
 	var access = false
+	dummy_ID = Global.get_passcode()
+	print("DUmB: %s" % dummy_ID)
 	if new_text == dummy_ID:
 		var green =  Color(0.0,1.0,0.0,1.0)
 		set("theme_override_colors/font_color", green)
