@@ -32,6 +32,10 @@ func go_to_passcode(passcode_path:String, current_puzzle:String, next_puzzle:Str
 func get_current_puzzle():
 	return current_puzz
 	
+func return_to_puzzle():
+	get_tree().current_scene.queue_free()
+	get_tree().change_scene_to_file(current_puzz)
+	
 
 func set_passcode():
 	var random_code = RandomNumberGenerator.new()

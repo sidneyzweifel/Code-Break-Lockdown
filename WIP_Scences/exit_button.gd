@@ -13,5 +13,6 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_tree().current_scene.queue_free()
+	#get_tree().current_scene.queue_free()
+	Global.return_to_puzzle()
 
