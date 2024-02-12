@@ -1172,8 +1172,8 @@ position = Vector2(-934, 301)
 rotation = -1.54932
 scale = Vector2(1.23594, 1.24611)
 path_to_new_scene = "res://WIP_Scences/Puzzle1_TEST.tscn"
-door_passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
-current_puzzle = "res://Puzzle3_TEST.tscn"
+passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
+path_current_puzzle = "res://Puzzle3_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_8clto")]
 position = Vector2(-755, -491)
