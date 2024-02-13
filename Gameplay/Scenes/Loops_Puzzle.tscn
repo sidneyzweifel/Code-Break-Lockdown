@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxiwyfixxhpmv"]
+
+[ext_resource type="Script" path="res://Gameplay/Scenes/level.gd" id="1_hug28"]
+[ext_resource type="PackedScene" uid="uid://blc8pts5kgsl0" path="res://Gameplay/player.tscn" id="2_tbtb6"]
+[ext_resource type="PackedScene" uid="uid://b0o33vveq8wx5" path="res://Gameplay/door.tscn" id="3_p5xcu"]
+
+[node name="Loops_Puzzle" type="Node2D" node_paths=PackedStringArray("player", "doors")]
+scale = Vector2(4, 4)
+script = ExtResource("1_hug28")
+player = NodePath("Player")
+doors = [NodePath("LoopsEntrance")]
+
+[node name="Player" parent="." instance=ExtResource("2_tbtb6")]
+position = Vector2(69, 58)
+scale = Vector2(0.5, 0.5)
+
+[node name="LoopsEntrance" parent="." instance=ExtResource("3_p5xcu")]
+position = Vector2(96.5, 162)
+entry_direction = 0
+transition_type = "fade_to_black"
+path_to_new_scene = "res://Gameplay/Scenes/Logic_Puzzle.tscn"
+entry_door_name = "LogicExit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 228.5
+offset_top = 150.25
+offset_right = 343.5
+offset_bottom = 176.25
+scale = Vector2(0.5, 0.5)
+text = "LOOPS PUZZLE"

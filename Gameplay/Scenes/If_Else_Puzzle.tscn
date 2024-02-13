@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbj2rgk8vqd74"]
+
+[ext_resource type="PackedScene" uid="uid://blc8pts5kgsl0" path="res://Gameplay/player.tscn" id="1_enfkk"]
+[ext_resource type="Script" path="res://Gameplay/Scenes/level.gd" id="1_p7pr6"]
+[ext_resource type="PackedScene" uid="uid://b0o33vveq8wx5" path="res://Gameplay/door.tscn" id="2_c1de0"]
+
+[node name="If_Else_Puzzle" type="Node2D" node_paths=PackedStringArray("player", "doors")]
+scale = Vector2(4, 4)
+script = ExtResource("1_p7pr6")
+player = NodePath("Player")
+doors = [NodePath("IfElseEntrance"), NodePath("IfElseExit")]
+
+[node name="Player" parent="." instance=ExtResource("1_enfkk")]
+position = Vector2(188.5, 100)
+scale = Vector2(0.5, 0.5)
+
+[node name="IfElseEntrance" parent="." instance=ExtResource("2_c1de0")]
+position = Vector2(213.5, -0.5)
+entry_direction = 2
+transition_type = "fade_to_black"
+path_to_new_scene = "res://Gameplay/Scenes/Variables_Puzzle.tscn"
+entry_door_name = "VariablesExit"
+
+[node name="IfElseExit" parent="." instance=ExtResource("2_c1de0")]
+position = Vector2(-0.5, 98.25)
+entry_direction = 1
+transition_type = "fade_to_black"
+path_to_new_scene = "res://Gameplay/Scenes/Logic_Puzzle.tscn"
+entry_door_name = "LogicEntrance"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 225.5
+offset_top = 148.5
+offset_right = 341.5
+offset_bottom = 174.5
+scale = Vector2(0.5, 0.5)
+text = "IF-ELSE PUZZLE"
