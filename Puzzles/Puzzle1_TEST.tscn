@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=12 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://b5y0g45qhwswd" path="res://Backgrounds/SDP_Background.png" id="2_0pa1j"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_lshwt"]
@@ -27,6 +27,16 @@ func _process(delta):
 
 
 "
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkssm"]
+radius = 9.96608
+height = 30.7201
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2err"]
+radius = 5.61268
+height = 26.6088
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktefk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("3_lshwt")
@@ -1175,9 +1185,29 @@ metadata/_edit_horizontal_guides_ = [-3815.0]
 position = Vector2(-17, -13)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(657, 386)
+position = Vector2(661, 404)
 scale = Vector2(1.08256, 1.05219)
 texture = ExtResource("2_0pa1j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1604, 609)
+rotation = 0.825789
+scale = Vector2(33.08, 10.12)
+
+[node name="Bed" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
+position = Vector2(-11.652, 36.9234)
+shape = SubResource("CapsuleShape2D_fkssm")
+
+[node name="Toliet" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
+position = Vector2(-29.156, 105.487)
+rotation = 0.071808
+shape = SubResource("CapsuleShape2D_k2err")
+
+[node name="Sink" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
+position = Vector2(-81.8641, 117.158)
+rotation = 1.11612
+scale = Vector2(1.50243, 1.23274)
+shape = SubResource("CapsuleShape2D_ktefk")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2295, -3991)
@@ -1194,9 +1224,9 @@ passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
-position = Vector2(827, -178)
+position = Vector2(923, -45)
 rotation = 0.19237
-scale = Vector2(1.34061, 2.42249)
+scale = Vector2(0.762002, 1.78746)
 
 [node name="Player_NOCAM" parent="." instance=ExtResource("6_ypr61")]
 position = Vector2(87, 516)
