@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://0hbl08fkxl1s"]
+[gd_scene load_steps=2 format=3 uid="uid://0hbl08fkxl1s"]
+
+[ext_resource type="PackedScene" uid="uid://d0kos26ve8f67" path="res://Gameplay/SarahCreatedFolder/passcode_window.tscn" id="1_bcorb"]
 
 [node name="Pop Door Passcode" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Passcode"
+
+[node name="PasscodeWindow" parent="." instance=ExtResource("1_bcorb")]
+visible = false
+
+[connection signal="pressed" from="Button" to="PasscodeWindow" method="_on_button_pressed"]

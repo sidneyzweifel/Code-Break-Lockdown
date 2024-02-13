@@ -4,11 +4,10 @@
 [ext_resource type="Script" path="res://Gameplay/Scenes/level.gd" id="1_p7pr6"]
 [ext_resource type="PackedScene" uid="uid://b0o33vveq8wx5" path="res://Gameplay/door.tscn" id="2_c1de0"]
 
-[node name="If_Else_Puzzle" type="Node2D" node_paths=PackedStringArray("player", "doors")]
+[node name="If_Else_Puzzle" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_p7pr6")
-player = NodePath("Player")
-doors = [NodePath("IfElseEntrance"), NodePath("IfElseExit")]
+player = null
 
 [node name="Player" parent="." instance=ExtResource("1_enfkk")]
 position = Vector2(188.5, 100)
