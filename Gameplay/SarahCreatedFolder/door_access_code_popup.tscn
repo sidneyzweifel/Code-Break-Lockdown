@@ -1,7 +1,23 @@
-[gd_scene format=3 uid="uid://cu16t73afr8fn"]
+[gd_scene load_steps=3 format=3 uid="uid://2hmmxr8mx06t"]
 
-[node name="Door Access Code Popup" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cj433kl8wxcbq" path="res://WIP_Scences/pop_up_test.tscn" id="2_hdutc"]
+[ext_resource type="Script" path="res://WIP_Scences/popup.gd" id="3_6xfye"]
+
+[node name="PopUp_Button" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 126.0
+offset_top = 76.0
+offset_right = 519.0
+offset_bottom = 202.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Click to open popup
+"
+
+[node name="PopUp" parent="." instance=ExtResource("2_hdutc")]
+title = ""
+visible = false
+script = ExtResource("3_6xfye")
+
+[connection signal="pressed" from="Button" to="PopUp" method="_on_pressed"]
