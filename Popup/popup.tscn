@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yd5bkrb3kivj"]
 
-[ext_resource type="PackedScene" path="res://Popup/pop_up_test.tscn" id="1_y1lh2"]
+[ext_resource type="PackedScene" uid="uid://c1shsld6r4nw6" path="res://Popup/pop_up_test.tscn" id="1_y1lh2"]
 [ext_resource type="Script" path="res://Popup/popup.gd" id="2_8ghxf"]
 
 [node name="PopUp_Button" type="Node2D"]

@@ -15,7 +15,6 @@ min_size = Vector2i(500, 500)
 content_scale_mode = 1
 content_scale_aspect = 1
 script = ExtResource("1_ha75x")
-passcode = "PASSCODE: 12345"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

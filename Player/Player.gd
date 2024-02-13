@@ -44,19 +44,18 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	get_collision()
-	#player_position = global_position
-	#print(player_position)
+
 
 	
 func get_collision():
 	#https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_2d.html
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		#get that the player collied with door and open the passcode entering scene
-		#print("I collided with ", collision.get_collider().name, i)
+#Each door added to the door group
+#when player collides with door the global script decides what happens
+#starts with player not having access
 		if collision.get_collider().is_in_group("door"):
 			Global.handle_door(has_door_access)
-			#get_tree().change_scene_to_file(door_passcode)
 			pass
 
 
