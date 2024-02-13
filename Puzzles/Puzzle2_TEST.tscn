@@ -1,11 +1,32 @@
 [gd_scene load_steps=9 format=3 uid="uid://mgf4g7528wwx"]
 
-[ext_resource type="Script" path="res://WIP_Scences/Main.gd" id="1_pugk6"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_sgofu"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_ebmv6"]
-[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://WIP_Scences/Player.tscn" id="4_im48q"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://WIP_Scences/door.tscn" id="5_2uc6i"]
-[ext_resource type="PackedScene" uid="uid://2hmmxr8mx06t" path="res://Scenes_Puzzles/popup.tscn" id="6_3g1eq"]
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="4_im48q"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="5_2uc6i"]
+[ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_3g1eq"]
+
+[sub_resource type="GDScript" id="GDScript_dxlop"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+
+	
+
+
+
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("3_ebmv6")
@@ -1145,7 +1166,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
 [node name="Puzzle2" type="Node2D" groups=["puzzle"]]
-script = ExtResource("1_pugk6")
+script = SubResource("GDScript_dxlop")
 metadata/_edit_horizontal_guides_ = [-3815.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -1171,9 +1192,9 @@ position = Vector2(2088, -1871)
 position = Vector2(3276, 21)
 rotation = 3.13733
 scale = Vector2(1.29958, 1.1454)
-path_to_new_scene = "res://Puzzle3_TEST.tscn"
-passcode_scene = "res://WIP_Scences/passcode_enter.tscn"
-path_current_puzzle = "res://Puzzle2_TEST.tscn"
+path_to_new_scene = "res://Puzzles/Puzzle3_TEST.tscn"
+passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
+path_current_puzzle = "res://Puzzles/Puzzle2_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_3g1eq")]
 position = Vector2(2285, -651)

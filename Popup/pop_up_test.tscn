@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj433kl8wxcbq"]
+[gd_scene load_steps=3 format=3 uid="uid://c1shsld6r4nw6"]
 
-[ext_resource type="Script" path="res://Scripts/PopUpTest.gd" id="1_jwqi8"]
-[ext_resource type="Script" path="res://WIP_Scences/Passcode.gd" id="2_fh1qt"]
+[ext_resource type="Script" path="res://Popup/PopUpTest.gd" id="1_ha75x"]
+[ext_resource type="Script" path="res://Popup/Passcode/Passcode.gd" id="2_7epu2"]
 
 [node name="PopUp" type="Window"]
 gui_embed_subwindows = true
@@ -14,7 +14,7 @@ popup_window = true
 min_size = Vector2i(500, 500)
 content_scale_mode = 1
 content_scale_aspect = 1
-script = ExtResource("1_jwqi8")
+script = ExtResource("1_ha75x")
 passcode = "PASSCODE: 12345"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -42,7 +42,7 @@ theme_override_font_sizes/font_size = 90
 text = "PASSCODE: 12345"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_fh1qt")
+script = ExtResource("2_7epu2")
 
 [connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

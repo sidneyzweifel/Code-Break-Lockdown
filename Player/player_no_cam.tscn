@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://dxq4sx0alr6pi"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_asw5k"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_asw5k"]
 [ext_resource type="Texture2D" uid="uid://csq7raydfcate" path="res://Sprites/Idles/Player/Back/back_idle_1.png" id="2_d2yna"]
 [ext_resource type="Texture2D" uid="uid://cabg24a5fupwc" path="res://Sprites/Idles/Player/Back/back_idle_2.png" id="3_2ikxe"]
 [ext_resource type="Texture2D" uid="uid://c4fabw0y4aoxb" path="res://Sprites/Idles/Player/Side/_Idle_Side_1.png" id="4_52l1f"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbp4xsnof0uob"]
 
-[ext_resource type="Script" path="res://WIP_Scences/LineEdit.gd" id="1_wtngb"]
-[ext_resource type="Script" path="res://WIP_Scences/exit_button.gd" id="2_5j64p"]
+[ext_resource type="Script" path="res://Popup/Passcode/LineEdit.gd" id="1_46g5p"]
+[ext_resource type="Script" path="res://Popup/Passcode/exit_button.gd" id="2_06kqa"]
 
 [node name="ColorRect" type="ColorRect"]
 show_behind_parent = true
@@ -33,7 +33,7 @@ placeholder_text = "Enter Passcode"
 alignment = 1
 max_length = 5
 expand_to_text_length = true
-script = ExtResource("1_wtngb")
+script = ExtResource("1_46g5p")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -60,7 +60,7 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(0.933333, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
 text = "X"
-script = ExtResource("2_5j64p")
+script = ExtResource("2_06kqa")
 
 [node name="AcessLabel" type="Label" parent="."]
 layout_mode = 1
