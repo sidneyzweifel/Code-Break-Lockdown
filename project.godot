@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Senior Design Project"
-run/main_scene="res://Puzzles/Puzzle1_TEST.tscn"
+run/main_scene="res://Menu/Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://Sprites/icon.svg"
 

@@ -1209,7 +1209,6 @@ polygon = PackedVector2Array(-26.9903, 81.9561, -27.3789, 76.4831, -25.2595, 67.
 [node name="MapBoundry" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
 position = Vector2(-11.5134, 134.142)
 rotation = -0.543899
-scale = Vector2(1, 1)
 build_mode = 1
 polygon = PackedVector2Array(7.20405, -31.8472, 6.9434, -32.037, 16.0431, -29.4921, 29.361, -41.2958, 42.7704, -65.7344, 64.6552, -86.1994, 59.2379, -63.1432, 0.151033, 0.672363, -10.7733, -3.20084, -13.2771, -13.7562)
 
