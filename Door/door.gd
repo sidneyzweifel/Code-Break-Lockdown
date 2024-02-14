@@ -19,3 +19,7 @@ func handle_access(door_access):
 	else:
 		Global.go_to_passcode(passcode_scene, path_current_puzzle, path_to_new_scene)
 	return
+
+
+func _on_button_pressed():
+	handle_access(false)

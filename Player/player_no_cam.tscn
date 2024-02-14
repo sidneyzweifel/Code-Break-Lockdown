@@ -34,8 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://1l5y4k0rkimt" path="res://Sprites/Walking/Player/Side/Walking_side_11.png" id="32_pnha8"]
 [ext_resource type="Texture2D" uid="uid://bc1yjsfpstkm" path="res://Sprites/Walking/Player/Side/Walking_side_12.png" id="33_qvobl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcqgd"]
-size = Vector2(278, 314)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ptd1"]
+radius = 92.0
+height = 232.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3ews"]
 animations = [{
@@ -171,8 +172,8 @@ position = Vector2(-114, 69)
 script = ExtResource("1_asw5k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(557, 240)
-shape = SubResource("RectangleShape2D_pcqgd")
+position = Vector2(568, 277)
+shape = SubResource("CapsuleShape2D_3ptd1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(555, 247)

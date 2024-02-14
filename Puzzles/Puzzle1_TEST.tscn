@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=11 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://b5y0g45qhwswd" path="res://Backgrounds/SDP_Background.png" id="2_0pa1j"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_lshwt"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="5_xkmdw"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
+[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
@@ -35,8 +35,6 @@ height = 30.7201
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2err"]
 radius = 5.61268
 height = 26.6088
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktefk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m2gb"]
 texture = ExtResource("3_lshwt")
@@ -1182,7 +1180,7 @@ metadata/_edit_horizontal_guides_ = [-3815.0]
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-17, -13)
+position = Vector2(-17, -28)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(661, 404)
@@ -1203,30 +1201,36 @@ position = Vector2(-29.156, 105.487)
 rotation = 0.071808
 shape = SubResource("CapsuleShape2D_k2err")
 
-[node name="Sink" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
-position = Vector2(-81.8641, 117.158)
-rotation = 1.11612
-scale = Vector2(1.50243, 1.23274)
-shape = SubResource("CapsuleShape2D_ktefk")
+[node name="Sink" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
+position = Vector2(-3.53188, -0.162811)
+build_mode = 1
+polygon = PackedVector2Array(-26.9903, 81.9561, -27.3789, 76.4831, -25.2595, 67.9514, -22.1925, 80.693, -23.4222, 85.0512)
+
+[node name="MapBoundry" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
+position = Vector2(-11.5134, 134.142)
+rotation = -0.543899
+scale = Vector2(1, 1)
+build_mode = 1
+polygon = PackedVector2Array(7.20405, -31.8472, 6.9434, -32.037, 16.0431, -29.4921, 29.361, -41.2958, 42.7704, -65.7344, 64.6552, -86.1994, 59.2379, -63.1432, 0.151033, 0.672363, -10.7733, -3.20084, -13.2771, -13.7562)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2295, -3991)
 tile_set = SubResource("TileSet_1jthv")
 format = 2
 
-[node name="Door" parent="." instance=ExtResource("5_xkmdw")]
-visible = false
-position = Vector2(936, -243)
-rotation = 1.55476
-scale = Vector2(2.5018, 1.27091)
+[node name="Door2" parent="." instance=ExtResource("6_tpbfh")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(907, 43)
+rotation = 1.59231
 path_to_new_scene = "res://Puzzles/Puzzle2_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
-position = Vector2(923, -45)
+modulate = Color(0.501961, 0, 0.780392, 1)
+position = Vector2(924, -45)
 rotation = 0.19237
 scale = Vector2(0.762002, 1.78746)
 
 [node name="Player_NOCAM" parent="." instance=ExtResource("6_ypr61")]
-position = Vector2(87, 516)
+position = Vector2(87, 522)
