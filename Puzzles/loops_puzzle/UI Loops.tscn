@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://i3kmp0451hi0"]
+
+[ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
+
+[node name="UI Loops" type="Node2D"]
+position = Vector2(521, 242)
+
+[node name="Window" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(1000, 600)
+script = ExtResource("1_hjv3k")
+item_number = "100"
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.54902, 0.352941, 1)
+
+[node name="ItemNumLabel" type="Label" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 70
+text = "ITEM #: "
+horizontal_alignment = 1
+
+[node name="StartIndex" type="LineEdit" parent="Window"]
+modulate = Color(1, 0.0901961, 1, 1)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -200.0
+offset_right = 318.0
+offset_bottom = -96.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+placeholder_text = "START INDEX"
+alignment = 1
+max_length = 3
+virtual_keyboard_type = 2
+
+[node name="EndIndex" type="LineEdit" parent="Window"]
+modulate = Color(0.0784314, 0.964706, 1, 1)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = -132.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "END INDEX"
+alignment = 1
+max_length = 3
+virtual_keyboard_type = 2
+
+[node name="Label" type="Label" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 110.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.788235, 0.913725, 1)
+theme_override_font_sizes/font_size = 61
+text = "Conditional Statement
+current item # index < end index
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="close_requested" from="Window" to="Window" method="_on_close_requested"]
+[connection signal="text_submitted" from="Window/StartIndex" to="Window" method="_on_start_index_text_submitted"]
+[connection signal="text_submitted" from="Window/EndIndex" to="Window" method="_on_end_index_text_submitted"]

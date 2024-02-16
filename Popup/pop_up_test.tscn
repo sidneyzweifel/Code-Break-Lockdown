@@ -6,7 +6,6 @@
 [node name="PopUp" type="Window"]
 gui_embed_subwindows = true
 mode = 1
-title = "TITLE"
 initial_position = 1
 size = Vector2i(1152, 648)
 transparent = true

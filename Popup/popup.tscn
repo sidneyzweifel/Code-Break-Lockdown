@@ -16,7 +16,6 @@ text = "Click to open popup
 "
 
 [node name="PopUp" parent="." instance=ExtResource("1_y1lh2")]
-title = ""
 visible = false
 script = ExtResource("2_8ghxf")
 
