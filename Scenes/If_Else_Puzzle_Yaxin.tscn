@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://bpaog0c6omgxl"]
+[gd_scene load_steps=4 format=3 uid="uid://bpaog0c6omgxl"]
+
+[ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Scenes/Player.tscn" id="1_0b41o"]
+[ext_resource type="Script" path="res://Scripts/If_Else_Puzzle_Exit.gd" id="2_m183m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vufg"]
+size = Vector2(236.5, 65)
 
 [node name="If_Else_Puzzle_Yaxin" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0b41o")]
+position = Vector2(-382, -19)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 343.0
+offset_top = 76.0
+offset_right = 739.0
+offset_bottom = 171.0
+text = "We are in Yaxin's if-else puzzle"
+
+[node name="If_Else_Puzzle_Exit" type="Area2D" parent="."]
+script = ExtResource("2_m183m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="If_Else_Puzzle_Exit"]
+position = Vector2(175, 378)
+shape = SubResource("RectangleShape2D_2vufg")
+
+[connection signal="body_entered" from="If_Else_Puzzle_Exit" to="If_Else_Puzzle_Exit" method="_on_body_entered"]
