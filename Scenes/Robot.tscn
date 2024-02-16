@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://s762j2jvorgg"]
+
+[ext_resource type="Script" path="res://Scripts/Robot.gd" id="1_5qtkc"]
+[ext_resource type="Texture2D" path="res://Sprites/frog-idle-3.png" id="2_7ki8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeefn"]
+size = Vector2(36, 37)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nj8m4"]
+radius = 65.437
+
+[node name="Robot" type="CharacterBody2D"]
+script = ExtResource("1_5qtkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jeefn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1.84286, 1.84375)
+texture = ExtResource("2_7ki8t")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_nj8m4")
+
+[node name="PlayerAttack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttack"]
+shape = SubResource("CircleShape2D_nj8m4")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerAttack" to="." method="_on_player_attack_body_entered"]
+[connection signal="body_exited" from="PlayerAttack" to="." method="_on_player_attack_body_exited"]
