@@ -15,10 +15,6 @@ run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://Sprites/icon.svg"
 
-[display]
-
-window/subwindows/embed_subwindows=false
-
 [input]
 
 left={
@@ -53,6 +49,5 @@ click={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.301961, 0, 0.227451, 1)
