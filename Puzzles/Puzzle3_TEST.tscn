@@ -1189,8 +1189,8 @@ layer_0/tile_data = PackedInt32Array(196581, 786432, 0, 196582, 786432, 0, 26211
 position = Vector2(-1160, -463)
 
 [node name="Door" parent="." instance=ExtResource("5_rodgw")]
-position = Vector2(-934, 301)
-rotation = -1.54932
+position = Vector2(-385, 631)
+rotation = 3.21664
 scale = Vector2(1.23594, 1.24611)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"

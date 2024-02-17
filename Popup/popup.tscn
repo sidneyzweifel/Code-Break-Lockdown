@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://yd5bkrb3kivj"]
+[gd_scene load_steps=4 format=3 uid="uid://yd5bkrb3kivj"]
 
 [ext_resource type="PackedScene" uid="uid://c1shsld6r4nw6" path="res://Popup/pop_up_test.tscn" id="1_y1lh2"]
+[ext_resource type="FontFile" uid="uid://dly6x782bp66" path="res://addons/fontawesome/fonts/fa-brands-400.woff2" id="1_yag4c"]
 [ext_resource type="Script" path="res://Popup/popup.gd" id="2_8ghxf"]
 
 [node name="PopUp_Button" type="Node2D"]
@@ -12,6 +13,7 @@ offset_right = 519.0
 offset_bottom = 202.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_yag4c")
 text = "Click to open popup
 "
 
