@@ -29,7 +29,7 @@ func _process(delta):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkssm"]
-radius = 8.95966
+radius = 8.95965
 height = 17.9193
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2err"]

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_sgofu"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_ebmv6"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="4_im48q"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="5_2uc6i"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_3g1eq"]
+[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_snv6m"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1180,6 +1180,7 @@ scale = Vector2(40.8203, 24.4375)
 texture = ExtResource("2_sgofu")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 scale = Vector2(1.05718, 0.946977)
 tile_set = SubResource("TileSet_1jthv")
 format = 2
@@ -1188,13 +1189,11 @@ layer_0/tile_data = PackedInt32Array(131091, 786432, 0, 196627, 786432, 0, 26216
 [node name="Player" parent="." instance=ExtResource("4_im48q")]
 position = Vector2(2088, -1871)
 
-[node name="Door" parent="." instance=ExtResource("5_2uc6i")]
-position = Vector2(3487, -410)
-rotation = 1.62141
-scale = Vector2(1.29958, 1.1454)
+[node name="CodePopup" parent="." instance=ExtResource("6_3g1eq")]
+position = Vector2(2285, -651)
+
+[node name="Door" parent="." instance=ExtResource("6_snv6m")]
+position = Vector2(3205, -963)
 path_to_new_scene = "res://Puzzles/Puzzle3_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle2_TEST.tscn"
-
-[node name="CodePopup" parent="." instance=ExtResource("6_3g1eq")]
-position = Vector2(2285, -651)
