@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://jct1k21n1kkn"]
+
+[ext_resource type="Script" path="res://Menu/PuzzleSelect.gd" id="1_31wfs"]
+
+[node name="PuzzleSelect" type="Node2D"]
+script = ExtResource("1_31wfs")
+puz1_path = "res://Puzzles/Puzzle1_TEST.tscn"
+puz2_path = "res://Puzzles/Puzzle2_TEST.tscn"
+puz3_path = "res://Puzzles/Puzzle3_TEST.tscn"
+puz4_path = "res://Puzzles/Puzzle1_TEST.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -5.0
+offset_right = 1279.0
+offset_bottom = 710.0
+color = Color(1, 0.278431, 1, 1)
+
+[node name="Puzzle 1" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -211.5
+offset_right = 220.5
+offset_bottom = 147.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "PUZZLE 1"
+
+[node name="Puzzle 2" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.366
+anchor_right = 0.5
+anchor_bottom = 0.366
+offset_left = -219.5
+offset_top = -62.69
+offset_right = 217.5
+offset_bottom = 81.31
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "PUZZLE 2"
+
+[node name="Puzzle 3" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.5
+offset_top = -343.0
+offset_right = 222.5
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "PUZZLE 3"
+
+[node name="Puzzle 4" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.5
+offset_top = -142.0
+offset_right = 227.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "PUZZLE 4"
+
+[connection signal="pressed" from="ColorRect/Puzzle 1" to="." method="_on_puzzle_1_pressed"]
+[connection signal="pressed" from="ColorRect/Puzzle 2" to="." method="_on_puzzle_2_pressed"]
+[connection signal="pressed" from="ColorRect/Puzzle 3" to="." method="_on_puzzle_3_pressed"]
+[connection signal="pressed" from="ColorRect/Puzzle 4" to="." method="_on_puzzle_4_pressed"]

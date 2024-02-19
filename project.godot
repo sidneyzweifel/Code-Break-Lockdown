@@ -11,9 +11,24 @@ config_version=5
 [application]
 
 config/name="Senior Design Project"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Menu/Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+Global="*res://Global/global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/per_pixel_transparency/allowed=true
+
+[gui]
+
+theme/custom_font="res://addons/fontawesome/fonts/fa-solid-900.woff2"
 
 [input]
 
@@ -49,4 +64,5 @@ click={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.482353, 0.313726, 0.65098, 1)
