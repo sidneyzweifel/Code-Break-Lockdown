@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cekhq85ljl3p8"]
+
+[ext_resource type="Script" path="res://Popup/PopUpTest.gd" id="1_ntchs"]
+[ext_resource type="Script" path="res://Popup/Passcode/Passcode.gd" id="2_bepeo"]
+
+[node name="PopUp" type="Window"]
+gui_embed_subwindows = true
+mode = 1
+initial_position = 1
+size = Vector2i(1152, 648)
+transparent = true
+popup_window = true
+min_size = Vector2i(500, 500)
+content_scale_mode = 1
+content_scale_aspect = 1
+script = ExtResource("1_ntchs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0196078, 0.133333, 0.345098, 1)
+
+[node name="Passcode" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.5
+offset_top = -63.5
+offset_right = 409.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945098, 0.454902, 0.25098, 1)
+theme_override_font_sizes/font_size = 90
+text = "PASSCODE: 12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_bepeo")
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

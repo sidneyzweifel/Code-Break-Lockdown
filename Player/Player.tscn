@@ -34,8 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://1l5y4k0rkimt" path="res://Sprites/Walking/Player/Side/Walking_side_11.png" id="32_lufi2"]
 [ext_resource type="Texture2D" uid="uid://bc1yjsfpstkm" path="res://Sprites/Walking/Player/Side/Walking_side_12.png" id="33_0cghr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcqgd"]
-size = Vector2(278, 314)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wy04b"]
+radius = 42.0
+height = 296.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3ews"]
 animations = [{
@@ -167,12 +168,12 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-114, 69)
+position = Vector2(-279, 58)
 script = ExtResource("1_j2ui2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(557, 240)
-shape = SubResource("RectangleShape2D_pcqgd")
+shape = SubResource("CapsuleShape2D_wy04b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(555, 247)
@@ -181,5 +182,5 @@ sprite_frames = SubResource("SpriteFrames_e3ews")
 animation = &"walking_side"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-177, -138)
+position = Vector2(12, -36)
 anchor_mode = 0
