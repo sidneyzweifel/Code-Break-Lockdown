@@ -1,21 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsuq5rmc14dty"]
+[gd_scene load_steps=4 format=3 uid="uid://uq3soatunpx7"]
 
-[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_mme2b"]
-[ext_resource type="Script" path="res://NPC/NPC.gd" id="1_t0wh8"]
+[ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
+[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_7cu12"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vr6a"]
-size = Vector2(105, 103)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppe2"]
+size = Vector2(124, 125)
 
-[node name="NPC" type="RigidBody2D"]
-position = Vector2(-1, 18)
-script = ExtResource("1_t0wh8")
-metadata/_edit_group_ = true
+[node name="NPC" type="RigidBody2D" groups=["npc"]]
+position = Vector2(15, 19)
+gravity_scale = 0.0
+script = ExtResource("1_oropo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(368, 125)
-scale = Vector2(0.84375, 0.8125)
-texture = ExtResource("1_mme2b")
+position = Vector2(291, 141)
+texture = ExtResource("2_7cu12")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(368.5, 124.5)
-shape = SubResource("RectangleShape2D_3vr6a")
+position = Vector2(292, 142)
+shape = SubResource("RectangleShape2D_5ppe2")

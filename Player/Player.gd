@@ -57,6 +57,8 @@ func get_collision():
 		if collision.get_collider().is_in_group("door"):
 			Global.handle_door(has_door_access)
 			pass
+		if collision.get_collider().is_in_group("npc"):
+			Global.handle_npc()
 
 
 

@@ -60,5 +60,7 @@ func get_passcode():
 	return current_passcode
 
 	
-
+func handle_npc():
+	print("I WANT ITEM# 100")
+	get_tree().call_group("npc","open_popup")
 	

@@ -1180,7 +1180,6 @@ scale = Vector2(24.2891, 21.3516)
 texture = ExtResource("2_eml7g")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 position = Vector2(110, 153)
 tile_set = SubResource("TileSet_1jthv")
 format = 2

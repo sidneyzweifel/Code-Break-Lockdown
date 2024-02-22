@@ -1180,7 +1180,6 @@ scale = Vector2(40.8203, 24.4375)
 texture = ExtResource("2_sgofu")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 scale = Vector2(1.05718, 0.946977)
 tile_set = SubResource("TileSet_1jthv")
 format = 2
