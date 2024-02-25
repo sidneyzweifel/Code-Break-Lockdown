@@ -7,7 +7,7 @@ script = ExtResource("1_31wfs")
 puz1_path = "res://Puzzles/Puzzle1_TEST.tscn"
 puz2_path = "res://Puzzles/Puzzle2_TEST.tscn"
 puz3_path = "res://Puzzles/Puzzle3_TEST.tscn"
-puz4_path = "res://Puzzles/Puzzle1_TEST.tscn"
+puz4_path = "res://Puzzles/Puzzle4_TEST.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_top = -5.0
