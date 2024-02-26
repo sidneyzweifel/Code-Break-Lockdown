@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=18 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://b5y0g45qhwswd" path="res://Backgrounds/SDP_Background.png" id="2_0pa1j"]
+[ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Sprites/Puzzle_1_Gretta/Puzzle_1_terminal.png" id="2_05vti"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_lshwt"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
@@ -1173,6 +1174,41 @@ texture = ExtResource("3_lshwt")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4m2gb")
 
+[sub_resource type="Environment" id="Environment_u4c5j"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.17
+glow_bloom = 0.43
+glow_blend_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_uhbys"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k6fao"]
+gradient = SubResource("Gradient_uhbys")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.52439, 0.554878)
+fill_to = Vector2(0.536585, 0.27439)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_solrv"]
+closed = false
+polygon = PackedVector2Array(-47, -5, -47, 89, -14, 378, 140, 330, 226, 316, 231, 349, 274, 327, 283, 301, 301, 272, 365, 242, 340, 274, 339, 289, 340, 325, 395, 376, 393, 400, 440, 395, 456, 409, 470, 404, 481, 443, 531, 443, 465, 539, 378, 630, 378, 630, 369, 678, 340, 732, 321, 751, 880, 748, 747, 443, 772, 438, 866, 500, 897, 500, 931, 506, 964.895, 505.34, 992, 497, 1016, 473, 1026, 447, 1026, 403, 961, 319, 1240, 411, 1274, 192, 1285, 3, 1337, 2, 1337, 757, 875, 746, -52, 749, -52, 83)
+
+[sub_resource type="Gradient" id="Gradient_hhqdq"]
+offsets = PackedFloat32Array(0, 0.832117, 0.989051)
+colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gy4c3"]
+gradient = SubResource("Gradient_hhqdq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.912791, 0.0639535)
+
 [node name="Puzzle1" type="Node2D" groups=["puzzle"]]
 script = SubResource("GDScript_dxlop")
 metadata/_edit_horizontal_guides_ = [-3815.0]
@@ -1204,12 +1240,17 @@ shape = SubResource("CapsuleShape2D_k2err")
 [node name="Sink" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
 position = Vector2(-3.53188, -0.162811)
 build_mode = 1
-polygon = PackedVector2Array(-26.9903, 81.9561, -27.3789, 76.4831, -25.2595, 67.9514, -22.1925, 80.693, -23.4222, 85.0512)
+polygon = PackedVector2Array(-26.9903, 81.9561, -27.567, 75.1093, -24.8069, 66.493, -22.1925, 80.693, -24.2882, 87.683)
 
 [node name="MapBoundry" type="CollisionPolygon2D" parent="ParallaxBackground/ParallaxLayer/StaticBody2D"]
 position = Vector2(-11.4071, 134.94)
 rotation = -0.543899
 polygon = PackedVector2Array(11.2658, -36.6242, 11.0684, -28.0373, 16.0431, -29.4921, 29.361, -41.2958, 36.7732, -60.4227, 65.5867, -88.0716, 59.2379, -63.1432, 0.151033, 0.672363, -10.7733, -3.20084, -13.4664, -16.0433)
+
+[node name="Terminal" type="Sprite2D" parent="."]
+position = Vector2(383, 275)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_05vti")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2295, -3991)
@@ -1226,9 +1267,33 @@ path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
 modulate = Color(0.501961, 1, 0.0392157, 1)
-position = Vector2(924, -45)
+position = Vector2(922, 2.28882e-05)
 rotation = 0.19237
 scale = Vector2(0.762002, 1.78746)
 
 [node name="Player_NOCAM" parent="." instance=ExtResource("6_ypr61")]
 position = Vector2(83, 499)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u4c5j")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.152941, 0.152941, 0.152941, 1)
+blend_mode = 2
+
+[node name="Above Light" type="PointLight2D" parent="."]
+position = Vector2(689, 2)
+scale = Vector2(21.625, 11.1406)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_k6fao")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_solrv")
+
+[node name="Computer Light" type="PointLight2D" parent="."]
+position = Vector2(399, 274)
+scale = Vector2(2.23958, 2.48698)
+color = Color(0, 0.721569, 1, 1)
+energy = 0.65
+texture = SubResource("GradientTexture2D_gy4c3")
+texture_scale = 1.2
