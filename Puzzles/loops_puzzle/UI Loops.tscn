@@ -75,9 +75,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -325.0
+offset_left = -290.0
 offset_top = -200.0
-offset_right = -200.0
+offset_right = -165.0
 offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -94,9 +94,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -325.0
+offset_left = -310.0
 offset_top = -38.5
-offset_right = -200.0
+offset_right = -185.0
 offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -133,18 +133,18 @@ popup/item_1/text = "--"
 popup/item_1/id = 1
 
 [node name="IInequality" type="Label" parent="."]
-offset_left = 200.0
-offset_top = 275.0
-offset_right = 238.0
-offset_bottom = 339.0
+offset_left = 250.0
+offset_top = 330.0
+offset_right = 288.0
+offset_bottom = 394.0
 theme_override_font_sizes/font_size = 60
 text = "i"
 
 [node name="IChange" type="Label" parent="."]
-offset_left = 400.0
-offset_top = 410.0
-offset_right = 440.0
-offset_bottom = 474.0
+offset_left = 450.0
+offset_top = 530.0
+offset_right = 490.0
+offset_bottom = 594.0
 theme_override_font_sizes/font_size = 60
 text = "I"
 
