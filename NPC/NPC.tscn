@@ -14,6 +14,7 @@ script = ExtResource("1_oropo")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 0.0509804, 0.0509804, 1)
 position = Vector2(291, 141)
 texture = ExtResource("2_7cu12")
 
@@ -22,14 +23,15 @@ position = Vector2(292, 142)
 shape = SubResource("RectangleShape2D_5ppe2")
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(0.921569, 0, 0.92549, 1)
 offset_left = 229.0
 offset_top = 80.0
 offset_right = 357.0
 offset_bottom = 203.0
-text = "You there!"
 
 [node name="NPCPopup" parent="." instance=ExtResource("3_m0wkc")]
 visible = false
+inmate_key = "inmate_A"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="confirmed" from="NPCPopup" to="." method="_on_npc_popup_confirmed"]
