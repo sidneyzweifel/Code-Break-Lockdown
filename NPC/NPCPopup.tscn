@@ -29,3 +29,4 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [connection signal="confirmed" from="." to="." method="_on_confirmed"]
+[connection signal="custom_action" from="." to="." method="_on_custom_action"]

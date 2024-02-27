@@ -7,6 +7,7 @@ var item_num:int = 100
 
 var dialouge_cnt:int = 0
 var player_dia_cnt:int = 0
+var next_option_button:Button
 
 @export var inmate_key:String
 
@@ -15,17 +16,13 @@ func _ready():
 	var dia = pick_next_dialouge_inmate(dialouge_cnt)
 	label_text.text = str(dia)
 	var response =  pick_next_player_response(player_dia_cnt)
-	popup.ok_button_text = response
+	next_option_button = popup.add_button(response, false, "custom action")
+
 
 
 
 func _on_confirmed():
-	dialouge_cnt += 1
-	player_dia_cnt += 1
-	var dia = pick_next_dialouge_inmate(dialouge_cnt)
-	label_text.text = str(dia)
-	var response = pick_next_player_response(player_dia_cnt)
-	popup.ok_button_text = response
+	popup.hide()
 	
 	
 
@@ -40,7 +37,7 @@ func pick_next_dialouge_inmate(cnt:int):
 			var pos = Dialouge.speech_dict[inmate_key]["door_location"]
 			return "It's " + str(pos) + " and is " + str(color)
 		_:
-			return str("Please get me item #")
+			return str("Please get me item #***")
 			
 			
 			
@@ -53,4 +50,15 @@ func pick_next_player_response(cnt:int):
 		2:
 			return str("Okay")
 		_:
+			remove_button(next_option_button)
 			return str("Got it")
+
+
+func _on_custom_action(action):
+	dialouge_cnt += 1
+	player_dia_cnt += 1
+	var dia = pick_next_dialouge_inmate(dialouge_cnt)
+	label_text.text = str(dia)
+	var response = pick_next_player_response(player_dia_cnt)
+	next_option_button.text = response
+	pass # Replace with function body.

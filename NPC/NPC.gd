@@ -12,4 +12,4 @@ func _on_button_pressed():
 
 
 func _on_npc_popup_confirmed():
-	popup.inmate_key = "inmate_B"
+	popup.inmate_key = "inmate_C"
