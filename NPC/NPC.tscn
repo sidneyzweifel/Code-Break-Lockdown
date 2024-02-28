@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://uq3soatunpx7"]
+[gd_scene load_steps=4 format=3 uid="uid://uq3soatunpx7"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_7cu12"]
-[ext_resource type="PackedScene" uid="uid://beducpmxsj7ek" path="res://NPC/NPCPopup.tscn" id="3_m0wkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppe2"]
 size = Vector2(124, 125)
@@ -29,9 +28,4 @@ offset_top = 80.0
 offset_right = 357.0
 offset_bottom = 203.0
 
-[node name="NPCPopup" parent="." instance=ExtResource("3_m0wkc")]
-visible = false
-inmate_key = "inmate_A"
-
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="confirmed" from="NPCPopup" to="." method="_on_npc_popup_confirmed"]

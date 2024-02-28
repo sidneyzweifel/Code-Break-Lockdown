@@ -9,8 +9,10 @@ var dialouge_cnt:int = 0
 var player_dia_cnt:int = 0
 var next_option_button:Button
 
+var inmate_key:String 
 
-@export var inmate_key:String
+func get_key(key:String):
+	inmate_key = key
 
 
 func _ready():
@@ -18,6 +20,7 @@ func _ready():
 	label_text.text = str(dia)
 	var response =  pick_next_player_response(player_dia_cnt)
 	next_option_button = popup.add_button(response, false, "custom action")
+
 	
 
 
@@ -63,3 +66,9 @@ func _on_custom_action(action):
 	var response = pick_next_player_response(player_dia_cnt)
 	next_option_button.text = response
 	pass # Replace with function body.
+
+
+
+
+
+

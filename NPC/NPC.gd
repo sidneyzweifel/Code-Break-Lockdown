@@ -1,15 +1,25 @@
-extends Node2D
+class_name Inmate extends Node2D
 
-@onready var popup = $NPCPopup
-@onready var button_text = $Button
+
+@onready var button_ = $Button
+
+@export var inmate_key:String
+@export var button_text:String
+
+
+var popup = preload("res://NPC/NPCPopup.tscn")
+
+
 
 func _ready():
-	button_text.text = "ID: 001"
+	button_.text = button_text
+
 
 func _on_button_pressed():
-	popup.show()
+	var p = popup.instantiate()
+	p.get_key(inmate_key)
+	add_child(p)
+	p.show()
 
 
 
-func _on_npc_popup_confirmed():
-	popup.inmate_key = "inmate_C"

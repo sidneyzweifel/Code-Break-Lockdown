@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://beducpmxsj7ek"]
 
+[ext_resource type="Theme" uid="uid://by2l1rqgrljkp" path="res://theme_testing/green.tres" id="1_4wf5t"]
 [ext_resource type="Script" path="res://NPC/NPCPopup.gd" id="1_f2xbo"]
-[ext_resource type="Theme" uid="uid://cb46bu5cj1xcp" path="res://theme_testing/button_popup.tres" id="1_y26ai"]
 
 [node name="NPCPopup" type="AcceptDialog"]
 title = ""
 initial_position = 2
 size = Vector2i(674, 300)
 visible = true
-theme = ExtResource("1_y26ai")
+theme = ExtResource("1_4wf5t")
 ok_button_text = "Got it!"
 script = ExtResource("1_f2xbo")
 
