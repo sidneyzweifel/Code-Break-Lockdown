@@ -29,7 +29,7 @@ theme_override_font_sizes/font_size = 70
 text = "ITEM #: "
 horizontal_alignment = 1
 
-[node name="StartIndex" type="LineEdit" parent="."]
+[node name="StartIndex" type="Label" parent="."]
 modulate = Color(1, 0.0901961, 1, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,18 +37,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -200.0
+offset_top = -180.0
 offset_right = 150.0
-offset_bottom = -100.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
-placeholder_text = "START INDEX"
-alignment = 1
-max_length = 3
-virtual_keyboard_type = 2
+text = "Start Index"
 
 [node name="EndIndex" type="LineEdit" parent="."]
 modulate = Color(0.0784314, 0.964706, 1, 1)
@@ -160,8 +157,6 @@ theme_override_font_sizes/font_size = 60
 text = "ENTER"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="text_changed" from="StartIndex" to="." method="_on_start_index_text_changed"]
-[connection signal="text_submitted" from="StartIndex" to="." method="_on_start_index_text_submitted"]
 [connection signal="text_changed" from="EndIndex" to="." method="_on_end_index_text_changed"]
 [connection signal="text_submitted" from="EndIndex" to="." method="_on_end_index_text_submitted"]
 [connection signal="item_selected" from="Inequality" to="." method="_on_inequality_item_selected"]

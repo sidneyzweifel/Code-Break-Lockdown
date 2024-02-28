@@ -3,7 +3,7 @@
 	"inmate_beckon": "You there!",
 	"inmate_ask": "I believe I know what you desire. Know the power of magic and get me the item I need.",
 	"door_color": "purple",
-	"door_location": "north west"
+	"door_location": "northwest"
   },
   "inmate_B": {
 	"inmate_beckon": "Excuse me!",
