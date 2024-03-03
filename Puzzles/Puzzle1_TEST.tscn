@@ -1271,7 +1271,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_k6fao")
 
 [node name="Computer Light" type="PointLight2D" parent="."]
-position = Vector2(392, 273)
+position = Vector2(385, 280)
 scale = Vector2(2.23958, 2.48698)
 color = Color(0, 0.721569, 1, 1)
 energy = 0.65

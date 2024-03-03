@@ -183,3 +183,5 @@ animation = &"walking_side"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-177, -138)
 anchor_mode = 0
+
+[node name="Step" type="AudioStreamPlayer2D" parent="."]
