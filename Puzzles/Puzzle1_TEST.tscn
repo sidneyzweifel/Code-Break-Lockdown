@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=21 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Texture2D" uid="uid://b5y0g45qhwswd" path="res://Backgrounds/SDP_Background.png" id="2_0pa1j"]
 [ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Sprites/Puzzle_1_Gretta/Puzzle_1_terminal.png" id="2_05vti"]
-[ext_resource type="Script" path="res://Puzzles/terminal.gd" id="2_u1u12"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/terminal.gd" id="2_u1u12"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="3_lshwt"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
+[ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
+[ext_resource type="PackedScene" uid="uid://bsw4pj704pv4d" path="res://Music Player.tscn" id="9_y0i41"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -50,12 +52,12 @@ fill = 1
 fill_from = Vector2(0.52439, 0.554878)
 fill_to = Vector2(0.536585, 0.27439)
 
-[sub_resource type="Gradient" id="Gradient_hhqdq"]
+[sub_resource type="Gradient" id="Gradient_0q8vf"]
 offsets = PackedFloat32Array(0, 0.832117, 0.989051)
 colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gy4c3"]
-gradient = SubResource("Gradient_hhqdq")
+gradient = SubResource("Gradient_0q8vf")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
@@ -1307,6 +1309,13 @@ occluder = SubResource("OccluderPolygon2D_g63h6")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.152941, 0.152941, 0.152941, 1)
 blend_mode = 2
+
+[node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xhcw0")
+volume_db = 7.0
+autoplay = true
+
+[node name="Background Music" parent="." instance=ExtResource("9_y0i41")]
 
 [connection signal="input_event" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]

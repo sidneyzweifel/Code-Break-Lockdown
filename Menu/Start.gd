@@ -10,4 +10,6 @@ func _on_pressed():
 
 
 func _on_puzzle_select_pressed():
+	# delete this
+	print("puzzle_select variable " +puzzle_select)
 	get_tree().change_scene_to_file(puzzle_select)
