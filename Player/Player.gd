@@ -18,27 +18,21 @@ func get_input():
 		animated_sprite.play("walking_side")
 		animated_sprite.flip_h = true
 		direction = "l"
-		if !$Step.playing:
-			$Step.play()
 	
 	elif Input.is_action_pressed("right"):
 		animated_sprite.play("walking_side")
 		animated_sprite.flip_h = false
 		direction = "r"
-		if !$Step.playing:
-			$Step.play()
+
 	
 	elif Input.is_action_pressed("up"):
 		animated_sprite.play("walking_back")
 		direction = "u"
-		if !$Step.playing:
-			$Step.play()
+
 	
 	elif Input.is_action_pressed("down"):
 		animated_sprite.play("walking_front")
 		direction = "d"
-		if !$Step.playing:
-			$Step.play()
 	
 	else:
 		if(direction == "l" or direction == "r"):

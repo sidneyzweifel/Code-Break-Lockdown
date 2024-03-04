@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global/global.gd"
 MusicPlayer="*res://Music Player.tscn"
+SceneTransition="*res://Puzzles/gretta_puzzle/Scene Transition.tscn"
 
 [input]
 

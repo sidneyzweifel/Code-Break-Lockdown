@@ -19,4 +19,4 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
-		get_tree().change_scene_to_file(terminal_screen) # Replace with function body.
+		SceneTransition.change_scene_to_file(terminal_screen) # Replace with function body.
