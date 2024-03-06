@@ -13,7 +13,6 @@ func handle_door(has_door_acess)-> void:
 	
 	if cur is ColorRect or cur is Window: #type of the passcode_enter scene
 		cur.queue_free() #free scene from tree
-		print("IN if statment")
 		if has_door_acess:
 			get_tree().change_scene_to_file(next_puzz)
 		else:
@@ -60,7 +59,4 @@ func get_passcode():
 	return current_passcode
 
 	
-func handle_npc():
-	print("I WANT ITEM# 100")
-	get_tree().call_group("npc","open_popup")
 	

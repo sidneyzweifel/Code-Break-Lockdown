@@ -14,6 +14,8 @@ var inmate_key:String
 func get_key(key:String):
 	inmate_key = key
 
+func get_item_num(_item_num:int):
+	item_num = _item_num
 
 func _ready():
 	var dia = pick_next_dialouge_inmate(dialouge_cnt)
@@ -41,7 +43,7 @@ func pick_next_dialouge_inmate(cnt:int):
 			var pos = Dialouge.speech_dict[inmate_key]["door_location"]
 			return "The door is " + str(pos) + " and is " + str(color)
 		_:
-			return str("Please get me item #***")
+			return str("Please get me item #") + str(item_num)
 			
 			
 			

@@ -8,16 +8,19 @@ class_name Inmate extends Node2D
 
 
 var popup = preload("res://NPC/NPCPopup.tscn")
+var item_num = load("res://Puzzles/loops_puzzle/item_number/item_number.gd")
 
-
+@onready var num_item = Item_Num.new() 
+@onready var item_dict = Item_Dict.new()
 
 func _ready():
 	button_.text = button_text
-
+	item_dict.add_item(inmate_key, num_item.item_num)
 
 func _on_button_pressed():
 	var p = popup.instantiate()
-	p.get_key(inmate_key)
+	p.get_key(inmate_key) #set key in NPCPopup based on exported key for NPC
+	p.get_item_num(num_item.item_num)
 	add_child(p)
 	p.show()
 

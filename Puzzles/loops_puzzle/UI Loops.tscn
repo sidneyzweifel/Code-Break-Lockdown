@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i3kmp0451hi0"]
+[gd_scene load_steps=3 format=3 uid="uid://i3kmp0451hi0"]
 
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
+[ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 
 [node name="Window" type="Window"]
 snap_2d_vertices_to_pixel = true
@@ -8,7 +9,7 @@ mode = 3
 initial_position = 2
 size = Vector2i(1280, 720)
 script = ExtResource("1_hjv3k")
-item_number = "100"
+error_popup = ExtResource("2_e84ew")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

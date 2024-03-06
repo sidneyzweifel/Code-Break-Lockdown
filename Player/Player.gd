@@ -3,8 +3,17 @@ extends CharacterBody2D
 @export var speed = 800 #was going too slow for me so I changed speed
 @export var has_door_access:bool = false
 
+@onready var player = $"."
 
-var player_position
+var player_position:Vector2
+
+func _process(delta):
+	get_player_postion()
+
+
+func get_player_postion():
+	player_position = player.position
+	return player_position
 
 @onready var animated_sprite = $AnimatedSprite2D
 var direction = ""
@@ -57,8 +66,8 @@ func get_collision():
 		if collision.get_collider().is_in_group("door"):
 			Global.handle_door(has_door_access)
 			pass
-		if collision.get_collider().is_in_group("npc"):
-			Global.handle_npc()
+		if collision.get_collider().is_in_group("npc"): #might add future capbablitiy
+			pass
 
 
 
