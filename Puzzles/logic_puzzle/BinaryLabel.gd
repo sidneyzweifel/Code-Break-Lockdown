@@ -1,22 +1,22 @@
 extends Label
 
-@onready var passcode_label = $"."
+@onready var binary_label = $"."
 
 func _ready():
 	# access current_passcode variable from get_passcode() in global script
 	var passcode = Global.get_passcode()
 	
 	# convert passcode to binary
-	var binary_digits = parse_digits_and_convert_to_binary(passcode)
+	var binary_digits = convert_to_binary(passcode)
 
 	# displaying binary digits on the passcode_label
 	for binary_digit in binary_digits:
-		passcode_label.text += binary_digit + "\n"
+		binary_label.text += binary_digit + "\n"
 	
 	print(binary_digits)
 
 # function to convert 5 digit number to 5 seperate binary nnumbers
-func parse_digits_and_convert_to_binary(number):
+func convert_to_binary(number):
 	var number_str = str(number)
 	var binary_digits = []
 	

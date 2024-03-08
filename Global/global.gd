@@ -4,7 +4,8 @@ extends Node
 var next_puzz:String 
 var current_puzz:String
 var current_passcode:String
-
+var logic_question:String = ""
+var logic_result = 0
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -28,7 +29,6 @@ func go_to_passcode(passcode_path:String, current_puzzle:String, next_puzzle:Str
 	get_tree().change_scene_to_file(passcode_path)
 	
 	
-
 #called in LineEdit.gd passcode_enter scene
 #Honestly, had trouble with this part
 #Not a 100% why I need it,
@@ -56,6 +56,53 @@ func set_passcode():
 func get_passcode():
 	return current_passcode
 
+#logic puzzle called in Puzzle3_TEST
+func set_logic_question() -> String:
+	var a = randi_range(0, 10)
+	var b = randi_range(0, 10)
+	var c = randi_range(0, 10)
+	var operators = ["&", "|", "^"] #logic operators that will be used randomly
+	logic_question = "(" + str(a) + " " + operators[randi() % operators.size()] + " " + str(b) + ") " + operators[randi() % operators.size()] + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
+	print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
+	return logic_question
 	
+func get_logic_question() -> String:
+	print("GLOBAL SCRIPT LOGIC QUESTION GETTER: " + logic_question)
+	return logic_question
 
-	
+#solves logic puzzle in Puzzle3_TEST
+func solve_logic_question(question: String) -> int:
+	var logic_result = 0
+
+	# Remove parentheses and split the logic question string into separate components
+	var cleaned_question = question.replace("(", "").replace(")", "")
+	var components = cleaned_question.split(" ")
+
+	# Ensure that components array has enough elements
+	if components.size() % 2 != 1:
+		print("Error: Invalid logic question format")
+		return 0
+
+	# Initialize the result with the first operand
+	logic_result = int(components[0])
+
+	# Iterate over the rest of the components and operators
+	for i in range(1, components.size(), 2):
+		var operator = components[i]
+		var operand = int(components[i + 1])
+
+		# Apply the operator to the current result and operand
+		if operator == "&":
+			logic_result &= operand
+		elif operator == "|":
+			logic_result |= operand
+		elif operator == "^":
+			logic_result ^= operand
+
+	var result_str = str(logic_result)
+	print("GLOBAL SCRIPT LOGIC ANSWER: ", result_str) # print logic result
+
+	return logic_result
+
+
+		

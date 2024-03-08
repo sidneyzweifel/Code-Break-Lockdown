@@ -3,27 +3,41 @@ extends Window
 @onready var logic_popup_window = $"."
 var number_input : LineEdit
 var binary_button : BinaryButton
+@onready var logicQuestion = Global.get_logic_question()
+@onready var solvedQuestion = Global.solve_logic_question(logicQuestion)
 
 func _ready():
 	logic_popup_window.hide()
 	
+	# handles line input on enter
 	number_input = $LineEdit
 	binary_button = $"../../BinaryPopUp/BinaryButton"
-	number_input.text = "" # Clear any previous input
-	number_input.focus_mode = Control.FOCUS_ALL # Set focus to the input field
-
+	number_input.text = "" # clear any previous input
+	number_input.focus_mode = Control.FOCUS_ALL # set focus to input field
+	
+	# prints question passed from LogicLabel
+	print("question passed to LogicWindow: ", logicQuestion)
+	# prints answer to question 
+	print("answer passed to LogicWindow: ", solvedQuestion)
+	
+	
 func _on_logic_button_pressed():
 	logic_popup_window.show()
+
 
 func _on_close_requested():
 	logic_popup_window.hide()
 
-func _on_line_edit_text_submitted(text: String) -> void:
-	var number = int(text) # convert input text to an integer
-	
-	if number != 0: # Check if input is a valid number
-		binary_button.hide() 
-	else:
-		binary_button.show()
 
-	hide() # hide window after processing input
+func _on_line_edit_text_submitted(text: String) -> void:
+	print(solvedQuestion)
+	var user_answer = int(text) # convert input text to an integer
+	print(user_answer)
+	
+	if user_answer == solvedQuestion: # check if input is correct
+		binary_button.show()
+		hide()
+	else:
+		binary_button.hide()
+		# add loud incorrect buzzer
+	

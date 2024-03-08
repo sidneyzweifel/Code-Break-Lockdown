@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=15 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryButton.gd" id="6_gwwqb"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryLabel.gd" id="7_prlxj"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicWindow.gd" id="8_n3uvp"]
+[ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
+[ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1869,6 +1871,7 @@ theme_override_font_sizes/font_size = 30
 text = "Enter \"0\" to show binary pop-up"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("10_6grr2")
 
 [node name="LineEdit" type="LineEdit" parent="LogicPopUp/LogicWindow"]
 anchors_preset = 4
@@ -1879,8 +1882,116 @@ offset_right = 500.0
 offset_bottom = 38.0
 grow_vertical = 2
 
+[node name="BinaryGuide" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="BinaryGuide"]
+offset_left = 282.0
+offset_top = 566.0
+offset_right = 323.0
+offset_bottom = 596.0
+
+[node name="BinaryGuideWindow" type="Window" parent="BinaryGuide"]
+position = Vector2i(0, 36)
+size = Vector2i(900, 600)
+visible = false
+script = ExtResource("11_w13ow")
+
+[node name="ColorRect" type="ColorRect" parent="BinaryGuide/BinaryGuideWindow"]
+offset_right = 900.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="BinaryGuide/BinaryGuideWindow"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -13.0
+offset_right = 98.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "BINARY GUIDE POP-UP"
+
+[node name="LogicGuide" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="LogicGuide"]
+offset_left = 788.0
+offset_top = 244.0
+offset_right = 845.0
+offset_bottom = 255.0
+
+[node name="LogicGuideWindow" type="Window" parent="LogicGuide"]
+position = Vector2i(0, 36)
+size = Vector2i(900, 600)
+visible = false
+script = ExtResource("11_w13ow")
+
+[node name="ColorRect" type="ColorRect" parent="LogicGuide/LogicGuideWindow"]
+offset_right = 900.0
+offset_bottom = 600.0
+color = Color(0.0352941, 0.341176, 0.345098, 1)
+
+[node name="Label" type="Label" parent="LogicGuide/LogicGuideWindow"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -13.0
+offset_right = 98.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "LOGIC GUIDE POP-UP"
+
+[node name="SymbolGuide" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="SymbolGuide"]
+offset_left = 850.0
+offset_top = 636.0
+offset_right = 878.0
+offset_bottom = 673.0
+
+[node name="SymbolGuideWindow" type="Window" parent="SymbolGuide"]
+position = Vector2i(0, 36)
+size = Vector2i(900, 600)
+visible = false
+script = ExtResource("11_w13ow")
+
+[node name="ColorRect" type="ColorRect" parent="SymbolGuide/SymbolGuideWindow"]
+offset_right = 900.0
+offset_bottom = 600.0
+color = Color(0.615686, 0.231373, 0, 1)
+
+[node name="Label" type="Label" parent="SymbolGuide/SymbolGuideWindow"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -13.0
+offset_right = 98.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "SYMBOL GUIDE POP-UP"
+
 [connection signal="pressed" from="BinaryPopUp/BinaryButton" to="BinaryPopUp/BinaryCodeWindow" method="_on_binary_button_pressed"]
 [connection signal="close_requested" from="BinaryPopUp/BinaryCodeWindow" to="BinaryPopUp/BinaryCodeWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicPopUp/LogicButton" to="LogicPopUp/LogicWindow" method="_on_logic_button_pressed"]
 [connection signal="close_requested" from="LogicPopUp/LogicWindow" to="LogicPopUp/LogicWindow" method="_on_close_requested"]
 [connection signal="text_submitted" from="LogicPopUp/LogicWindow/LineEdit" to="LogicPopUp/LogicWindow" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="BinaryGuide/Button" to="BinaryGuide/BinaryGuideWindow" method="_on_button_pressed"]
+[connection signal="close_requested" from="BinaryGuide/BinaryGuideWindow" to="BinaryGuide/BinaryGuideWindow" method="_on_close_requested"]
+[connection signal="pressed" from="LogicGuide/Button" to="LogicGuide/LogicGuideWindow" method="_on_button_pressed"]
+[connection signal="close_requested" from="LogicGuide/LogicGuideWindow" to="LogicGuide/LogicGuideWindow" method="_on_close_requested"]
+[connection signal="pressed" from="SymbolGuide/Button" to="SymbolGuide/SymbolGuideWindow" method="_on_button_pressed"]
+[connection signal="close_requested" from="SymbolGuide/SymbolGuideWindow" to="SymbolGuide/SymbolGuideWindow" method="_on_close_requested"]
