@@ -23,10 +23,12 @@ func get_input():
 		animated_sprite.play("walking_side")
 		animated_sprite.flip_h = false
 		direction = "r"
+
 	
 	elif Input.is_action_pressed("up"):
 		animated_sprite.play("walking_back")
 		direction = "u"
+
 	
 	elif Input.is_action_pressed("down"):
 		animated_sprite.play("walking_front")
