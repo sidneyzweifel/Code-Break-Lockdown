@@ -55,7 +55,8 @@ func set_passcode():
 func get_passcode():
 	return current_passcode
 
-#logic puzzle called in Puzzle3_TEST
+# logic puzzle called in Puzzle3_TEST
+# generates and sets a random logic question to de displayed (eg: (3 & 2) ^ (5 | 7))
 func set_logic_question() -> String:
 	var a = randi_range(0, 10)
 	var b = randi_range(0, 10)
@@ -65,32 +66,33 @@ func set_logic_question() -> String:
 	print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
 	return logic_question
 	
+# get last randomly generated logic question in Puzzle3_TEST
 func get_logic_question() -> String:
 	print("GLOBAL SCRIPT LOGIC QUESTION GETTER: " + logic_question)
 	return logic_question
 
-#solves logic puzzle in Puzzle3_TEST
+# solves logic puzzle in Puzzle3_TEST
 func solve_logic_question(question: String) -> int:
 	var logic_result = 0
 
-	# Remove parentheses and split the logic question string into separate components
+	# remove parentheses and split the logic question string into separate components
 	var cleaned_question = question.replace("(", "").replace(")", "")
 	var components = cleaned_question.split(" ")
 
-	# Ensure that components array has enough elements
+	# ensure that components array has enough elements
 	if components.size() % 2 != 1:
-		print("Error: Invalid logic question format")
+		print("Error: Invalid logic question format") # game crashes if array is too small
 		return 0
 
-	# Initialize the result with the first operand
+	# initialize the result with the first operand
 	logic_result = int(components[0])
 
-	# Iterate over the rest of the components and operators
+	# iterate over the rest of the components and operators
 	for i in range(1, components.size(), 2):
 		var operator = components[i]
 		var operand = int(components[i + 1])
 
-		# Apply the operator to the current result and operand
+		# apply the operator to the current result and operand
 		if operator == "&":
 			logic_result &= operand
 		elif operator == "|":
@@ -102,6 +104,3 @@ func solve_logic_question(question: String) -> int:
 	print("GLOBAL SCRIPT LOGIC ANSWER: ", result_str) # print logic result
 
 	return logic_result
-
-
-		

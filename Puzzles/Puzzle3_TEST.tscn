@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=17 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicWindow.gd" id="8_n3uvp"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
+[ext_resource type="Texture2D" uid="uid://cj3turjj5sr8x" path="res://Sprites/binary placeholder.png" id="12_ppdwp"]
+[ext_resource type="FontVariation" uid="uid://c47st61viycg2" path="res://Puzzles/logic_puzzle/Puzzle3Symbols.tres" id="13_m8y7e"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1777,14 +1779,14 @@ layer_5/z_index = 0
 layer_5/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("4_0gp5h")]
-position = Vector2(231, 146)
+position = Vector2(242, 509)
 scale = Vector2(0.4, 0.4)
 speed = 300
 
 [node name="CodePopup" parent="." instance=ExtResource("6_8clto")]
-position = Vector2(539, 93)
+position = Vector2(438, 148)
 rotation = 1.5708
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 
 [node name="Door" parent="." instance=ExtResource("5_lasnf")]
 position = Vector2(312, 179)
@@ -1797,11 +1799,11 @@ path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
 
 [node name="BinaryButton" type="Button" parent="BinaryPopUp"]
 visible = false
-offset_left = 570.0
-offset_top = 191.0
-offset_right = 697.0
-offset_bottom = 243.0
-text = "Binary code"
+offset_left = 476.0
+offset_top = 205.0
+offset_right = 516.0
+offset_bottom = 260.0
+text = "Bin"
 script = ExtResource("6_gwwqb")
 
 [node name="BinaryCodeWindow" type="Window" parent="BinaryPopUp"]
@@ -1831,6 +1833,7 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.498039, 0.839216, 0.611765, 1)
+theme_override_fonts/font = ExtResource("13_m8y7e")
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1839,14 +1842,14 @@ script = ExtResource("7_prlxj")
 [node name="LogicPopUp" type="Node" parent="."]
 
 [node name="LogicButton" type="Button" parent="LogicPopUp"]
-offset_left = 943.0
-offset_top = 472.0
-offset_right = 1011.0
-offset_bottom = 504.0
-text = "LOGIC"
+offset_left = 953.0
+offset_top = 471.0
+offset_right = 999.0
+offset_bottom = 507.0
+text = "LOG"
 
 [node name="LogicWindow" type="Window" parent="LogicPopUp"]
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(900, 600)
 visible = false
 script = ExtResource("8_n3uvp")
@@ -1891,7 +1894,7 @@ offset_right = 323.0
 offset_bottom = 596.0
 
 [node name="BinaryGuideWindow" type="Window" parent="BinaryGuide"]
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(900, 600)
 visible = false
 script = ExtResource("11_w13ow")
@@ -1901,20 +1904,9 @@ offset_right = 900.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="BinaryGuide/BinaryGuideWindow"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -13.0
-offset_right = 98.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "BINARY GUIDE POP-UP"
+[node name="Sprite2D" type="Sprite2D" parent="BinaryGuide/BinaryGuideWindow"]
+texture = ExtResource("12_ppdwp")
+centered = false
 
 [node name="LogicGuide" type="Node" parent="."]
 
@@ -1925,7 +1917,7 @@ offset_right = 845.0
 offset_bottom = 255.0
 
 [node name="LogicGuideWindow" type="Window" parent="LogicGuide"]
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(900, 600)
 visible = false
 script = ExtResource("11_w13ow")
@@ -1953,13 +1945,13 @@ text = "LOGIC GUIDE POP-UP"
 [node name="SymbolGuide" type="Node" parent="."]
 
 [node name="Button" type="Button" parent="SymbolGuide"]
-offset_left = 850.0
-offset_top = 636.0
-offset_right = 878.0
-offset_bottom = 673.0
+offset_left = 724.0
+offset_top = 557.0
+offset_right = 752.0
+offset_bottom = 594.0
 
 [node name="SymbolGuideWindow" type="Window" parent="SymbolGuide"]
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(900, 600)
 visible = false
 script = ExtResource("11_w13ow")
@@ -1983,6 +1975,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "SYMBOL GUIDE POP-UP"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 318.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("13_m8y7e")
+theme_override_font_sizes/font_size = 50
+text = "u
+c"
 
 [connection signal="pressed" from="BinaryPopUp/BinaryButton" to="BinaryPopUp/BinaryCodeWindow" method="_on_binary_button_pressed"]
 [connection signal="close_requested" from="BinaryPopUp/BinaryCodeWindow" to="BinaryPopUp/BinaryCodeWindow" method="_on_close_requested"]
