@@ -1,7 +1,7 @@
 extends Window
 
 @onready var window = $"."
-#@export var item_number:String
+
 @onready var item_number_label = $ItemNumLabel
 @onready var start_index_label = $StartIndex
 
@@ -13,6 +13,7 @@ var end_index:String
 var cur_puzz:String
 var _increment_index:int = 0
 var _inequality_index:int = 0
+
 
 
 @onready var item_number = Item_Dict.new().get_item(Dialouge.get_current_inmate_key())
@@ -29,9 +30,12 @@ func _on_close_requested():
 	
 
 func _ready():
-	item_number_label.text = "ITEM #: " + str(item_number)
-	start_index = rng.randi_range(0, 999)
-	start_index_label.text = str(start_index)
+	if(item_number == "ERROR!"):
+		start_index_label.text = "Talk to Inmate"
+	else:
+		item_number_label.text = "ITEM #: " + str(item_number)
+		start_index = rng.randi_range(0, 999)
+		start_index_label.text = str(start_index)
 	
 
 
