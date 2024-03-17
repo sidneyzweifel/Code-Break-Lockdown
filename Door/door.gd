@@ -11,7 +11,6 @@ class_name Door extends StaticBody2D
 @export var path_current_puzzle:String
 
 
-
 #door group function to determine if player can move to next puzzle
 func handle_access(door_access):
 	if door_access:

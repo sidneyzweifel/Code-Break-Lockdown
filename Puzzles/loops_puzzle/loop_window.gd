@@ -30,7 +30,7 @@ func _on_close_requested():
 	
 
 func _ready():
-	if(item_number == "ERROR!"):
+	if(item_number is String):
 		start_index_label.text = "Talk to Inmate"
 	else:
 		item_number_label.text = "ITEM #: " + str(item_number)

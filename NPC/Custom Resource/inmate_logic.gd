@@ -10,5 +10,11 @@ func _init(inmate_ = null, loop_door_ = null):
 	loop_door = loop_door_
 
 
+func set_door_postion(pos:Vector2):
+	loop_door.global_position = pos
+	
+func set_door_color(color:Color):
+	loop_door.modulate = color
+
 
 
