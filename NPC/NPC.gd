@@ -16,8 +16,10 @@ var item_num = load("res://Puzzles/loops_puzzle/item_number/item_number.gd")
 func _ready():
 	button_.text = button_text
 	item_dict.add_item(inmate_key, num_item.item_num)
+	
 
 func _on_button_pressed():
+	Dialouge.set_current_npc_key(inmate_key)
 	var p = popup.instantiate()
 	p.get_key(inmate_key) #set key in NPCPopup based on exported key for NPC
 	p.get_item_num(num_item.item_num)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=8 format=3 uid="uid://cwvg1vljgtu5s"]
 
+[ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
@@ -9,7 +10,9 @@
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
 
+@export var inmate_logic : Resource
 
+var item_num:int
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -30,6 +33,7 @@ func _process(delta):
 
 [node name="Puzzle4" type="Node2D" groups=["puzzle"]]
 script = SubResource("GDScript_dxlop")
+inmate_logic = ExtResource("1_gli8o")
 metadata/_edit_horizontal_guides_ = [-3815.0, -1900.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

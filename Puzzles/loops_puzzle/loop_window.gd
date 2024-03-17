@@ -6,16 +6,21 @@ extends Window
 @onready var start_index_label = $StartIndex
 
 @export var error_popup:PackedScene
+@export var success_popup:PackedScene
 
 var start_index:int
 var end_index:String
 var cur_puzz:String
 var _increment_index:int = 0
 var _inequality_index:int = 0
-@onready var item_number = Item_Num.new()
+
+
+@onready var item_number = Item_Dict.new().get_item(Dialouge.get_current_inmate_key())
 
 
 var rng = RandomNumberGenerator.new()
+
+
 func _on_close_requested():
 	window.hide()
 	
@@ -24,9 +29,8 @@ func _on_close_requested():
 	
 
 func _ready():
-	item_number_label.text = "ITEM #: " + str(item_number.item_num)
+	item_number_label.text = "ITEM #: " + str(item_number)
 	start_index = rng.randi_range(0, 999)
-	#start_index = 10
 	start_index_label.text = str(start_index)
 	
 
@@ -65,10 +69,14 @@ func calculate_loop(start, end_index, inequality_index, increment_index):
 	else:
 		print(item_selected)
 		#TODO:check if item_selected is equal to item asked for function
-		if(item_selected == item_number.item_num):
+		if(item_selected == item_number):
 			print("NICE!")
-			Global.handle_door(true)
+			var s = success_popup.instantiate()
+			add_child(s)
+			s.show()
 		else:
+			
+			
 			Global.handle_door(true)
 		
 func index_to_symbol_increment(index:int):
@@ -114,3 +122,8 @@ func _on_end_index_text_changed(new_text):
 	print("END")
 	print(new_text)
 	end_index = new_text
+
+
+func _on_exit_button_pressed():
+	Global.handle_door(true)
+	#window.hide()
