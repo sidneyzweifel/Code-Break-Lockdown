@@ -16,35 +16,14 @@ script/source = "extends Node2D
 
 @onready var door = preload(\"res://Door/door_click.tscn\")
 
-var color:Color = Color(0.5, 1, 1)
-var pos:Vector2 = Vector2(100,-500)
-
 var inmate_dic:Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	var i = inmate.instantiate()
-#	var d = door.instantiate()
-#	i.inmate_key = \"inmate_C\"
-#	i.button_text = \"TESTING\"
-#
-#	inmate_logic.new(i, d)
-#	inmate_logic.set_door_color(color)
-#	inmate_logic.set_door_postion(pos)
-#
-#	add_child(i)
-#	add_child(d)
-
-#	var k = Inmate_Data.new(\"inmate_A\", \"id:999\")
-#	print(k.inmate_dic[\"inmate_A\"].button_text)
-#	print(k.inmate_dic[\"inmate_A\"].door)
-#	print(k.inmate_dic[\"inmate_A\"].door.door)
-
 	_init_inmate_data()
 	for key in inmate_dic:
 		add_inmate(key)
 		
-	
 	pass # Replace with function body.
 
 
@@ -65,9 +44,10 @@ func add_inmate(key:String):
 	var i = inmate.instantiate()
 	var d = door.instantiate()
 	set_data(key, i, d)
+	#set_door(key, i, d)
 	add_child(i)
 	add_child(d)
-
+	set_door(key, i, d)
 
 func set_data(key:String, inmate, door):
 	inmate.inmate_key = key
@@ -75,6 +55,12 @@ func set_data(key:String, inmate, door):
 	door.path_to_new_scene = inmate_dic[key].door.path_to_new_scene
 	door.passcode_scene = inmate_dic[key].door.passcode_scene
 	door.path_current_puzzle = inmate_dic[key].door.path_current_puzzle
+	
+	
+func set_door(key:String, inmate, door):
+	inmate_logic.new(inmate, door)
+	inmate_logic.set_door_color(key)
+	inmate_logic.set_door_postion(key)
 	
 	
 
@@ -90,41 +76,41 @@ metadata/_edit_horizontal_guides_ = [-3815.0, -1900.0]
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.0509804, 0.521569, 0.882353, 1)
-position = Vector2(-1453, -931)
+modulate = Color(0, 0.733333, 0.74902, 0.435294)
+position = Vector2(-16.0001, -26.0001)
 scale = Vector2(24.2891, 21.3516)
 texture = ExtResource("1_j3vdk")
 
 [node name="Player" parent="." instance=ExtResource("3_f4mwc")]
-position = Vector2(-2956, -888)
+position = Vector2(-1544, 403)
 
 [node name="CodePopup" parent="." instance=ExtResource("4_xrdjd")]
-position = Vector2(-887, -1161)
+position = Vector2(482, -992)
 
 [node name="Door" parent="." instance=ExtResource("5_14kpp")]
-position = Vector2(-430, -988)
+position = Vector2(1058, -1211)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
 
 [node name="LoopDoor" parent="." instance=ExtResource("5_14kpp")]
 modulate = Color(0, 0.533333, 0, 1)
-position = Vector2(-2648, -1702)
+position = Vector2(-1040, -1204)
 path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
 passcode_scene = "res://Puzzles/loops_puzzle/UI Loops.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
 
 [node name="NPC_A" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-1777, -968)
+position = Vector2(-1641, -115)
 inmate_key = "inmate_A"
 button_text = "id: 001"
 
 [node name="NPC_B" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-2173, -1297)
+position = Vector2(-1644, -1214)
 inmate_key = "inmate_B"
 button_text = "id: 010"
 
 [node name="NPC_C" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-2819, -1114)
+position = Vector2(-1022, -525)
 inmate_key = "inmate_C"
 button_text = "id: 100"
