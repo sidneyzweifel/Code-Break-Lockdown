@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=7 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_14kpp"]
-[ext_resource type="PackedScene" uid="uid://uq3soatunpx7" path="res://NPC/NPC.tscn" id="5_in63m"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -34,9 +33,9 @@ func _process(delta):
 
 
 func _init_inmate_data():
-	var i = Inmate_Data.new(\"inmate_A\", \"id:NEW\")
-	var j = Inmate_Data.new(\"inmate_B\", \"id:NEW\")
-	var k = Inmate_Data.new(\"inmate_C\", \"id:NEW\")
+	var i = Inmate_Data.new(\"inmate_A\", \"id:001\")
+	var j = Inmate_Data.new(\"inmate_B\", \"id:010\")
+	var k = Inmate_Data.new(\"inmate_C\", \"id:100\")
 	inmate_dic = k.get_dict()
 	
 
@@ -82,35 +81,13 @@ scale = Vector2(24.2891, 21.3516)
 texture = ExtResource("1_j3vdk")
 
 [node name="Player" parent="." instance=ExtResource("3_f4mwc")]
-position = Vector2(-1544, 403)
+position = Vector2(-583, -244)
 
 [node name="CodePopup" parent="." instance=ExtResource("4_xrdjd")]
-position = Vector2(482, -992)
+position = Vector2(11, -1082)
 
 [node name="Door" parent="." instance=ExtResource("5_14kpp")]
-position = Vector2(1058, -1211)
+position = Vector2(-131, -1132)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
-path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
-
-[node name="LoopDoor" parent="." instance=ExtResource("5_14kpp")]
-modulate = Color(0, 0.533333, 0, 1)
-position = Vector2(-1040, -1204)
-path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
-passcode_scene = "res://Puzzles/loops_puzzle/UI Loops.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
-
-[node name="NPC_A" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-1641, -115)
-inmate_key = "inmate_A"
-button_text = "id: 001"
-
-[node name="NPC_B" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-1644, -1214)
-inmate_key = "inmate_B"
-button_text = "id: 010"
-
-[node name="NPC_C" parent="." instance=ExtResource("5_in63m")]
-position = Vector2(-1022, -525)
-inmate_key = "inmate_C"
-button_text = "id: 100"

@@ -10,7 +10,9 @@ var lower_right_corner:Vector2 = Vector2(-800, 800)
 var lower_left_corner: Vector2 = Vector2(800, 800)
 
 var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
-var taken_pos_array
+
+var array_cnt:int = 4
+
 
 func _init(inmate_ = null, loop_door_ = null):
 	inmate = inmate_
@@ -23,20 +25,23 @@ func new(_inmate, _loop_door):
 
 func set_inmate_pos():
 	var taken_pos = randi() % pos_array.size()
-	for i in taken_pos_array:
-		if(i != taken_pos):	
-			inmate.global_position = pos_array[taken_pos]
-	taken_pos_array.append(taken_pos)
+	inmate.global_position = pos_array[taken_pos]
+	pos_array.remove_at(taken_pos)
+	array_cnt -= 1
+	pos_array.resize(array_cnt)
+	
+	return
+		
 
 
 func set_door_postion(key:String):
 	match key:
 		"inmate_A":
-			loop_door.global_position = inmate.global_position - Vector2(100, 90)
+			loop_door.global_position = inmate.global_position - Vector2(200, 200)
 		"inmate_B":
-			loop_door.global_position = inmate.global_position - Vector2(-100, 0)
+			loop_door.global_position = inmate.global_position - Vector2(-400, 0)
 		"inmate_C":
-			loop_door.global_position = inmate.global_position - Vector2(0, -90)
+			loop_door.global_position = inmate.global_position - Vector2(-50, 400)
 		_:
 			print("ERROR in set_door_position in inmate_logic.gd")
 	
