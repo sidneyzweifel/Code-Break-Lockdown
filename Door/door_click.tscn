@@ -23,7 +23,7 @@ disable_mode = 1
 script = ExtResource("1_gsyjb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.12549, 1, 1, 1)
+modulate = Color(0.870588, 0.878431, 0.905882, 1)
 position = Vector2(136.5, 237)
 scale = Vector2(1.176, 1.85455)
 sprite_frames = SubResource("SpriteFrames_836jx")
