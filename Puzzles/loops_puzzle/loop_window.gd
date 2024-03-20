@@ -72,15 +72,13 @@ func calculate_loop(start, end_index, inequality_index, increment_index):
 		#TODO: provide player with hints
 	else:
 		print(item_selected)
-		#TODO:check if item_selected is equal to item asked for function
 		if(item_selected == item_number):
 			print("NICE!")
 			var s = success_popup.instantiate()
 			add_child(s)
 			s.show()
+			
 		else:
-			
-			
 			Global.handle_door(true)
 		
 func index_to_symbol_increment(index:int):

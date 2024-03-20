@@ -43,7 +43,7 @@ func pick_next_dialouge_inmate(cnt:int):
 			var pos = Dialouge.speech_dict[inmate_key]["door_location"]
 			return "The door is " + str(pos) + " and is " + str(color)
 		_:
-			return str("Please get me item #") + str(item_num)
+			return str("Please get me item #") + str(item_num) + " from the machine beyond the door"
 			
 			
 			

@@ -29,7 +29,6 @@ func set_inmate_pos():
 	pos_array.remove_at(taken_pos)
 	array_cnt -= 1
 	pos_array.resize(array_cnt)
-	
 	return
 		
 
