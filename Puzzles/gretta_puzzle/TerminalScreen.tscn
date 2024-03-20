@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvgs10xd3aaqq"]
+
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/terminal_front.png" id="1_7rkae"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Screen.gd" id="1_hlsye"]
+[ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="2_na7m4"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Screen Buttons.gd" id="4_aldx6"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/exit_default.png" id="5_ygw1k"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/exit_hovered.png" id="6_nudj8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25kwe"]
+size = Vector2(44, 37)
+
+[sub_resource type="Gradient" id="Gradient_hhqdq"]
+offsets = PackedFloat32Array(0, 0.832117, 0.989051)
+colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uxoxn"]
+gradient = SubResource("Gradient_hhqdq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.912791, 0.0639535)
+
+[node name="TerminalScreen" type="Node2D"]
+position = Vector2(1, 3)
+script = ExtResource("1_hlsye")
+
+[node name="front of terminal" type="Sprite2D" parent="."]
+position = Vector2(597, 304)
+texture = ExtResource("1_7rkae")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_aldx6")
+
+[node name="exit_hovered" type="Sprite2D" parent="Node2D"]
+position = Vector2(800, 112)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_nudj8")
+
+[node name="exit_default" type="Sprite2D" parent="Node2D"]
+position = Vector2(800, 112)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_ygw1k")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(800, 111.5)
+shape = SubResource("RectangleShape2D_25kwe")
+
+[node name="Computer Light" type="PointLight2D" parent="."]
+position = Vector2(578, 308)
+scale = Vector2(15.4036, 10.5729)
+color = Color(0.854902, 0.854902, 0.854902, 1)
+energy = 0.65
+texture = SubResource("GradientTexture2D_uxoxn")
+texture_scale = 1.2
+
+[node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_na7m4")
+volume_db = 12.0
+autoplay = true
+
+[connection signal="input_event" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_exited"]
