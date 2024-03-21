@@ -11,7 +11,7 @@ func handle_door(has_door_acess)-> void:
 	var cur = get_tree().current_scene
 	print("in handle door")
 	
-	if cur is ColorRect or cur is Window: #type of the passcode_enter scene
+	if cur is ColorRect or cur is Window or cur is Sprite2D: #type of the passcode_enter scene
 		cur.queue_free() #free scene from tree
 		if has_door_acess:
 			get_tree().change_scene_to_file(next_puzz)
@@ -58,5 +58,6 @@ func set_passcode():
 func get_passcode():
 	return current_passcode
 
-	
+
+
 	

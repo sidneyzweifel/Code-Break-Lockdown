@@ -9,9 +9,14 @@ var upper_left_corner:Vector2 = Vector2(800, -800)
 var lower_right_corner:Vector2 = Vector2(-800, 800)
 var lower_left_corner: Vector2 = Vector2(800, 800)
 
-var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
+var pos1:Vector2 = Vector2(-1000, 0)
+var pos2:Vector2 = Vector2(0, -100)
+var pos3:Vector2 = Vector2(900, -700)
 
-var array_cnt:int = 4
+#var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
+var pos_array = [pos1, pos2, pos3]
+
+var array_cnt:int = pos_array.size()
 
 
 func _init(inmate_ = null, loop_door_ = null):
@@ -36,11 +41,11 @@ func set_inmate_pos():
 func set_door_postion(key:String):
 	match key:
 		"inmate_A":
-			loop_door.global_position = inmate.global_position - Vector2(200, 200)
+			loop_door.global_position = inmate.global_position - Vector2(300, 500)
 		"inmate_B":
-			loop_door.global_position = inmate.global_position - Vector2(-400, 0)
+			loop_door.global_position = inmate.global_position - Vector2(-800, 0)
 		"inmate_C":
-			loop_door.global_position = inmate.global_position - Vector2(-50, 400)
+			loop_door.global_position = inmate.global_position - Vector2(-60, 500)
 		_:
 			print("ERROR in set_door_position in inmate_logic.gd")
 	
