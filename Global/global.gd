@@ -9,8 +9,6 @@ var current_passcode:String
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
 	var cur = get_tree().current_scene
-	print("in handle door")
-	
 	if cur is ColorRect or cur is Window or cur is Sprite2D: #type of the passcode_enter scene
 		cur.queue_free() #free scene from tree
 		if has_door_acess:

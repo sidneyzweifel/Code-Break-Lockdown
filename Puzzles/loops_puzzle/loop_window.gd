@@ -14,7 +14,7 @@ var cur_puzz:String
 var _increment_index:int = 0
 var _inequality_index:int = 0
 
-
+var puzzle_solved:bool = false
 
 @onready var item_number = Item_Dict.new().get_item(Dialouge.get_current_inmate_key())
 
@@ -64,22 +64,20 @@ func calculate_loop(start, end_index, inequality_index, increment_index):
 			print("Caclcuting....WAY 4")
 			for n in range(start, end_index - 1, -1): #for (int i = 10; i >= 7; i--) 
 				item_selected = n
-	if item_selected == -1:
+	print(item_selected)
+	if item_selected == -1 or item_selected != item_number:
 		print("ERROR")
 		var p = error_popup.instantiate()
 		add_child(p)
 		p.show()
-		#TODO: provide player with hints
-	else:
-		print(item_selected)
-		if(item_selected == item_number):
+	if(item_selected == item_number):
 			print("NICE!")
 			var s = success_popup.instantiate()
 			add_child(s)
 			s.show()
+			puzzle_solved = true
 			
-		else:
-			Global.handle_door(true)
+
 		
 func index_to_symbol_increment(index:int):
 	match index:
@@ -101,31 +99,28 @@ func index_to_symbol_inequalities(index:int):
 
 
 func _on_button_pressed():
-	print("ENTERED")
-	print(start_index)
-	print(end_index)
 	calculate_loop(start_index, int(end_index), _inequality_index, _increment_index)
 	pass # Replace with function body.
 
 
 func _on_inequality_item_selected(index):
 	_inequality_index = index
-	print(index)
 	pass # Replace with function body.
 
 
 func _on_increment_or_decrement_item_selected(index):
 	_increment_index = index
-	print(index)
 
 
 
 func _on_end_index_text_changed(new_text):
-	print("END")
-	print(new_text)
 	end_index = new_text
 
 
 func _on_exit_button_pressed():
-	Global.handle_door(true)
+	#Global.handle_door(true)
+	if(puzzle_solved):
+		Puzzle4Autoload.loop_puzzle_solved()
+	else:
+		Puzzle4Autoload.loop_puzzle_exit()
 	#window.hide()

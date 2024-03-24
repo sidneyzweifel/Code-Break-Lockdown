@@ -14,7 +14,6 @@ func _ready():
 
 func set_current_npc_key(inmate_key):
 	key = inmate_key
-	print(key)
 func get_current_inmate_key():
 	return key
 

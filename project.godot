@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 
 Global="*res://Global/global.gd"
 Dialouge="*res://NPC/Dialouge/Dialouge.gd"
+Puzzle4Autoload="*res://Puzzles/loops_puzzle/puzzle4_autoload.gd"
 
 [display]
 

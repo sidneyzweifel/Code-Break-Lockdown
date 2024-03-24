@@ -25,6 +25,7 @@ func _on_button_pressed():
 	p.get_item_num(num_item.item_num)
 	add_child(p)
 	p.show()
+	
 
 
 
