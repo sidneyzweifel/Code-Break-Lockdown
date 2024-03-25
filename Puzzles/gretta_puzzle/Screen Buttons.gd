@@ -4,12 +4,14 @@ var puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 func _on_area_2d_mouse_entered():
 	print("enetered")
 	get_child(1).hide()
+	get_child(0).show()
 	pass
 
 
 func _on_area_2d_mouse_exited():
 	print("exited")
 	get_child(1).show()
+	get_child(0).hide()
 	pass
 
 

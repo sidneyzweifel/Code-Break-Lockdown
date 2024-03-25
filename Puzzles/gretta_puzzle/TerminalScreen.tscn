@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvgs10xd3aaqq"]
+[gd_scene load_steps=15 format=3 uid="uid://bvgs10xd3aaqq"]
 
 [ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/terminal_front.png" id="1_7rkae"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Screen.gd" id="1_hlsye"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Screen Buttons.gd" id="4_aldx6"]
 [ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/exit_default.png" id="5_ygw1k"]
 [ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/exit_hovered.png" id="6_nudj8"]
+[ext_resource type="Texture2D" uid="uid://dnbws50u457uq" path="res://Puzzles/gretta_puzzle/Terminal/folder open.png" id="7_4wk2n"]
+[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/folder closed.png" id="8_o6t5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkc4q"]
 texture = ExtResource("2_6x347")
@@ -538,7 +540,7 @@ texture = ExtResource("2_6x347")
 sources/0 = SubResource("TileSetAtlasSource_fkc4q")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25kwe"]
-size = Vector2(26, 22)
+size = Vector2(63.375, 58.25)
 
 [sub_resource type="Gradient" id="Gradient_hhqdq"]
 offsets = PackedFloat32Array(0, 0.832117, 0.989051)
@@ -565,35 +567,56 @@ layer_1/name = "background"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="front of terminal" type="Sprite2D" parent="."]
-position = Vector2(671, 361)
-rotation = 0.0349066
-scale = Vector2(0.6, 0.6)
+position = Vector2(642.793, 335.204)
+rotation = -0.00698132
+scale = Vector2(0.766, 0.768668)
 texture = ExtResource("1_7rkae")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("4_aldx6")
 
 [node name="exit_hovered" type="Sprite2D" parent="Node2D"]
-position = Vector2(798, 249)
-scale = Vector2(0.06, 0.06)
+position = Vector2(817, 234)
+scale = Vector2(0.095, 0.095)
 texture = ExtResource("6_nudj8")
 
 [node name="exit_default" type="Sprite2D" parent="Node2D"]
-position = Vector2(798, 249)
-scale = Vector2(0.06, 0.06)
+position = Vector2(817, 234)
+scale = Vector2(0.095, 0.095)
 texture = ExtResource("5_ygw1k")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(798, 249)
+position = Vector2(816, 236)
+shape = SubResource("RectangleShape2D_25kwe")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(50, 0)
+script = ExtResource("4_aldx6")
+
+[node name="folder_hovered" type="Sprite2D" parent="Node2D2"]
+visible = false
+position = Vector2(475, 301)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_4wk2n")
+
+[node name="folder_default" type="Sprite2D" parent="Node2D2"]
+position = Vector2(475, 301)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_o6t5u")
+
+[node name="Area2D" type="Area2D" parent="Node2D2"]
+
+[node name="folder collision" type="CollisionShape2D" parent="Node2D2/Area2D"]
+position = Vector2(476.25, 301.5)
 shape = SubResource("RectangleShape2D_25kwe")
 
 [node name="Computer Light" type="PointLight2D" parent="."]
-position = Vector2(652, 349)
-scale = Vector2(15.2344, 11.224)
+position = Vector2(649, 376.5)
+scale = Vector2(13.099, 9.59636)
 color = Color(0.854902, 0.854902, 0.854902, 1)
-energy = 0.65
+energy = 0.84
 texture = SubResource("GradientTexture2D_uxoxn")
 texture_scale = 1.2
 
@@ -605,3 +628,6 @@ autoplay = true
 [connection signal="input_event" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Node2D2/Area2D" to="Node2D2" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Node2D2/Area2D" to="Node2D2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D2/Area2D" to="Node2D2" method="_on_area_2d_mouse_exited"]
