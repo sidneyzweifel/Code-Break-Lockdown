@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=11 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
@@ -17,6 +17,9 @@ script/source = "extends Node2D
 @onready var door = preload(\"res://Door/door_click.tscn\")
 
 var inmate_dic:Dictionary
+var cur_inmate
+
+signal inmate_clicked_signal 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,11 +45,26 @@ func _init_inmate_data():
 
 func add_inmate(key:String):
 	var i = inmate.instantiate()
+	cur_inmate = i
 	var d = door.instantiate()
 	set_data(key, i, d)
+	set_inmate_pos()
 	add_child(i)
+	await inmate_clicked_signal 
 	add_child(d)
 	set_door(key, i, d)
+	
+func add_door():
+	inmate_clicked_signal.emit()
+	
+
+
+func set_inmate_pos():
+	#NOTE!!!: code based off Godot 2D tutorial
+	var inmate_spawn_location = $InmateSpawnPath/InmateSpawnLocation
+	inmate_spawn_location.progress_ratio = randf()
+	cur_inmate.global_position = inmate_spawn_location.position
+	
 
 func set_data(key:String, inmate, door):
 	inmate.inmate_key = key
@@ -56,10 +74,11 @@ func set_data(key:String, inmate, door):
 	door.path_current_puzzle = inmate_dic[key].door.path_current_puzzle
 	
 	
-func set_door(key:String, inmate, door):
-	inmate_logic.new(inmate, door)
+func set_door(key:String, inmate_pos, door):
+	inmate_pos = cur_inmate.global_position
+	inmate_logic.new(door)
+	inmate_logic.set_door_postion(key, inmate_pos)
 	inmate_logic.set_door_color(key)
-	inmate_logic.set_door_postion(key)
 	
 	
 
@@ -1642,6 +1661,12 @@ texture = ExtResource("3_oggbi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b0cg5")
 
+[sub_resource type="Curve2D" id="Curve2D_xjkff"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -699.893, 751.5, 0, 0, 0, 0, -572.132, -203, 0, 0, 0, 0, 723.167, -255.133, 0, 0, 0, 0, 617.027, 638.8, 0, 0, 0, 0, -705.789, 764.533)
+}
+point_count = 5
+
 [node name="Puzzle4" type="Node2D" groups=["puzzle_4"]]
 script = SubResource("GDScript_dxlop")
 inmate_logic = ExtResource("1_gli8o")
@@ -1690,3 +1715,12 @@ position = Vector2(-117, -1520)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
+
+[node name="InmateSpawnPath" type="Path2D" parent="."]
+position = Vector2(16.1588, -169.217)
+scale = Vector2(1.01753, 1.30435)
+curve = SubResource("Curve2D_xjkff")
+
+[node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
+position = Vector2(-699.893, 751.5)
+rotation = -1.43774

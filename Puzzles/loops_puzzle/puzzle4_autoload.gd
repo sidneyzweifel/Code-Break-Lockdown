@@ -5,9 +5,11 @@ var key_list:Array
 var data_set:bool = false
 var inmate_temp
 
-func inmate_clicked(door):
-	add_child(door)
-	
+func inmate_clicked():
+	#get_tree().call_group("puzzle_4", "set_inmate_pos")
+	get_tree().call_group("puzzle_4", "add_door")
+
+
 	
 func set_inmate_dict(inmate_dic:Dictionary):
 		inmate_dict = inmate_dic
@@ -18,7 +20,6 @@ func set_inmate_dict(inmate_dic:Dictionary):
 
 	
 func spawn_current_inmate():
-		print("IN SPAWN CURRENT INMATE")
 		if(key_list.size() == 0):
 			return false
 		else:

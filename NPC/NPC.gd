@@ -19,6 +19,7 @@ func _ready():
 	
 
 func _on_button_pressed():
+	Puzzle4Autoload.inmate_clicked()
 	Dialouge.set_current_npc_key(inmate_key)
 	var p = popup.instantiate()
 	p.get_key(inmate_key) #set key in NPCPopup based on exported key for NPC

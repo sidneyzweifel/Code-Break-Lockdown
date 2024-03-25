@@ -6,7 +6,7 @@
 [node name="NPCPopup" type="AcceptDialog"]
 title = ""
 initial_position = 2
-size = Vector2i(674, 300)
+size = Vector2i(700, 400)
 visible = true
 theme = ExtResource("1_4wf5t")
 ok_button_text = "Got it!"
@@ -18,8 +18,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 674.0
-offset_bottom = 241.0
+offset_right = 700.0
+offset_bottom = 341.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30

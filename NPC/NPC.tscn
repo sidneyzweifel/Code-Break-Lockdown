@@ -10,6 +10,8 @@ size = Vector2(124, 125)
 position = Vector2(-1, 13)
 gravity_scale = 0.0
 script = ExtResource("1_oropo")
+inmate_key = null
+button_text = null
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -4,48 +4,39 @@ extends Resource
 @export var inmate:Inmate
 @export var loop_door:Door
 
-var upper_right_corner:Vector2 = Vector2(-800, -800)
-var upper_left_corner:Vector2 = Vector2(800, -800)
-var lower_right_corner:Vector2 = Vector2(-800, 800)
-var lower_left_corner: Vector2 = Vector2(800, 800)
-
-var pos1:Vector2 = Vector2(-1000, 0)
-var pos2:Vector2 = Vector2(0, -100)
-var pos3:Vector2 = Vector2(900, -700)
-
-#var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
-var pos_array = [pos1, pos2, pos3]
-
-var array_cnt:int = pos_array.size()
+#var upper_right_corner:Vector2 = Vector2(-800, -800)
+#var upper_left_corner:Vector2 = Vector2(800, -800)
+#var lower_right_corner:Vector2 = Vector2(-800, 800)
+#var lower_left_corner: Vector2 = Vector2(800, 800)
+#
+#var pos1:Vector2 = Vector2(-1000, 0)
+#var pos2:Vector2 = Vector2(0, -100)
+#var pos3:Vector2 = Vector2(900, -700)
+#
+##var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
+#var pos_array = [pos1, pos2, pos3]
+#
+#var array_cnt:int = pos_array.size()
 
 
 func _init(inmate_ = null, loop_door_ = null):
 	inmate = inmate_
 	loop_door = loop_door_
 
-func new(_inmate, _loop_door):
-	inmate = _inmate
+func new(_loop_door):
 	loop_door = _loop_door
-	set_inmate_pos()
-
-func set_inmate_pos():
-	var taken_pos = randi() % pos_array.size()
-	inmate.global_position = pos_array[taken_pos]
-	pos_array.remove_at(taken_pos)
-	array_cnt -= 1
-	pos_array.resize(array_cnt)
-	return
-		
 
 
-func set_door_postion(key:String):
+
+func set_door_postion(key:String, inmate_pos):
+	var scalar = randi() % 3 + 2 #can be at least 3 times away but must be atleast twice as far
 	match key:
 		"inmate_A":
-			loop_door.global_position = inmate.global_position - Vector2(300, 500)
+			loop_door.global_position = inmate_pos - scalar * Vector2(400, 600)
 		"inmate_B":
-			loop_door.global_position = inmate.global_position - Vector2(-800, 0)
+			loop_door.global_position = inmate_pos - scalar * Vector2(-900, 0)
 		"inmate_C":
-			loop_door.global_position = inmate.global_position - Vector2(-60, 500)
+			loop_door.global_position = inmate_pos - scalar * Vector2(-60, 600)
 		_:
 			print("ERROR in set_door_position in inmate_logic.gd")
 	
