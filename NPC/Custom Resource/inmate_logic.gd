@@ -29,7 +29,7 @@ func new(_loop_door):
 
 
 func set_door_postion(key:String, inmate_pos):
-	var scalar = randi() % 3 + 2 #can be at least 3 times away but must be atleast twice as far
+	var scalar = 2 
 	match key:
 		"inmate_A":
 			loop_door.global_position = inmate_pos - scalar * Vector2(400, 600)

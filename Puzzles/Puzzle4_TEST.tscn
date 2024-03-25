@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=12 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_oggbi"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_14kpp"]
+[ext_resource type="PackedScene" uid="uid://k36l72cy6xu" path="res://NPC/LoopGuide/InmateGuide.tscn" id="7_p74k8"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1705,7 +1706,7 @@ scale = Vector2(24.2891, 21.3516)
 texture = ExtResource("1_j3vdk")
 
 [node name="Player" parent="." instance=ExtResource("3_f4mwc")]
-position = Vector2(-583, 1464)
+position = Vector2(-475, 1312)
 
 [node name="CodePopup" parent="." instance=ExtResource("4_xrdjd")]
 position = Vector2(118, -1433)
@@ -1724,3 +1725,6 @@ curve = SubResource("Curve2D_xjkff")
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
 position = Vector2(-699.893, 751.5)
 rotation = -1.43774
+
+[node name="Guide" parent="." instance=ExtResource("7_p74k8")]
+position = Vector2(-446, 1935)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://k36l72cy6xu"]
+
+[ext_resource type="Script" path="res://NPC/LoopGuide/InmateGuide.gd" id="1_p8rc5"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(15, 9)
+script = ExtResource("1_p8rc5")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.921569, 0, 0.92549, 1)
+offset_left = 474.0
+offset_top = 231.0
+offset_right = 608.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0.803922, 0.262745, 0.584314, 1)
+theme_override_font_sizes/font_size = 25
+text = "GUIDE"
+
+[node name="Window" type="Window" parent="."]
+title = "POPUP"
+initial_position = 2
+size = Vector2i(700, 500)
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
