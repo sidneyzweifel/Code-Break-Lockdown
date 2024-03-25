@@ -42,10 +42,10 @@ height = 232.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_d2yna")
+"texture": ExtResource("6_fkd8i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2ikxe")
+"texture": ExtResource("7_iwi7q")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -64,10 +64,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_fkd8i")
+"texture": ExtResource("2_d2yna")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_iwi7q")
+"texture": ExtResource("3_2ikxe")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -179,4 +179,4 @@ shape = SubResource("CapsuleShape2D_3ptd1")
 position = Vector2(555, 247)
 scale = Vector2(0.238609, 0.17491)
 sprite_frames = SubResource("SpriteFrames_e3ews")
-animation = &"walking_side"
+animation = &"idle_up"
