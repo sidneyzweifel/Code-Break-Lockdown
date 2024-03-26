@@ -6,9 +6,11 @@ var data_set:bool = false
 var inmate_temp
 
 func inmate_clicked():
+	#get_tree().call_group("puzzle_4", "set_inmate_pos")
 	get_tree().call_group("puzzle_4", "add_door")
 
 
+	
 func set_inmate_dict(inmate_dic:Dictionary):
 		inmate_dict = inmate_dic
 		if(!data_set):
