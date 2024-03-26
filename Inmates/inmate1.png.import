@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxr3v862kn46f"
-path="res://.godot/imported/SDP_loop_background.png-2f1b363fd97c607f3c83a53f2510403f.ctex"
+uid="uid://c2yodes2vfrvr"
+path="res://.godot/imported/inmate1.png-1c1d8018daab4ed05aed286996c290ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/SDP_loop_background.png"
-dest_files=["res://.godot/imported/SDP_loop_background.png-2f1b363fd97c607f3c83a53f2510403f.ctex"]
+source_file="res://Inmates/inmate1.png"
+dest_files=["res://.godot/imported/inmate1.png-1c1d8018daab4ed05aed286996c290ef.ctex"]
 
 [params]
 
