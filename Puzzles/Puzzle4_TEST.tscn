@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=12 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
@@ -1662,6 +1662,12 @@ texture = ExtResource("3_oggbi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b0cg5")
 
+[sub_resource type="Curve2D" id="Curve2D_xjkff"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -699.893, 751.5, 0, 0, 0, 0, -572.132, -203, 0, 0, 0, 0, 723.167, -255.133, 0, 0, 0, 0, 617.027, 638.8, 0, 0, 0, 0, -705.789, 764.533)
+}
+point_count = 5
+
 [node name="Puzzle4" type="Node2D" groups=["puzzle_4"]]
 script = SubResource("GDScript_dxlop")
 inmate_logic = ExtResource("1_gli8o")
@@ -1710,6 +1716,15 @@ position = Vector2(-117, -1520)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
+
+[node name="InmateSpawnPath" type="Path2D" parent="."]
+position = Vector2(16.1588, -169.217)
+scale = Vector2(1.01753, 1.30435)
+curve = SubResource("Curve2D_xjkff")
+
+[node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
+position = Vector2(-699.893, 751.5)
+rotation = -1.43774
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
 position = Vector2(-446, 1935)

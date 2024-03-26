@@ -1,23 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://i3kmp0451hi0"]
 
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://b7bok0pdjmef2" path="res://Backgrounds/SDP_loop_background.png" id="1_o1emu"]
-=======
-[ext_resource type="Texture2D" uid="uid://cyi1xjn8rpvx0" path="res://Backgrounds/SDP_loop_background.png" id="1_o1emu"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 [ext_resource type="PackedScene" uid="uid://cgpmmmq6efotm" path="res://Puzzles/loops_puzzle/loop_success.tscn" id="3_3vimy"]
 
 [node name="Background" type="Sprite2D"]
-<<<<<<< Updated upstream
 position = Vector2(936, 499)
 scale = Vector2(1.55625, 1.6)
-=======
-modulate = Color(0.694118, 0.317647, 0.972549, 1)
-position = Vector2(963, 537.5)
-scale = Vector2(1.53125, 1.55139)
->>>>>>> Stashed changes
 texture = ExtResource("1_o1emu")
 
 [node name="Window" type="Window" parent="."]
