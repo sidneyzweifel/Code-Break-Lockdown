@@ -1,14 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://i3kmp0451hi0"]
 
-[ext_resource type="Texture2D" uid="uid://d2l48m1y1q3qj" path="res://Backgrounds/back.png" id="1_csq65"]
+[ext_resource type="Texture2D" uid="uid://drsah5bbq72o0" path="res://Backgrounds/SDP_loop_background.png" id="1_5tqim"]
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
 [ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 [ext_resource type="PackedScene" uid="uid://cgpmmmq6efotm" path="res://Puzzles/loops_puzzle/loop_success.tscn" id="3_3vimy"]
 
 [node name="Background" type="Sprite2D"]
-position = Vector2(688.5, 345)
-scale = Vector2(6.84115, 7.05833)
-texture = ExtResource("1_csq65")
+modulate = Color(0.639216, 0.713726, 0.564706, 1)
+position = Vector2(952.5, 556)
+scale = Vector2(1.68516, 2.15)
+texture = ExtResource("1_5tqim")
 
 [node name="Window" type="Window" parent="."]
 snap_2d_vertices_to_pixel = true
