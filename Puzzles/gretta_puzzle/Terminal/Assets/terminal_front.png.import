@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwkkathc6cakg"
-path="res://.godot/imported/terminal_front.png-faeed76cdebf78603783e80d81141814.ctex"
+path="res://.godot/imported/terminal_front.png-593259d5edd944a00ce2451feaf1ae33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/terminal_front.png"
-dest_files=["res://.godot/imported/terminal_front.png-faeed76cdebf78603783e80d81141814.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png"
+dest_files=["res://.godot/imported/terminal_front.png-593259d5edd944a00ce2451feaf1ae33.ctex"]
 
 [params]
 

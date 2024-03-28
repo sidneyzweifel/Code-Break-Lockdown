@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kqtex5jcix7e"
-path="res://.godot/imported/folder closed.png-e91ccc135baf9642f3eece90dadfc9ce.ctex"
+uid="uid://dnbws50u457uq"
+path="res://.godot/imported/folder open.png-a80c4fc8660c1d8098dc20c93bb04920.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/folder closed.png"
-dest_files=["res://.godot/imported/folder closed.png-e91ccc135baf9642f3eece90dadfc9ce.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/folder open.png"
+dest_files=["res://.godot/imported/folder open.png-a80c4fc8660c1d8098dc20c93bb04920.ctex"]
 
 [params]
 

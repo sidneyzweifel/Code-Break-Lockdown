@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbrk3bqordx1"
-path="res://.godot/imported/Puzzle_1_terminal.png-cbc60a747570cc1b5399808404e293ea.ctex"
+uid="uid://dwfxii5ygqn6a"
+path="res://.godot/imported/exit_hovered.png-edf6ac9dac8a3669fa1a85dfeffd2e87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/Puzzle_1_terminal.png"
-dest_files=["res://.godot/imported/Puzzle_1_terminal.png-cbc60a747570cc1b5399808404e293ea.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png"
+dest_files=["res://.godot/imported/exit_hovered.png-edf6ac9dac8a3669fa1a85dfeffd2e87.ctex"]
 
 [params]
 

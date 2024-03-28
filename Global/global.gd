@@ -1,4 +1,3 @@
-					 
 extends Node
 
 var next_puzz:String 
