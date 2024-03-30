@@ -1748,8 +1748,8 @@ scale = Vector2(0.998171, 1.22776)
 curve = SubResource("Curve2D_p2ws1")
 
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
-position = Vector2(-223.304, -548.662)
-rotation = 0.00353478
+position = Vector2(-223.309, -548.662)
+rotation = 0.00353481
 progress = 1883.43
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
@@ -1762,7 +1762,6 @@ scale = Vector2(2.65703, 3.65972)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(0.940852, 6.42121)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nmjrj")
 debug_color = Color(0.34902, 0.572549, 0.309804, 0.419608)
 
@@ -1774,3 +1773,11 @@ texture = ExtResource("8_gt5wf")
 [node name="Board_GUI" parent="." instance=ExtResource("8_y0xfm")]
 position = Vector2(-584, -328)
 scale = Vector2(1.45775, 1.94615)
+
+[node name="FakeLoopDoor" parent="." instance=ExtResource("5_14kpp")]
+modulate = Color(1, 0.101961, 0.266667, 0.615686)
+position = Vector2(1774, 823)
+rotation = 1.59938
+path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
+passcode_scene = "res://Puzzles/loops_puzzle/fake_loop_ui.tscn"
+path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
