@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6l1unw4rab8o"]
+[gd_scene load_steps=3 format=3 uid="uid://c6l1unw4rab8o"]
 
+[ext_resource type="Texture2D" uid="uid://drsah5bbq72o0" path="res://Backgrounds/SDP_loop_background.png" id="1_j1834"]
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/fake_loop_ui.gd" id="1_lcbdv"]
 
-[node name="Fake Loop UI" type="Node2D"]
+[node name="Fake Loop UI" type="Sprite2D"]
+modulate = Color(0.172549, 0.568627, 0.788235, 1)
+position = Vector2(936, 510)
+scale = Vector2(1.62031, 1.73333)
+texture = ExtResource("1_j1834")
 script = ExtResource("1_lcbdv")
 
 [node name="Window" type="Window" parent="."]
