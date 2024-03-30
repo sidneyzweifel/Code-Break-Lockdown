@@ -4,20 +4,6 @@ extends Resource
 @export var inmate:Inmate
 @export var loop_door:Door
 
-#var upper_right_corner:Vector2 = Vector2(-800, -800)
-#var upper_left_corner:Vector2 = Vector2(800, -800)
-#var lower_right_corner:Vector2 = Vector2(-800, 800)
-#var lower_left_corner: Vector2 = Vector2(800, 800)
-#
-#var pos1:Vector2 = Vector2(-1000, 0)
-#var pos2:Vector2 = Vector2(0, -100)
-#var pos3:Vector2 = Vector2(900, -700)
-#
-##var pos_array = [upper_right_corner, upper_left_corner, lower_right_corner, lower_left_corner]
-#var pos_array = [pos1, pos2, pos3]
-#
-#var array_cnt:int = pos_array.size()
-
 
 func _init(inmate_ = null, loop_door_ = null):
 	inmate = inmate_

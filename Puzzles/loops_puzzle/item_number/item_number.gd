@@ -1,7 +1,5 @@
 class_name Item_Num extends Node
 
-#want to generate a item number for each NPC that will remain the same 
-#throughout the puzzle 
 
 var item_num:int
 

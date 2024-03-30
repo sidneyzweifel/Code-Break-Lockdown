@@ -18,6 +18,7 @@ var puzzle_solved:bool = false
 
 @onready var item_number = Item_Dict.new().get_item(Dialouge.get_current_inmate_key())
 
+var correct_index
 
 var rng = RandomNumberGenerator.new()
 
@@ -72,6 +73,7 @@ func calculate_loop(start, end_index, inequality_index, increment_index):
 		p.show()
 	if(item_selected == item_number):
 			print("NICE!")
+			correct_index = end_index
 			var s = success_popup.instantiate()
 			add_child(s)
 			s.show()
@@ -120,7 +122,7 @@ func _on_end_index_text_changed(new_text):
 func _on_exit_button_pressed():
 	#Global.handle_door(true)
 	if(puzzle_solved):
-		Puzzle4Autoload.loop_puzzle_solved()
+		Puzzle4Autoload.loop_puzzle_solved(correct_index)
 	else:
 		Puzzle4Autoload.loop_puzzle_exit()
 	#window.hide()

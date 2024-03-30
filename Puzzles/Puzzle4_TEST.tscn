@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=14 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
-[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_j3vdk"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_oggbi"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_14kpp"]
 [ext_resource type="PackedScene" uid="uid://k36l72cy6xu" path="res://NPC/LoopGuide/InmateGuide.tscn" id="7_p74k8"]
 [ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate1.png" id="8_gt5wf"]
+[ext_resource type="PackedScene" uid="uid://4o0238b8uaf1" path="res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.tscn" id="8_y0xfm"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -18,14 +18,18 @@ script/source = "extends Node2D
 
 @onready var door = preload(\"res://Door/door_click.tscn\")
 
+@onready var board = $Board_GUI
+
 var inmate_dic:Dictionary
 var cur_inmate
+var inmate_ids = [\"001\", \"010\", \"011\"]
 
 signal inmate_clicked_signal 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	board.hide()
 	_init_inmate_data()
 		#for key in inmate_dic:
 			#add_inmate(key)
@@ -38,11 +42,21 @@ func _ready():
 
 
 func _init_inmate_data():
-	var i = Inmate_Data.new(\"inmate_A\", \"id:001\")
-	var j = Inmate_Data.new(\"inmate_B\", \"id:010\")
-	var k = Inmate_Data.new(\"inmate_C\", \"id:100\")
+	##TODO:
+	##consider making a separate JSON for inmates
+	##and their ID
+	##want to show the transfering of data
+	##plus show that the code is adaptable 
+	var i = Inmate_Data.new(\"inmate_A\", \"id:\"+inmate_ids[0])
+	var j = Inmate_Data.new(\"inmate_B\", \"id:\"+inmate_ids[1])
+	var k = Inmate_Data.new(\"inmate_C\", \"id:\"+inmate_ids[2])
 	inmate_dic = k.get_dict()
+	set_ids_for_board()
 	Puzzle4Autoload.set_inmate_dict(k.get_dict())
+
+
+func set_ids_for_board():
+	board.set_ids(inmate_ids)
 	
 
 func add_inmate(key:String):
@@ -65,6 +79,10 @@ func set_inmate_pos():
 	#NOTE!!!: code based off Godot 2D tutorial
 	var inmate_spawn_location = $InmateSpawnPath/InmateSpawnLocation
 	inmate_spawn_location.progress_ratio = randf()
+	
+	inmate_spawn_location.h_offset = randf_range(0, 200)
+	inmate_spawn_location.v_offset = randf_range(0, 200)
+	
 	cur_inmate.global_position = inmate_spawn_location.position
 	
 
@@ -83,6 +101,15 @@ func set_door(key:String, inmate_pos, door):
 	inmate_logic.set_door_color(key)
 	
 	
+
+
+func passcode_puzzle(index_array:Array):
+	board.show()
+	print(index_array)
+	board.set_index_array(index_array)
+	print(\"passcode_puzzle\")
+
+
 
 "
 
@@ -1663,11 +1690,14 @@ texture = ExtResource("3_oggbi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b0cg5")
 
-[sub_resource type="Curve2D" id="Curve2D_xjkff"]
+[sub_resource type="Curve2D" id="Curve2D_p2ws1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -699.893, 751.5, 0, 0, 0, 0, -572.132, -203, 0, 0, 0, 0, 723.167, -255.133, 0, 0, 0, 0, 617.027, 638.8, 0, 0, 0, 0, -705.789, 764.533)
+"points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -893.82, -551.032, 0, 0, 0, 0, 949.551, -544.516, 0, 0, 0, 0, 933.521, 647.896, 0, 0, 0, 0, -845.732, 660.928)
 }
 point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmjrj"]
+size = Vector2(1260.81, 714.808)
 
 [node name="Puzzle4" type="Node2D" groups=["puzzle_4"]]
 script = SubResource("GDScript_dxlop")
@@ -1700,12 +1730,6 @@ layer_2/tile_data = PackedInt32Array(-6029444, 262144, 1, -5963908, 262144, 1, -
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0, 0.733333, 0.74902, 0.435294)
-position = Vector2(-16.0001, -26.0001)
-scale = Vector2(24.2891, 21.3516)
-texture = ExtResource("1_j3vdk")
-
 [node name="Player" parent="." instance=ExtResource("3_f4mwc")]
 position = Vector2(-475, 1312)
 
@@ -1719,18 +1743,34 @@ passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
 
 [node name="InmateSpawnPath" type="Path2D" parent="."]
-position = Vector2(16.1588, -169.217)
-scale = Vector2(1.01753, 1.30435)
-curve = SubResource("Curve2D_xjkff")
+position = Vector2(-51.8143, -123.463)
+scale = Vector2(0.998171, 1.22776)
+curve = SubResource("Curve2D_p2ws1")
 
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
-position = Vector2(-699.893, 751.5)
-rotation = -1.43774
+position = Vector2(-223.304, -548.662)
+rotation = 0.00353478
+progress = 1883.43
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
 position = Vector2(-446, 1935)
 
+[node name="Background" type="Area2D" parent="."]
+visible = false
+position = Vector2(1.50013, -124.5)
+scale = Vector2(2.65703, 3.65972)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2(0.940852, 6.42121)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nmjrj")
+debug_color = Color(0.34902, 0.572549, 0.309804, 0.419608)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1332, 868)
+position = Vector2(-1350, 948)
 scale = Vector2(0.555859, 0.683333)
 texture = ExtResource("8_gt5wf")
+
+[node name="Board_GUI" parent="." instance=ExtResource("8_y0xfm")]
+position = Vector2(-584, -328)
+scale = Vector2(1.45775, 1.94615)
