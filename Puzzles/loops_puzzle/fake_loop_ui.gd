@@ -5,7 +5,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 
 var current_item_int = 0
-var wanted_item_int = 10
+var wanted_item_int = 100
 func _ready():
 	wanted_item.set_text("Wanted Item: " + str(wanted_item_int))
 	current_item.set_text("Current Item: "+ str(current_item_int))

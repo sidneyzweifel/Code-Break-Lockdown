@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://cx8cx1mjiisha"]
+[gd_scene load_steps=2 format=3 uid="uid://cx8cx1mjiisha"]
+
+[ext_resource type="Script" path="res://Puzzles/loops_puzzle/LoopError.gd" id="1_yrjms"]
 
 [node name="LoopError" type="AcceptDialog"]
 initial_position = 2
 size = Vector2i(807, 222)
 visible = true
 ok_button_text = "Try Again"
+script = ExtResource("1_yrjms")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -38,3 +41,6 @@ Please double check your enterted information.
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="custom_action" from="." to="." method="_on_custom_action"]

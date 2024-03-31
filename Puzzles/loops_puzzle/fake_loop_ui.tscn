@@ -74,20 +74,23 @@ text = "Current Item Number"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Window/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 400
 alignment = 1
 
 [node name="Increment" type="Button" parent="Window/VBoxContainer/HBoxContainer"]
-modulate = Color(0.478431, 0.67451, 0.678431, 1)
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 59
 text = "+"
 icon_alignment = 1
 
 [node name="Decrement" type="Button" parent="Window/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "-"
+theme_override_font_sizes/font_size = 58
+text = "-        
+"
+icon_alignment = 1
 
 [connection signal="pressed" from="Window/ColorRect/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Enter" to="." method="_on_enter_pressed"]
