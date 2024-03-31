@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://ta8fdeyo5l78"]
+
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_iyh7x"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_b5323"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_vkgqe"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_xvlmj"]
+[ext_resource type="Texture2D" uid="uid://dnbws50u457uq" path="res://Puzzles/gretta_puzzle/Terminal/Assets/folder open.png" id="6_n345l"]
+[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/folder closed.png" id="7_aq17c"]
+[ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_fowye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woxnm"]
+size = Vector2(63.375, 58.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvs8b"]
+size = Vector2(89, 79.5)
+
+[node name="Employees Only Screen" type="Node2D"]
+
+[node name="front of terminal" type="Sprite2D" parent="."]
+position = Vector2(642.793, 335.204)
+rotation = -0.00698132
+scale = Vector2(0.766, 0.768668)
+texture = ExtResource("2_iyh7x")
+
+[node name="exit" type="Node2D" parent="."]
+script = ExtResource("3_b5323")
+
+[node name="exit_hovered" type="Sprite2D" parent="exit"]
+position = Vector2(817, 234)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("4_vkgqe")
+
+[node name="exit_default" type="Sprite2D" parent="exit"]
+position = Vector2(817, 234)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("5_xvlmj")
+
+[node name="Area2D" type="Area2D" parent="exit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit/Area2D"]
+position = Vector2(816, 236)
+shape = SubResource("RectangleShape2D_woxnm")
+
+[node name="folder 1 - prisoner enrichment" type="Node2D" parent="."]
+position = Vector2(50, 0)
+
+[node name="folder_hovered" type="Sprite2D" parent="folder 1 - prisoner enrichment"]
+visible = false
+position = Vector2(475, 301)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_n345l")
+
+[node name="folder_default" type="Sprite2D" parent="folder 1 - prisoner enrichment"]
+position = Vector2(475, 301)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_aq17c")
+
+[node name="folder 1 - Area2D" type="Area2D" parent="folder 1 - prisoner enrichment"]
+
+[node name="folder 1 - CollisionShape2D" type="CollisionShape2D" parent="folder 1 - prisoner enrichment/folder 1 - Area2D"]
+position = Vector2(477, 300.5)
+shape = SubResource("RectangleShape2D_hvs8b")
+
+[node name="folder 1 - Label" type="Label" parent="folder 1 - prisoner enrichment"]
+offset_left = 433.0
+offset_top = 348.0
+offset_right = 523.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 7
+text = "Lunch Menus"
+
+[node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_fowye")
+volume_db = 12.0
+autoplay = true
+
+[connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="folder 1 - prisoner enrichment/folder 1 - Area2D" to="folder 1 - prisoner enrichment" method="_on_folder_1__area_2d_input_event"]
+[connection signal="mouse_entered" from="folder 1 - prisoner enrichment/folder 1 - Area2D" to="folder 1 - prisoner enrichment" method="_on_folder_1__area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="folder 1 - prisoner enrichment/folder 1 - Area2D" to="folder 1 - prisoner enrichment" method="_on_folder_1__area_2d_mouse_exited"]

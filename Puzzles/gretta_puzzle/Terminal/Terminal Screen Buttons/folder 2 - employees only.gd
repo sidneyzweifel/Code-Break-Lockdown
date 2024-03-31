@@ -1,6 +1,6 @@
 extends Node2D
 
-var insideFolder2 = "res://Puzzles/Puzzle1_TEST.tscn"
+var insideFolder2 = "res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Employees Only Screen.tscn"
 
 func _on_folder_2__area_2d_mouse_entered():
 	print("entered")
