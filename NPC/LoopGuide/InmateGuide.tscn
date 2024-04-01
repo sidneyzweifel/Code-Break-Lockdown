@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://NPC/LoopGuide/InmateGuide.gd" id="1_p8rc5"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(15, 9)
+position = Vector2(-1, 13)
 script = ExtResource("1_p8rc5")
 
 [node name="Button" type="Button" parent="."]
@@ -20,6 +20,7 @@ text = "GUIDE"
 title = "For Loop Guide"
 initial_position = 2
 size = Vector2i(700, 500)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 anchors_preset = 15
@@ -100,8 +101,6 @@ text = "i ++"
 layout_mode = 2
 text = "Get Demo
 "
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window"]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

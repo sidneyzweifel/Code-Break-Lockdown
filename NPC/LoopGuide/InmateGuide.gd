@@ -52,5 +52,4 @@ func _on_go_back_pressed():
 
 
 func _on_demo_pressed():
-	$Window/ColorRect/Options.hide()
-	
+	pass

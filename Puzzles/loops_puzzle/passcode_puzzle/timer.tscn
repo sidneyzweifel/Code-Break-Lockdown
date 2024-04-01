@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://yhn58orntox5"]
+
+[ext_resource type="Script" path="res://Puzzles/loops_puzzle/passcode_puzzle/timer.gd" id="1_ulu1n"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ulu1n")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 155.0
+offset_bottom = 58.0
+text = "Start Timer"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
