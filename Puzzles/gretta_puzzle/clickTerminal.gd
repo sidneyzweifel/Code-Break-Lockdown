@@ -6,7 +6,7 @@ var oldModulator = self.modulate
 var terminal_screen = "res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Home Terminal Screen.tscn"
 
 func _on_area_2d_mouse_entered():
-	var color = Color(255, 0, 0)
+	var color = Color(0, 0, 0)
 	color.v = 1.1
 	set_modulate(color)
 	print("on terminal")
