@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 800 #was going too slow for me so I changed speed
+@export var speed = 450 #was going too slow for me so I changed speed
 @export var has_door_access:bool = false
 
 

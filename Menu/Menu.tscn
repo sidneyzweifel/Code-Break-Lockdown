@@ -6,9 +6,8 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 9.0
-offset_top = 2.0
-offset_right = 1292.0
-offset_bottom = 716.0
+offset_right = 1289.0
+offset_bottom = 720.0
 color = Color(0.317647, 0.929412, 0.956863, 1)
 
 [node name="Start" type="Button" parent="ColorRect"]
@@ -35,9 +34,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -191.0
-offset_right = 191.0
-offset_bottom = 132.0
+offset_left = -193.0
+offset_top = 79.0
+offset_right = 189.0
+offset_bottom = 211.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 90
 text = "PUZZLES"

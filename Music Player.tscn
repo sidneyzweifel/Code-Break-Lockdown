@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsw4pj704pv4d"]
 
-[ext_resource type="AudioStream" uid="uid://2iqkmih32u6y" path="res://SFX/ambient music.wav" id="1_7cawg"]
+[ext_resource type="AudioStream" uid="uid://docwww8egwyar" path="res://SFX/ambient music.mp3" id="1_5sxfm"]
 
-[node name="Background Music" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_7cawg")
-volume_db = -10.224
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_5sxfm")
+volume_db = -10.0
 autoplay = true

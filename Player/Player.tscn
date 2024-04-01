@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_side",
-"speed": 15.0
+"speed": 9.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
