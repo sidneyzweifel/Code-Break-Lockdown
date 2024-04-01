@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb405pf3yd2b7"]
+[gd_scene load_steps=5 format=3 uid="uid://b4tt36ir3tlyb"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Scene Transition.gd" id="1_f6smw"]
 

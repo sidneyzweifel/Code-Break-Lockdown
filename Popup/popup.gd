@@ -9,3 +9,7 @@ func _on_pressed():
 
 func _on_close_requested():
 	popup_window_.hide()
+
+
+func _on_button_pressed():
+	pass # Replace with function body.
