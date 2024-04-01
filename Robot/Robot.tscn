@@ -361,7 +361,7 @@ shape = SubResource("RectangleShape2D_imp7u")
 position = Vector2(-24, -16)
 scale = Vector2(0.120969, 0.143531)
 sprite_frames = SubResource("SpriteFrames_l6hi3")
-animation = &"idle_front"
+animation = &"walk_front"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

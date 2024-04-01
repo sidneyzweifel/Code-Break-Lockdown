@@ -7,20 +7,19 @@ var SPEED = 100
 func _physics_process(delta):
 	if chase == true:
 		player = get_node("../../Player/Player")
-		var direction = (player.position - self.position).normalized()	
+		var direction = (player.position - self.position).normalized()
+		
+		velocity = direction * SPEED
 
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").play("walk_side")
-		else:
+		elif direction.x <0:
 			get_node("AnimatedSprite2D").play("walk_side")
 			get_node("AnimatedSprite2D").flip_h = true
-		velocity.x = direction.x * SPEED
-		
-		if direction.y > 0:
+		elif direction.y > 0:
 			get_node("AnimatedSprite2D").play("walk_front")
-		else:
+		elif direction.y < 0:
 			get_node("AnimatedSprite2D").play("walk_back")
-		velocity.y = direction.y * SPEED
 			
 	else:
 		get_node("AnimatedSprite2D").play("idle_front")
