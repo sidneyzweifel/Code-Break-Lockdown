@@ -23,7 +23,9 @@ script/source = "extends Node2D
 var inmate_dic:Dictionary
 var cur_inmate
 var inmate_ids = [\"001\", \"010\", \"011\"]
+var cur_index = 0
 
+var inmate_pos_after_doors = [0, 0.5, 1]
 
 signal inmate_clicked_signal 
 signal looped
@@ -39,11 +41,10 @@ func _ready():
 		var inmate_cur = Puzzle4Autoload.spawn_current_inmate()
 		if(inmate_cur):
 			add_inmate_and_door(inmate_cur)
+		else:
+			passcode_puzzle_ready()
 	else:
-		board.show()
-		_init_inmate_data()
-		add_inmates(inmate_dic)
-		print(\"second half\")
+		passcode_puzzle_ready()
 		pass # Replace with function body.
  
 
@@ -62,8 +63,6 @@ func _init_inmate_data():
 	Puzzle4Autoload.set_inmate_dict(k.get_dict())
 
 
-func set_ids_for_board():
-	board.set_ids(inmate_ids)
 	
 
 func add_inmate_and_door(key:String):
@@ -92,11 +91,10 @@ func set_inmate_pos():
 	
 	cur_inmate.global_position = inmate_spawn_location.position
 
-func set_inmate_pos_after_doors(inmate):
+func set_inmate_pos_passcode_puz(inmate):
 	var inmate_spawn_location = $InmatePasscodePath/InmatePasscodeLocation
-	inmate_spawn_location.progress_ratio = randf()
-	
-	
+	inmate_spawn_location.progress_ratio = inmate_pos_after_doors[cur_index]
+	cur_index += 1
 	inmate.global_position = inmate_spawn_location.position
 
 func set_data(key:String, inmate, door):
@@ -119,19 +117,25 @@ func add_inmates(inmate_dictionary):
 		var i = inmate.instantiate()
 		i.inmate_key = key
 		i.button_text = inmate_dic[key].button_text
-		set_inmate_pos_after_doors(i)
+		set_inmate_pos_passcode_puz(i)
 		add_child(i)
 		
 
-func passcode_puzzle(index_array:Array):
-	set_ids_for_board()
+func set_board():
+	var id_button_array:Array
+	var cnt = 0
+	for i in Puzzle4Autoload.correct_order_inmate:
+		id_button_array.append(inmate_dic[Puzzle4Autoload.correct_order_inmate[cnt]].button_text)
+		cnt += 1
+	board.set_ids(id_button_array)
+	board.set_index_array(Puzzle4Autoload.correct_user_entered_index)
 	board.show()
-	print(index_array)
-	board.set_index_array(index_array)
-	print(\"passcode_puzzle\")
-	_init_inmate_data()
-	add_inmates(inmate_dic)
 	
+func passcode_puzzle_ready():
+		_init_inmate_data()
+		add_inmates(inmate_dic)
+		set_board()
+		print(\"second half\")
 
 func update_loop_counter():
 	var loop_cnt = Puzzle4Autoload.loop_counter() 
@@ -1785,7 +1789,7 @@ curve = SubResource("Curve2D_dw41c")
 
 [node name="InmatePasscodeLocation" type="PathFollow2D" parent="InmatePasscodePath"]
 position = Vector2(678.054, 200.742)
-rotation = 0.564554
+rotation = 0.564555
 progress = 1558.42
 
 [node name="InmateSpawnPath" type="Path2D" parent="."]

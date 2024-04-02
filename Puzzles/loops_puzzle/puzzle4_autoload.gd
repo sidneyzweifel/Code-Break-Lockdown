@@ -5,6 +5,7 @@ var key_list:Array
 var data_set:bool = false
 var inmate_temp
 var correct_user_entered_index:Array
+var correct_order_inmate:Array
 var loop_cnt:int = 0
 var loop_door_solved:bool = false
 
@@ -26,7 +27,8 @@ func set_inmate_dict(inmate_dic:Dictionary):
 	
 func spawn_current_inmate():
 		if(key_list.size() == 0):
-			get_tree().call_group("puzzle_4", "passcode_puzzle", correct_user_entered_index)
+			##get_tree().call_group("puzzle_4", "passcode_puzzle", correct_user_entered_index, correct_order_inmate)
+			loop_doors_solved()
 			return false
 		else:
 			var current_inmate_pos = randi() % key_list.size()
@@ -43,10 +45,12 @@ func set_key_list():
 	
 func loop_puzzle_solved(array_element):
 	correct_user_entered_index.append(array_element)
+	correct_order_inmate.append(inmate_temp)
 	Global.handle_door(true)
 		
 func loop_puzzle_exit():
-	key_list.append(inmate_temp)
+	if(!loop_door_solved):
+		key_list.append(inmate_temp)
 	Global.handle_door(true)
 
 
