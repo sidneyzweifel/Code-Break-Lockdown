@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=15 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
@@ -27,18 +27,24 @@ var inmate_ids = [\"001\", \"010\", \"011\"]
 
 signal inmate_clicked_signal 
 signal looped
+@onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	board.hide()
+	player.speed = 801
 	looped.emit()
-	_init_inmate_data()
-		#for key in inmate_dic:
-			#add_inmate(key)
-	var inmate_cur = Puzzle4Autoload.spawn_current_inmate()
-	if(inmate_cur):
-		add_inmate(inmate_cur)
-	pass # Replace with function body.
+	if(!Puzzle4Autoload.loop_door_solved):
+		board.hide()
+		_init_inmate_data()
+		var inmate_cur = Puzzle4Autoload.spawn_current_inmate()
+		if(inmate_cur):
+			add_inmate_and_door(inmate_cur)
+	else:
+		board.show()
+		_init_inmate_data()
+		add_inmates(inmate_dic)
+		print(\"second half\")
+		pass # Replace with function body.
  
 
 
@@ -53,7 +59,6 @@ func _init_inmate_data():
 	var j = Inmate_Data.new(\"inmate_B\", \"id:\"+inmate_ids[1])
 	var k = Inmate_Data.new(\"inmate_C\", \"id:\"+inmate_ids[2])
 	inmate_dic = k.get_dict()
-	set_ids_for_board()
 	Puzzle4Autoload.set_inmate_dict(k.get_dict())
 
 
@@ -61,7 +66,7 @@ func set_ids_for_board():
 	board.set_ids(inmate_ids)
 	
 
-func add_inmate(key:String):
+func add_inmate_and_door(key:String):
 	var i = inmate.instantiate()
 	cur_inmate = i
 	var d = door.instantiate()
@@ -86,7 +91,13 @@ func set_inmate_pos():
 	inmate_spawn_location.v_offset = randf_range(0, 200)
 	
 	cur_inmate.global_position = inmate_spawn_location.position
+
+func set_inmate_pos_after_doors(inmate):
+	var inmate_spawn_location = $InmatePasscodePath/InmatePasscodeLocation
+	inmate_spawn_location.progress_ratio = randf()
 	
+	
+	inmate.global_position = inmate_spawn_location.position
 
 func set_data(key:String, inmate, door):
 	inmate.inmate_key = key
@@ -103,18 +114,28 @@ func set_door(key:String, inmate_pos, door):
 	inmate_logic.set_door_color(key)
 	
 	
-
+func add_inmates(inmate_dictionary):
+	for key in inmate_dictionary:
+		var i = inmate.instantiate()
+		i.inmate_key = key
+		i.button_text = inmate_dic[key].button_text
+		set_inmate_pos_after_doors(i)
+		add_child(i)
+		
 
 func passcode_puzzle(index_array:Array):
+	set_ids_for_board()
 	board.show()
 	print(index_array)
 	board.set_index_array(index_array)
 	print(\"passcode_puzzle\")
+	_init_inmate_data()
+	add_inmates(inmate_dic)
+	
 
 func update_loop_counter():
 	var loop_cnt = Puzzle4Autoload.loop_counter() 
 	$LoopCounter.set_text(\"Level Loop Counter: \" + str(loop_cnt))
-
 
 
 func _on_looped():
@@ -1698,6 +1719,12 @@ texture = ExtResource("3_oggbi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b0cg5")
 
+[sub_resource type="Curve2D" id="Curve2D_dw41c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -618.317, 243.91, 0, 0, 0, 0, 29.8689, -209.762, 0, 0, 0, 0, 678.054, 200.742)
+}
+point_count = 3
+
 [sub_resource type="Curve2D" id="Curve2D_p2ws1"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -893.82, -551.032, 0, 0, 0, 0, 949.551, -544.516, 0, 0, 0, 0, 933.521, 647.896, 0, 0, 0, 0, -845.732, 660.928)
@@ -1750,6 +1777,16 @@ position = Vector2(-117, -1520)
 path_to_new_scene = "res://Puzzles/Puzzle1_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
+
+[node name="InmatePasscodePath" type="Path2D" parent="."]
+position = Vector2(-51.8143, -123.463)
+scale = Vector2(0.998171, 1.22776)
+curve = SubResource("Curve2D_dw41c")
+
+[node name="InmatePasscodeLocation" type="PathFollow2D" parent="InmatePasscodePath"]
+position = Vector2(678.054, 200.742)
+rotation = 0.564554
+progress = 1558.42
 
 [node name="InmateSpawnPath" type="Path2D" parent="."]
 position = Vector2(-51.8143, -123.463)

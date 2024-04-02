@@ -6,6 +6,7 @@ var data_set:bool = false
 var inmate_temp
 var correct_user_entered_index:Array
 var loop_cnt:int = 0
+var loop_door_solved:bool = false
 
 func inmate_clicked():
 	get_tree().call_group("puzzle_4", "add_door")
@@ -47,3 +48,7 @@ func loop_puzzle_solved(array_element):
 func loop_puzzle_exit():
 	key_list.append(inmate_temp)
 	Global.handle_door(true)
+
+
+func loop_doors_solved():
+	loop_door_solved = true
