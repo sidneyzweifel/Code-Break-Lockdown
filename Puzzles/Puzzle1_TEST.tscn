@@ -1742,7 +1742,7 @@ metadata/_edit_horizontal_guides_ = [-3815.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(400, 200)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_yrhts")
 format = 2
 layer_0/name = "walls and floor"
@@ -1779,7 +1779,7 @@ layer_4/tile_data = PackedInt32Array(196618, 1048576, 18, 262154, 1048576, 19, 3
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Above Light" type="PointLight2D" parent="."]
-position = Vector2(682, -61)
+position = Vector2(681, -61)
 scale = Vector2(27.9531, 14.4277)
 energy = 0.75
 shadow_enabled = true
