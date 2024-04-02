@@ -1803,5 +1803,3 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Level Loop Counter: "
 horizontal_alignment = 1
-
-[connection signal="looped" from="." to="." method="_on_looped"]
