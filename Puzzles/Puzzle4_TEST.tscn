@@ -24,12 +24,14 @@ var inmate_dic:Dictionary
 var cur_inmate
 var inmate_ids = [\"001\", \"010\", \"011\"]
 
-signal inmate_clicked_signal 
 
+signal inmate_clicked_signal 
+signal looped
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	board.hide()
+	looped.emit()
 	_init_inmate_data()
 		#for key in inmate_dic:
 			#add_inmate(key)
@@ -109,8 +111,14 @@ func passcode_puzzle(index_array:Array):
 	board.set_index_array(index_array)
 	print(\"passcode_puzzle\")
 
+func update_loop_counter():
+	var loop_cnt = Puzzle4Autoload.loop_counter() 
+	$LoopCounter.set_text(\"Level Loop Counter: \" + str(loop_cnt))
 
 
+
+func _on_looped():
+	update_loop_counter()
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0cg5"]
@@ -1707,6 +1715,7 @@ metadata/_edit_horizontal_guides_ = [-3815.0, -1900.0]
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
 tile_set = SubResource("TileSet_d0rjy")
+cell_quadrant_size = 3
 format = 2
 layer_0/name = "floor"
 layer_0/modulate = Color(0.843137, 0.807843, 0.847059, 1)
@@ -1748,9 +1757,8 @@ scale = Vector2(0.998171, 1.22776)
 curve = SubResource("Curve2D_p2ws1")
 
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
-position = Vector2(-223.309, -548.662)
-rotation = 0.00353481
-progress = 1883.43
+position = Vector2(-845.732, 660.928)
+rotation = -1.61045
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
 position = Vector2(-446, 1935)
@@ -1771,7 +1779,7 @@ scale = Vector2(0.555859, 0.683333)
 texture = ExtResource("8_gt5wf")
 
 [node name="Board_GUI" parent="." instance=ExtResource("8_y0xfm")]
-position = Vector2(-584, -328)
+position = Vector2(-584, -329)
 scale = Vector2(1.45775, 1.94615)
 
 [node name="FakeLoopDoor" parent="." instance=ExtResource("5_14kpp")]
@@ -1781,3 +1789,19 @@ rotation = 1.59938
 path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
 passcode_scene = "res://Puzzles/loops_puzzle/fake_loop_ui.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
+
+[node name="LoopCounter" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1707.0
+offset_top = -1380.0
+offset_right = -715.0
+offset_bottom = -1097.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Level Loop Counter: "
+horizontal_alignment = 1
+
+[connection signal="looped" from="." to="." method="_on_looped"]

@@ -5,11 +5,15 @@ var key_list:Array
 var data_set:bool = false
 var inmate_temp
 var correct_user_entered_index:Array
+var loop_cnt:int = 0
 
 func inmate_clicked():
 	get_tree().call_group("puzzle_4", "add_door")
 
-
+func loop_counter():
+	loop_cnt += 1
+	return loop_cnt
+	
 	
 func set_inmate_dict(inmate_dic:Dictionary):
 		inmate_dict = inmate_dic
