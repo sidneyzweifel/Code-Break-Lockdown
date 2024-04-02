@@ -23,13 +23,14 @@ script/source = "extends Node2D
 var inmate_dic:Dictionary
 var cur_inmate
 var inmate_ids = [\"001\", \"010\", \"011\"]
-
+@onready var player = $Player
 
 signal inmate_clicked_signal 
 signal looped
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.speed = 800
 	board.hide()
 	looped.emit()
 	_init_inmate_data()
