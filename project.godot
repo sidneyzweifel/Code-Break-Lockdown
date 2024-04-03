@@ -68,4 +68,4 @@ click={
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.482353, 0.313726, 0.65098, 1)
+environment/defaults/default_clear_color=Color(0.133333, 0.12549, 0.113725, 1)

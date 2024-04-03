@@ -180,3 +180,4 @@ position = Vector2(562, 240)
 scale = Vector2(0.238609, 0.17491)
 sprite_frames = SubResource("SpriteFrames_e3ews")
 animation = &"idle_side"
+autoplay = "idle_side"

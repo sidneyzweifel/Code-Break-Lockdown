@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4tt36ir3tlyb"]
+[gd_scene load_steps=5 format=3 uid="uid://bb405pf3yd2b7"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Scene Transition.gd" id="1_f6smw"]
 
@@ -45,8 +45,8 @@ script = ExtResource("1_f6smw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_right = 1153.0
-offset_bottom = 650.0
+offset_right = 1918.0
+offset_bottom = 1080.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
