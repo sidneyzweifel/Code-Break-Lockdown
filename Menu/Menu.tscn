@@ -1,14 +1,111 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtfaflr4ptvky"]
+[gd_scene load_steps=24 format=3 uid="uid://dtfaflr4ptvky"]
 
 [ext_resource type="Script" path="res://Menu/Start.gd" id="1_4xyal"]
+[ext_resource type="Texture2D" uid="uid://bvvpmiv28gfhw" path="res://Menu/Assets/menu screen background/tile000.png" id="1_5mtnm"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd it.otf" id="1_oimot"]
+[ext_resource type="Texture2D" uid="uid://bncvc7ffb13oj" path="res://Menu/Assets/menu screen background/tile001.png" id="2_fkf88"]
+[ext_resource type="Texture2D" uid="uid://cp7u06bb052op" path="res://Menu/Assets/menu screen background/tile002.png" id="3_3lycp"]
+[ext_resource type="Texture2D" uid="uid://p35dwyl6m1m1" path="res://Menu/Assets/menu screen background/tile003.png" id="4_l4lby"]
+[ext_resource type="Texture2D" uid="uid://ceyus665rjubx" path="res://Menu/Assets/menu screen background/tile004.png" id="5_81lhf"]
+[ext_resource type="Texture2D" uid="uid://8hc1toa4o27j" path="res://Menu/Assets/menu screen background/tile005.png" id="6_xmq3y"]
+[ext_resource type="Texture2D" uid="uid://berfagitwjxg6" path="res://Menu/Assets/menu screen background/tile006.png" id="7_jqv64"]
+[ext_resource type="Texture2D" uid="uid://bqvpkjc6hsup8" path="res://Menu/Assets/menu screen background/tile007.png" id="8_capkb"]
+[ext_resource type="Texture2D" uid="uid://dnhybt3bru5do" path="res://Menu/Assets/menu screen background/tile011.png" id="8_sqmc1"]
+[ext_resource type="Texture2D" uid="uid://dhn1tu8g0yfbp" path="res://Menu/Assets/menu screen background/tile008.png" id="9_p6tgg"]
+[ext_resource type="Texture2D" uid="uid://dnx6j2x3a58mm" path="res://Menu/Assets/menu screen background/tile010.png" id="11_0h0qt"]
+[ext_resource type="Texture2D" uid="uid://716hw1klkwdr" path="res://Menu/Assets/menu screen background/tile009.png" id="12_imyfg"]
+[ext_resource type="Texture2D" uid="uid://bprslojl75gq4" path="res://Menu/Assets/menu screen background/tile012.png" id="13_vkice"]
+[ext_resource type="Texture2D" uid="uid://ddle7qntl2dxa" path="res://Menu/Assets/menu screen background/tile013.png" id="14_7cg0v"]
+[ext_resource type="Texture2D" uid="uid://0pmkbtu3qvkg" path="res://Menu/Assets/menu screen background/tile015.png" id="15_rksco"]
+[ext_resource type="Texture2D" uid="uid://xav4t3udr0md" path="res://Menu/Assets/menu screen background/tile014.png" id="16_nagyr"]
+[ext_resource type="Texture2D" uid="uid://1m6oa1a1bqs7" path="res://Menu/Assets/menu screen background/tile016.png" id="17_4ixfv"]
+[ext_resource type="Texture2D" uid="uid://bgbql2skpq7ej" path="res://Menu/Assets/menu screen background/tile017.png" id="18_oio81"]
+[ext_resource type="Texture2D" uid="uid://g7c0yb1a2r41" path="res://Menu/Assets/menu screen background/tile018.png" id="19_0gkdu"]
+[ext_resource type="Texture2D" uid="uid://w2itu2sptlou" path="res://Menu/Assets/menu screen background/tile019.png" id="20_be3lh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxyi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5mtnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fkf88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3lycp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l4lby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81lhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xmq3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jqv64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sqmc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_capkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p6tgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0h0qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_imyfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vkice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7cg0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rksco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nagyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4ixfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oio81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0gkdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_be3lh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 9.0
-offset_right = 1289.0
-offset_bottom = 720.0
-color = Color(0.317647, 0.929412, 0.956863, 1)
+offset_right = 1916.0
+offset_bottom = 1072.0
+color = Color(0.54902, 0.176471, 0.976471, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+modulate = Color(0.0745098, 0.231373, 1, 1)
+position = Vector2(950.5, 536.5)
+scale = Vector2(1.5975, 1.60741)
+sprite_frames = SubResource("SpriteFrames_kxyi5")
+autoplay = "default"
+frame_progress = 0.272009
 
 [node name="Start" type="Button" parent="ColorRect"]
 layout_mode = 1
@@ -17,13 +114,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = -62.5
-offset_right = 247.0
-offset_bottom = 62.5
+offset_left = -195.5
+offset_top = -150.0
+offset_right = 196.5
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 98
 text = "START"
 script = ExtResource("1_4xyal")
 puzzle_1 = "res://Puzzles/Puzzle1_TEST.tscn"
@@ -34,12 +132,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -193.0
-offset_top = 79.0
-offset_right = 189.0
-offset_bottom = 211.0
+offset_left = -172.5
+offset_top = 594.0
+offset_right = 197.5
+offset_bottom = 698.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]

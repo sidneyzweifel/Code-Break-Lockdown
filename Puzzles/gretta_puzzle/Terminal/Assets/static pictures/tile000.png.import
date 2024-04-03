@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cewybvdvaj87d"
-path="res://.godot/imported/static sprite sheet.png-33198864d80c7b40c281e52466dd4f76.ctex"
+uid="uid://fqjeivgevikl"
+path="res://.godot/imported/tile000.png-06904b89a9993ba9c51b7a045f9a636f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/static sprite sheet.png"
-dest_files=["res://.godot/imported/static sprite sheet.png-33198864d80c7b40c281e52466dd4f76.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png"
+dest_files=["res://.godot/imported/tile000.png-06904b89a9993ba9c51b7a045f9a636f.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cb07aualwbh2a"]
+[gd_scene load_steps=27 format=3 uid="uid://cb07aualwbh2a"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_aak1t"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Door Colors Screen.gd" id="1_dj036"]
@@ -10,6 +10,16 @@
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_vkx14"]
 [ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_pyter"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_70q8x"]
+[ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_sb1fh"]
+[ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_b34va"]
+[ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_k2t66"]
+[ext_resource type="Texture2D" uid="uid://1fu74ieyomtj" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile003.png" id="14_0hfb4"]
+[ext_resource type="Texture2D" uid="uid://dic3jxijioef8" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile005.png" id="15_8hcyb"]
+[ext_resource type="Texture2D" uid="uid://bri3i7d54r2uk" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile004.png" id="16_5xmra"]
+[ext_resource type="Texture2D" uid="uid://begpg4avcgjsc" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile006.png" id="17_a6aud"]
+[ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_qj6iw"]
+[ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_pt57t"]
+[ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_euoe4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sbmh"]
 texture = ExtResource("1_aak1t")
@@ -543,12 +553,50 @@ sources/0 = SubResource("TileSetAtlasSource_2sbmh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t1g5"]
 size = Vector2(67, 56)
 
-[sub_resource type="Gradient" id="Gradient_7nr5c"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmjev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sb1fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b34va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k2t66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0hfb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8hcyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5xmra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a6aud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qj6iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pt57t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_euoe4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_5o20s"]
 offsets = PackedFloat32Array(0, 0.832117, 0.989051)
 colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_avvpp"]
-gradient = SubResource("Gradient_7nr5c")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t2kxc"]
+gradient = SubResource("Gradient_5o20s")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
@@ -687,19 +735,27 @@ offset_right = 1233.0
 offset_bottom = 827.0
 theme_override_fonts/font = ExtResource("9_70q8x")
 
-[node name="Computer Light" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(637, 384)
-scale = Vector2(11.3412, 9.59636)
-color = Color(0.854902, 0.854902, 0.854902, 1)
-energy = 0.84
-texture = SubResource("GradientTexture2D_avvpp")
-texture_scale = 1.2
-
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_vkx14")
 volume_db = 12.0
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0705882)
+position = Vector2(977.329, 605.41)
+scale = Vector2(1.33131, 2.78236)
+skew = 0.0401426
+sprite_frames = SubResource("SpriteFrames_jmjev")
+autoplay = "default"
+frame_progress = 0.767513
+
+[node name="Computer Light" type="PointLight2D" parent="."]
+position = Vector2(971, 569)
+scale = Vector2(15.4297, 10.9766)
+color = Color(0.854902, 0.854902, 0.854902, 1)
+energy = 0.1
+texture = SubResource("GradientTexture2D_t2kxc")
+texture_scale = 1.2
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]

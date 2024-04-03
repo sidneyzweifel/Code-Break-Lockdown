@@ -1923,7 +1923,7 @@ offset_left = 797.0
 offset_top = 212.0
 offset_right = 887.0
 offset_bottom = 230.0
-color = Color(1, 1, 0, 0.529412)
+color = Color(0, 0.901961, 0, 0.878431)
 script = ExtResource("8_ymibn")
 
 [node name="lightGlow" type="PointLight2D" parent="doorLightColor"]
@@ -1931,7 +1931,7 @@ unique_name_in_owner = true
 show_behind_parent = true
 position = Vector2(48, 8.00002)
 scale = Vector2(4.75695, 3.90625)
-color = Color(0.807843, 0.12549, 0.0901961, 1)
+color = Color(1, 0, 0, 0.760784)
 energy = 0.45
 texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 0.9
