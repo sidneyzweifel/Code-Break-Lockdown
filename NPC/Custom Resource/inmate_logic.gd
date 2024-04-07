@@ -15,14 +15,14 @@ func new(_loop_door):
 
 
 func set_door_postion(key:String, inmate_pos):
-	var scalar = 2 
+	var scalar = 2
 	match key:
 		"inmate_A":
-			loop_door.global_position = inmate_pos - scalar * Vector2(400, 600)
+			loop_door.position = inmate_pos - scalar * Vector2(400, 600)
 		"inmate_B":
-			loop_door.global_position = inmate_pos - scalar * Vector2(-900, 0)
+			loop_door.position = inmate_pos - scalar * Vector2(-900, 0)
 		"inmate_C":
-			loop_door.global_position = inmate_pos - scalar * Vector2(-60, 600)
+			loop_door.position = inmate_pos - scalar * Vector2(-60, 600)
 		_:
 			print("ERROR in set_door_position in inmate_logic.gd")
 	

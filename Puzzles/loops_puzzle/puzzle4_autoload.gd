@@ -64,3 +64,8 @@ func set_passcode(paswrd:String):
 func get_puzz4_passcode():
 	return passcode
 	
+func start_puz():
+	Global.overide_passcode.connect(puz4_ready)
+	
+func puz4_ready():
+	get_tree().call_group("puzzle_4", "_ready")

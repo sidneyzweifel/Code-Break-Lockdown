@@ -42,10 +42,13 @@ func _ready():
 		_init_inmate_data()
 		var inmate_cur = Puzzle4Autoload.spawn_current_inmate()
 		if(inmate_cur):
+			
 			add_inmate_and_door(inmate_cur)
 		else:
+			
 			passcode_puzzle_ready()
 	else:
+		cur_index = 0
 		passcode_puzzle_ready()
 		pass # Replace with function body.
  
@@ -110,21 +113,13 @@ func set_door(key:String, inmate_pos, door):
 	
 	
 func add_inmates(inmate_dictionary):
-	if(inmate):
 		for key in inmate_dictionary:
 			var i = inmate.instantiate()
 			i.inmate_key = key
 			i.button_text = inmate_dic[key].button_text
 			set_inmate_pos_passcode_puz(i)
-			add_child(i)
-	else:
-		var inmate_:PackedScene = preload(\"res://NPC/NPC.tscn\")
-		for key in inmate_dictionary:
-			var i = inmate_.instantiate()
-			i.inmate_key = key
-			i.button_text = inmate_dic[key].button_text
-			set_inmate_pos_passcode_puz(i)
-			add_child(i)
+			add_child.call_deferred(i)
+
 	
 		
 
@@ -132,20 +127,12 @@ func set_board():
 	var id_button_array:Array
 	var cnt = 0
 	for i in Puzzle4Autoload.correct_order_inmate:
-		id_button_array.append(inmate_dic[Puzzle4Autoload.correct_order_inmate[cnt]].button_text)
-		cnt += 1
-	if(board):
-		board.set_ids(id_button_array)
-		board.set_index_array(Puzzle4Autoload.correct_user_entered_index)
-		board.show()
-		set_passcode(id_button_array, Puzzle4Autoload.correct_user_entered_index)
-	else:
-		var board_:PackedScene = preload(\"res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.tscn\")
-		var b = board_.instantiate()
-		b.set_ids(id_button_array)
-		b.set_index_array(Puzzle4Autoload.correct_user_entered_index)
-		b.show()
-		set_passcode(id_button_array, Puzzle4Autoload.correct_user_entered_index)
+			id_button_array.append(inmate_dic[Puzzle4Autoload.correct_order_inmate[cnt]].button_text)
+			cnt += 1
+	board.set_ids(id_button_array)
+	board.set_index_array(Puzzle4Autoload.correct_user_entered_index)
+	board.show()
+	set_passcode(id_button_array, Puzzle4Autoload.correct_user_entered_index)
 	
 func passcode_puzzle_ready():
 		_init_inmate_data()
@@ -173,11 +160,13 @@ func set_passcode(buttons, index):
 				d_3 = index[cnt_index] 
 				d_2 = index[cnt_index]
 				cnt_index += 1
-	var passcode:String = str(d_1) + str(d_2) + str(d_3) + str(d_4) + str(d_5)
+	var passcode:String = str(d_1)
 	Puzzle4Autoload.set_passcode(passcode)
+	#Global.overide_passcode.emit()
 
 
-
+func test_fun():
+	pass
 	
 
 func update_loop_counter():
@@ -187,6 +176,20 @@ func update_loop_counter():
 
 func _on_looped():
 	update_loop_counter()
+
+
+
+
+
+func _on_child_entered_tree(node):
+	if(!node.get_parent() == node.owner):
+		node.print_tree_pretty()
+		print(to_global(node.position))
+		print(node.global_position)
+		print(node.get_global_position())
+		print(node.get_position())
+
+
 
 
 "
@@ -1850,7 +1853,6 @@ rotation = -1.61045
 position = Vector2(-446, 1935)
 
 [node name="Background" type="Area2D" parent="."]
-visible = false
 position = Vector2(1.50013, -124.5)
 scale = Vector2(2.65703, 3.65972)
 
@@ -1890,4 +1892,6 @@ theme_override_font_sizes/font_size = 25
 text = "Level Loop Counter: "
 horizontal_alignment = 1
 
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="looped" from="." to="." method="_on_looped"]
+[connection signal="child_entered_tree" from="InmateSpawnPath/InmateSpawnLocation" to="." method="_on_inmate_spawn_location_child_entered_tree"]
