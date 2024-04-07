@@ -6,7 +6,7 @@ extends Label
 func _ready():
 	var passcode= Global.set_passcode()
 	passcode_text.text = "PASSCODE: " + passcode
-	print(passcode)
+	print("PASSCODE: " + passcode)
 	pass 
 
 

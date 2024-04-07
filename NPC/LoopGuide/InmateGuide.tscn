@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://k36l72cy6xu"]
+
+[ext_resource type="Script" path="res://NPC/LoopGuide/InmateGuide.gd" id="1_p8rc5"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, 13)
+script = ExtResource("1_p8rc5")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.921569, 0, 0.92549, 1)
+offset_left = 474.0
+offset_top = 231.0
+offset_right = 608.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0.803922, 0.262745, 0.584314, 1)
+theme_override_font_sizes/font_size = 25
+text = "GUIDE"
+
+[node name="Window" type="Window" parent="."]
+title = "For Loop Guide"
+initial_position = 2
+size = Vector2i(700, 500)
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.278431, 1, 0.490196)
+
+[node name="Detail" type="VBoxContainer" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -89.0
+offset_right = 42.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="OptionSelectedTitle" type="Label" parent="Window/ColorRect/Detail"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Window/ColorRect/Detail"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Go Back" type="Button" parent="Window/ColorRect/Detail"]
+layout_mode = 2
+text = "Go back"
+
+[node name="Options" type="VBoxContainer" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -47.0
+offset_right = 41.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Label" type="Label" parent="Window/ColorRect/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Learn about differnt parts of a for loop"
+horizontal_alignment = 1
+
+[node name="start" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "i = ###"
+
+[node name="condtion" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "i > ###"
+
+[node name="change" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "i ++"
+
+[node name="Demo" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+text = "Get Demo
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/ColorRect/Detail/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/condtion" to="." method="_on_condtion_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/change" to="." method="_on_change_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/Demo" to="." method="_on_demo_pressed"]

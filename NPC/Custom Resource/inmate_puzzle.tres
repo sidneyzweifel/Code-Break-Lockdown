@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://gj4i5x8liogj"]
+
+[ext_resource type="Script" path="res://NPC/Custom Resource/inmate_logic.gd" id="1_w5cix"]
+
+[resource]
+script = ExtResource("1_w5cix")

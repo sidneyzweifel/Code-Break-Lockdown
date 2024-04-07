@@ -15,12 +15,8 @@ func _ready():
 	pass # Replace with function body.
 
 
-
-
 func _on_puzzle_1_pressed():
 	get_tree().change_scene_to_file(puz1_path)
-
-
 
 
 func _on_puzzle_2_pressed():

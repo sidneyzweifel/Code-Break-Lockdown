@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://uq3soatunpx7"]
+
+[ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
+[ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_7cu12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppe2"]
+size = Vector2(124, 125)
+
+[node name="NPC" type="RigidBody2D" groups=["npc"]]
+position = Vector2(-1, 13)
+gravity_scale = 0.0
+script = ExtResource("1_oropo")
+inmate_key = null
+button_text = null
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 0.0509804, 0.0509804, 1)
+position = Vector2(291, 141)
+texture = ExtResource("2_7cu12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(292, 142)
+shape = SubResource("RectangleShape2D_5ppe2")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.921569, 0, 0.92549, 1)
+offset_left = 229.0
+offset_top = 80.0
+offset_right = 357.0
+offset_bottom = 203.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

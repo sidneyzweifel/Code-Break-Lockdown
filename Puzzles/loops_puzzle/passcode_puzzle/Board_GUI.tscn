@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://4o0238b8uaf1"]
+
+[ext_resource type="Script" path="res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.gd" id="1_rqiq2"]
+
+[node name="Board_GUI" type="Node2D"]
+script = ExtResource("1_rqiq2")
+id_array = ["000", "000", "000"]
+index_array = ["999", "999", "999"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 374.0
+offset_top = 147.0
+offset_right = 439.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+
+[node name="Board" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(700, 300)
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Board"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.462745, 1, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Board"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -129.5
+offset_right = 123.0
+offset_bottom = 129.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Board/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ID Title" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Inmate ID:"
+
+[node name="ID 1" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "001"
+
+[node name="ID 2" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "010"
+
+[node name="ID 3" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "011"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Board/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Index Title" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Index:"
+horizontal_alignment = 2
+
+[node name="Index 1" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "999"
+
+[node name="Index 2" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "999"
+
+[node name="Index 3" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "999
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Board" to="." method="_on_board_close_requested"]
