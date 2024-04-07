@@ -1,0 +1,26 @@
+{
+  "inmate_A": {
+	"inmate_beckon": "You there!",
+	"inmate_ask": "I believe I know what you desire. Know the power of magic and get me the item I need.",
+	"door_color": "purple",
+	"door_location": "north west",
+	"inmate_thanks": "Greatest thanks!",
+	"passcode_hint": "I believe the last passcode digit is the last digit of this number matching my ID here."
+  },
+  "inmate_B": {
+	"inmate_beckon": "Excuse me!",
+	"inmate_ask": "Please be kind and get me this item.",
+	"door_color": "orange",
+	"door_location": "right of me",
+	"inmate_thanks": "Thank you so much for getting the item I needed!",
+	"passcode_hint": "Of course! Yes, the penultimate matches the same digit for the index of my ID."
+  },
+  "inmate_C": {
+	"inmate_beckon": "Over here!",
+	"inmate_ask": "There's this technologically advanced door that I just NEED to know more about.",
+	"door_color": "green",
+	"door_location": "straight ahead",
+	"inmate_thanks": "Much gratitude for this item! I have the final ingredient to turn me back into a human.",
+	"passcode_hint": "Sure. The third and fourth digit are my ID ANDed with the corresponding index. The first digit is how many times you have looped these halls."
+  }
+}

@@ -25,10 +25,12 @@ var cur_inmate
 var inmate_ids = [\"001\", \"010\", \"011\"]
 var cur_index = 0
 
+
 var inmate_pos_after_doors = [0, 0.5, 1]
 
 signal inmate_clicked_signal 
 signal looped
+
 @onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
@@ -51,11 +53,6 @@ func _ready():
 
 
 func _init_inmate_data():
-	##TODO:
-	##consider making a separate JSON for inmates
-	##and their ID
-	##want to show the transfering of data
-	##plus show that the code is adaptable 
 	var i = Inmate_Data.new(\"inmate_A\", \"id:\"+inmate_ids[0])
 	var j = Inmate_Data.new(\"inmate_B\", \"id:\"+inmate_ids[1])
 	var k = Inmate_Data.new(\"inmate_C\", \"id:\"+inmate_ids[2])
@@ -113,12 +110,22 @@ func set_door(key:String, inmate_pos, door):
 	
 	
 func add_inmates(inmate_dictionary):
-	for key in inmate_dictionary:
-		var i = inmate.instantiate()
-		i.inmate_key = key
-		i.button_text = inmate_dic[key].button_text
-		set_inmate_pos_passcode_puz(i)
-		add_child(i)
+	if(inmate):
+		for key in inmate_dictionary:
+			var i = inmate.instantiate()
+			i.inmate_key = key
+			i.button_text = inmate_dic[key].button_text
+			set_inmate_pos_passcode_puz(i)
+			add_child(i)
+	else:
+		var inmate_:PackedScene = preload(\"res://NPC/NPC.tscn\")
+		for key in inmate_dictionary:
+			var i = inmate_.instantiate()
+			i.inmate_key = key
+			i.button_text = inmate_dic[key].button_text
+			set_inmate_pos_passcode_puz(i)
+			add_child(i)
+	
 		
 
 func set_board():
@@ -127,15 +134,51 @@ func set_board():
 	for i in Puzzle4Autoload.correct_order_inmate:
 		id_button_array.append(inmate_dic[Puzzle4Autoload.correct_order_inmate[cnt]].button_text)
 		cnt += 1
-	board.set_ids(id_button_array)
-	board.set_index_array(Puzzle4Autoload.correct_user_entered_index)
-	board.show()
+	if(board):
+		board.set_ids(id_button_array)
+		board.set_index_array(Puzzle4Autoload.correct_user_entered_index)
+		board.show()
+		set_passcode(id_button_array, Puzzle4Autoload.correct_user_entered_index)
+	else:
+		var board_:PackedScene = preload(\"res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.tscn\")
+		var b = board_.instantiate()
+		b.set_ids(id_button_array)
+		b.set_index_array(Puzzle4Autoload.correct_user_entered_index)
+		b.show()
+		set_passcode(id_button_array, Puzzle4Autoload.correct_user_entered_index)
 	
 func passcode_puzzle_ready():
 		_init_inmate_data()
 		add_inmates(inmate_dic)
 		set_board()
-		print(\"second half\")
+		
+
+func set_passcode(buttons, index):
+	var d_1 = Puzzle4Autoload.loop_cnt
+	var d_2
+	var d_3
+	var d_4
+	var d_5
+	print(buttons, index)
+	var cnt_index = 0
+	for i in buttons:
+		match i:
+			\"id:001\":
+				d_5 = index[cnt_index] 
+				cnt_index += 1
+			\"id:010\":
+				d_4 = index[cnt_index] 
+				cnt_index += 1
+			\"id:011\":
+				d_3 = index[cnt_index] 
+				d_2 = index[cnt_index]
+				cnt_index += 1
+	var passcode:String = str(d_1) + str(d_2) + str(d_3) + str(d_4) + str(d_5)
+	Puzzle4Autoload.set_passcode(passcode)
+
+
+
+	
 
 func update_loop_counter():
 	var loop_cnt = Puzzle4Autoload.loop_counter() 
@@ -144,6 +187,8 @@ func update_loop_counter():
 
 func _on_looped():
 	update_loop_counter()
+
+
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0cg5"]

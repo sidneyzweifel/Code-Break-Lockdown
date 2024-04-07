@@ -47,9 +47,16 @@ func return_to_puzzle():
 #Called in popup_test scene
 #passcode.gd
 func set_passcode():
-	var random_code = RandomNumberGenerator.new()
-	current_passcode = str(randi_range(11111, 99999))
-	return current_passcode
+	if(Puzzle4Autoload.key_list.size() == 0 and current_puzz ==  "res://Puzzles/Puzzle4_TEST.tscn"):
+		get_tree().call_group("puzzle_4", "passcode_puzzle_ready")
+		current_passcode = Puzzle4Autoload.get_puzz4_passcode()
+		return current_passcode
+	if(Puzzle4Autoload.loop_door_solved):
+		return current_passcode
+	else:
+		var random_code = RandomNumberGenerator.new()
+		current_passcode = str(randi_range(11111, 99999))
+		return current_passcode
 
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
