@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpnqitfms6tja"]
+
+[ext_resource type="Script" path="res://Door_Puz4.gd" id="1_hr0rl"]
+[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="2_7tual"]
+
+[node name="Door_Puz4" type="Node2D"]
+script = ExtResource("1_hr0rl")
+
+[node name="Door" parent="." instance=ExtResource("2_7tual")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
