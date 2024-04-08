@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=16 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
@@ -25,6 +25,7 @@ var cur_inmate
 var inmate_ids = [\"001\", \"010\", \"011\"]
 var cur_index = 0
 
+var pos_in_map:bool = false
 
 var inmate_pos_after_doors = [0, 0.5, 1]
 
@@ -45,7 +46,6 @@ func _ready():
 			
 			add_inmate_and_door(inmate_cur)
 		else:
-			
 			passcode_puzzle_ready()
 	else:
 		cur_index = 0
@@ -108,9 +108,18 @@ func set_data(key:String, inmate, door):
 func set_door(key:String, inmate_pos, door):
 	inmate_pos = cur_inmate.global_position
 	inmate_logic.new(door)
-	inmate_logic.set_door_postion(key, inmate_pos)
 	inmate_logic.set_door_color(key)
+	inmate_logic.set_door_postion(key, inmate_pos, \"reg\")
+	var pos = inmate_logic.get_door_pos(key)
+	$CheckDoorPos.global_position = pos
+	while(!pos_in_map):
+		inmate_logic.set_door_postion(key, inmate_pos, \"less\")
+		pos = inmate_logic.get_door_pos(key)
+		$CheckDoorPos.global_position = pos
+		await get_tree().create_timer(2.0).timeout
 	
+	
+
 	
 func add_inmates(inmate_dictionary):
 		for key in inmate_dictionary:
@@ -179,12 +188,17 @@ func _on_looped():
 
 
 
+
+
+
+
 func _on_area_2d_body_entered(body):
-	print(body.name)
+	if(body.name == \"CheckDoorPos\"):
+		print(body.name, body.global_position)
+		pos_in_map = true
+		$CheckDoorPos.queue_free()
+	
 
-
-func _on_area_2d_area_entered(area):
-	print(area)
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0cg5"]
@@ -1772,9 +1786,24 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_p2ws1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -893.82, -551.032, 0, 0, 0, 0, 949.551, -544.516, 0, 0, 0, 0, 933.521, 647.896, 0, 0, 0, 0, -845.732, 660.928)
+"points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -741.542, -423.973, 0, 0, 0, 0, 829.331, -476.1, 0, 0, 0, 0, 933.521, 647.896, 0, 0, 0, 0, -845.732, 660.928)
 }
 point_count = 5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hghkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gt5wf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fv26h"]
+radius = 304.0
+height = 608.0
 
 [node name="Puzzle4" type="Node2D" groups=["puzzle_4"]]
 script = SubResource("GDScript_dxlop")
@@ -1831,24 +1860,19 @@ rotation = 0.564555
 progress = 1558.42
 
 [node name="InmateSpawnPath" type="Path2D" parent="."]
-position = Vector2(-51.8143, -123.463)
-scale = Vector2(0.998171, 1.22776)
+position = Vector2(-112.656, -163.66)
+scale = Vector2(0.926231, 1.14333)
 curve = SubResource("Curve2D_p2ws1")
 
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
 position = Vector2(-845.732, 660.928)
-rotation = -1.61045
+rotation = -1.47505
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
 position = Vector2(-446, 1935)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1350, 948)
-scale = Vector2(0.555859, 0.683333)
-texture = ExtResource("8_gt5wf")
-
 [node name="Board_GUI" parent="." instance=ExtResource("8_y0xfm")]
-position = Vector2(-584, -329)
+position = Vector2(-592, -333)
 scale = Vector2(1.45775, 1.94615)
 
 [node name="FakeLoopDoor" parent="." instance=ExtResource("5_14kpp")]
@@ -1877,9 +1901,24 @@ horizontal_alignment = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-13, 27)
-polygon = PackedVector2Array(-1444, -1327, -153, -1327, -153, -1071, 204, -1051, 190, -1287, 1435, -1280, 1401, 718, 957, 1028, -1081, 1041, -1478, 893)
+skew = 0.0383972
+polygon = PackedVector2Array(-1707.2, -1464.08, -114.895, -1456.07, -110.91, -1143.84, 80.1684, -1167.86, 85.1045, -1456.07, 1676.8, -1464.08, 1716.39, 817.603, 1687.76, 1113.82, -1438.4, 1161.86, -1638.08, 961.709)
+
+[node name="CheckDoorPos" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(3008, 32)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckDoorPos"]
+position = Vector2(45, 40.9999)
+scale = Vector2(0.613281, 0.680556)
+sprite_frames = SubResource("SpriteFrames_hghkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckDoorPos"]
+position = Vector2(8, 5)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_fv26h")
 
 [connection signal="looped" from="." to="." method="_on_looped"]
 [connection signal="child_entered_tree" from="InmateSpawnPath/InmateSpawnLocation" to="." method="_on_inmate_spawn_location_child_entered_tree"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

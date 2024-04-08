@@ -4,12 +4,12 @@ static var inmate_dic:Dictionary
 
 var inmate_key:String
 var button_text:String
-var door:Door_Info
+var door:Door_Info_Puz4
 
 func _init(key:String, text:String):
 	inmate_key = key
 	button_text = text
-	door = Door_Info.new()
+	door = Door_Info_Puz4.new()
 	add_to_dictionary(inmate_key, self)
 
 

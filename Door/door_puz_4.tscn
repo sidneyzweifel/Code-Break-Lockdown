@@ -8,4 +8,5 @@ script = ExtResource("1_hr0rl")
 
 [node name="Door" parent="." instance=ExtResource("2_7tual")]
 
+[connection signal="button_pressed" from="." to="Door" method="_on_door_puz_4_button_pressed"]
 [connection signal="ready" from="." to="." method="_on_ready"]

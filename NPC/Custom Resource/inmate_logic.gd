@@ -27,8 +27,13 @@ func get_door_pos(key:String):
 			print("ERROR")
 	
 
-func set_door_postion(key:String, inmate_pos):
+func set_door_postion(key:String, inmate_pos, scalar_range):
 	var scalar = 2 * randf_range(1, 1.5)
+	match scalar_range:
+		"less":
+			scalar = 2 * randf()
+		"reg":
+			scalar = 2 * randf_range(1, 1.5)
 	match key:
 		"inmate_A":
 			loop_door.position = inmate_pos - scalar * Vector2(400, 600)
