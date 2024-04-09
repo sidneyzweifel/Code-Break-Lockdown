@@ -3,7 +3,7 @@ extends Window
 @onready var logic_popup_window = $"."
 var number_input : LineEdit
 var binary_button : BinaryButton
-var binary_sprite : BinarySprite
+var no_access_button : NoAccessButton
 @onready var logicQuestion = Global.get_logic_question()
 @onready var solvedQuestion = Global.solve_logic_question(logicQuestion)
 
@@ -13,7 +13,7 @@ func _ready():
 	# handles line input on enter
 	number_input = $LineEdit
 	binary_button = $"../../BinaryPopUp/BinaryButton"
-	binary_sprite = $"../../BinaryPopUpHover/Area2D/BinarySprite"
+	no_access_button = $"../../NoAccessGuide/NoAccessButton"
 	number_input.text = "" # clear any previous input
 	number_input.focus_mode = Control.FOCUS_ALL # set focus to input field
 	
@@ -37,11 +37,11 @@ func _on_line_edit_text_submitted(text: String) -> void:
 	print(user_answer)
 	
 	if user_answer == solvedQuestion: # check if input is correct
+		no_access_button.hide()
 		binary_button.show()
-		binary_sprite.show()
 		hide()
 	else:
+		no_access_button.show()
 		binary_button.hide()
-		binary_sprite.hide()
 		# add loud incorrect buzzer
 	

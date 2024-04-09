@@ -16,12 +16,12 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryLabel.gd" id="7_prlxj"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/PopUpHover.gd" id="8_kktge"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicWindow.gd" id="8_n3uvp"]
+[ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinarySprite.gd" id="9_igo8v"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
 [ext_resource type="FontVariation" uid="uid://c47st61viycg2" path="res://Puzzles/logic_puzzle/Puzzle3Symbols.tres" id="13_m8y7e"]
 [ext_resource type="Texture2D" uid="uid://c8vlnrl3ds5qd" path="res://Puzzles/logic_puzzle/sprites/BinaryGuideSprite.jpg" id="15_vncwa"]
 [ext_resource type="Texture2D" uid="uid://bfq5h2lnowpei" path="res://Puzzles/logic_puzzle/sprites/LogicGuideSprite.jpg" id="16_4qcux"]
-[ext_resource type="Script" path="res://Puzzles/logic_puzzle/NoAccessButton.gd" id="17_ifd4h"]
 [ext_resource type="Texture2D" uid="uid://b3l0ni8dp3vgg" path="res://Puzzles/logic_puzzle/sprites/SymbolGuideSprite.jpg" id="17_v3kgf"]
 [ext_resource type="Texture2D" uid="uid://b6wd5w5h06adi" path="res://Tilesets/Cyber City/Decor/32x32_spr_fire_barrel_strip6.png" id="19_c8u2o"]
 [ext_resource type="FontVariation" uid="uid://djj84h5p3moj8" path="res://Puzzles/logic_puzzle/Puzzle3_Default.tres" id="19_prs32"]
@@ -6609,6 +6609,7 @@ scale = Vector2(5.85119, 5.14352)
 texture = ExtResource("2_cbdsy")
 region_enabled = true
 region_rect = Rect2(229.345, 2.05446, 21.0665, 27.5301)
+script = ExtResource("9_igo8v")
 
 [node name="BinaryGuide" type="Node" parent="."]
 
@@ -6688,47 +6689,6 @@ color = Color(0.359375, 0.464844, 0.550781, 1)
 texture = ExtResource("17_v3kgf")
 centered = false
 
-[node name="NoAccessGuide" type="Node" parent="."]
-
-[node name="NoAccessButton" type="Button" parent="NoAccessGuide"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 24.0
-offset_top = 216.0
-offset_right = 162.0
-offset_bottom = 372.0
-script = ExtResource("17_ifd4h")
-
-[node name="NoAccessGuideWindow" type="Window" parent="NoAccessGuide"]
-initial_position = 1
-size = Vector2i(900, 970)
-visible = false
-theme_override_fonts/title_font = ExtResource("19_prs32")
-script = ExtResource("11_w13ow")
-
-[node name="ColorRect" type="ColorRect" parent="NoAccessGuide/NoAccessGuideWindow"]
-offset_right = 950.0
-offset_bottom = 1050.0
-color = Color(0.0859375, 0.625, 0.800781, 1)
-
-[node name="Label" type="Label" parent="NoAccessGuide/NoAccessGuideWindow"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.5
-offset_top = -32.0
-offset_right = 139.5
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.72549, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_prs32")
-theme_override_font_sizes/font_size = 50
-text = "NO ACCESS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="LogicPopUp" type="Node" parent="."]
 
 [node name="LogicButton" type="Button" parent="LogicPopUp"]
@@ -6741,7 +6701,7 @@ text = "LOG"
 
 [node name="LogicWindow" type="Window" parent="LogicPopUp"]
 initial_position = 1
-size = Vector2i(900, 970)
+size = Vector2i(1000, 600)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("8_n3uvp")
@@ -6752,7 +6712,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.996094, 0.457031, 0, 1)
+color = Color(0.521569, 0.0745098, 0.290196, 1)
 
 [node name="LogicLabel" type="Label" parent="LogicPopUp/LogicWindow"]
 anchors_preset = -1
@@ -6764,7 +6724,6 @@ offset_left = -169.0
 offset_right = 169.0
 offset_bottom = 94.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.996094, 0.996094, 0.453125, 1)
 theme_override_fonts/font = ExtResource("19_prs32")
 theme_override_font_sizes/font_size = 90
 text = "logic"
@@ -6784,7 +6743,6 @@ offset_right = 250.0
 offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.996094, 0.992188, 0.453125, 1)
 theme_override_fonts/font = ExtResource("19_prs32")
 theme_override_font_sizes/font_size = 60
 
@@ -6801,7 +6759,7 @@ script = ExtResource("6_gwwqb")
 
 [node name="BinaryCodeWindow" type="Window" parent="BinaryPopUp"]
 initial_position = 1
-size = Vector2i(900, 970)
+size = Vector2i(900, 600)
 visible = false
 script = ExtResource("6_0p8i5")
 
@@ -6811,7 +6769,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0859375, 0.625, 0.800781, 1)
+color = Color(0.235294, 0.313726, 0.376471, 1)
 
 [node name="BinaryLabel" type="Label" parent="BinaryPopUp/BinaryCodeWindow"]
 anchors_preset = 8
@@ -6825,7 +6783,7 @@ offset_right = 74.5
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.507813, 0.996094, 0.902344, 1)
+theme_override_colors/font_color = Color(0.498039, 0.839216, 0.611765, 1)
 theme_override_fonts/font = ExtResource("13_m8y7e")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
@@ -6880,8 +6838,6 @@ environment = SubResource("Environment_ggm2x")
 [connection signal="close_requested" from="LogicGuide/LogicGuideWindow" to="LogicGuide/LogicGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="SymbolGuide/Button" to="SymbolGuide/SymbolGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="SymbolGuide/SymbolGuideWindow" to="SymbolGuide/SymbolGuideWindow" method="_on_close_requested"]
-[connection signal="pressed" from="NoAccessGuide/NoAccessButton" to="NoAccessGuide/NoAccessGuideWindow" method="_on_button_pressed"]
-[connection signal="close_requested" from="NoAccessGuide/NoAccessGuideWindow" to="NoAccessGuide/NoAccessGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicPopUp/LogicButton" to="LogicPopUp/LogicWindow" method="_on_logic_button_pressed"]
 [connection signal="close_requested" from="LogicPopUp/LogicWindow" to="LogicPopUp/LogicWindow" method="_on_close_requested"]
 [connection signal="text_submitted" from="LogicPopUp/LogicWindow/LineEdit" to="LogicPopUp/LogicWindow" method="_on_line_edit_text_submitted"]
