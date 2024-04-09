@@ -6558,6 +6558,23 @@ path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
 
+[node name="BinaryPopUpHover" type="Node2D" parent="."]
+script = ExtResource("8_kktge")
+
+[node name="Area2D" type="Area2D" parent="BinaryPopUpHover"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BinaryPopUpHover/Area2D"]
+position = Vector2(123, 94)
+scale = Vector2(20.8, 9.8)
+polygon = PackedVector2Array(1.68269, 12.7551, -4.95192, 12.8571, -5.09615, 28.5714, 1.97115, 28.1633)
+
+[node name="BinarySprite" type="Sprite2D" parent="BinaryPopUpHover/Area2D"]
+position = Vector2(88.5625, 295.563)
+scale = Vector2(5.85119, 5.14352)
+texture = ExtResource("2_cbdsy")
+region_enabled = true
+region_rect = Rect2(229.345, 2.05446, 21.0665, 27.5301)
+
 [node name="LogicGuideHover" type="Node2D" parent="."]
 script = ExtResource("8_kktge")
 
@@ -6592,23 +6609,6 @@ scale = Vector2(5.93891, 5.71981)
 texture = ExtResource("2_cbdsy")
 region_enabled = true
 region_rect = Rect2(198.353, 3.75548, 19.065, 25.0004)
-
-[node name="BinaryPopUpHover" type="Node2D" parent="."]
-script = ExtResource("8_kktge")
-
-[node name="Area2D" type="Area2D" parent="BinaryPopUpHover"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BinaryPopUpHover/Area2D"]
-position = Vector2(123, 94)
-scale = Vector2(20.8, 9.8)
-polygon = PackedVector2Array(1.68269, 12.7551, -4.95192, 12.8571, -5.09615, 28.5714, 1.97115, 28.1633)
-
-[node name="BinarySprite" type="Sprite2D" parent="BinaryPopUpHover/Area2D"]
-position = Vector2(88.5625, 295.563)
-scale = Vector2(5.85119, 5.14352)
-texture = ExtResource("2_cbdsy")
-region_enabled = true
-region_rect = Rect2(229.345, 2.05446, 21.0665, 27.5301)
 
 [node name="BinaryGuide" type="Node" parent="."]
 
@@ -6674,7 +6674,7 @@ text = "symbol"
 
 [node name="SymbolGuideWindow" type="Window" parent="SymbolGuide"]
 initial_position = 1
-size = Vector2i(600, 1000)
+size = Vector2i(600, 950)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("11_w13ow")
@@ -6685,6 +6685,7 @@ offset_bottom = 900.0
 color = Color(0.359375, 0.464844, 0.550781, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="SymbolGuide/SymbolGuideWindow"]
+position = Vector2(0, -10)
 texture = ExtResource("17_v3kgf")
 centered = false
 
@@ -6700,7 +6701,7 @@ script = ExtResource("17_ifd4h")
 
 [node name="NoAccessGuideWindow" type="Window" parent="NoAccessGuide"]
 initial_position = 1
-size = Vector2i(900, 970)
+size = Vector2i(900, 950)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("11_w13ow")
@@ -6729,6 +6730,50 @@ text = "NO ACCESS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BinaryPopUp" type="Node" parent="."]
+
+[node name="BinaryButton" type="Button" parent="BinaryPopUp"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 30.0
+offset_top = 226.0
+offset_right = 148.0
+offset_bottom = 368.0
+text = "Bin"
+script = ExtResource("6_gwwqb")
+
+[node name="BinaryCodeWindow" type="Window" parent="BinaryPopUp"]
+initial_position = 1
+size = Vector2i(900, 970)
+visible = false
+script = ExtResource("6_0p8i5")
+
+[node name="ColorRect" type="ColorRect" parent="BinaryPopUp/BinaryCodeWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0859375, 0.625, 0.800781, 1)
+
+[node name="BinaryLabel" type="Label" parent="BinaryPopUp/BinaryCodeWindow"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -13.0
+offset_right = 74.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.507813, 0.996094, 0.902344, 1)
+theme_override_fonts/font = ExtResource("13_m8y7e")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_prlxj")
+
 [node name="LogicPopUp" type="Node" parent="."]
 
 [node name="LogicButton" type="Button" parent="LogicPopUp"]
@@ -6741,7 +6786,7 @@ text = "LOG"
 
 [node name="LogicWindow" type="Window" parent="LogicPopUp"]
 initial_position = 1
-size = Vector2i(900, 970)
+size = Vector2i(900, 950)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("8_n3uvp")
@@ -6788,50 +6833,6 @@ theme_override_colors/font_color = Color(0.996094, 0.992188, 0.453125, 1)
 theme_override_fonts/font = ExtResource("19_prs32")
 theme_override_font_sizes/font_size = 60
 
-[node name="BinaryPopUp" type="Node" parent="."]
-
-[node name="BinaryButton" type="Button" parent="BinaryPopUp"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 30.0
-offset_top = 226.0
-offset_right = 148.0
-offset_bottom = 368.0
-text = "Bin"
-script = ExtResource("6_gwwqb")
-
-[node name="BinaryCodeWindow" type="Window" parent="BinaryPopUp"]
-initial_position = 1
-size = Vector2i(900, 970)
-visible = false
-script = ExtResource("6_0p8i5")
-
-[node name="ColorRect" type="ColorRect" parent="BinaryPopUp/BinaryCodeWindow"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0859375, 0.625, 0.800781, 1)
-
-[node name="BinaryLabel" type="Label" parent="BinaryPopUp/BinaryCodeWindow"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -74.5
-offset_top = -13.0
-offset_right = 74.5
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.507813, 0.996094, 0.902344, 1)
-theme_override_fonts/font = ExtResource("13_m8y7e")
-theme_override_font_sizes/font_size = 100
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("7_prlxj")
-
 [node name="TrashFire" type="AnimatedSprite2D" parent="."]
 position = Vector2(2244, 347)
 scale = Vector2(6.5586, 7.6211)
@@ -6861,19 +6862,19 @@ animation = &"binary_hint"
 frame_progress = 0.384693
 
 [node name="Player" parent="." instance=ExtResource("4_0gp5h")]
-position = Vector2(746, 849)
+position = Vector2(441, 1334)
 scale = Vector2(0.8, 0.8)
 speed = 500
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ggm2x")
 
+[connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="LogicGuideHover/Area2D" to="LogicGuideHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="LogicGuideHover/Area2D" to="LogicGuideHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="LogicPopUpHover/Area2D" to="LogicPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="LogicPopUpHover/Area2D" to="LogicPopUpHover" method="_on_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="BinaryGuide/Button" to="BinaryGuide/BinaryGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="BinaryGuide/BinaryGuideWindow" to="BinaryGuide/BinaryGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicGuide/Button" to="LogicGuide/LogicGuideWindow" method="_on_button_pressed"]
@@ -6882,8 +6883,8 @@ environment = SubResource("Environment_ggm2x")
 [connection signal="close_requested" from="SymbolGuide/SymbolGuideWindow" to="SymbolGuide/SymbolGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="NoAccessGuide/NoAccessButton" to="NoAccessGuide/NoAccessGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="NoAccessGuide/NoAccessGuideWindow" to="NoAccessGuide/NoAccessGuideWindow" method="_on_close_requested"]
+[connection signal="pressed" from="BinaryPopUp/BinaryButton" to="BinaryPopUp/BinaryCodeWindow" method="_on_binary_button_pressed"]
+[connection signal="close_requested" from="BinaryPopUp/BinaryCodeWindow" to="BinaryPopUp/BinaryCodeWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicPopUp/LogicButton" to="LogicPopUp/LogicWindow" method="_on_logic_button_pressed"]
 [connection signal="close_requested" from="LogicPopUp/LogicWindow" to="LogicPopUp/LogicWindow" method="_on_close_requested"]
 [connection signal="text_submitted" from="LogicPopUp/LogicWindow/LineEdit" to="LogicPopUp/LogicWindow" method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="BinaryPopUp/BinaryButton" to="BinaryPopUp/BinaryCodeWindow" method="_on_binary_button_pressed"]
-[connection signal="close_requested" from="BinaryPopUp/BinaryCodeWindow" to="BinaryPopUp/BinaryCodeWindow" method="_on_close_requested"]
