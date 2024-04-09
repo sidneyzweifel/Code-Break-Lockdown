@@ -1916,7 +1916,6 @@ sprite_frames = SubResource("SpriteFrames_hghkq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckDoorPos"]
 position = Vector2(8, 5)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_fv26h")
 
 [connection signal="looped" from="." to="." method="_on_looped"]

@@ -58,7 +58,7 @@ func set_passcode():
 		return current_passcode
 	else:
 		var random_code = RandomNumberGenerator.new()
-		current_passcode = str(randi_range(11111, 99999))
+		current_passcode = str(randi_range(10000, 99999))
 		return current_passcode
 
 #called in LineEdit.gd in passcode_enter scene
