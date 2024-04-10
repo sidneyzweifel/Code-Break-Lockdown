@@ -4,7 +4,7 @@
 
 [node name="LoopError" type="AcceptDialog"]
 initial_position = 2
-size = Vector2i(807, 222)
+size = Vector2i(814, 243)
 visible = true
 ok_button_text = "Try Again"
 script = ExtResource("1_yrjms")
@@ -15,8 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 799.0
-offset_bottom = 173.0
+offset_right = -8.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.72549, 0.196078, 0.321569, 1)
@@ -27,8 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 799.0
-offset_bottom = 173.0
+offset_right = -8.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20

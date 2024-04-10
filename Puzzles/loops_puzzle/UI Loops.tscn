@@ -109,7 +109,7 @@ offset_right = -185.0
 offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 item_count = 4
 selected = 0
 popup/item_0/text = "<"
@@ -155,7 +155,7 @@ offset_top = 530.0
 offset_right = 490.0
 offset_bottom = 594.0
 theme_override_font_sizes/font_size = 60
-text = "I"
+text = "i"
 
 [node name="ExitButton" type="Button" parent="Window"]
 anchors_preset = 9

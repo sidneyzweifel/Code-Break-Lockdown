@@ -28,9 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.278431, 1, 0.490196)
+color = Color(0.0470588, 0.113725, 0.235294, 0.490196)
 
 [node name="Detail" type="VBoxContainer" parent="Window/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +57,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
-[node name="Go Back" type="Button" parent="Window/ColorRect/Detail"]
+[node name="Go Back Options" type="Button" parent="Window/ColorRect/Detail"]
 layout_mode = 2
 text = "Go back"
 
@@ -102,10 +103,56 @@ layout_mode = 2
 text = "Get Demo
 "
 
+[node name="Go Back Start" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+text = "Go Back"
+
+[node name="Start" type="VBoxContainer" parent="Window/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -52.0
+offset_right = 239.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GuideMessage" type="Label" parent="Window/ColorRect/Start"]
+layout_mode = 2
+size_flags_stretch_ratio = 6.48
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "We're all counting on you!
+This is the last puzzle before you make 
+it out of here. But your journey is just getting
+started. 
+You're a programmer right?
+You've seen a for loop before. Surely. 
+Well, it has been a long time.
+In case you need a refresher I have preapared some review material for you. 
+
+When you're ready. Track down an imate and they'll show you the magic loop door.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Review For Loops" type="Button" parent="Window/ColorRect/Start"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Review For Loops"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
-[connection signal="pressed" from="Window/ColorRect/Detail/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Detail/Go Back Options" to="." method="_on_go_back_options_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/condtion" to="." method="_on_condtion_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/change" to="." method="_on_change_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/Demo" to="." method="_on_demo_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/Go Back Start" to="." method="_on_go_back_start_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Start/Review For Loops" to="." method="_on_review_for_loops_pressed"]

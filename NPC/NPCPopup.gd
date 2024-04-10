@@ -66,9 +66,9 @@ func pick_next_player_response(cnt:int):
 		2:
 			return str("Okay")
 		5:
-			return "No problem. Now how do I get out of here?"
+			return "No problem.\nNow how do I get out of here?"
 		6:
-			return "Okay. Thanks"
+			return "Okay. Thanks!"
 		_:
 			remove_button(next_option_button)
 			return str("Got it")

@@ -34,6 +34,8 @@ signal looped
 
 @onready var player = $Player
 
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player.speed = 801
@@ -73,6 +75,7 @@ func add_inmate_and_door(key:String):
 	set_inmate_pos()
 	add_child(i)
 	await inmate_clicked_signal 
+	i.linear_velocity = Vector2(0,0)
 	add_child(d, true)
 	set_door(key, i, d)
 	
@@ -185,9 +188,6 @@ func update_loop_counter():
 
 func _on_looped():
 	update_loop_counter()
-
-
-
 
 
 
@@ -1786,7 +1786,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_p2ws1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -741.542, -423.973, 0, 0, 0, 0, 829.331, -476.1, 0, 0, 0, 0, 933.521, 647.896, 0, 0, 0, 0, -845.732, 660.928)
+"points": PackedVector2Array(0, 0, 0, 0, -845.732, 660.928, 0, 0, 0, 0, -829.538, -506.713, 0, 0, 0, 0, 1159.17, -511.086, 0, 0, 0, 0, 1141.89, 656.556, 0, 0, 0, 0, -845.732, 660.928)
 }
 point_count = 5
 
@@ -1802,8 +1802,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fv26h"]
-radius = 304.0
-height = 608.0
+radius = 152.0
+height = 460.0
 
 [node name="Puzzle4" type="Node2D" groups=["puzzle_4"]]
 script = SubResource("GDScript_dxlop")
@@ -1866,7 +1866,7 @@ curve = SubResource("Curve2D_p2ws1")
 
 [node name="InmateSpawnLocation" type="PathFollow2D" parent="InmateSpawnPath"]
 position = Vector2(-845.732, 660.928)
-rotation = -1.47505
+rotation = -1.55693
 
 [node name="Guide" parent="." instance=ExtResource("7_p74k8")]
 position = Vector2(-446, 1935)
@@ -1897,15 +1897,15 @@ theme_override_font_sizes/font_size = 25
 text = "Level Loop Counter: "
 horizontal_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="MapArea" type="Area2D" parent="."]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapArea"]
 position = Vector2(-13, 27)
 skew = 0.0383972
-polygon = PackedVector2Array(-1707.2, -1464.08, -114.895, -1456.07, -110.91, -1143.84, 80.1684, -1167.86, 85.1045, -1456.07, 1676.8, -1464.08, 1716.39, 817.603, 1687.76, 1113.82, -1438.4, 1161.86, -1638.08, 961.709)
+polygon = PackedVector2Array(-1754.89, -1508.11, -114.895, -1456.07, -110.91, -1143.84, 80.1684, -1167.86, 85.1045, -1456.07, 1676.8, -1464.08, 1716.39, 817.603, 1792.48, 1184.87, -1563.25, 1191.88, -1641.89, 1070.79)
 
 [node name="CheckDoorPos" type="CharacterBody2D" parent="."]
-visible = false
 position = Vector2(3008, 32)
 metadata/_edit_group_ = true
 
@@ -1918,6 +1918,30 @@ sprite_frames = SubResource("SpriteFrames_hghkq")
 position = Vector2(8, 5)
 shape = SubResource("CapsuleShape2D_fv26h")
 
+[node name="NPCBounds" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NPCBounds"]
+position = Vector2(-114, -14)
+polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NPCBounds"]
+position = Vector2(164, -119)
+rotation = 3.1307
+polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NPCBounds"]
+position = Vector2(-42, 79)
+rotation = 1.56535
+polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPCBounds"]
+position = Vector2(-170, 2477)
+rotation = 1.57198
+polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
+
 [connection signal="looped" from="." to="." method="_on_looped"]
 [connection signal="child_entered_tree" from="InmateSpawnPath/InmateSpawnLocation" to="." method="_on_inmate_spawn_location_child_entered_tree"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="MapArea" to="." method="_on_area_2d_body_entered"]

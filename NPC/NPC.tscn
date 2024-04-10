@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://uq3soatunpx7"]
+[gd_scene load_steps=5 format=3 uid="uid://uq3soatunpx7"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_7cu12"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0urd8"]
+friction = 0.53
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppe2"]
 size = Vector2(124, 125)
 
 [node name="NPC" type="RigidBody2D" groups=["npc"]]
 position = Vector2(-1, 13)
+collision_layer = 3
+collision_mask = 3
+inertia = 6.28
+physics_material_override = SubResource("PhysicsMaterial_0urd8")
 gravity_scale = 0.0
+lock_rotation = true
+linear_velocity = Vector2(700, 500)
 script = ExtResource("1_oropo")
-inmate_key = null
-button_text = null
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
