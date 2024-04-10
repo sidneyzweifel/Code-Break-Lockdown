@@ -60,7 +60,6 @@ func set_passcode():
 	if(Puzzle4Autoload.loop_door_solved):
 		return current_passcode
 	else:
-		var random_code = RandomNumberGenerator.new()
 		current_passcode = str(randi_range(10000, 99999))
 		return current_passcode
 

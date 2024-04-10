@@ -1,10 +1,11 @@
 extends Node2D
 
-@onready var puz1 = $"ColorRect/Puzzle 1"
-@onready var puz2 = $"ColorRect/Puzzle 2"
-@onready var puz3 = $"ColorRect/Puzzle 3"
-@onready var puz4 = $"ColorRect/Puzzle 4"
+@onready var puz1 = $"Window/ColorRect/VBoxContainer/Puzzle 1"
+@onready var puz2 = $"Window/ColorRect/VBoxContainer/Puzzle 2"
+@onready var puz3 = $"Window/ColorRect/VBoxContainer/Puzzle 3"
+@onready var puz4 = $"Window/ColorRect/VBoxContainer/Puzzle 4"
 
+@onready var window = $Window
 
 @export var puz1_path:String
 @export var puz2_path:String
@@ -12,6 +13,8 @@ extends Node2D
 @export var puz4_path:String
 
 func _ready():
+	var screen_size = DisplayServer.screen_get_size()
+	#window.size = Vector2i(screen_size.x, screen_size.y)
 	pass # Replace with function body.
 
 

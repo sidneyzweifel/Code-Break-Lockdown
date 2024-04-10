@@ -31,6 +31,7 @@ grow_vertical = 2
 color = Color(0.101961, 0.54902, 0.352941, 1)
 
 [node name="ItemNumLabel" type="Label" parent="Window"]
+modulate = Color(1, 0.8, 0.196078, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,7 +43,6 @@ text = "ITEM #: "
 horizontal_alignment = 1
 
 [node name="StartIndex" type="Label" parent="Window"]
-modulate = Color(1, 0.0901961, 1, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
