@@ -4,7 +4,7 @@ extends Label
 
 #Sets the passcode for each door
 func _ready():
-	var passcode= Global.set_passcode()
+	var passcode =  await Global.set_passcode()
 	passcode_text.text = "PASSCODE: " + passcode
 	print("PASSCODE: " + passcode)
 	pass 

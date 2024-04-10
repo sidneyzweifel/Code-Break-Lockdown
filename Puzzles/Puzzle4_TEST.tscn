@@ -45,7 +45,6 @@ func _ready():
 		_init_inmate_data()
 		var inmate_cur = Puzzle4Autoload.spawn_current_inmate()
 		if(inmate_cur):
-			
 			add_inmate_and_door(inmate_cur)
 		else:
 			passcode_puzzle_ready()
@@ -130,6 +129,7 @@ func add_inmates(inmate_dictionary):
 			i.inmate_key = key
 			i.button_text = inmate_dic[key].button_text
 			set_inmate_pos_passcode_puz(i)
+			#add_child(i)
 			add_child.call_deferred(i)
 
 	
@@ -153,37 +153,25 @@ func passcode_puzzle_ready():
 		
 
 func set_passcode(buttons, index):
-	var d_1 = Puzzle4Autoload.loop_cnt
-	var d_2
-	var d_3
-	var d_4
-	var d_5
+	var loop_cnt = Puzzle4Autoload.get_loop_count()
+	print(loop_cnt)
 	print(buttons, index)
-	var cnt_index = 0
-	for i in buttons:
-		match i:
-			\"id:001\":
-				d_5 = index[cnt_index] 
-				cnt_index += 1
-			\"id:010\":
-				d_4 = index[cnt_index] 
-				cnt_index += 1
-			\"id:011\":
-				d_3 = index[cnt_index] 
-				d_2 = index[cnt_index]
-				cnt_index += 1
-	var passcode:String = str(d_1)
+	var indexSum = 0
+	for i in index:
+		indexSum += i
+	print(indexSum)
+	var passcode:String = str(indexSum - loop_cnt)
 	Puzzle4Autoload.set_passcode(passcode)
-	#Global.overide_passcode.emit()
+	Global.override_passcode.emit()
 
 
-func test_fun():
-	pass
+
 	
 
 func update_loop_counter():
 	var loop_cnt = Puzzle4Autoload.loop_counter() 
 	$LoopCounter.set_text(\"Level Loop Counter: \" + str(loop_cnt))
+	print(\"Level Loop Counter: \" + str(loop_cnt))
 
 
 func _on_looped():
@@ -198,6 +186,8 @@ func _on_area_2d_body_entered(body):
 		pos_in_map = true
 		$CheckDoorPos.queue_free()
 	
+
+
 
 "
 

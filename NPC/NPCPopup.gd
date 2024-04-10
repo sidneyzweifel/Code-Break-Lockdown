@@ -51,7 +51,7 @@ func pick_next_dialouge_inmate(cnt:int):
 			return str(Dialouge.speech_dict[inmate_key]["passcode_hint"])
 			
 		7:
-			return str("Good luck")
+			return str("We're counting on you!")
 		_:
 			return str("Please get me item #") + str(item_num) + " from the machine beyond the door"
 			

@@ -1,26 +1,26 @@
 {
   "inmate_A": {
 	"inmate_beckon": "You there!",
-	"inmate_ask": "I believe I know what you desire. Know the power of magic and get me the item I need.",
+	"inmate_ask": "I believe I know what you desire. Know the power of magic and get me the item I need from a magical door",
 	"door_color": "purple",
 	"door_location": "north west",
-	"inmate_thanks": "Greatest thanks!",
-	"passcode_hint": "I believe the last passcode digit is the last digit of this number matching my ID here."
+	"inmate_thanks": "Greatest thanks! I wish you luck on your travels.",
+	"passcode_hint": "The magic was too much to maintain. Sum these numbers here. That's what the passcode would be if were not for these challenges."
   },
   "inmate_B": {
 	"inmate_beckon": "Excuse me!",
-	"inmate_ask": "Please be kind and get me this item.",
+	"inmate_ask": "Please be kind and get me this item from a machine inside a door.",
 	"door_color": "orange",
 	"door_location": "right of me",
 	"inmate_thanks": "Thank you so much for getting the item I needed!",
-	"passcode_hint": "Of course! Yes, the penultimate matches the same digit for the index of my ID."
+	"passcode_hint": "I heard that the passcode was having some issues. I believe it is still at the starting index it was when you entered."
   },
   "inmate_C": {
 	"inmate_beckon": "Over here!",
-	"inmate_ask": "There's this technologically advanced door that I just NEED to know more about.",
+	"inmate_ask": "There's this technologically advanced door that I just NEED to know more about. In it is a machine whose interworkings deny human comprehension.",
 	"door_color": "green",
 	"door_location": "straight ahead",
 	"inmate_thanks": "Much gratitude for this item! I have the final ingredient to turn me back into a human.",
-	"passcode_hint": "Sure. The third and fourth digit are my ID ANDed with the corresponding index. The first digit is how many times you have looped these halls."
+	"passcode_hint": "I have heard what the other inmates have told you. I'll give you a hint. Subtract the number of times you have repeated your path. This is listed in the upper left corner for you."
   }
 }

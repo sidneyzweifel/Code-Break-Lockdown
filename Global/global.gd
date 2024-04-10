@@ -5,7 +5,6 @@ var next_puzz:String
 var current_puzz:String
 var current_passcode:String
 
-signal overide_passcode
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -47,12 +46,16 @@ func return_to_puzzle():
 
 #Called in popup_test scene
 #passcode.gd
+
+signal override_passcode
 func set_passcode():
 	if(Puzzle4Autoload.key_list.size() == 0 and current_puzz ==  "res://Puzzles/Puzzle4_TEST.tscn"):
 		print("In set_passcode")
-		Puzzle4Autoload.puz4_ready()
-		#await overide_passcode
+		#Puzzle4Autoload.puz4_ready()
+		override_passcode.connect(override_passcode_set)
+		await override_passcode
 		current_passcode = Puzzle4Autoload.get_puzz4_passcode()
+		override_passcode.disconnect(override_passcode_set)
 		return current_passcode
 	if(Puzzle4Autoload.loop_door_solved):
 		return current_passcode
@@ -66,6 +69,7 @@ func set_passcode():
 func get_passcode():
 	return current_passcode
 
-
+func override_passcode_set():
+	pass
 
 	

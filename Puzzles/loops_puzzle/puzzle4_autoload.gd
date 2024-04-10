@@ -18,6 +18,9 @@ func loop_counter():
 	loop_cnt += 1
 	return loop_cnt
 	
+func get_loop_count():
+	return loop_cnt
+	
 	
 func set_inmate_dict(inmate_dic:Dictionary):
 		inmate_dict = inmate_dic
@@ -64,8 +67,6 @@ func set_passcode(paswrd:String):
 func get_puzz4_passcode():
 	return passcode
 	
-func start_puz():
-	Global.overide_passcode.connect(puz4_ready)
 	
 func puz4_ready():
 	get_tree().call_group("puzzle_4", "_ready")
