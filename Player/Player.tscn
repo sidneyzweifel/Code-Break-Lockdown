@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bc1yjsfpstkm" path="res://Sprites/Walking/Player/Side/Walking_side_12.png" id="33_0cghr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcqgd"]
-size = Vector2(278, 314)
+size = Vector2(108.715, 176)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3ews"]
 animations = [{
@@ -167,19 +167,21 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-114, 69)
+position = Vector2(-112, 69)
 script = ExtResource("1_j2ui2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(557, 240)
+position = Vector2(112, -69)
 shape = SubResource("RectangleShape2D_pcqgd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(555, 247)
-scale = Vector2(0.238609, 0.17491)
+position = Vector2(112, -61)
+scale = Vector2(0.0936751, 0.0947052)
 sprite_frames = SubResource("SpriteFrames_e3ews")
 animation = &"walking_side"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-177, -138)
+position = Vector2(-512, -429)
 anchor_mode = 0
+
+[node name="Step" type="AudioStreamPlayer2D" parent="."]
