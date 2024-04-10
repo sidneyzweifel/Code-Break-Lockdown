@@ -94,21 +94,37 @@ animations = [{
 
 [node name="Menu" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 9.0
-offset_right = 1916.0
-offset_bottom = 1072.0
-color = Color(0.54902, 0.176471, 0.976471, 1)
+[node name="Window" type="Window" parent="."]
+mode = 3
+initial_position = 2
+size = Vector2i(1920, 1080)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/ColorRect/VBoxContainer"]
 modulate = Color(0.678431, 0, 0, 1)
-position = Vector2(956, 541.25)
 scale = Vector2(1.5975, 1.57704)
 sprite_frames = SubResource("SpriteFrames_kxyi5")
 autoplay = "default"
 frame_progress = 0.430074
+centered = false
 
-[node name="Start" type="Button" parent="ColorRect"]
+[node name="Start" type="Button" parent="Window/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -116,9 +132,9 @@ anchor_top = 0.5
 anchor_right = 0.516
 anchor_bottom = 0.577
 offset_left = -178.5
-offset_top = -11.0
+offset_top = -50.772
 offset_right = 142.988
-offset_bottom = 32.456
+offset_bottom = 72.228
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_oimot")
@@ -128,8 +144,7 @@ script = ExtResource("1_4xyal")
 puzzle_1 = "res://Puzzles/Puzzle1_TEST.tscn"
 puzzle_select = "res://Menu/PuzzleSelect.tscn"
 
-[node name="Start2" type="Label" parent="ColorRect"]
-layout_mode = 0
+[node name="Start2" type="Label" parent="Window/ColorRect"]
 offset_left = 811.0
 offset_top = 527.0
 offset_right = 1163.0
@@ -139,7 +154,7 @@ theme_override_fonts/font = ExtResource("1_oimot")
 theme_override_font_sizes/font_size = 95
 text = "START"
 
-[node name="PuzzleSelect" type="Button" parent="ColorRect"]
+[node name="PuzzleSelect" type="Button" parent="Window/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -153,8 +168,7 @@ theme_override_fonts/font = ExtResource("1_oimot")
 theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
-[node name="PuzzleSelect2" type="Label" parent="ColorRect"]
-layout_mode = 0
+[node name="PuzzleSelect2" type="Label" parent="Window/ColorRect"]
 offset_left = 797.0
 offset_top = 733.0
 offset_right = 1167.0
@@ -164,8 +178,7 @@ theme_override_fonts/font = ExtResource("1_oimot")
 theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
+[node name="Label" type="Label" parent="Window/ColorRect"]
 offset_left = 378.0
 offset_top = 335.0
 offset_right = 1526.0
@@ -174,7 +187,7 @@ theme_override_fonts/font = ExtResource("1_oimot")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
-[node name="Label2" type="Label" parent="ColorRect"]
+[node name="Label2" type="Label" parent="Window/ColorRect"]
 offset_left = 383.0
 offset_top = 331.0
 offset_right = 1531.0
@@ -188,5 +201,5 @@ text = "CODE BREAK LOCKDOWN"
 stream = ExtResource("23_mrpth")
 autoplay = true
 
-[connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
-[connection signal="pressed" from="ColorRect/PuzzleSelect" to="ColorRect/Start" method="_on_puzzle_select_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Start" to="Window/ColorRect/Start" method="_on_pressed"]
+[connection signal="pressed" from="Window/ColorRect/PuzzleSelect" to="Window/ColorRect/Start" method="_on_puzzle_select_pressed"]

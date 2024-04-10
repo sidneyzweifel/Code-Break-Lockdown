@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_14kpp"]
 [ext_resource type="PackedScene" uid="uid://k36l72cy6xu" path="res://NPC/LoopGuide/InmateGuide.tscn" id="7_p74k8"]
-[ext_resource type="Texture2D" path="res://Backgrounds/inmate1.png" id="8_gt5wf"]
+[ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate1.png" id="8_gt5wf"]
 [ext_resource type="PackedScene" uid="uid://4o0238b8uaf1" path="res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.tscn" id="8_y0xfm"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
