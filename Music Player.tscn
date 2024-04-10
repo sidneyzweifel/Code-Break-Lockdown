@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://docwww8egwyar" path="res://SFX/ambient music.mp3" id="1_5sxfm"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="backgroundMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_5sxfm")
 volume_db = -10.0
 autoplay = true

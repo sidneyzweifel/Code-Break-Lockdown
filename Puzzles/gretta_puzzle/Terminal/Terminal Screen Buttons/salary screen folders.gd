@@ -11,7 +11,7 @@ func _on_employees_salaries_screen__line_edit_text_submitted(new_text):
 	# go to the correct scene based on inputted text
 	if new_text == "print employee 1 salary":
 		#SceneTransition.change_scene_to_file(variable1) 
-		pass
+		%printvariable.show()
 	elif new_text == "print employee 2 salary":
 		#SceneTransition.change_scene_to_file(variable2)
 		pass

@@ -102,11 +102,11 @@ color = Color(0.54902, 0.176471, 0.976471, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
 modulate = Color(0.678431, 0, 0, 1)
-position = Vector2(956, 541.25)
-scale = Vector2(1.5975, 1.57704)
+position = Vector2(954.75, 536)
+scale = Vector2(1.59958, 1.6)
 sprite_frames = SubResource("SpriteFrames_kxyi5")
 autoplay = "default"
-frame_progress = 0.430074
+frame_progress = 0.930176
 
 [node name="Start" type="Button" parent="ColorRect"]
 layout_mode = 1
@@ -175,6 +175,7 @@ theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
 [node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 383.0
 offset_top = 331.0
 offset_right = 1531.0
@@ -184,7 +185,8 @@ theme_override_fonts/font = ExtResource("1_oimot")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="titleMusic" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("23_mrpth")
 autoplay = true
 
