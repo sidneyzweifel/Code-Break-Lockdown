@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfo4c6xoa1yqf"]
+[gd_scene load_steps=32 format=3 uid="uid://bfo4c6xoa1yqf"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Employee Salaries Screen.gd" id="1_4qwjq"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_vsph1"]
@@ -20,6 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_hc454"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_3mu51"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_mudis"]
+[ext_resource type="Texture2D" uid="uid://bacc6fok5ejwx" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Employee1 (1).png" id="21_n3y4c"]
+[ext_resource type="Texture2D" uid="uid://d35lbw87cmnk1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Employee_2.png" id="22_xwf8h"]
+[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Employee3.png" id="23_ulqgv"]
+[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Employee4.png" id="24_spryr"]
+[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Manger.png" id="25_8h2vq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5v87"]
 texture = ExtResource("1_vsph1")
@@ -749,6 +754,7 @@ sprite_frames = SubResource("SpriteFrames_kicdq")
 autoplay = "default"
 
 [node name="Computer Light" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(971, 569)
 scale = Vector2(15.4297, 10.9766)
 color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -756,15 +762,38 @@ energy = 0.1
 texture = SubResource("GradientTexture2D_8dnks")
 texture_scale = 1.2
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(389, 684)
-
-[node name="printVariable" type="Popup" parent="Node2D"]
+[node name="Window" type="Window" parent="."]
 unique_name_in_owner = true
-title = "test"
-visible = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Salaries" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+position = Vector2(200, 135)
+scale = Vector2(0.65, 0.65)
+
+[node name="employee 1 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("21_n3y4c")
+
+[node name="employee 2 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("22_xwf8h")
+
+[node name="employee 3 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("23_ulqgv")
+
+[node name="employee 4 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("24_spryr")
+
+[node name="manager salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("25_8h2vq")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="employees salaries screen - LineEdit" to="employee 1 - salaries" method="_on_employees_salaries_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="employee 1 - salaries" method="_on_window_close_requested"]
