@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dm7g6d5bljoxn"]
+[gd_scene load_steps=29 format=3 uid="uid://dm7g6d5bljoxn"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Enrichment Screen.gd" id="1_8662j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_cn0rf"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_h0125"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_1asqe"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_d8bu0"]
+[ext_resource type="Texture2D" uid="uid://e7vmtxbxnp73" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/educational.png" id="21_xp8m2"]
+[ext_resource type="Texture2D" uid="uid://bnt47sr3aehwk" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/inspiration.png" id="22_ri0ag"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_le1ka"]
 texture = ExtResource("1_cn0rf")
@@ -716,6 +718,35 @@ color = Color(0.854902, 0.854902, 0.854902, 1)
 energy = 0.0
 texture = SubResource("GradientTexture2D_qu1y1")
 texture_scale = 1.2
+
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="enrichment" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+
+[node name="educational" type="Sprite2D" parent="Window/enrichment"]
+position = Vector2(200, 150)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("21_xp8m2")
+
+[node name="enrichment" type="Sprite2D" parent="Window/enrichment"]
+visible = false
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("22_ri0ag")
+
+[node name="inspiration" type="Sprite2D" parent="Window/enrichment"]
+position = Vector2(200, 150)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_ri0ag")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
