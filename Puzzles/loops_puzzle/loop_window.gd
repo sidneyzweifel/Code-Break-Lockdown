@@ -37,7 +37,10 @@ func _ready():
 		item_number_label.text = "ITEM #: " + str(item_number)
 		start_index = rng.randi_range(0, 999)
 		start_index_label.text = str(start_index)
-	
+		if(item_number != start_index):
+			if(rng.randi_range(0, 100) % 3 == 0):
+				$Inequality.set_item_disabled(2, true)
+				$Inequality.set_item_disabled(3, true)
 
 
 	

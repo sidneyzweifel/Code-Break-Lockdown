@@ -1,9 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://i3kmp0451hi0"]
+[gd_scene load_steps=8 format=3 uid="uid://i3kmp0451hi0"]
 
 [ext_resource type="Texture2D" uid="uid://drsah5bbq72o0" path="res://Backgrounds/SDP_loop_background.png" id="1_5tqim"]
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
 [ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 [ext_resource type="PackedScene" uid="uid://cgpmmmq6efotm" path="res://Puzzles/loops_puzzle/loop_success.tscn" id="3_3vimy"]
+
+[sub_resource type="FontFile" id="FontFile_a06hb"]
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_5knvj"]
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_5jcr8"]
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Background" type="Sprite2D"]
 modulate = Color(0.639216, 0.713726, 0.564706, 1)
@@ -92,6 +140,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = SubResource("FontFile_a06hb")
 theme_override_font_sizes/font_size = 60
 text = "i = "
 horizontal_alignment = 1
@@ -142,20 +191,25 @@ popup/item_1/text = "--"
 popup/item_1/id = 1
 
 [node name="IInequality" type="Label" parent="Window"]
-offset_left = 250.0
-offset_top = 330.0
-offset_right = 288.0
-offset_bottom = 394.0
+offset_left = 260.0
+offset_top = 320.0
+offset_right = 298.0
+offset_bottom = 404.0
+theme_override_fonts/font = SubResource("FontFile_5knvj")
 theme_override_font_sizes/font_size = 60
 text = "i"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="IChange" type="Label" parent="Window"]
 offset_left = 450.0
-offset_top = 530.0
+offset_top = 520.0
 offset_right = 490.0
-offset_bottom = 594.0
+offset_bottom = 604.0
+theme_override_fonts/font = SubResource("FontFile_5jcr8")
 theme_override_font_sizes/font_size = 60
 text = "i"
+horizontal_alignment = 1
 
 [node name="ExitButton" type="Button" parent="Window"]
 anchors_preset = 9

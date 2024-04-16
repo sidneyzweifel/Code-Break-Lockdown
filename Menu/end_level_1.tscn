@@ -1,13 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0t8ke1etujsw"]
+[gd_scene load_steps=3 format=3 uid="uid://b0t8ke1etujsw"]
 
 [ext_resource type="Script" path="res://Menu/end_level_1.gd" id="1_81m24"]
+
+[sub_resource type="FontFile" id="FontFile_op5on"]
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="EndLevel1" type="Node2D"]
 script = ExtResource("1_81m24")
 
 [node name="Window" type="Window" parent="."]
-initial_position = 2
-size = Vector2i(700, 700)
+mode = 3
+initial_position = 1
+size = Vector2i(1920, 1080)
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 anchors_preset = 15
@@ -30,17 +47,20 @@ offset_right = 137.0
 offset_bottom = 36.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 111
 alignment = 1
 
 [node name="EndMessage" type="Label" parent="Window/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_op5on")
+theme_override_font_sizes/font_size = 64
 text = "You have finished the game! 
 😁"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Window/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Menu"
 
 [connection signal="pressed" from="Window/ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]

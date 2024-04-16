@@ -40,6 +40,7 @@ signal looped
 func _ready():
 	player.speed = 801
 	looped.emit()
+	$CheckDoorPos.hide()
 	if(!Puzzle4Autoload.loop_door_solved):
 		board.hide()
 		_init_inmate_data()
@@ -1888,6 +1889,7 @@ text = "Level Loop Counter: "
 horizontal_alignment = 1
 
 [node name="MapArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapArea"]
 position = Vector2(-13, 27)
@@ -1895,6 +1897,7 @@ skew = 0.0383972
 polygon = PackedVector2Array(-1754.89, -1508.11, -114.895, -1456.07, -110.91, -1143.84, 80.1684, -1167.86, 85.1045, -1456.07, 1676.8, -1464.08, 1716.39, 817.603, 1792.48, 1184.87, -1563.25, 1191.88, -1641.89, 1070.79)
 
 [node name="CheckDoorPos" type="CharacterBody2D" parent="."]
+visible = false
 position = Vector2(3008, 32)
 metadata/_edit_group_ = true
 
@@ -1908,6 +1911,7 @@ position = Vector2(8, 5)
 shape = SubResource("CapsuleShape2D_fv26h")
 
 [node name="NPCBounds" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
