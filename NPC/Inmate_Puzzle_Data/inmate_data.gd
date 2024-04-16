@@ -1,4 +1,4 @@
-class_name Inmate_Data extends Node
+class_name Inmate_Data extends Node2D
 
 static var inmate_dic:Dictionary
 

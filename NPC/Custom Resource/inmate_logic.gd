@@ -39,7 +39,7 @@ func set_door_postion(key:String, inmate_pos, scalar_range):
 			loop_door.position = inmate_pos - scalar * Vector2(400, 600)
 			pos_A = loop_door.position
 		"inmate_B":
-			loop_door.position = inmate_pos - scalar * Vector2(-900, 0)
+			loop_door.position = inmate_pos - scalar * Vector2(-500, 0)
 			pos_B = loop_door.position
 		"inmate_C":
 			loop_door.position = inmate_pos - scalar * Vector2(-60, 600)

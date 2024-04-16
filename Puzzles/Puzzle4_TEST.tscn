@@ -1888,7 +1888,6 @@ text = "Level Loop Counter: "
 horizontal_alignment = 1
 
 [node name="MapArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapArea"]
 position = Vector2(-13, 27)
@@ -1909,25 +1908,24 @@ position = Vector2(8, 5)
 shape = SubResource("CapsuleShape2D_fv26h")
 
 [node name="NPCBounds" type="StaticBody2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NPCBounds"]
+[node name="CollisionPolygon2DLeft" type="CollisionPolygon2D" parent="NPCBounds"]
 position = Vector2(-114, -14)
 polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NPCBounds"]
+[node name="CollisionPolygon2DRight" type="CollisionPolygon2D" parent="NPCBounds"]
 position = Vector2(164, -119)
 rotation = 3.1307
 polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NPCBounds"]
+[node name="CollisionPolygon2D2Top" type="CollisionPolygon2D" parent="NPCBounds"]
 position = Vector2(-42, 79)
 rotation = 1.56535
 polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPCBounds"]
+[node name="CollisionPolygon2DBottom" type="CollisionPolygon2D" parent="NPCBounds"]
 position = Vector2(-170, 2477)
 rotation = 1.57198
 polygon = PackedVector2Array(-1622, -1391, -1010, -1412, -1032, 1194, -1656, 1165)
