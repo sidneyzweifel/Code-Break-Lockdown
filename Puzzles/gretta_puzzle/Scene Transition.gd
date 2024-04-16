@@ -1,6 +1,10 @@
 extends CanvasLayer
 
 func change_scene_to_file(target: String) -> void:
+	if %error:
+		%error.play()
+	if %click:
+		%click.play()
 	$AnimationPlayer.play('dissolve')
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file(target)

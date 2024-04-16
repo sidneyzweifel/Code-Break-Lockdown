@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch8bv5i0l4xpd"]
+[gd_scene load_steps=6 format=3 uid="uid://ch8bv5i0l4xpd"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Scene Transition.gd" id="1_rl8vw"]
+[ext_resource type="AudioStream" uid="uid://c8q5b8lqh7r86" path="res://SFX/click.mp3" id="2_whtfx"]
 
 [sub_resource type="Animation" id="Animation_lnll6"]
 resource_name = "RESET"
@@ -56,3 +57,8 @@ root_node = NodePath("../ColorRect")
 libraries = {
 "": SubResource("AnimationLibrary_7updk")
 }
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_whtfx")
+volume_db = -9.905

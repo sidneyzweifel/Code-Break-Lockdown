@@ -4,11 +4,17 @@ extends Button
 @export var puzzle_select:String
 
 func _ready():
-	%titleMusic.play()
+	if MusicPlayer.title_music_playing():
+		pass
+	else:
+		MusicPlayer.play_title_music()
+	Global.set_door_color()
+	Global.set_door_number()
+	Global.set_door_pairs()
 	
 	
 func _on_pressed():
-	%titleMusic.stop()
+	MusicPlayer.play_ambient_music()
 	SceneTransition.change_scene_to_file(puzzle_1)
 
 

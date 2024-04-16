@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Home Screen.gd" id="1_j1w11"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_fktl6"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="3_de0i8"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_1in3n"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="4_h80vd"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="5_5jdgi"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="6_dftgd"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_nl7wp"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_7rxp5"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/home screen folders.gd" id="7_efd7a"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_maabe"]
-[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/folder closed.png" id="9_p3nlp"]
+[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/folder closed.png" id="8_lpsga"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_13byi"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="10_sdeqc"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_0ol1h"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_7367d"]
@@ -624,7 +624,7 @@ layer_1/tile_data = PackedInt32Array()
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("3_de0i8")
+texture = ExtResource("3_1in3n")
 
 [node name="exit" type="Node2D" parent="."]
 script = ExtResource("4_h80vd")
@@ -632,12 +632,12 @@ script = ExtResource("4_h80vd")
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_5jdgi")
+texture = ExtResource("5_nl7wp")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_dftgd")
+texture = ExtResource("6_7rxp5")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -652,14 +652,14 @@ script = ExtResource("7_efd7a")
 [node name="folder_default" type="Sprite2D" parent="folder 1 - prisoner enrichment"]
 position = Vector2(760, 500)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_p3nlp")
+texture = ExtResource("8_lpsga")
 
 [node name="folder 1 - Label" type="Label" parent="folder 1 - prisoner enrichment"]
 offset_left = 681.0
 offset_top = 567.0
 offset_right = 856.0
 offset_bottom = 589.0
-theme_override_fonts/font = ExtResource("9_maabe")
+theme_override_fonts/font = ExtResource("9_13byi")
 theme_override_font_sizes/font_size = 15
 text = "Prisoner Enrichment"
 
@@ -669,14 +669,14 @@ position = Vector2(200, 0)
 [node name="folder_default" type="Sprite2D" parent="folder 2 - employees only"]
 position = Vector2(800, 500)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_p3nlp")
+texture = ExtResource("8_lpsga")
 
 [node name="folder 2 - Label" type="Label" parent="folder 2 - employees only"]
 offset_left = 739.0
 offset_top = 567.0
 offset_right = 868.0
 offset_bottom = 589.0
-theme_override_fonts/font = ExtResource("9_maabe")
+theme_override_fonts/font = ExtResource("9_13byi")
 theme_override_font_sizes/font_size = 15
 text = "Employees Only"
 
@@ -686,7 +686,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_maabe")
+theme_override_fonts/font = ExtResource("9_13byi")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_sdeqc")

@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Enrichment Screen.gd" id="1_8662j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_cn0rf"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_41rc7"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_7h8yf"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_meid1"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_j4214"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_j7nif"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_5od6v"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_e6q3i"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/enrichment screen folders.gd" id="6_g765c"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_ealkb"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_7oxhp"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_8bcxx"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/image icon.png" id="8_l4qqk"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_y1u3x"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_ptqg3"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_eimo6"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_5mj6f"]
@@ -615,7 +615,7 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, 720
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_41rc7")
+texture = ExtResource("3_7h8yf")
 
 [node name="exit" type="Node2D" parent="."]
 script = ExtResource("3_meid1")
@@ -623,12 +623,12 @@ script = ExtResource("3_meid1")
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_j4214")
+texture = ExtResource("5_5od6v")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_j7nif")
+texture = ExtResource("6_e6q3i")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -643,14 +643,14 @@ script = ExtResource("6_g765c")
 [node name="folder_default" type="Sprite2D" parent="enrichment image 1"]
 position = Vector2(769, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_l4qqk")
 
 [node name="image 1 - Label" type="Label" parent="enrichment image 1"]
 offset_left = 695.0
 offset_top = 574.0
 offset_right = 838.0
 offset_bottom = 594.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
 text = "Enrichment image 1"
 
@@ -660,14 +660,14 @@ position = Vector2(200, 0)
 [node name="folder_default" type="Sprite2D" parent="enrichment image 2"]
 position = Vector2(950, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_l4qqk")
 
 [node name="image 2 - Label" type="Label" parent="enrichment image 2"]
 offset_left = 710.0
 offset_top = 574.0
 offset_right = 853.0
 offset_bottom = 594.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
 text = "Enrichment image 2"
 
@@ -677,14 +677,14 @@ position = Vector2(50, 125)
 [node name="folder_default" type="Sprite2D" parent="enrichment image 3"]
 position = Vector2(935, 400)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_l4qqk")
 
 [node name="image 3 - Label" type="Label" parent="enrichment image 3"]
 offset_left = 1027.0
 offset_top = 449.0
 offset_right = 1170.0
 offset_bottom = 469.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
 text = "Enrichment image 3"
 
@@ -694,7 +694,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ealkb")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://jct1k21n1kkn"]
+[gd_scene load_steps=3 format=3 uid="uid://jct1k21n1kkn"]
 
 [ext_resource type="Script" path="res://Menu/PuzzleSelect.gd" id="1_31wfs"]
-[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd it.otf" id="2_biyap"]
-[ext_resource type="AudioStream" uid="uid://dbs8lvpeymvfm" path="res://Menu/Assets/title music.mp3" id="2_ece4j"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="2_dhdk0"]
 
 [node name="PuzzleSelect" type="Node2D"]
 script = ExtResource("1_31wfs")
@@ -27,7 +26,7 @@ offset_top = 260.0
 offset_right = -90.0
 offset_bottom = 389.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_biyap")
+theme_override_fonts/font = ExtResource("2_dhdk0")
 theme_override_font_sizes/font_size = 100
 text = "Puzzle 1"
 
@@ -44,7 +43,7 @@ offset_right = 636.922
 offset_bottom = -119.563
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_biyap")
+theme_override_fonts/font = ExtResource("2_dhdk0")
 theme_override_font_sizes/font_size = 100
 text = "Puzzle 2"
 
@@ -61,7 +60,7 @@ offset_right = -90.0
 offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_biyap")
+theme_override_fonts/font = ExtResource("2_dhdk0")
 theme_override_font_sizes/font_size = 100
 text = "Puzzle 3"
 
@@ -78,7 +77,7 @@ offset_right = 635.0
 offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_biyap")
+theme_override_fonts/font = ExtResource("2_dhdk0")
 theme_override_font_sizes/font_size = 100
 text = "Puzzle 4"
 
@@ -95,14 +94,9 @@ offset_right = -641.0
 offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_biyap")
+theme_override_fonts/font = ExtResource("2_dhdk0")
 theme_override_font_sizes/font_size = 80
 text = "Back"
-
-[node name="titleMusic" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("2_ece4j")
-autoplay = true
 
 [connection signal="pressed" from="ColorRect/Puzzle 1" to="." method="_on_puzzle_1_pressed"]
 [connection signal="pressed" from="ColorRect/Puzzle 2" to="." method="_on_puzzle_2_pressed"]

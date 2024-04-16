@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb405pf3yd2b7"]
+[gd_scene load_steps=6 format=3 uid="uid://bb405pf3yd2b7"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Scene Transition.gd" id="1_f6smw"]
+[ext_resource type="AudioStream" uid="uid://dpou3b4pdyht1" path="res://SFX/error noise.mp3" id="2_xu8od"]
 
 [sub_resource type="Animation" id="Animation_lnll6"]
 resource_name = "RESET"
@@ -40,7 +41,7 @@ _data = {
 "dissolve": SubResource("Animation_srxo6")
 }
 
-[node name="SceneTransition" type="CanvasLayer"]
+[node name="WrongInput" type="CanvasLayer"]
 script = ExtResource("1_f6smw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -57,3 +58,7 @@ root_node = NodePath("../ColorRect")
 libraries = {
 "": SubResource("AnimationLibrary_7updk")
 }
+
+[node name="error" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_xu8od")

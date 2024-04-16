@@ -11,33 +11,26 @@ extends Node2D
 @export var puz3_path:String
 @export var puz4_path:String
 
-func _ready():
-	%titleMusic.play()
-	pass # Replace with function body.
-
-
-
 
 func _on_puzzle_1_pressed():
-	%titleMusic.stop()
+	MusicPlayer.play_ambient_music()
 	SceneTransition.change_scene_to_file(puz1_path)
 
 
 func _on_puzzle_2_pressed():
-	%titleMusic.stop()
+	MusicPlayer.play_ambient_music()
 	SceneTransition.change_scene_to_file(puz2_path)
 
 
 func _on_puzzle_3_pressed():
-	%titleMusic.stop()
+	MusicPlayer.play_ambient_music()
 	SceneTransition.change_scene_to_file(puz3_path)
 
 
 func _on_puzzle_4_pressed():
-	%titleMusic.stop()
+	MusicPlayer.play_ambient_music()
 	SceneTransition.change_scene_to_file(puz4_path)
 
 
 func _on_back_pressed():
-	%titleMusic.stop()
 	SceneTransition.change_scene_to_file("res://Menu/Menu.tscn")

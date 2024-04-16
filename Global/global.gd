@@ -5,6 +5,11 @@ var current_puzz:String
 var current_passcode:String
 var logic_question:String = ""
 var logic_result = 0
+var door_colors = ["blue", "red", "purple", "yellow", "green"]
+var door_numbers = ["1", "2", "3", "4", "5"]
+var current_door_color:String
+var current_door_number:String
+var pairDict
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -49,6 +54,48 @@ func set_passcode():
 	var random_code = RandomNumberGenerator.new()
 	current_passcode = str(randi_range(11111, 99999))
 	return current_passcode
+	
+func set_door_color():
+	if door_colors.size() != 0:
+		current_door_color = door_colors.pick_random()
+	print("door color: " +current_door_color)
+	return current_door_color
+	
+func get_door_color():
+	return current_door_color
+	
+func set_door_number():
+	if door_numbers.size() != 0:
+		current_door_number = door_numbers.pick_random()
+	print("door number: " +current_door_number)
+	return current_door_number
+	
+func get_door_number():
+	return current_door_number
+	
+func set_door_pairs():
+		
+	door_colors.erase(current_door_color)
+	door_numbers.erase(current_door_number)
+	
+	# set the generated door number to the door color
+	pairDict = {
+		current_door_number: current_door_color
+	}
+	
+	while door_colors.size():
+		var rndNum = door_numbers.pick_random()
+		var rndClr = door_colors.pick_random()
+		pairDict[rndNum] = rndClr
+		
+		door_numbers.erase(rndNum)
+		door_colors.erase(rndClr)
+	
+	print(pairDict)
+	return pairDict
+	
+func get_door_pairs():
+	return pairDict
 
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match

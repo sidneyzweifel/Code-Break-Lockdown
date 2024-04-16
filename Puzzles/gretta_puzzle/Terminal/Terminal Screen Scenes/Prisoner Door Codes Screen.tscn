@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_01str"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Door Codes Screen.gd" id="1_nsrlq"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_pobmq"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_nvaqi"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_jiw8o"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_jc6q7"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_xf7mg"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_088r4"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_0dvtv"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/door codes folders.gd" id="6_8rijf"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_77q50"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_n0bac"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_dejdg"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/image icon.png" id="8_ex206"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_obn3q"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_g2dj0"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_5d3to"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_8pp3h"]
@@ -615,7 +615,7 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, 786430, 65536, 14, -2, 6
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_pobmq")
+texture = ExtResource("3_xf7mg")
 
 [node name="exit" type="Node2D" parent="."]
 script = ExtResource("3_nvaqi")
@@ -623,12 +623,12 @@ script = ExtResource("3_nvaqi")
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_jiw8o")
+texture = ExtResource("5_088r4")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_jc6q7")
+texture = ExtResource("6_0dvtv")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -644,14 +644,14 @@ script = ExtResource("6_8rijf")
 [node name="folder_default" type="Sprite2D" parent="door 1 - door codes"]
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_n0bac")
+texture = ExtResource("8_ex206")
 
 [node name="door 1 - Label" type="Label" parent="door 1 - door codes"]
 offset_left = 744.444
 offset_top = 574.445
 offset_right = 852.444
 offset_bottom = 597.445
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
 text = "Door 1 Code"
 
@@ -662,14 +662,14 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="door 2 - door codes"]
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_n0bac")
+texture = ExtResource("8_ex206")
 
 [node name="door 2 - Label" type="Label" parent="door 2 - door codes"]
 offset_left = 813.333
 offset_top = 574.445
 offset_right = 921.333
 offset_bottom = 597.445
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
 text = "Door 2 Code"
 
@@ -680,14 +680,14 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="door 3 - door codes"]
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_n0bac")
+texture = ExtResource("8_ex206")
 
 [node name="door 3 - Label" type="Label" parent="door 3 - door codes"]
 offset_left = 883.333
 offset_top = 573.333
 offset_right = 991.333
 offset_bottom = 596.333
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
 text = "Door 3 Code"
 
@@ -698,14 +698,14 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="door 4 - door codes"]
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_n0bac")
+texture = ExtResource("8_ex206")
 
 [node name="door 4 - Label" type="Label" parent="door 4 - door codes"]
 offset_left = 741.111
 offset_top = 598.889
 offset_right = 849.111
 offset_bottom = 621.889
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
 text = "Door 4 Code"
 
@@ -716,14 +716,14 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="door 5 - door codes"]
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_n0bac")
+texture = ExtResource("8_ex206")
 
 [node name="door 5 - Label" type="Label" parent="door 5 - door codes"]
 offset_left = 812.222
 offset_top = 597.778
 offset_right = 920.222
 offset_bottom = 620.778
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
 text = "Door 5 Code"
 
@@ -733,7 +733,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_dejdg")
+theme_override_fonts/font = ExtResource("9_obn3q")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_77q50")

@@ -1,15 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://cphyke5q650xc"]
+[gd_scene load_steps=34 format=3 uid="uid://cphyke5q650xc"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_3ngca"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Lunch Menus Screen.gd" id="1_dun22"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_p8i7a"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_bmfnw"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_x8fdp"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_ka24n"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_f1ujk"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_dqbfm"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_jlxw1"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/lunch screen folders.gd" id="6_n74hp"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_13oev"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_2j6v4"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_488tt"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/image icon.png" id="8_kie2l"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_a8hl2"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_fb25f"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_4gk2i"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_aegmi"]
@@ -20,6 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_wmoxv"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_8d8x8"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_n38cj"]
+[ext_resource type="Texture2D" uid="uid://cglndar28b1ap" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/monday.png" id="21_j2xp4"]
+[ext_resource type="Texture2D" uid="uid://daj1a7pwwcibq" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/tuesday.png" id="22_n3m6t"]
+[ext_resource type="Texture2D" uid="uid://dgqyrc5d3wtdu" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/thursday.png" id="23_hfx8s"]
+[ext_resource type="Texture2D" uid="uid://cmakt751832ox" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/wednesday.png" id="23_hw7rv"]
+[ext_resource type="Texture2D" uid="uid://qgkpxy4y4b2f" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/friday.png" id="25_jgrbf"]
+[ext_resource type="Texture2D" uid="uid://nxhodea0g5wh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/saturday.png" id="26_0uyes"]
+[ext_resource type="Texture2D" uid="uid://dkfh0gdffisxf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/sunday.png" id="27_p8eno"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6ba3"]
 texture = ExtResource("1_3ngca")
@@ -615,7 +622,7 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, -65
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_p8i7a")
+texture = ExtResource("3_bmfnw")
 
 [node name="exit" type="Node2D" parent="."]
 script = ExtResource("3_x8fdp")
@@ -623,12 +630,12 @@ script = ExtResource("3_x8fdp")
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_ka24n")
+texture = ExtResource("5_dqbfm")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_f1ujk")
+texture = ExtResource("6_jlxw1")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -644,14 +651,14 @@ script = ExtResource("6_n74hp")
 [node name="folder_default" type="Sprite2D" parent="monday - lunch menus"]
 position = Vector2(825, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="monday - Label" type="Label" parent="monday - lunch menus"]
 offset_left = 760.0
 offset_top = 588.235
 offset_right = 885.0
 offset_bottom = 606.235
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Monday Lunch Menu"
 
@@ -662,14 +669,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="tuesday - lunch menus"]
 position = Vector2(860, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="tuesday - Label" type="Label" parent="tuesday - lunch menus"]
 offset_left = 790.588
 offset_top = 587.059
 offset_right = 922.588
 offset_bottom = 605.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Tuesday Lunch Menu"
 
@@ -680,14 +687,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="wednesday - lunch menus"]
 position = Vector2(895, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="wednesday - Label" type="Label" parent="wednesday - lunch menus"]
 offset_left = 822.353
 offset_top = 587.059
 offset_right = 960.353
 offset_bottom = 605.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 11
 text = "Wednesday Lunch Menu"
 
@@ -698,14 +705,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="thursday - lunch menus"]
 position = Vector2(930, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="thursday - Label" type="Label" parent="thursday - lunch menus"]
 offset_left = 856.47
 offset_top = 587.059
 offset_right = 996.47
 offset_bottom = 605.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Thursday Lunch Menu"
 
@@ -716,14 +723,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="friday - lunch menus"]
 position = Vector2(825, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="friday - Label" type="Label" parent="friday - lunch menus"]
 offset_left = 758.823
 offset_top = 627.059
 offset_right = 883.823
 offset_bottom = 645.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Friday Lunch Menu"
 
@@ -734,14 +741,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="saturday - lunch menus"]
 position = Vector2(860, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="saturday - Label" type="Label" parent="saturday - lunch menus"]
 offset_left = 785.882
 offset_top = 627.059
 offset_right = 925.882
 offset_bottom = 645.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Saturday Lunch Menu"
 
@@ -752,14 +759,14 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="sunday - lunch menus"]
 position = Vector2(895, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_2j6v4")
+texture = ExtResource("8_kie2l")
 
 [node name="sunday - Label" type="Label" parent="sunday - lunch menus"]
 offset_left = 829.412
 offset_top = 627.059
 offset_right = 954.412
 offset_bottom = 645.059
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "Sunday Lunch Menu"
 
@@ -769,7 +776,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_488tt")
+theme_override_fonts/font = ExtResource("9_a8hl2")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_13oev")
@@ -792,7 +799,205 @@ energy = 0.1
 texture = SubResource("GradientTexture2D_vdjek")
 texture_scale = 1.2
 
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="menus" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+position = Vector2(200, 135)
+scale = Vector2(0.65, 0.65)
+
+[node name="monday" type="Sprite2D" parent="Window/menus"]
+position = Vector2(0, 90)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("21_j2xp4")
+
+[node name="mon" type="Label" parent="Window/menus/monday"]
+offset_left = -200.0
+offset_top = 60.0
+offset_right = 250.0
+offset_bottom = 560.0
+rotation = -0.760964
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 54
+text = "monday"
+
+[node name="title" type="Label" parent="Window/menus/monday"]
+offset_left = -245.0
+offset_top = -240.0
+offset_right = 5.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 26
+text = "nutritious chicken water boil"
+autowrap_mode = 2
+
+[node name="tuesday" type="Sprite2D" parent="Window/menus"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("22_n3m6t")
+
+[node name="tues" type="Label" parent="Window/menus/tuesday"]
+offset_left = -200.0
+offset_top = 170.0
+offset_right = 250.0
+offset_bottom = 670.0
+rotation = -0.760964
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 42
+text = "tuesday"
+
+[node name="title" type="Label" parent="Window/menus/tuesday"]
+offset_left = -245.0
+offset_top = -165.0
+offset_right = 205.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 26
+text = "nutritious meat cube"
+autowrap_mode = 2
+
+[node name="wednesday" type="Sprite2D" parent="Window/menus"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("23_hw7rv")
+
+[node name="weds" type="Label" parent="Window/menus/wednesday"]
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 250.0
+offset_bottom = 530.0
+rotation = 0.382227
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 31
+text = "wednesday"
+
+[node name="title" type="Label" parent="Window/menus/wednesday"]
+offset_left = -245.0
+offset_top = 170.0
+offset_right = 205.0
+offset_bottom = 670.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 26
+text = "nutritious dough triangle"
+
+[node name="thursday" type="Sprite2D" parent="Window/menus"]
+position = Vector2(0, 50)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("23_hfx8s")
+
+[node name="thurs" type="Label" parent="Window/menus/thursday"]
+offset_left = -180.0
+offset_top = -50.0
+offset_right = 270.0
+offset_bottom = 450.0
+rotation = 0.570723
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 35
+text = "thursday"
+
+[node name="title" type="Label" parent="Window/menus/thursday"]
+offset_left = -245.0
+offset_top = -205.0
+offset_right = 205.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 26
+text = "nutritious raw fish roll"
+
+[node name="friday" type="Sprite2D" parent="Window/menus"]
+position = Vector2(0, 110)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("25_jgrbf")
+
+[node name="fri" type="Label" parent="Window/menus/friday"]
+offset_left = -180.0
+offset_top = -60.0
+offset_right = 270.0
+offset_bottom = 440.0
+rotation = 0.411898
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 35
+text = "friday"
+
+[node name="title" type="Label" parent="Window/menus/friday"]
+offset_left = -245.0
+offset_top = -250.0
+offset_right = 514.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 26
+text = "nutritious noodle lines"
+
+[node name="saturday" type="Sprite2D" parent="Window/menus"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("26_0uyes")
+
+[node name="sat" type="Label" parent="Window/menus/saturday"]
+offset_left = -190.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 540.0
+rotation = 0.380482
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 45
+text = "saturday"
+
+[node name="title" type="Label" parent="Window/menus/saturday"]
+offset_left = -230.0
+offset_top = -150.0
+offset_right = 70.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 23
+text = "nutritious lettuce and cheese"
+autowrap_mode = 2
+
+[node name="sunday" type="Sprite2D" parent="Window/menus"]
+position = Vector2(0, 20)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("27_p8eno")
+
+[node name="sun" type="Label" parent="Window/menus/sunday"]
+offset_left = -190.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 540.0
+rotation = 0.47473
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 54
+text = "sunday"
+
+[node name="title" type="Label" parent="Window/menus/sunday"]
+offset_left = -240.0
+offset_top = -180.0
+offset_right = 272.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.145098, 0.196078, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 24
+text = "nutritious meat wrapped in dough"
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="lunch menus screen - LineEdit" to="monday - lunch menus" method="_on_lunch_menus_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="monday - lunch menus" method="_on_window_close_requested"]

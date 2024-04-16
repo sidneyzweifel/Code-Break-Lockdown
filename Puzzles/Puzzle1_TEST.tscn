@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/clickTerminal.gd" id="3_flx1v"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
+[ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/Puzzle_1_terminal.png" id="4_q58l7"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
-[ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Puzzle_1_terminal.png" id="8_v63x8"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
 [ext_resource type="Script" path="res://Puzzles/doorLightColor.gd" id="8_ymibn"]
 
@@ -1856,7 +1856,7 @@ polygon = PackedVector2Array(-675, -683.8, -675, -682.4, -665, -678.4, -665, -67
 [node name="Terminal" type="Sprite2D" parent="Terminal - Node2D/Area2D"]
 position = Vector2(457, 377)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_v63x8")
+texture = ExtResource("4_q58l7")
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
 visible = false
@@ -1936,38 +1936,33 @@ texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 0.9
 script = SubResource("GDScript_5ku1d")
 
-[node name="ColorRect" type="ColorRect" parent="doorLightColor"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = -2.0
-offset_right = 3.0
-offset_bottom = 21.0
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 792.0
+offset_top = 210.0
+offset_right = 800.0
+offset_bottom = 233.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="doorLightColor"]
-layout_mode = 0
-offset_left = 84.0
-offset_top = -2.0
-offset_right = 92.0
-offset_bottom = 21.0
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 881.0
+offset_top = 210.0
+offset_right = 889.0
+offset_bottom = 233.0
 color = Color(0, 0, 0, 1)
 
-[node name="highlight" type="ColorRect" parent="doorLightColor"]
+[node name="highlight" type="ColorRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 13.0
-offset_top = 3.0
-offset_right = 82.0
-offset_bottom = 6.0
+offset_left = 810.0
+offset_top = 215.0
+offset_right = 879.0
+offset_bottom = 218.0
 
-[node name="highlight2" type="ColorRect" parent="doorLightColor"]
+[node name="highlight2" type="ColorRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 7.0
-offset_top = 3.0
-offset_right = 10.0
-offset_bottom = 6.0
-color = Color(0.992157, 0.992157, 0.992157, 1)
+offset_left = 804.0
+offset_top = 215.0
+offset_right = 807.0
+offset_bottom = 218.0
 
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]
