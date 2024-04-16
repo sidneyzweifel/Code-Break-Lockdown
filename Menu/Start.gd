@@ -14,8 +14,8 @@ func _ready():
 	
 	
 func _on_pressed():
-	MusicPlayer.play_ambient_music()
-	SceneTransition.change_scene_to_file(puzzle_1)
+	MusicPlayer.play_transition_music()
+	SceneTransition.change_scene_to_file("res://Menu/Title.tscn")
 
 
 

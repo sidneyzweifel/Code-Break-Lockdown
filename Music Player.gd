@@ -11,8 +11,9 @@ func _process(delta):
 	pass
 	
 func play_title_music():
-	%ambient.stop()
 	%title.play()
+	%transition.stop()
+	%ambient.stop()
 	
 func title_music_playing():
 	if %title.is_playing():
@@ -23,4 +24,10 @@ func title_music_playing():
 func play_ambient_music():
 	%ambient.play()
 	%title.stop()
+	%transition.stop()
+	
+func play_transition_music():
+	%title.stop()
+	%ambient.stop()
+	%transition.play()
 	
