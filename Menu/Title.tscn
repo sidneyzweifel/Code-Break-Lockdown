@@ -23,7 +23,7 @@ theme_override_fonts/font = ExtResource("1_pbl44")
 theme_override_font_sizes/font_size = 50
 text = "In the depths of oblivion, you find yourself adrift in a sea of forgotten memories. Your name, your past, all shrouded in the mists of amnesia. 
 
-A dim awareness pulls you from the abyss, and as your senses awaken, you realize you're confined in a bright, sterile chamber. The door stands ominously locked, sealing you in solitude. Suddenly, a robotic voice cuts through the silence, its words through your confines..."
+A dim awareness pulls you from the abyss, and as your senses awaken, you realize you're confined in a bright, sterile chamber. The door stands ominously locked, sealing you in solitude. Suddenly, a robotic voice cuts through the silence, its words echo through your confines..."
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="ColorRect"]
