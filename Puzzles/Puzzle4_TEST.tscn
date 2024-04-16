@@ -1891,6 +1891,7 @@ text = "Level Loop Counter: "
 horizontal_alignment = 1
 
 [node name="MapArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapArea"]
 position = Vector2(-13, 27)
