@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://uq3soatunpx7"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
-[ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate1.png" id="2_ag7i0"]
+[ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate_C.png" id="2_56ga0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0urd8"]
 friction = 0.53
@@ -25,10 +25,10 @@ script = ExtResource("1_oropo")
 position = Vector2(273, 137)
 shape = SubResource("RectangleShape2D_5ppe2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="InmateSprite" type="Sprite2D" parent="."]
 position = Vector2(318, 166)
 scale = Vector2(0.430225, 0.464062)
-texture = ExtResource("2_ag7i0")
+texture = ExtResource("2_56ga0")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(0.921569, 0, 0.92549, 0.0117647)
