@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dm7g6d5bljoxn"]
+[gd_scene load_steps=30 format=3 uid="uid://dm7g6d5bljoxn"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Enrichment Screen.gd" id="1_8662j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_cn0rf"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_d8bu0"]
 [ext_resource type="Texture2D" uid="uid://e7vmtxbxnp73" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/educational.png" id="21_xp8m2"]
 [ext_resource type="Texture2D" uid="uid://bnt47sr3aehwk" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/inspiration.png" id="22_ri0ag"]
+[ext_resource type="Texture2D" uid="uid://dp0cnd82j4k7q" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/enrichment.png" id="22_tpu8i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_le1ka"]
 texture = ExtResource("1_cn0rf")
@@ -738,10 +739,9 @@ scale = Vector2(0.13, 0.13)
 texture = ExtResource("21_xp8m2")
 
 [node name="enrichment" type="Sprite2D" parent="Window/enrichment"]
-visible = false
-position = Vector2(200, 190)
-scale = Vector2(1.9, 1.9)
-texture = ExtResource("22_ri0ag")
+position = Vector2(180, 190)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("22_tpu8i")
 
 [node name="inspiration" type="Sprite2D" parent="Window/enrichment"]
 position = Vector2(200, 150)
@@ -752,3 +752,4 @@ texture = ExtResource("22_ri0ag")
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="prisoner enrichment screen - LineEdit" to="enrichment image 1" method="_on_prisoner_enrichment_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
