@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbp4xsnof0uob"]
+[gd_scene load_steps=5 format=3 uid="uid://dbp4xsnof0uob"]
 
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="1_5yyyo"]
 [ext_resource type="Script" path="res://Popup/Passcode/LineEdit.gd" id="1_46g5p"]
 [ext_resource type="Script" path="res://Popup/Passcode/exit_button.gd" id="2_06kqa"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="3_ctyws"]
 
 [node name="ColorRect" type="ColorRect"]
 show_behind_parent = true
@@ -28,7 +30,8 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 1, 1)
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("1_5yyyo")
+theme_override_font_sizes/font_size = 100
 placeholder_text = "Enter Passcode"
 alignment = 1
 max_length = 5
@@ -40,11 +43,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -467.0
-offset_right = 467.0
-offset_bottom = 127.0
+offset_left = -826.0
+offset_top = 121.0
+offset_right = 833.0
+offset_bottom = 281.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("3_ctyws")
+theme_override_font_sizes/font_size = 130
 text = "Press Enter to Submit"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -54,11 +59,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -78.0
-offset_bottom = 31.0
+offset_left = -113.0
+offset_bottom = 117.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.933333, 0, 0, 1)
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("3_ctyws")
+theme_override_font_sizes/font_size = 90
 text = "X"
 script = ExtResource("2_06kqa")
 
@@ -69,12 +75,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
+offset_left = -385.0
+offset_top = -261.0
+offset_right = 385.0
+offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
+theme_override_fonts/font = ExtResource("3_ctyws")
 theme_override_font_sizes/font_size = 90
 text = "ACCESS GRANTED"
 horizontal_alignment = 1

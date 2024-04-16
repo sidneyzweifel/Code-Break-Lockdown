@@ -25,13 +25,14 @@ scale = Vector2(1.176, 1.85455)
 sprite_frames = SubResource("SpriteFrames_836jx")
 
 [node name="Button" type="Button" parent="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -62.5
-offset_top = -82.5
-offset_right = -62.5
-offset_bottom = -82.5
+offset_left = -66.0
+offset_top = -86.0
+offset_right = 64.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/icon_normal_color = Color(0.803922, 0.129412, 0.227451, 1)

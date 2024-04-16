@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bsn657fectlh8"]
+[gd_scene load_steps=31 format=3 uid="uid://bsn657fectlh8"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_01str"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Door Codes Screen.gd" id="1_nsrlq"]
@@ -20,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_wd1kk"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_jysrn"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_rtan8"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="21_u3mgj"]
+[ext_resource type="Texture2D" uid="uid://dhwx75qn8emg0" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/purpleDoor.png" id="22_rtnjr"]
+[ext_resource type="Texture2D" uid="uid://8mwifuqhkj5v" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/redDoor.png" id="23_g6uqk"]
+[ext_resource type="Texture2D" uid="uid://bvoe7l10728cq" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/yellowDoor.png" id="24_u1tcs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ro82"]
 texture = ExtResource("1_01str")
@@ -756,7 +760,97 @@ energy = 0.1
 texture = SubResource("GradientTexture2D_fypmb")
 texture_scale = 1.2
 
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="codes" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+
+[node name="door 1 code" type="Sprite2D" parent="Window/codes"]
+unique_name_in_owner = true
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+
+[node name="code1" type="Label" parent="Window/codes/door 1 code"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("21_u3mgj")
+theme_override_font_sizes/font_size = 40
+text = "3333"
+
+[node name="door 2 code" type="Sprite2D" parent="Window/codes"]
+unique_name_in_owner = true
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+
+[node name="code2" type="Label" parent="Window/codes/door 2 code"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("21_u3mgj")
+theme_override_font_sizes/font_size = 40
+text = "3333"
+
+[node name="door 3 code" type="Sprite2D" parent="Window/codes"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("22_rtnjr")
+
+[node name="code3" type="Label" parent="Window/codes/door 3 code"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("21_u3mgj")
+theme_override_font_sizes/font_size = 40
+text = "3333"
+
+[node name="door 4 code" type="Sprite2D" parent="Window/codes"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("23_g6uqk")
+
+[node name="code4" type="Label" parent="Window/codes/door 4 code"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("21_u3mgj")
+theme_override_font_sizes/font_size = 40
+text = "3333"
+
+[node name="door 5 code" type="Sprite2D" parent="Window/codes"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("24_u1tcs")
+
+[node name="code5" type="Label" parent="Window/codes/door 5 code"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("21_u3mgj")
+theme_override_font_sizes/font_size = 40
+text = "3333"
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="prisoner door codes screen - LineEdit" to="door 1 - door codes" method="_on_prisoner_door_codes_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="door 1 - door codes" method="_on_window_close_requested"]

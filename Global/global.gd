@@ -10,6 +10,7 @@ var door_numbers = ["1", "2", "3", "4", "5"]
 var current_door_color:String
 var current_door_number:String
 var pairDict
+var previous_terminal_window = "none"
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -69,6 +70,13 @@ func set_door_number():
 		current_door_number = door_numbers.pick_random()
 	print("door number: " +current_door_number)
 	return current_door_number
+	
+func set_previous_terminal_window(path):
+	previous_terminal_window = path
+	return previous_terminal_window
+	
+func get_previous_terminal_window():
+	return previous_terminal_window
 	
 func get_door_number():
 	return current_door_number

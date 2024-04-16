@@ -31,11 +31,14 @@ func _on_text_submitted(new_text):
 		access_label.text = "ACCESS GRANTED"
 		access_label.show()
 		door_access = 1 #set door_access granted
+		Global.set_passcode()
+		print("in text submitted, new passcode is: "+Global.get_passcode())
 	else:
 		#stlying stuff that doesn't work when changing scenes
 		var red =  Color(1.0,0.0,0.0,1.0)
 		set("theme_override_colors/font_color", red)
 		label.show()
+		WrongInput.change_scene_to_file("res://Puzzles/Puzzle1_TEST.tscn")
 		door_access = -1 #set to access denied 
 	
 

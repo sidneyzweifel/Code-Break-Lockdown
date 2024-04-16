@@ -2,11 +2,7 @@ extends Node2D
 
 var backToScreen = "res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Door Colors Screen.tscn"
 var previousScreen ="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Security Screen.tscn"
-#var blue = %colors.get_child(0)
-#var green = %colors.get_child(1)
-#var purple = %colors.get_child(2)
-#var red = %colors.get_child(3)
-#var yellow = %colors.get_child(4)
+
 var previousChild = 0
 
 var door_pairs = Global.get_door_pairs()
@@ -19,15 +15,7 @@ func _ready():
 	%colors.get_child(2).hide()
 	%colors.get_child(3).hide()
 	%colors.get_child(4).hide()
-	
-	var doorClrsInScene = {
-		"blue":0,
-		"green":1,
-		"purple":2,
-		"red":3,
-		"yellow":4,
-	}
-	
+
 	print(door_pairs)
 	
 func _on_line_edit_text_submitted(new_text):
