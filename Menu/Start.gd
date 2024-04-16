@@ -11,6 +11,7 @@ func _ready():
 	Global.set_door_color()
 	Global.set_door_number()
 	Global.set_door_pairs()
+	Global.set_previous_terminal_window("res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Home Terminal Screen.tscn")
 	
 	
 func _on_pressed():

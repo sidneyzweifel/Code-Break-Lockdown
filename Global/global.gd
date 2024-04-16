@@ -109,6 +109,7 @@ func get_door_pairs():
 #make sure what the user enters and the set passcode match
 func get_passcode():
 	return current_passcode
+	
 
 # logic puzzle called in Puzzle3_TEST
 # generates and sets a random logic question to de displayed (eg: (3 & 2) ^ (5 | 7))
