@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwvg1vljgtu5s"]
+[gd_scene load_steps=17 format=3 uid="uid://cwvg1vljgtu5s"]
 
 [ext_resource type="Resource" uid="uid://gj4i5x8liogj" path="res://NPC/Custom Resource/inmate_puzzle.tres" id="1_gli8o"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="3_f4mwc"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_oggbi"]
+[ext_resource type="PackedScene" uid="uid://cpnqitfms6tja" path="res://Door/door_puz_4.tscn" id="4_jkt7o"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="4_xrdjd"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_14kpp"]
 [ext_resource type="PackedScene" uid="uid://k36l72cy6xu" path="res://NPC/LoopGuide/InmateGuide.tscn" id="7_p74k8"]
@@ -1831,14 +1832,14 @@ layer_2/tile_data = PackedInt32Array(-6029444, 262144, 1, -5963908, 262144, 1, -
 [node name="Player" parent="." instance=ExtResource("3_f4mwc")]
 position = Vector2(-475, 1312)
 
-[node name="CodePopup" parent="." instance=ExtResource("4_xrdjd")]
-position = Vector2(118, -1433)
-
-[node name="Door" parent="." instance=ExtResource("5_14kpp")]
-position = Vector2(-117, -1520)
+[node name="Door_Puz4" parent="." instance=ExtResource("4_jkt7o")]
+position = Vector2(-283, -1668)
 path_to_new_scene = "res://Menu/end_level_1.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle4_TEST.tscn"
+
+[node name="CodePopup" parent="." instance=ExtResource("4_xrdjd")]
+position = Vector2(118, -1433)
 
 [node name="InmatePasscodePath" type="Path2D" parent="."]
 position = Vector2(-51.8143, -123.463)
@@ -1890,7 +1891,6 @@ text = "Level Loop Counter: "
 horizontal_alignment = 1
 
 [node name="MapArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapArea"]
 position = Vector2(-13, 27)
