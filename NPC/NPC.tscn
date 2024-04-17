@@ -12,8 +12,8 @@ size = Vector2(238, 136)
 
 [node name="NPC" type="RigidBody2D" groups=["npc"]]
 position = Vector2(-1, 13)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 inertia = 6.28
 physics_material_override = SubResource("PhysicsMaterial_0urd8")
 gravity_scale = 0.0
