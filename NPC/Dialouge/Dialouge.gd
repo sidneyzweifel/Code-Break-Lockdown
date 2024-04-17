@@ -6,7 +6,7 @@ extends Node
 var speech_dict = {}
 var key:String
 
-var path_to_JSON = "res://NPC/Dialouge/Inmate Dialouge - Sheet1.json"
+var path_to_JSON = "res://NPC/Dialouge/Inmate Dialouge.json"
 
 func _ready():
 	speech_dict = load_data_from_JSON(path_to_JSON)

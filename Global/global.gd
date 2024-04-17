@@ -55,10 +55,22 @@ func return_to_puzzle():
 
 #Called in popup_test scene
 #passcode.gd
+
+signal override_passcode
 func set_passcode():
-	var random_code = RandomNumberGenerator.new()
-	current_passcode = str(randi_range(11111, 99999))
-	return current_passcode
+	if(Puzzle4Autoload.key_list.size() == 0 and current_puzz ==  "res://Puzzles/Puzzle4_TEST.tscn"):
+		print("In set_passcode")
+		#Puzzle4Autoload.puz4_ready()
+		override_passcode.connect(override_passcode_set)
+		await override_passcode
+		current_passcode = Puzzle4Autoload.get_puzz4_passcode()
+		override_passcode.disconnect(override_passcode_set)
+		return current_passcode
+	if(Puzzle4Autoload.loop_door_solved):
+		return current_passcode
+	else:
+		current_passcode = str(randi_range(10000, 99999))
+		return current_passcode
 
 # PUZZLE 1 -----------------------------------------------
 
@@ -172,6 +184,9 @@ func set_logic_question() -> String:
 func get_logic_question() -> String:
 	print("GLOBAL SCRIPT LOGIC QUESTION GETTER: " + logic_question)
 	return logic_question
+	
+func override_passcode_set():
+	pass
 
 # solves logic puzzle in Puzzle3_TEST
 func solve_logic_question(question: String) -> int:
