@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dst1urd8iune6"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/textbox.gd" id="1_mi3kp"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Textbox.gd" id="1_jmrs4"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="2_qeki1"]
 [ext_resource type="AudioStream" uid="uid://be1q677w0xyv4" path="res://SFX/text writing.mp3" id="3_8j76v"]
 
@@ -13,7 +13,7 @@ border_width_bottom = 10
 border_color = Color(0.0627451, 0.611765, 0.819608, 1)
 
 [node name="textbox" type="CanvasLayer"]
-script = ExtResource("1_mi3kp")
+script = ExtResource("1_jmrs4")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 anchors_preset = 10

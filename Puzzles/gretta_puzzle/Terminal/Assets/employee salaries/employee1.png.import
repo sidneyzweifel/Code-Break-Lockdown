@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chrvlfjlydj42"
-path="res://.godot/imported/employee3.png-02c2e4c0bef29c300906d46dec6d3e12.ctex"
+uid="uid://bacc6fok5ejwx"
+path="res://.godot/imported/employee1.png-52f26a8969a79e23fc536d26125e2162.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee3.png"
-dest_files=["res://.godot/imported/employee3.png-02c2e4c0bef29c300906d46dec6d3e12.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee1.png"
+dest_files=["res://.godot/imported/employee1.png-52f26a8969a79e23fc536d26125e2162.ctex"]
 
 [params]
 

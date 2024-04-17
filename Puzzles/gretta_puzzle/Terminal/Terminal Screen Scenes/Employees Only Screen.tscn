@@ -1,14 +1,14 @@
 [gd_scene load_steps=30 format=3 uid="uid://ta8fdeyo5l78"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_0g5lu"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Employees Only Screen.gd" id="1_8c3ap"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_b5323"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_xrerl"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_m63f2"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/employees only folders.gd" id="6_17krs"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_bm26a"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Employees Only Screen.gd" id="1_ifp7i"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_elgfj"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_n72gv"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_rsam7"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_4wbp3"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Employees Only Folders.gd" id="7_7u0s7"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_fowye"]
-[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/folder closed.png" id="8_uq6ns"]
+[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/folderClosed.png" id="8_woy6a"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_ljmmo"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_0tqkp"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_wumo0"]
@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_ui1m7"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_lg3if"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_ovs8c"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/post it.gd" id="21_cbohh"]
-[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/post it note.png" id="22_a4tgb"]
-[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/click post it.png" id="23_sdxf8"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="21_o7j53"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="22_fxmk5"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="23_oipe5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twg8m"]
 texture = ExtResource("1_0g5lu")
@@ -605,7 +605,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Employees Only Screen" type="Node2D"]
-script = ExtResource("1_8c3ap")
+script = ExtResource("1_ifp7i")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -618,20 +618,20 @@ layer_0/tile_data = PackedInt32Array(-65536, 458753, 2, -65535, 327681, 2, -6553
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("3_xrerl")
+texture = ExtResource("3_elgfj")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_b5323")
+script = ExtResource("4_n72gv")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_m63f2")
+texture = ExtResource("5_rsam7")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_bm26a")
+texture = ExtResource("6_4wbp3")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -641,12 +641,12 @@ shape = SubResource("RectangleShape2D_woxnm")
 
 [node name="folder 1 - lunch menus" type="Node2D" parent="."]
 position = Vector2(50, 0)
-script = ExtResource("6_17krs")
+script = ExtResource("7_7u0s7")
 
 [node name="folder_default" type="Sprite2D" parent="folder 1 - lunch menus"]
 position = Vector2(760, 500)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("8_uq6ns")
+texture = ExtResource("8_woy6a")
 
 [node name="folder 1 - Label" type="Label" parent="folder 1 - lunch menus"]
 offset_left = 711.0
@@ -663,7 +663,7 @@ position = Vector2(200, 0)
 [node name="folder_default" type="Sprite2D" parent="folder 2 - employee salaries"]
 position = Vector2(770, 500)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("8_uq6ns")
+texture = ExtResource("8_woy6a")
 
 [node name="folder 2 - Label" type="Label" parent="folder 2 - employee salaries"]
 offset_left = 702.0
@@ -680,7 +680,7 @@ position = Vector2(50, 125)
 [node name="folder_default" type="Sprite2D" parent="folder 3 - security"]
 position = Vector2(1080, 375)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("8_uq6ns")
+texture = ExtResource("8_woy6a")
 
 [node name="folder 3 - Label" type="Label" parent="folder 3 - security"]
 offset_left = 1047.0
@@ -721,7 +721,7 @@ texture = SubResource("GradientTexture2D_5iuas")
 texture_scale = 1.2
 
 [node name="post it" type="Node2D" parent="."]
-script = ExtResource("21_cbohh")
+script = ExtResource("21_o7j53")
 
 [node name="Area2D" type="Area2D" parent="post it"]
 
@@ -733,7 +733,7 @@ polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95,
 [node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
 position = Vector2(1318, 385)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("22_a4tgb")
+texture = ExtResource("22_fxmk5")
 
 [node name="PostItWindow" type="Window" parent="."]
 unique_name_in_owner = true
@@ -749,7 +749,7 @@ color = Color(0.568627, 0.870588, 0.960784, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
 position = Vector2(250, 300)
-texture = ExtResource("23_sdxf8")
+texture = ExtResource("23_oipe5")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]

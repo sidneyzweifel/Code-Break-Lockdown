@@ -1,14 +1,14 @@
 [gd_scene load_steps=28 format=3 uid="uid://d37eysramgty0"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Security Screen.gd" id="1_0e5sd"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Security Screen.gd" id="1_kdy2o"]
 [ext_resource type="TileSet" uid="uid://dp57idtshtcd" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/Terminal Background.tres" id="1_ojgdn"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_7f0jp"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_h8ivt"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_vd018"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_awxj2"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/secuirty screen folders.gd" id="6_rli44"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_ip2yb"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_cccqp"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_w1eig"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_kgysc"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_5ncxd"]
-[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/folder closed.png" id="8_pe5ca"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Secuirty Screen Folders.gd" id="7_cetem"]
+[ext_resource type="Texture2D" uid="uid://kqtex5jcix7e" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/folderClosed.png" id="8_kkvmb"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_kxnps"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_xjljw"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_f7vb0"]
@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_syldt"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_sggfj"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_dsyl3"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/post it.gd" id="21_h3glq"]
-[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/post it note.png" id="22_6uhpy"]
-[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/click post it.png" id="23_ueu50"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="21_o4t2l"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="22_ifna8"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="23_vupg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r6jc"]
 size = Vector2(68, 54)
@@ -76,7 +76,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Security Screen" type="Node2D"]
-script = ExtResource("1_0e5sd")
+script = ExtResource("1_kdy2o")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -89,20 +89,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65538, 11, -131050, 524290, 11, -65
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("3_h8ivt")
+texture = ExtResource("3_ip2yb")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_7f0jp")
+script = ExtResource("4_cccqp")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_vd018")
+texture = ExtResource("5_w1eig")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_awxj2")
+texture = ExtResource("6_kgysc")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -112,12 +112,12 @@ shape = SubResource("RectangleShape2D_3r6jc")
 
 [node name="folder 1 - prisoner door codes" type="Node2D" parent="."]
 position = Vector2(50, 0)
-script = ExtResource("6_rli44")
+script = ExtResource("7_cetem")
 
 [node name="folder_default" type="Sprite2D" parent="folder 1 - prisoner door codes"]
 position = Vector2(760, 500)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pe5ca")
+texture = ExtResource("8_kkvmb")
 
 [node name="folder 1 - Label" type="Label" parent="folder 1 - prisoner door codes"]
 offset_left = 690.0
@@ -134,7 +134,7 @@ position = Vector2(200, 0)
 [node name="folder_default" type="Sprite2D" parent="folder 2 - prisoner door colors"]
 position = Vector2(800, 500)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pe5ca")
+texture = ExtResource("8_kkvmb")
 
 [node name="folder 2 - Label" type="Label" parent="folder 2 - prisoner door colors"]
 offset_left = 724.0
@@ -175,7 +175,7 @@ texture = SubResource("GradientTexture2D_mhnfk")
 texture_scale = 1.2
 
 [node name="post it" type="Node2D" parent="."]
-script = ExtResource("21_h3glq")
+script = ExtResource("21_o4t2l")
 
 [node name="Area2D" type="Area2D" parent="post it"]
 
@@ -187,7 +187,7 @@ polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95,
 [node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
 position = Vector2(1318, 385)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("22_6uhpy")
+texture = ExtResource("22_ifna8")
 
 [node name="PostItWindow" type="Window" parent="."]
 unique_name_in_owner = true
@@ -203,7 +203,7 @@ color = Color(0.568627, 0.870588, 0.960784, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
 position = Vector2(250, 300)
-texture = ExtResource("23_ueu50")
+texture = ExtResource("23_vupg5")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]

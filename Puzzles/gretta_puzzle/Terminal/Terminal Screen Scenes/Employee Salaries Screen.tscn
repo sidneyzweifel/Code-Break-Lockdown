@@ -1,14 +1,14 @@
-[gd_scene load_steps=35 format=3 uid="uid://bfo4c6xoa1yqf"]
+[gd_scene load_steps=34 format=3 uid="uid://bfo4c6xoa1yqf"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Employee Salaries Screen.gd" id="1_4qwjq"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Salaries Screen.gd" id="1_5ssdk"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_vsph1"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_5jocm"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_vufoe"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_tk5cf"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/salary screen folders.gd" id="6_eqro3"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_qhofe"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_6hdx3"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_7sdfg"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_lbc8m"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_e0h7x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_gpjp0"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/image icon.png" id="8_5tb6j"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Salary Screen Folders.gd" id="7_wakd3"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/imageIcon.png" id="8_pry7o"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_mhkel"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_o3gco"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_u1k8m"]
@@ -20,14 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_hc454"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_3mu51"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_mudis"]
-[ext_resource type="Texture2D" uid="uid://bacc6fok5ejwx" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee1 (1).png" id="21_fnuh6"]
-[ext_resource type="Texture2D" uid="uid://d35lbw87cmnk1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee_2.png" id="22_pxksx"]
-[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee3.png" id="23_6negv"]
-[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee4.png" id="24_j17ox"]
-[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Manger.png" id="25_g43cf"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/post it.gd" id="26_gxxgl"]
-[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/post it note.png" id="27_0ng1u"]
-[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/click post it.png" id="28_hotjv"]
+[ext_resource type="Texture2D" uid="uid://d35lbw87cmnk1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee2.png" id="21_otaas"]
+[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee3.png" id="22_6d2ry"]
+[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee4.png" id="23_8ptcr"]
+[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/manger.png" id="24_eby0o"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="25_ndslq"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="26_odggr"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="27_834ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5v87"]
 texture = ExtResource("1_vsph1")
@@ -610,7 +609,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Employee Salaries Screen" type="Node2D"]
-script = ExtResource("1_4qwjq")
+script = ExtResource("1_5ssdk")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -623,20 +622,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, 720
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("3_vufoe")
+texture = ExtResource("3_6hdx3")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_5jocm")
+script = ExtResource("4_7sdfg")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_tk5cf")
+texture = ExtResource("5_lbc8m")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_qhofe")
+texture = ExtResource("6_e0h7x")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -647,12 +646,12 @@ shape = SubResource("RectangleShape2D_abdlb")
 [node name="employee 1 - salaries" type="Node2D" parent="."]
 position = Vector2(90, 30)
 scale = Vector2(0.9, 0.9)
-script = ExtResource("6_eqro3")
+script = ExtResource("7_wakd3")
 
 [node name="folder_default" type="Sprite2D" parent="employee 1 - salaries"]
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_5tb6j")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 1 - Label" type="Label" parent="employee 1 - salaries"]
 offset_left = 725.556
@@ -670,7 +669,7 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="employee 2 - salaries"]
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_5tb6j")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 2 - salaries"]
 offset_left = 794.444
@@ -688,7 +687,7 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="employee 3 - salaries"]
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_5tb6j")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 3 - salaries"]
 offset_left = 862.222
@@ -706,7 +705,7 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="employee 4 - salaries"]
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_5tb6j")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 4 - salaries"]
 offset_left = 723.333
@@ -724,7 +723,7 @@ scale = Vector2(0.9, 0.9)
 [node name="folder_default" type="Sprite2D" parent="manager - salaries"]
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_5tb6j")
+texture = ExtResource("8_pry7o")
 
 [node name="manager - Label" type="Label" parent="manager - salaries"]
 offset_left = 777.778
@@ -781,22 +780,21 @@ position = Vector2(200, 135)
 scale = Vector2(0.65, 0.65)
 
 [node name="employee 1 salary" type="Sprite2D" parent="Window/Salaries"]
-texture = ExtResource("21_fnuh6")
 
 [node name="employee 2 salary" type="Sprite2D" parent="Window/Salaries"]
-texture = ExtResource("22_pxksx")
+texture = ExtResource("21_otaas")
 
 [node name="employee 3 salary" type="Sprite2D" parent="Window/Salaries"]
-texture = ExtResource("23_6negv")
+texture = ExtResource("22_6d2ry")
 
 [node name="employee 4 salary" type="Sprite2D" parent="Window/Salaries"]
-texture = ExtResource("24_j17ox")
+texture = ExtResource("23_8ptcr")
 
 [node name="manager salary" type="Sprite2D" parent="Window/Salaries"]
-texture = ExtResource("25_g43cf")
+texture = ExtResource("24_eby0o")
 
 [node name="post it" type="Node2D" parent="."]
-script = ExtResource("26_gxxgl")
+script = ExtResource("25_ndslq")
 
 [node name="Area2D" type="Area2D" parent="post it"]
 
@@ -808,7 +806,7 @@ polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95,
 [node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
 position = Vector2(1318, 385)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("27_0ng1u")
+texture = ExtResource("26_odggr")
 
 [node name="PostItWindow" type="Window" parent="."]
 unique_name_in_owner = true
@@ -824,7 +822,7 @@ color = Color(0.568627, 0.870588, 0.960784, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
 position = Vector2(250, 300)
-texture = ExtResource("28_hotjv")
+texture = ExtResource("27_834ai")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]

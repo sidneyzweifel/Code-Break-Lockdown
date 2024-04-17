@@ -1,14 +1,14 @@
 [gd_scene load_steps=37 format=3 uid="uid://cphyke5q650xc"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_3ngca"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Lunch Menus Screen.gd" id="1_dun22"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminal_front.png" id="3_bmfnw"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_x8fdp"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_hovered.png" id="5_dqbfm"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exit_default.png" id="6_jlxw1"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/lunch screen folders.gd" id="6_n74hp"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Lunch Menus Screen.gd" id="1_16p0e"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_l6k6l"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_k6y08"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_e0lgp"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_2e7eg"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_13oev"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/image icon.png" id="8_kie2l"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Lunch Screen Folders.gd" id="7_lh8jc"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/imageIcon.png" id="8_rfvi4"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_a8hl2"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_fb25f"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_4gk2i"]
@@ -27,9 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://qgkpxy4y4b2f" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/friday.png" id="25_jgrbf"]
 [ext_resource type="Texture2D" uid="uid://nxhodea0g5wh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/saturday.png" id="26_0uyes"]
 [ext_resource type="Texture2D" uid="uid://dkfh0gdffisxf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/menu items/sunday.png" id="27_p8eno"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/post it.gd" id="28_ruewq"]
-[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/post it note.png" id="29_085xr"]
-[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/click post it.png" id="30_phsae"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="28_sevj7"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="29_xxogd"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="30_n6ued"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6ba3"]
 texture = ExtResource("1_3ngca")
@@ -612,7 +612,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Lunch Menus Screen" type="Node2D"]
-script = ExtResource("1_dun22")
+script = ExtResource("1_16p0e")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -625,20 +625,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, -65
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("3_bmfnw")
+texture = ExtResource("3_l6k6l")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_x8fdp")
+script = ExtResource("4_k6y08")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_dqbfm")
+texture = ExtResource("5_e0lgp")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_jlxw1")
+texture = ExtResource("6_2e7eg")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -649,12 +649,12 @@ shape = SubResource("RectangleShape2D_vjhcj")
 [node name="monday - lunch menus" type="Node2D" parent="."]
 position = Vector2(90, 50)
 scale = Vector2(0.85, 0.85)
-script = ExtResource("6_n74hp")
+script = ExtResource("7_lh8jc")
 
 [node name="folder_default" type="Sprite2D" parent="monday - lunch menus"]
 position = Vector2(825, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="monday - Label" type="Label" parent="monday - lunch menus"]
 offset_left = 760.0
@@ -672,7 +672,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="tuesday - lunch menus"]
 position = Vector2(860, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="tuesday - Label" type="Label" parent="tuesday - lunch menus"]
 offset_left = 790.588
@@ -690,7 +690,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="wednesday - lunch menus"]
 position = Vector2(895, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="wednesday - Label" type="Label" parent="wednesday - lunch menus"]
 offset_left = 822.353
@@ -708,7 +708,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="thursday - lunch menus"]
 position = Vector2(930, 540)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="thursday - Label" type="Label" parent="thursday - lunch menus"]
 offset_left = 856.47
@@ -726,7 +726,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="friday - lunch menus"]
 position = Vector2(825, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="friday - Label" type="Label" parent="friday - lunch menus"]
 offset_left = 758.823
@@ -744,7 +744,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="saturday - lunch menus"]
 position = Vector2(860, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="saturday - Label" type="Label" parent="saturday - lunch menus"]
 offset_left = 785.882
@@ -762,7 +762,7 @@ scale = Vector2(0.85, 0.85)
 [node name="folder_default" type="Sprite2D" parent="sunday - lunch menus"]
 position = Vector2(895, 580)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_kie2l")
+texture = ExtResource("8_rfvi4")
 
 [node name="sunday - Label" type="Label" parent="sunday - lunch menus"]
 offset_left = 829.412
@@ -1000,7 +1000,7 @@ theme_override_font_sizes/font_size = 24
 text = "nutritious meat wrapped in dough"
 
 [node name="post it" type="Node2D" parent="."]
-script = ExtResource("28_ruewq")
+script = ExtResource("28_sevj7")
 
 [node name="Area2D" type="Area2D" parent="post it"]
 
@@ -1012,7 +1012,7 @@ polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95,
 [node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
 position = Vector2(1318, 385)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("29_085xr")
+texture = ExtResource("29_xxogd")
 
 [node name="PostItWindow" type="Window" parent="."]
 unique_name_in_owner = true
@@ -1028,7 +1028,7 @@ color = Color(0.568627, 0.870588, 0.960784, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
 position = Vector2(250, 300)
-texture = ExtResource("30_phsae")
+texture = ExtResource("30_n6ued")
 
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]

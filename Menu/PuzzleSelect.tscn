@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://jct1k21n1kkn"]
 
-[ext_resource type="Script" path="res://Menu/PuzzleSelect.gd" id="1_31wfs"]
+[ext_resource type="Script" path="res://Menu/Puzzle Select.gd" id="1_toxd2"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="2_dhdk0"]
 
 [node name="PuzzleSelect" type="Node2D"]
-script = ExtResource("1_31wfs")
+script = ExtResource("1_toxd2")
 puz1_path = "res://Puzzles/Puzzle1_TEST.tscn"
 puz2_path = "res://Puzzles/Puzzle2_TEST.tscn"
 puz3_path = "res://Puzzles/Puzzle3_TEST.tscn"

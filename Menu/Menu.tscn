@@ -188,9 +188,5 @@ theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
-[node name="titleMusic" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-autoplay = true
-
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
 [connection signal="pressed" from="ColorRect/PuzzleSelect" to="ColorRect/Start" method="_on_puzzle_select_pressed"]

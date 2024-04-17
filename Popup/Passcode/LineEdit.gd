@@ -31,7 +31,7 @@ func _on_text_submitted(new_text):
 		access_label.text = "ACCESS GRANTED"
 		access_label.show()
 		door_access = 1 #set door_access granted
-		Global.set_passcode()
+		Global.set_passcode() # set a new passcode for the next scene
 		print("in text submitted, new passcode is: "+Global.get_passcode())
 		%success.play()
 	else:
