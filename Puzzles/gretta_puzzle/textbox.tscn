@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dst1urd8iune6"]
+[gd_scene load_steps=5 format=3 uid="uid://dst1urd8iune6"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/textbox.gd" id="1_mi3kp"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="2_qeki1"]
+[ext_resource type="AudioStream" uid="uid://be1q677w0xyv4" path="res://SFX/text writing.mp3" id="3_8j76v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88ih2"]
 bg_color = Color(0.784314, 0.882353, 0.941176, 1)
@@ -47,3 +48,6 @@ theme_override_font_sizes/font_size = 60
 text = "placeholder text! the quick brown fox jumped over the lazy dog fjjdjfkkkkkkkkk"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Text Noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8j76v")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be1q677w0xyv4"
+path="res://.godot/imported/text writing.mp3-574d96b6df2edd5c30767826b96d841b.mp3str"
+
+[deps]
+
+source_file="res://SFX/text writing.mp3"
+dest_files=["res://.godot/imported/text writing.mp3-574d96b6df2edd5c30767826b96d841b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

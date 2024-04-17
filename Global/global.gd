@@ -11,6 +11,7 @@ var current_door_color:String
 var current_door_number:String
 var pairDict
 var previous_terminal_window = "none"
+var textbox_shown = false
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -105,6 +106,12 @@ func set_door_pairs():
 func get_door_pairs():
 	return pairDict
 
+func has_shown_textbox():
+	if textbox_shown:
+		return true
+	else:
+		textbox_shown = true
+		return false
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
 func get_passcode():
