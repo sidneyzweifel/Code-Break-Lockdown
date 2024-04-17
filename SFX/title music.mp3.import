@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b50ubbbkknath"
+path="res://.godot/imported/title music.mp3-db05c94c7cdbb766f9934ed2f2d7b039.mp3str"
+
+[deps]
+
+source_file="res://SFX/title music.mp3"
+dest_files=["res://.godot/imported/title music.mp3-db05c94c7cdbb766f9934ed2f2d7b039.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

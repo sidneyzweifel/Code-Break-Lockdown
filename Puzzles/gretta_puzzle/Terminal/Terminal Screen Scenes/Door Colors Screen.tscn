@@ -1,15 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://cb07aualwbh2a"]
+[gd_scene load_steps=35 format=3 uid="uid://cb07aualwbh2a"]
 
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Door Colors Screen.gd" id="1_184hs"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_aak1t"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Door Colors Screen.gd" id="1_dj036"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_k6voc"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_2wekl"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_3s3ji"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_d8off"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/door colors folders.gd" id="6_auq1k"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_5k3qj"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_kstdn"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_qqekf"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_yj4gq"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Door Colors Folders.gd" id="7_vk4sk"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_vkx14"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_pyter"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_70q8x"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/imageIcon.png" id="8_4lvvj"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_j7h72"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_sb1fh"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_b34va"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_k2t66"]
@@ -20,6 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_qj6iw"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_pt57t"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_euoe4"]
+[ext_resource type="Texture2D" uid="uid://dvyigwl1w3i1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/blueDoor.png" id="21_27mwa"]
+[ext_resource type="Texture2D" uid="uid://bvoe7l10728cq" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/yellowDoor.png" id="21_sct50"]
+[ext_resource type="Texture2D" uid="uid://dgel5fn1vwr6i" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/greenDoor.png" id="22_lvwdm"]
+[ext_resource type="Texture2D" uid="uid://dhwx75qn8emg0" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/purpleDoor.png" id="23_77fq6"]
+[ext_resource type="Texture2D" uid="uid://8mwifuqhkj5v" path="res://Puzzles/gretta_puzzle/Terminal/Assets/door colors/redDoor.png" id="24_ilx4y"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="26_l4tjk"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="27_ktjmx"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="28_n7bij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sbmh"]
 texture = ExtResource("1_aak1t")
@@ -602,7 +610,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Door Colors Screen" type="Node2D"]
-script = ExtResource("1_dj036")
+script = ExtResource("1_184hs")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -615,20 +623,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, 720
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_k6voc")
+texture = ExtResource("3_5k3qj")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_2wekl")
+script = ExtResource("4_kstdn")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_3s3ji")
+texture = ExtResource("5_qqekf")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_d8off")
+texture = ExtResource("6_yj4gq")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -639,93 +647,103 @@ shape = SubResource("RectangleShape2D_0t1g5")
 [node name="door 1 - door colors" type="Node2D" parent="."]
 position = Vector2(90, 30)
 scale = Vector2(0.9, 0.9)
-script = ExtResource("6_auq1k")
+script = ExtResource("7_vk4sk")
 
 [node name="folder_default" type="Sprite2D" parent="door 1 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_pyter")
+texture = ExtResource("8_4lvvj")
 
 [node name="door 1 - Label" type="Label" parent="door 1 - door colors"]
 offset_left = 738.889
 offset_top = 573.333
 offset_right = 856.889
 offset_bottom = 596.333
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
-text = "Door 1 Color"
+text = "door 1 color"
 
 [node name="door 2 - door colors" type="Node2D" parent="."]
 position = Vector2(200, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 2 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_pyter")
+texture = ExtResource("8_4lvvj")
 
 [node name="door 2 - Label" type="Label" parent="door 2 - door colors"]
 offset_left = 807.778
 offset_top = 573.333
 offset_right = 925.778
 offset_bottom = 596.333
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
-text = "Door 2 Color"
+text = "door 2 color"
 
 [node name="door 3 - door colors" type="Node2D" parent="."]
 position = Vector2(310, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 3 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_pyter")
+texture = ExtResource("8_4lvvj")
 
 [node name="door 3 - Label" type="Label" parent="door 3 - door colors"]
 offset_left = 880.0
 offset_top = 573.333
 offset_right = 998.0
 offset_bottom = 596.333
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
-text = "Door 3 Color"
+text = "door 3 color"
 
 [node name="door 4 - door colors" type="Node2D" parent="."]
 position = Vector2(90, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 4 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_pyter")
+texture = ExtResource("8_4lvvj")
 
 [node name="door 4 - Label" type="Label" parent="door 4 - door colors"]
 offset_left = 738.889
 offset_top = 597.778
 offset_right = 856.889
 offset_bottom = 620.778
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
-text = "Door 4 Color"
+text = "door 4 color"
 
 [node name="door 5 - door colors" type="Node2D" parent="."]
 position = Vector2(200, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 5 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_pyter")
+texture = ExtResource("8_4lvvj")
 
 [node name="door 5 - Label" type="Label" parent="door 5 - door colors"]
 offset_left = 808.889
 offset_top = 597.778
 offset_right = 926.889
 offset_bottom = 620.778
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
-text = "Door 5 Color"
+text = "door 5 color"
 
 [node name="door colors screen - LineEdit" type="LineEdit" parent="."]
 unique_name_in_owner = true
@@ -733,7 +751,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_70q8x")
+theme_override_fonts/font = ExtResource("9_j7h72")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_vkx14")
@@ -757,7 +775,81 @@ energy = 0.1
 texture = SubResource("GradientTexture2D_t2kxc")
 texture_scale = 1.2
 
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="colors" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+
+[node name="door 1 color" type="Sprite2D" parent="Window/colors"]
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("21_27mwa")
+
+[node name="door 2 color" type="Sprite2D" parent="Window/colors"]
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("22_lvwdm")
+
+[node name="door 3 color" type="Sprite2D" parent="Window/colors"]
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("23_77fq6")
+
+[node name="door 4 color" type="Sprite2D" parent="Window/colors"]
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("24_ilx4y")
+
+[node name="door 5 color" type="Sprite2D" parent="Window/colors"]
+position = Vector2(200, 190)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("21_sct50")
+
+[node name="post it" type="Node2D" parent="."]
+script = ExtResource("26_l4tjk")
+
+[node name="Area2D" type="Area2D" parent="post it"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95, -20, -90, -8.33331, -83.3333, 3.33337, -75, 15, -63.3333, 28.3334, -46.6667, 43.3334, -33.3333, 53.3334, -10, 68.3334, 20, 83.3334, 53.3333, 95, 85, 100, 125, 101.667, 163.333, 100, 165, 95, 165, 26.6667, 158.333, -146.667, 158.333, -163.333, 151.667, -166.667, 145, -168.333, 51.6667, -166.667, -35, -163.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("27_ktjmx")
+
+[node name="PostItWindow" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(506, 49)
+size = Vector2i(550, 600)
+
+[node name="ColorRect" type="ColorRect" parent="PostItWindow"]
+offset_right = 550.0
+offset_bottom = 600.0
+color = Color(0.568627, 0.870588, 0.960784, 1)
+
+[node name="Node2D" type="Node2D" parent="PostItWindow/ColorRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
+position = Vector2(250, 300)
+texture = ExtResource("28_n7bij")
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="door colors screen - LineEdit" to="door 1 - door colors" method="_on_line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="door 1 - door colors" method="_on_window_close_requested"]
+[connection signal="input_event" from="post it/Area2D" to="post it" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_exited"]
+[connection signal="close_requested" from="PostItWindow" to="post it" method="_on_post_it_window_close_requested"]

@@ -6,6 +6,16 @@ var current_passcode:String
 var logic_question:String = ""
 var logic_result = 0
 
+# variables for puzzle 1 - gretta's puzzle
+var door_colors = ["blue", "red", "purple", "yellow", "green"]
+var door_numbers = ["1", "2", "3", "4", "5"]
+var current_door_color:String
+var current_door_number:String
+var pairDict
+var previous_terminal_window = "none"
+var textbox_shown = false
+var door_passcodes
+
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
 	var cur = get_tree().current_scene
@@ -50,6 +60,98 @@ func set_passcode():
 	current_passcode = str(randi_range(11111, 99999))
 	return current_passcode
 
+# PUZZLE 1 -----------------------------------------------
+
+# sets a random color to the door light color in PUZZLE 1
+# can be 1 of 5 different colors
+func set_door_color():
+	if door_colors.size() != 0:
+		current_door_color = door_colors.pick_random()
+	print("door color: " +current_door_color)
+	return current_door_color
+
+# returns the door light color for PUZZLE 1
+func get_door_color():
+	return current_door_color
+
+# sets a random number to the door in PUZZLE 1
+# can be a number 1 through 5
+func set_door_number():
+	if door_numbers.size() != 0:
+		current_door_number = door_numbers.pick_random()
+	print("door number: " +current_door_number)
+	return current_door_number
+
+# returns the current door number variable in PUZZLE 1
+func get_door_number():
+	return current_door_number
+
+# for PUZZLE 1
+# sets the previous terminal window to inputed path so
+# when the player leaves the terminal and comes back
+# the screen they were on is saved
+func set_previous_terminal_window(path):
+	previous_terminal_window = path
+	return previous_terminal_window
+	
+# return the previous terminal window variable
+func get_previous_terminal_window():
+	return previous_terminal_window
+
+# set the door number:door light color pairs
+func set_door_pairs():
+	
+	# remove the door number and color for the door that can be opened
+	# in PUZZLE 1
+	door_colors.erase(current_door_color)
+	door_numbers.erase(current_door_number)
+	
+	# set the generated door number to the door color
+	pairDict = {
+		current_door_number: current_door_color
+	}
+	
+	# set the other door numbers to the remaining door colors
+	while door_colors.size():
+		var rndNum = door_numbers.pick_random()
+		var rndClr = door_colors.pick_random()
+		pairDict[rndNum] = rndClr
+		
+		door_numbers.erase(rndNum)
+		door_colors.erase(rndClr)
+	
+	print(pairDict)
+	return pairDict
+
+# returns the door pairs dictionary
+func get_door_pairs():
+	return pairDict
+
+# checks if the text box in PUZZLE 1 has been show
+func has_shown_textbox():
+	if textbox_shown: # has been shown
+		return true
+	else: # hasn't been show
+		textbox_shown = true # set it to true (because it will show it now)
+		return false
+
+# set passcodes for the doors in PUZZLE 1
+func set_door_passcodes():
+	door_passcodes = {
+		"1":str(randi_range(11111, 99999)),
+		"2":str(randi_range(11111, 99999)),
+		"3":str(randi_range(11111, 99999)),
+		"4":str(randi_range(11111, 99999)),
+		"5":str(randi_range(11111, 99999))
+	}
+	return door_passcodes
+
+# return the generated door passcodes (they don't do anything)
+func get_door_passcodes():
+	return door_passcodes
+
+#--------------------------------------------------------------
+
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
 func get_passcode():
@@ -65,7 +167,7 @@ func set_logic_question() -> String:
 	logic_question = "(" + str(a) + " " + operators[randi() % operators.size()] + " " + str(b) + ") " + operators[randi() % operators.size()] + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
 	print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
 	return logic_question
-	
+
 # get last randomly generated logic question in Puzzle3_TEST
 func get_logic_question() -> String:
 	print("GLOBAL SCRIPT LOGIC QUESTION GETTER: " + logic_question)

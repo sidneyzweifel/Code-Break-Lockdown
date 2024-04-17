@@ -1,13 +1,20 @@
-[gd_scene load_steps=26 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=42 format=3 uid="uid://b71656ykcqicn"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/clickTerminal.gd" id="3_flx1v"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Click On Terminal.gd" id="3_ay63j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
+[ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/puzzle1Terminal.png" id="4_vjmke"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
-[ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/Puzzle_1_terminal.png" id="8_v63x8"]
+[ext_resource type="AudioStream" uid="uid://dl4bf0ktnye1n" path="res://SFX/air vent.mp3" id="8_q0x8x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
-[ext_resource type="Script" path="res://Puzzles/doorLightColor.gd" id="8_ymibn"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Door Light Color.gd" id="9_a2tml"]
+[ext_resource type="PackedScene" uid="uid://dst1urd8iune6" path="res://Puzzles/gretta_puzzle/textbox.tscn" id="9_t7sde"]
+[ext_resource type="Texture2D" uid="uid://cy5c2cnxbbjn6" path="res://Tilesets/Industrial Cyberpunk/4 Animated objects/Card.png" id="11_he7he"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Hint.gd" id="11_v437t"]
+[ext_resource type="Texture2D" uid="uid://bga0humacbmau" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/noteBackground.png" id="13_upjvd"]
+[ext_resource type="Texture2D" uid="uid://1scl7repwxy4" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/wallScratches.png" id="14_2xum5"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="14_uroro"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1658,6 +1665,12 @@ texture = ExtResource("4_mmwtb")
 6:9/0 = 0
 6:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:9/0/physics_layer_0/angular_velocity = 0.0
+21:3/0 = 0
+21:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:3/0/physics_layer_0/angular_velocity = 0.0
+21:2/0 = 0
+21:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_yrhts"]
 physics_layer_0/collision_layer = 1
@@ -1718,19 +1731,72 @@ size = Vector2(259, 127)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grmkv"]
 size = Vector2(140, 211.5)
 
-[sub_resource type="GDScript" id="GDScript_5ku1d"]
-script/source = "extends PointLight2D
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mgw4"]
+size = Vector2(62, 59)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bmkj"]
+atlas = ExtResource("11_he7he")
+region = Rect2(0, 0, 24, 24)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4dsg"]
+atlas = ExtResource("11_he7he")
+region = Rect2(24, 0, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l766f"]
+atlas = ExtResource("11_he7he")
+region = Rect2(48, 0, 24, 24)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[sub_resource type="AtlasTexture" id="AtlasTexture_083jd"]
+atlas = ExtResource("11_he7he")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b0b7"]
+atlas = ExtResource("11_he7he")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpt1x"]
+atlas = ExtResource("11_he7he")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlftm"]
+atlas = ExtResource("11_he7he")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f44p7"]
+atlas = ExtResource("11_he7he")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sj6mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bmkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4dsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l766f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_083jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b0b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpt1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlftm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f44p7")
+}],
+"loop": true,
+"name": &"symbol_hint",
+"speed": 5.0
+}]
 
 [node name="Puzzle1" type="Node2D" groups=["puzzle"]]
 position = Vector2(-20, 10)
@@ -1750,7 +1816,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(65535, 786432, 17, -1, 786432, 17, -65537, 786432, 15, -131072, 851968, 15, -131071, 917504, 15, -65536, 851968, 17, -65535, 917504, 16, 0, 851968, 16, 1, 917504, 17, 131071, 786432, 17, 65536, 851968, 17, 65537, 917504, 17, 5, 1048576, 2, 65541, 1048576, 3, 6, 1114112, 2, 65542, 1114112, 3, 7, 1048576, 2, 65543, 1048576, 3, 8, 1114112, 2, 65544, 1114112, 3, -131061, 1703936, 0, -65525, 1703936, 1, -131060, 1769472, 0, -65524, 1769472, 1, -131059, 1835008, 0, -65523, 1835008, 1, -131058, 1900544, 0, -65522, 1900544, 1, -131066, 2490368, 6, -65530, 2490368, 7, -131065, 2555904, 6, -65529, 2555904, 7, -131078, 1441792, 2, -65542, 1441792, 3, -131077, 1507328, 2, -65541, 1507328, 3, -131070, 1572864, 12, 2, 720896, 0, -131069, 1769472, 12)
+layer_1/tile_data = PackedInt32Array(65535, 786432, 17, -1, 786432, 17, -65537, 786432, 15, -131072, 851968, 15, -131071, 917504, 15, -65536, 851968, 17, -65535, 917504, 16, 0, 851968, 16, 1, 917504, 17, 131071, 786432, 17, 65536, 851968, 17, 65537, 917504, 17, 5, 1048576, 2, 65541, 1048576, 3, 6, 1114112, 2, 65542, 1114112, 3, 7, 1048576, 2, 65543, 1048576, 3, 8, 1114112, 2, 65544, 1114112, 3, -131060, 1703936, 0, -65524, 1703936, 1, -131059, 1769472, 0, -65523, 1769472, 1, -131058, 1835008, 0, -65522, 1835008, 1, -131066, 2490368, 6, -65530, 2490368, 7, -131065, 2555904, 6, -65529, 2555904, 7, 2, 720896, 0, -131078, 1048576, 0, -65542, 1048576, 1, -131077, 1114112, 0, -65541, 1114112, 1, -131076, 1179648, 0, -65540, 1179648, 1, -131075, 1245184, 0, -65539, 1245184, 1, -196600, 1376256, 2, -131064, 1376256, 3, -131057, 1900544, 0, -65521, 1900544, 1)
 layer_2/name = "bed and floor decorations"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -1776,7 +1842,7 @@ layer_4/tile_data = PackedInt32Array(196618, 1048576, 18, 262154, 1048576, 19, 3
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Above Light" type="PointLight2D" parent="."]
-position = Vector2(947, -16)
+position = Vector2(917, 106)
 scale = Vector2(27.9531, 14.4277)
 energy = 0.75
 shadow_enabled = true
@@ -1836,7 +1902,7 @@ texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 1.2
 
 [node name="Door2" parent="." instance=ExtResource("6_tpbfh")]
-position = Vector2(587, 196)
+position = Vector2(560, 250)
 rotation = 0.00349066
 scale = Vector2(0.7, 0.4)
 path_to_new_scene = "res://Puzzles/Puzzle2_TEST.tscn"
@@ -1844,7 +1910,7 @@ passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 
 [node name="Terminal - Node2D" type="Node2D" parent="."]
-script = ExtResource("3_flx1v")
+script = ExtResource("3_ay63j")
 
 [node name="Area2D" type="Area2D" parent="Terminal - Node2D"]
 
@@ -1856,7 +1922,7 @@ polygon = PackedVector2Array(-675, -683.8, -675, -682.4, -665, -678.4, -665, -67
 [node name="Terminal" type="Sprite2D" parent="Terminal - Node2D/Area2D"]
 position = Vector2(457, 377)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_v63x8")
+texture = ExtResource("4_vjmke")
 
 [node name="CodePopup" parent="." instance=ExtResource("6_6xh31")]
 visible = false
@@ -1866,7 +1932,7 @@ rotation = 0.19237
 scale = Vector2(0.762002, 1.78746)
 
 [node name="Player_NOCAM" parent="." instance=ExtResource("6_ypr61")]
-position = Vector2(248, 520)
+position = Vector2(795, 482)
 scale = Vector2(0.8, 0.8)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1882,8 +1948,13 @@ stream = ExtResource("8_xhcw0")
 volume_db = 7.0
 autoplay = true
 
+[node name="Air Vent" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(459, 390)
+stream = ExtResource("8_q0x8x")
+volume_db = -15.0
+autoplay = true
+
 [node name="Boundaries" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="top wall" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(982, 183)
@@ -1923,8 +1994,7 @@ offset_left = 797.0
 offset_top = 212.0
 offset_right = 887.0
 offset_bottom = 230.0
-color = Color(0, 0.901961, 0, 0.878431)
-script = ExtResource("8_ymibn")
+script = ExtResource("9_a2tml")
 
 [node name="lightGlow" type="PointLight2D" parent="doorLightColor"]
 unique_name_in_owner = true
@@ -1935,8 +2005,100 @@ color = Color(1, 0, 0, 0.760784)
 energy = 0.45
 texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 0.9
-script = SubResource("GDScript_5ku1d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 792.0
+offset_top = 210.0
+offset_right = 800.0
+offset_bottom = 233.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 881.0
+offset_top = 210.0
+offset_right = 889.0
+offset_bottom = 233.0
+color = Color(0, 0, 0, 1)
+
+[node name="highlight" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = 810.0
+offset_top = 215.0
+offset_right = 879.0
+offset_bottom = 218.0
+
+[node name="highlight2" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = 804.0
+offset_top = 215.0
+offset_right = 807.0
+offset_bottom = 218.0
+
+[node name="textbox" parent="." instance=ExtResource("9_t7sde")]
+offset = Vector2(550, 95)
+scale = Vector2(0.6, 0.6)
+transform = Transform2D(0.6, 0, 0, 0.6, 550, 95)
+
+[node name="hint" type="Node2D" parent="."]
+script = ExtResource("11_v437t")
+
+[node name="Area2D" type="Area2D" parent="hint"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hint/Area2D"]
+position = Vector2(862, 430)
+shape = SubResource("RectangleShape2D_8mgw4")
+
+[node name="SymbolHint" type="AnimatedSprite2D" parent="hint/Area2D"]
+position = Vector2(865, 429)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_sj6mj")
+animation = &"symbol_hint"
+autoplay = "symbol_hint"
+
+[node name="HintWindow" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(506, 49)
+size = Vector2i(500, 500)
+
+[node name="ColorRect" type="ColorRect" parent="HintWindow"]
+offset_right = 550.0
+offset_bottom = 600.0
+color = Color(0.568627, 0.870588, 0.960784, 1)
+
+[node name="Node2D" type="Node2D" parent="HintWindow/ColorRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="HintWindow/ColorRect/Node2D"]
+position = Vector2(250, 250)
+texture = ExtResource("13_upjvd")
+
+[node name="Label" type="Label" parent="HintWindow/ColorRect/Node2D"]
+offset_left = 4.0
+offset_right = 513.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("14_uroro")
+theme_override_font_sizes/font_size = 17
+text = "  I don't have much time so I have to make this brief.
+
+  I was the prisoner that inhabited this room before you, whoever you are. You don't know me and I don't know you, however, I wish to aid your escape from this place. The robotic guards here don't check the terminals as often as they should, allowing me to gain access to security files that can secure your freedom. 
+
+  The door is locked by a mere passcode that can be found in the files I uncovered, my only clue is to pay attention to the color of the light by the door. For further assistance with the terminal, refer to the post-it note I've left. May your escape be as triumphant as I hope mine will be. 
+
+  Best of luck—fortune favors the brave."
+autowrap_mode = 2
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node"]
+position = Vector2(896, 380)
+rotation = 0.322886
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_2xum5")
 
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="hint/Area2D" to="hint" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="hint/Area2D" to="hint" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="hint/Area2D" to="hint" method="_on_area_2d_mouse_exited"]
+[connection signal="close_requested" from="HintWindow" to="hint" method="_on_hint_window_close_requested"]

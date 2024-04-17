@@ -1,15 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfo4c6xoa1yqf"]
+[gd_scene load_steps=34 format=3 uid="uid://bfo4c6xoa1yqf"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Employee Salaries Screen.gd" id="1_4qwjq"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Salaries Screen.gd" id="1_5ssdk"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_vsph1"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_hg8yl"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_5jocm"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_461hx"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_v2qi6"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/salary screen folders.gd" id="6_eqro3"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_6hdx3"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_7sdfg"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_lbc8m"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_e0h7x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_gpjp0"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_jtsdc"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_2a17i"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Salary Screen Folders.gd" id="7_wakd3"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/imageIcon.png" id="8_pry7o"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_mhkel"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_o3gco"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_u1k8m"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_s3c6b"]
@@ -20,6 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_hc454"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_3mu51"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_mudis"]
+[ext_resource type="Texture2D" uid="uid://d35lbw87cmnk1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee2.png" id="21_otaas"]
+[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee3.png" id="22_6d2ry"]
+[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee4.png" id="23_8ptcr"]
+[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/manger.png" id="24_eby0o"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="25_ndslq"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="26_odggr"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="27_834ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5v87"]
 texture = ExtResource("1_vsph1")
@@ -602,7 +609,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
 [node name="Employee Salaries Screen" type="Node2D"]
-script = ExtResource("1_4qwjq")
+script = ExtResource("1_5ssdk")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -615,20 +622,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, 720
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_hg8yl")
+texture = ExtResource("3_6hdx3")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_5jocm")
+script = ExtResource("4_7sdfg")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_461hx")
+texture = ExtResource("5_lbc8m")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_v2qi6")
+texture = ExtResource("6_e0h7x")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -639,93 +646,103 @@ shape = SubResource("RectangleShape2D_abdlb")
 [node name="employee 1 - salaries" type="Node2D" parent="."]
 position = Vector2(90, 30)
 scale = Vector2(0.9, 0.9)
-script = ExtResource("6_eqro3")
+script = ExtResource("7_wakd3")
 
 [node name="folder_default" type="Sprite2D" parent="employee 1 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_jtsdc")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 1 - Label" type="Label" parent="employee 1 - salaries"]
 offset_left = 725.556
 offset_top = 573.333
 offset_right = 871.556
 offset_bottom = 594.333
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
-text = "Employee 1 Salary"
+text = "employee 1 salary"
 
 [node name="employee 2 - salaries" type="Node2D" parent="."]
 position = Vector2(200, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 2 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_jtsdc")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 2 - salaries"]
 offset_left = 794.444
 offset_top = 574.445
 offset_right = 940.444
 offset_bottom = 595.445
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
-text = "Employee 2 Salary"
+text = "employee 2 salary"
 
 [node name="employee 3 - salaries" type="Node2D" parent="."]
 position = Vector2(310, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 3 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_jtsdc")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 3 - salaries"]
 offset_left = 862.222
 offset_top = 574.445
 offset_right = 1008.22
 offset_bottom = 595.445
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
-text = "Employee 3 Salary"
+text = "employee 3 salary"
 
 [node name="employee 4 - salaries" type="Node2D" parent="."]
 position = Vector2(90, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 4 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_jtsdc")
+texture = ExtResource("8_pry7o")
 
 [node name="employee 2 - Label" type="Label" parent="employee 4 - salaries"]
 offset_left = 723.333
 offset_top = 598.889
 offset_right = 869.333
 offset_bottom = 619.889
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
-text = "Employee 4 Salary"
+text = "employee 4 salary"
 
 [node name="manager - salaries" type="Node2D" parent="."]
 position = Vector2(200, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="manager - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_jtsdc")
+texture = ExtResource("8_pry7o")
 
 [node name="manager - Label" type="Label" parent="manager - salaries"]
 offset_left = 777.778
 offset_top = 600.0
 offset_right = 957.778
 offset_bottom = 621.0
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
-text = "Manager Norbit Salary"
+text = "manager norbit salary"
 
 [node name="employees salaries screen - LineEdit" type="LineEdit" parent="."]
 unique_name_in_owner = true
@@ -733,7 +750,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_2a17i")
+theme_override_fonts/font = ExtResource("9_mhkel")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_gpjp0")
@@ -749,6 +766,7 @@ sprite_frames = SubResource("SpriteFrames_kicdq")
 autoplay = "default"
 
 [node name="Computer Light" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(971, 569)
 scale = Vector2(15.4297, 10.9766)
 color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -756,7 +774,72 @@ energy = 0.1
 texture = SubResource("GradientTexture2D_8dnks")
 texture_scale = 1.2
 
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Salaries" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+position = Vector2(200, 135)
+scale = Vector2(0.65, 0.65)
+
+[node name="employee 1 salary" type="Sprite2D" parent="Window/Salaries"]
+
+[node name="employee 2 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("21_otaas")
+
+[node name="employee 3 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("22_6d2ry")
+
+[node name="employee 4 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("23_8ptcr")
+
+[node name="manager salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("24_eby0o")
+
+[node name="post it" type="Node2D" parent="."]
+script = ExtResource("25_ndslq")
+
+[node name="Area2D" type="Area2D" parent="post it"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95, -20, -90, -8.33331, -83.3333, 3.33337, -75, 15, -63.3333, 28.3334, -46.6667, 43.3334, -33.3333, 53.3334, -10, 68.3334, 20, 83.3334, 53.3333, 95, 85, 100, 125, 101.667, 163.333, 100, 165, 95, 165, 26.6667, 158.333, -146.667, 158.333, -163.333, 151.667, -166.667, 145, -168.333, 51.6667, -166.667, -35, -163.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("26_odggr")
+
+[node name="PostItWindow" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(506, 49)
+size = Vector2i(550, 600)
+
+[node name="ColorRect" type="ColorRect" parent="PostItWindow"]
+offset_right = 550.0
+offset_bottom = 600.0
+color = Color(0.568627, 0.870588, 0.960784, 1)
+
+[node name="Node2D" type="Node2D" parent="PostItWindow/ColorRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
+position = Vector2(250, 300)
+texture = ExtResource("27_834ai")
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="employees salaries screen - LineEdit" to="employee 1 - salaries" method="_on_employees_salaries_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="employee 1 - salaries" method="_on_window_close_requested"]
+[connection signal="input_event" from="post it/Area2D" to="post it" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_exited"]
+[connection signal="close_requested" from="PostItWindow" to="post it" method="_on_post_it_window_close_requested"]

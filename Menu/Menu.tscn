@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dtfaflr4ptvky"]
+[gd_scene load_steps=24 format=3 uid="uid://dtfaflr4ptvky"]
 
 [ext_resource type="Script" path="res://Menu/Start.gd" id="1_4xyal"]
 [ext_resource type="Texture2D" uid="uid://bvvpmiv28gfhw" path="res://Menu/Assets/menu screen background/tile000.png" id="1_5mtnm"]
-[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd it.otf" id="1_oimot"]
 [ext_resource type="Texture2D" uid="uid://bncvc7ffb13oj" path="res://Menu/Assets/menu screen background/tile001.png" id="2_fkf88"]
 [ext_resource type="Texture2D" uid="uid://cp7u06bb052op" path="res://Menu/Assets/menu screen background/tile002.png" id="3_3lycp"]
 [ext_resource type="Texture2D" uid="uid://p35dwyl6m1m1" path="res://Menu/Assets/menu screen background/tile003.png" id="4_l4lby"]
@@ -22,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bgbql2skpq7ej" path="res://Menu/Assets/menu screen background/tile017.png" id="18_oio81"]
 [ext_resource type="Texture2D" uid="uid://g7c0yb1a2r41" path="res://Menu/Assets/menu screen background/tile018.png" id="19_0gkdu"]
 [ext_resource type="Texture2D" uid="uid://w2itu2sptlou" path="res://Menu/Assets/menu screen background/tile019.png" id="20_be3lh"]
-[ext_resource type="AudioStream" uid="uid://dbs8lvpeymvfm" path="res://Menu/Assets/title music.mp3" id="23_mrpth"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="21_xeo4o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxyi5"]
 animations = [{
@@ -102,11 +101,11 @@ color = Color(0.54902, 0.176471, 0.976471, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
 modulate = Color(0.678431, 0, 0, 1)
-position = Vector2(956, 541.25)
-scale = Vector2(1.5975, 1.57704)
+position = Vector2(931.5, 507)
+scale = Vector2(1.8925, 2.10074)
 sprite_frames = SubResource("SpriteFrames_kxyi5")
 autoplay = "default"
-frame_progress = 0.430074
+frame_progress = 0.930176
 
 [node name="Start" type="Button" parent="ColorRect"]
 layout_mode = 1
@@ -121,7 +120,7 @@ offset_right = 142.988
 offset_bottom = 32.456
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 95
 text = "START"
 script = ExtResource("1_4xyal")
@@ -135,7 +134,7 @@ offset_top = 527.0
 offset_right = 1163.0
 offset_bottom = 653.0
 theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 95
 text = "START"
 
@@ -149,7 +148,7 @@ offset_top = 730.0
 offset_right = 185.5
 offset_bottom = 834.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
@@ -160,33 +159,34 @@ offset_top = 733.0
 offset_right = 1167.0
 offset_bottom = 837.0
 theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 378.0
+offset_left = 379.5
 offset_top = 335.0
-offset_right = 1526.0
+offset_right = 1527.5
 offset_bottom = 461.0
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
 [node name="Label2" type="Label" parent="ColorRect"]
-offset_left = 383.0
-offset_top = 331.0
-offset_right = 1531.0
-offset_bottom = 457.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -568.5
+offset_top = 330.0
+offset_right = 579.5
+offset_bottom = 456.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("23_mrpth")
-autoplay = true
 
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
 [connection signal="pressed" from="ColorRect/PuzzleSelect" to="ColorRect/Start" method="_on_puzzle_select_pressed"]

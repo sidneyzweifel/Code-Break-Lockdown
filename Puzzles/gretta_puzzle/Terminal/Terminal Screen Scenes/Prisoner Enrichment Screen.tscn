@@ -1,15 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://dm7g6d5bljoxn"]
+[gd_scene load_steps=33 format=3 uid="uid://dm7g6d5bljoxn"]
 
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Enrichment Screen.gd" id="1_8662j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_cn0rf"]
-[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal_front.png" id="2_41rc7"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Exit Button.gd" id="3_meid1"]
-[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_hovered.png" id="4_j4214"]
-[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/exit_default.png" id="5_j7nif"]
-[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/enrichment screen folders.gd" id="6_g765c"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Prisoner Enrichment Screen.gd" id="1_r0f3y"]
+[ext_resource type="Texture2D" uid="uid://dwkkathc6cakg" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/terminalFront.png" id="3_60ylh"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Exit Button.gd" id="4_0ie1w"]
+[ext_resource type="Texture2D" uid="uid://dwfxii5ygqn6a" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitHovered.png" id="5_3kq8r"]
+[ext_resource type="Texture2D" uid="uid://dxu7pq4rm2ko2" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/exitDefault.png" id="6_2p7et"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="7_ealkb"]
-[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/image icon.png" id="8_7oxhp"]
-[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd.otf" id="9_8bcxx"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Folders Scripts/Enrichment Screen Folders.gd" id="7_vriaf"]
+[ext_resource type="Texture2D" uid="uid://ftndb3dojv1c" path="res://Puzzles/gretta_puzzle/Terminal/Assets/app icons/imageIcon.png" id="8_5c6mf"]
+[ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="9_y1u3x"]
 [ext_resource type="Texture2D" uid="uid://fqjeivgevikl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile000.png" id="11_ptqg3"]
 [ext_resource type="Texture2D" uid="uid://bd8e2wi3krsrf" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile001.png" id="12_eimo6"]
 [ext_resource type="Texture2D" uid="uid://h4wqf753usnm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile002.png" id="13_5mj6f"]
@@ -20,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_h0125"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_1asqe"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_d8bu0"]
+[ext_resource type="Texture2D" uid="uid://e7vmtxbxnp73" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/educational.png" id="21_xp8m2"]
+[ext_resource type="Texture2D" uid="uid://bnt47sr3aehwk" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/inspiration.png" id="22_ri0ag"]
+[ext_resource type="Texture2D" uid="uid://dp0cnd82j4k7q" path="res://Puzzles/gretta_puzzle/Terminal/Assets/enrichment/enrichment.png" id="22_tpu8i"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="24_iulr1"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="25_18jn1"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="26_fk75h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_le1ka"]
 texture = ExtResource("1_cn0rf")
@@ -602,7 +608,7 @@ fill_from = Vector2(0.525862, 0.525862)
 fill_to = Vector2(0, 1)
 
 [node name="Prisoner Enrichment Screen" type="Node2D"]
-script = ExtResource("1_8662j")
+script = ExtResource("1_r0f3y")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(300, 225)
@@ -615,20 +621,20 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 11, -131050, 524288, 11, 720
 position = Vector2(980, 545)
 rotation = -0.00698132
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("2_41rc7")
+texture = ExtResource("3_60ylh")
 
 [node name="exit" type="Node2D" parent="."]
-script = ExtResource("3_meid1")
+script = ExtResource("4_0ie1w")
 
 [node name="exit_hovered" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_j4214")
+texture = ExtResource("5_3kq8r")
 
 [node name="exit_default" type="Sprite2D" parent="exit"]
 position = Vector2(1210, 420)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_j7nif")
+texture = ExtResource("6_2p7et")
 
 [node name="Area2D" type="Area2D" parent="exit"]
 
@@ -638,21 +644,21 @@ shape = SubResource("RectangleShape2D_jxj67")
 
 [node name="enrichment image 1" type="Node2D" parent="."]
 position = Vector2(50, 0)
-script = ExtResource("6_g765c")
+script = ExtResource("7_vriaf")
 
 [node name="folder_default" type="Sprite2D" parent="enrichment image 1"]
 position = Vector2(769, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_5c6mf")
 
 [node name="image 1 - Label" type="Label" parent="enrichment image 1"]
 offset_left = 695.0
 offset_top = 574.0
 offset_right = 838.0
 offset_bottom = 594.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
-text = "Enrichment image 1"
+text = "enrichment image 1"
 
 [node name="enrichment image 2" type="Node2D" parent="."]
 position = Vector2(200, 0)
@@ -660,16 +666,16 @@ position = Vector2(200, 0)
 [node name="folder_default" type="Sprite2D" parent="enrichment image 2"]
 position = Vector2(950, 525)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_5c6mf")
 
 [node name="image 2 - Label" type="Label" parent="enrichment image 2"]
 offset_left = 710.0
 offset_top = 574.0
 offset_right = 853.0
 offset_bottom = 594.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
-text = "Enrichment image 2"
+text = "enrichment image 2"
 
 [node name="enrichment image 3" type="Node2D" parent="."]
 position = Vector2(50, 125)
@@ -677,16 +683,16 @@ position = Vector2(50, 125)
 [node name="folder_default" type="Sprite2D" parent="enrichment image 3"]
 position = Vector2(935, 400)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_7oxhp")
+texture = ExtResource("8_5c6mf")
 
 [node name="image 3 - Label" type="Label" parent="enrichment image 3"]
 offset_left = 1027.0
 offset_top = 449.0
 offset_right = 1170.0
 offset_bottom = 469.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 theme_override_font_sizes/font_size = 13
-text = "Enrichment image 3"
+text = "enrichment image 3"
 
 [node name="prisoner enrichment screen - LineEdit" type="LineEdit" parent="."]
 unique_name_in_owner = true
@@ -694,7 +700,7 @@ offset_left = 705.0
 offset_top = 769.0
 offset_right = 1233.0
 offset_bottom = 827.0
-theme_override_fonts/font = ExtResource("9_8bcxx")
+theme_override_fonts/font = ExtResource("9_y1u3x")
 
 [node name="Computer Buzzing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ealkb")
@@ -717,7 +723,71 @@ energy = 0.0
 texture = SubResource("GradientTexture2D_qu1y1")
 texture_scale = 1.2
 
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(656, 241)
+size = Vector2i(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="enrichment" type="Node2D" parent="Window"]
+unique_name_in_owner = true
+
+[node name="educational" type="Sprite2D" parent="Window/enrichment"]
+position = Vector2(200, 150)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("21_xp8m2")
+
+[node name="enrichment" type="Sprite2D" parent="Window/enrichment"]
+position = Vector2(180, 190)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("22_tpu8i")
+
+[node name="inspiration" type="Sprite2D" parent="Window/enrichment"]
+position = Vector2(200, 150)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_ri0ag")
+
+[node name="post it" type="Node2D" parent="."]
+script = ExtResource("24_iulr1")
+
+[node name="Area2D" type="Area2D" parent="post it"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95, -20, -90, -8.33331, -83.3333, 3.33337, -75, 15, -63.3333, 28.3334, -46.6667, 43.3334, -33.3333, 53.3334, -10, 68.3334, 20, 83.3334, 53.3333, 95, 85, 100, 125, 101.667, 163.333, 100, 165, 95, 165, 26.6667, 158.333, -146.667, 158.333, -163.333, 151.667, -166.667, 145, -168.333, 51.6667, -166.667, -35, -163.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("25_18jn1")
+
+[node name="PostItWindow" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(506, 49)
+size = Vector2i(550, 600)
+
+[node name="ColorRect" type="ColorRect" parent="PostItWindow"]
+offset_right = 550.0
+offset_bottom = 600.0
+color = Color(0.568627, 0.870588, 0.960784, 1)
+
+[node name="Node2D" type="Node2D" parent="PostItWindow/ColorRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
+position = Vector2(250, 300)
+texture = ExtResource("26_fk75h")
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="prisoner enrichment screen - LineEdit" to="enrichment image 1" method="_on_prisoner_enrichment_screen__line_edit_text_submitted"]
+[connection signal="close_requested" from="Window" to="enrichment image 1" method="_on_window_close_requested"]
+[connection signal="input_event" from="post it/Area2D" to="post it" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_exited"]
+[connection signal="close_requested" from="PostItWindow" to="post it" method="_on_post_it_window_close_requested"]
