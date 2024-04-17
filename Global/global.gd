@@ -12,6 +12,7 @@ var current_door_number:String
 var pairDict
 var previous_terminal_window = "none"
 var textbox_shown = false
+var door_passcodes
 
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
@@ -112,6 +113,19 @@ func has_shown_textbox():
 	else:
 		textbox_shown = true
 		return false
+		
+func set_door_passcodes():
+	door_passcodes = {
+		"1":str(randi_range(11111, 99999)),
+		"2":str(randi_range(11111, 99999)),
+		"3":str(randi_range(11111, 99999)),
+		"4":str(randi_range(11111, 99999)),
+		"5":str(randi_range(11111, 99999))
+	}
+	return door_passcodes
+			
+func get_door_passcodes():
+	return door_passcodes
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
 func get_passcode():

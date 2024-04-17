@@ -8,6 +8,7 @@ func _ready():
 		pass
 	else:
 		MusicPlayer.play_title_music()
+	Global.set_door_passcodes()
 	Global.set_door_color()
 	Global.set_door_number()
 	Global.set_door_pairs()

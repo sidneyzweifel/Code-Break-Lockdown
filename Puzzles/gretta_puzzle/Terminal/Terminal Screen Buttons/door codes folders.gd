@@ -7,6 +7,7 @@ var previousChild = 0
 
 var door_number = Global.get_door_number()
 var passcode = Global.get_passcode()
+var door_passcode = Global.get_door_passcodes()
 
 func _ready():
 	%Window.hide()
@@ -15,12 +16,16 @@ func _ready():
 	%codes.get_child(2).hide()
 	%codes.get_child(3).hide()
 	%codes.get_child(4).hide()
+	print("door passcodes") 
+	print(door_passcode)
 	
 func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 
 	if new_text == "PRINT door 1 code":
 		if door_number == "1":
 			%"door 1 code".get_child(0).set_text(passcode)
+		else:
+			%"door 1 code".get_child(0).set_text(door_passcode["1"])
 		pass
 		%codes.get_child(previousChild).hide()
 		%Window.show()
@@ -29,7 +34,8 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 	elif new_text == "PRINT door 2 code":
 		if door_number == "2":
 			%"door 2 code".get_child(0).set_text(passcode)
-		pass
+		else:
+			%"door 2 code".get_child(0).set_text(door_passcode["2"])
 		%codes.get_child(previousChild).hide()
 		%Window.show()
 		%codes.get_child(1).show()
@@ -37,7 +43,8 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 	elif new_text == "PRINT door 3 code":
 		if door_number == "3":
 			%"door 3 code".get_child(0).set_text(passcode)
-		pass
+		else:
+			%"door 3 code".get_child(0).set_text(door_passcode["3"])
 		%codes.get_child(previousChild).hide()
 		%Window.show()
 		%codes.get_child(2).show()
@@ -45,7 +52,8 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 	elif new_text == "PRINT door 4 code":
 		if door_number == "4":
 			%"door 4 code".get_child(0).set_text(passcode)
-		pass
+		else:
+			%"door 4 code".get_child(0).set_text(door_passcode["4"])
 		%codes.get_child(previousChild).hide()
 		%Window.show()
 		%codes.get_child(3).show()
@@ -53,7 +61,8 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 	elif new_text == "PRINT door 5 code":
 		if door_number == "5":
 			%"door 5 code".get_child(0).set_text(passcode)
-		pass
+		else:
+			%"door 5 code".get_child(0).set_text(door_passcode["5"])
 		%codes.get_child(previousChild).hide()
 		%Window.show()
 		%codes.get_child(4).show()
