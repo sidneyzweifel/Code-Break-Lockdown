@@ -650,6 +650,7 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("7_vk4sk")
 
 [node name="folder_default" type="Sprite2D" parent="door 1 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_4lvvj")
@@ -659,6 +660,7 @@ offset_left = 738.889
 offset_top = 573.333
 offset_right = 856.889
 offset_bottom = 596.333
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
 text = "door 1 color"
@@ -668,6 +670,7 @@ position = Vector2(200, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 2 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_4lvvj")
@@ -677,6 +680,7 @@ offset_left = 807.778
 offset_top = 573.333
 offset_right = 925.778
 offset_bottom = 596.333
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
 text = "door 2 color"
@@ -686,6 +690,7 @@ position = Vector2(310, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 3 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_4lvvj")
@@ -695,6 +700,7 @@ offset_left = 880.0
 offset_top = 573.333
 offset_right = 998.0
 offset_bottom = 596.333
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
 text = "door 3 color"
@@ -704,6 +710,7 @@ position = Vector2(90, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 4 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_4lvvj")
@@ -713,6 +720,7 @@ offset_left = 738.889
 offset_top = 597.778
 offset_right = 856.889
 offset_bottom = 620.778
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
 text = "door 4 color"
@@ -722,6 +730,7 @@ position = Vector2(200, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="door 5 - door colors"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_4lvvj")
@@ -731,6 +740,7 @@ offset_left = 808.889
 offset_top = 597.778
 offset_right = 926.889
 offset_bottom = 620.778
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j7h72")
 theme_override_font_sizes/font_size = 16
 text = "door 5 color"

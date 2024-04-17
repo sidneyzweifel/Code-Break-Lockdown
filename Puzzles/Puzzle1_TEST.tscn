@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=42 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Click On Terminal.gd" id="3_ay63j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dst1urd8iune6" path="res://Puzzles/gretta_puzzle/textbox.tscn" id="9_t7sde"]
 [ext_resource type="Texture2D" uid="uid://cy5c2cnxbbjn6" path="res://Tilesets/Industrial Cyberpunk/4 Animated objects/Card.png" id="11_he7he"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Hint.gd" id="11_v437t"]
-[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="13_oy5xi"]
+[ext_resource type="Texture2D" uid="uid://bga0humacbmau" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/noteBackground.png" id="13_upjvd"]
 [ext_resource type="Texture2D" uid="uid://1scl7repwxy4" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/wallScratches.png" id="14_2xum5"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="14_uroro"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -2057,8 +2058,7 @@ autoplay = "symbol_hint"
 [node name="HintWindow" type="Window" parent="."]
 unique_name_in_owner = true
 position = Vector2i(506, 49)
-size = Vector2i(550, 600)
-visible = false
+size = Vector2i(500, 500)
 
 [node name="ColorRect" type="ColorRect" parent="HintWindow"]
 offset_right = 550.0
@@ -2068,8 +2068,24 @@ color = Color(0.568627, 0.870588, 0.960784, 1)
 [node name="Node2D" type="Node2D" parent="HintWindow/ColorRect"]
 
 [node name="Sprite2D" type="Sprite2D" parent="HintWindow/ColorRect/Node2D"]
-position = Vector2(250, 300)
-texture = ExtResource("13_oy5xi")
+position = Vector2(250, 250)
+texture = ExtResource("13_upjvd")
+
+[node name="Label" type="Label" parent="HintWindow/ColorRect/Node2D"]
+offset_left = 4.0
+offset_right = 513.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("14_uroro")
+theme_override_font_sizes/font_size = 17
+text = "  I don't have much time so I have to make this brief.
+
+  I was the prisoner that inhabited this room before you, whoever you are. You don't know me and I don't know you, however, I wish to aid your escape from this place. The robotic guards here don't check the terminals as often as they should, allowing me to gain access to security files that can secure your freedom. 
+
+  The door is locked by a mere passcode that can be found in the files I uncovered, my only clue is to pay attention to the color of the light by the door. For further assistance with the terminal, refer to the post-it note I've left. May your escape be as triumphant as I hope mine will be. 
+
+  Best of luck—fortune favors the brave."
+autowrap_mode = 2
 
 [node name="Node" type="Node" parent="."]
 

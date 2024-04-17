@@ -670,6 +670,7 @@ text = "prisoner enrichment"
 position = Vector2(200, 0)
 
 [node name="folder_default" type="Sprite2D" parent="folder 2 - employees only"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_62f1k")
@@ -679,6 +680,7 @@ offset_left = 739.0
 offset_top = 567.0
 offset_right = 868.0
 offset_bottom = 589.0
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_13byi")
 theme_override_font_sizes/font_size = 15
 text = "employees only"

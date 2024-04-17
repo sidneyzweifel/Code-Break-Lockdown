@@ -649,6 +649,7 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("7_wakd3")
 
 [node name="folder_default" type="Sprite2D" parent="employee 1 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -658,6 +659,7 @@ offset_left = 725.556
 offset_top = 573.333
 offset_right = 871.556
 offset_bottom = 594.333
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 1 salary"
@@ -667,6 +669,7 @@ position = Vector2(200, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 2 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -676,6 +679,7 @@ offset_left = 794.444
 offset_top = 574.445
 offset_right = 940.444
 offset_bottom = 595.445
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 2 salary"
@@ -685,6 +689,7 @@ position = Vector2(310, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 3 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -694,6 +699,7 @@ offset_left = 862.222
 offset_top = 574.445
 offset_right = 1008.22
 offset_bottom = 595.445
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 3 salary"
@@ -703,6 +709,7 @@ position = Vector2(90, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 4 - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -712,6 +719,7 @@ offset_left = 723.333
 offset_top = 598.889
 offset_right = 869.333
 offset_bottom = 619.889
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 4 salary"
@@ -721,6 +729,7 @@ position = Vector2(200, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="manager - salaries"]
+modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -730,6 +739,7 @@ offset_left = 777.778
 offset_top = 600.0
 offset_right = 957.778
 offset_bottom = 621.0
+theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "manager norbit salary"
