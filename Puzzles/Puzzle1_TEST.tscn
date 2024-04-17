@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=27 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/clickTerminal.gd" id="3_flx1v"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
+[ext_resource type="AudioStream" uid="uid://dl4bf0ktnye1n" path="res://SFX/air vent.mp3" id="8_q0x8x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
 [ext_resource type="Script" path="res://Puzzles/doorLightColor.gd" id="8_ymibn"]
+[ext_resource type="PackedScene" uid="uid://dst1urd8iune6" path="res://Puzzles/gretta_puzzle/textbox.tscn" id="9_t7sde"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -1742,7 +1744,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(65535, 786432, 17, -1, 786432, 17, -65537, 786432, 15, -131072, 851968, 15, -131071, 917504, 15, -65536, 851968, 17, -65535, 917504, 16, 0, 851968, 16, 1, 917504, 17, 131071, 786432, 17, 65536, 851968, 17, 65537, 917504, 17, 5, 1048576, 2, 65541, 1048576, 3, 6, 1114112, 2, 65542, 1114112, 3, 7, 1048576, 2, 65543, 1048576, 3, 8, 1114112, 2, 65544, 1114112, 3, -131060, 1703936, 0, -65524, 1703936, 1, -131059, 1769472, 0, -65523, 1769472, 1, -131058, 1835008, 0, -65522, 1835008, 1, -131066, 2490368, 6, -65530, 2490368, 7, -131065, 2555904, 6, -65529, 2555904, 7, 2, 720896, 0, -131078, 1048576, 0, -65542, 1048576, 1, -131077, 1114112, 0, -65541, 1114112, 1, -131076, 1179648, 0, -65540, 1179648, 1, -131075, 1245184, 0, -65539, 1245184, 1, -196600, 1376256, 2, -131064, 1376256, 3, -196599, 1441792, 2, -131063, 1441792, 3, -196598, 1507328, 2, -131062, 1507328, 3, -131057, 1900544, 0, -65521, 1900544, 1)
+layer_1/tile_data = PackedInt32Array(65535, 786432, 17, -1, 786432, 17, -65537, 786432, 15, -131072, 851968, 15, -131071, 917504, 15, -65536, 851968, 17, -65535, 917504, 16, 0, 851968, 16, 1, 917504, 17, 131071, 786432, 17, 65536, 851968, 17, 65537, 917504, 17, 5, 1048576, 2, 65541, 1048576, 3, 6, 1114112, 2, 65542, 1114112, 3, 7, 1048576, 2, 65543, 1048576, 3, 8, 1114112, 2, 65544, 1114112, 3, -131060, 1703936, 0, -65524, 1703936, 1, -131059, 1769472, 0, -65523, 1769472, 1, -131058, 1835008, 0, -65522, 1835008, 1, -131066, 2490368, 6, -65530, 2490368, 7, -131065, 2555904, 6, -65529, 2555904, 7, 2, 720896, 0, -131078, 1048576, 0, -65542, 1048576, 1, -131077, 1114112, 0, -65541, 1114112, 1, -131076, 1179648, 0, -65540, 1179648, 1, -131075, 1245184, 0, -65539, 1245184, 1, -196600, 1376256, 2, -131064, 1376256, 3, -131057, 1900544, 0, -65521, 1900544, 1)
 layer_2/name = "bed and floor decorations"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -1874,6 +1876,12 @@ stream = ExtResource("8_xhcw0")
 volume_db = 7.0
 autoplay = true
 
+[node name="Air  Vent" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(459, 390)
+stream = ExtResource("8_q0x8x")
+volume_db = -15.0
+autoplay = true
+
 [node name="Boundaries" type="StaticBody2D" parent="."]
 visible = false
 
@@ -1954,6 +1962,12 @@ offset_left = 804.0
 offset_top = 215.0
 offset_right = 807.0
 offset_bottom = 218.0
+
+[node name="textbox" parent="." instance=ExtResource("9_t7sde")]
+visible = false
+offset = Vector2(533, 113)
+scale = Vector2(0.6, 0.6)
+transform = Transform2D(0.6, 0, 0, 0.6, 533, 113)
 
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]
