@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4rairieo28vl"
+path="res://.godot/imported/title transition.mp3-3a672019a2de5e3e70b973ebbc0e8517.mp3str"
+
+[deps]
+
+source_file="res://SFX/title transition.mp3"
+dest_files=["res://.godot/imported/title transition.mp3-3a672019a2de5e3e70b973ebbc0e8517.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

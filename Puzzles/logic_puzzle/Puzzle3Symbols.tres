@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c47st61viycg2"]
+
+[ext_resource type="FontFile" uid="uid://bcehlnkimilwo" path="res://addons/fontawesome/fonts/Cait_sith-Regular.ttf" id="1_74i7c"]
+
+[resource]
+base_font = ExtResource("1_74i7c")

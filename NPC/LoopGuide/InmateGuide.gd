@@ -12,9 +12,6 @@ func _ready():
 
 func _on_button_pressed():
 	p.show()
-	$Window/ColorRect/Start.show()
-	$Window/ColorRect/Options.hide()
-	$Window/ColorRect/Detail.hide()
 	
 
 
@@ -49,24 +46,10 @@ func _on_change_pressed():
 	pass # Replace with function body.
 
 
-
-
-
-func _on_demo_pressed():
-	pass
-
-
-func _on_review_for_loops_pressed():
-	$Window/ColorRect/Start.hide()
-	$Window/ColorRect/Options.show()
-
-
-func _on_go_back_options_pressed():
+func _on_go_back_pressed():
 	$Window/ColorRect/Detail.hide()
 	$Window/ColorRect/Options.show()
 
 
-
-func _on_go_back_start_pressed():
-	$Window/ColorRect/Options.hide()
-	$Window/ColorRect/Start.show()
+func _on_demo_pressed():
+	pass

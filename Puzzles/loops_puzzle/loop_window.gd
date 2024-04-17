@@ -2,8 +2,8 @@ extends Window
 
 @onready var window = $"."
 
-@onready var item_number_label = $ColorRect/ItemNumLabel
-@onready var start_index_label = $ColorRect/LoopContriants/Start/StartIndex
+@onready var item_number_label = $ItemNumLabel
+@onready var start_index_label = $StartIndex
 
 @export var error_popup:PackedScene
 @export var success_popup:PackedScene
@@ -37,10 +37,7 @@ func _ready():
 		item_number_label.text = "ITEM #: " + str(item_number)
 		start_index = rng.randi_range(0, 999)
 		start_index_label.text = str(start_index)
-		if(item_number != start_index):
-			if(rng.randi_range(0, 100) % 3 == 0):
-				$ColorRect/LoopContriants/End/Inequality.set_item_disabled(2, true)
-				$ColorRect/LoopContriants/End/Inequality.set_item_disabled(3, true)
+	
 
 
 	

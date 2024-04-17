@@ -13,9 +13,9 @@ func _ready():
 
 
 func set_ids(id_array:Array):
-	$"Board/HBoxContainer/VBoxContainer/ID 1".set_text(str(id_array[0]))
-	$"Board/HBoxContainer/VBoxContainer/ID 2".set_text(str(id_array[1]))
-	$"Board/HBoxContainer/VBoxContainer/ID 3".set_text(str(id_array[2]))
+	$"Board/HBoxContainer/VBoxContainer/ID 1".set_text(id_array[0])
+	$"Board/HBoxContainer/VBoxContainer/ID 2".set_text(id_array[1])
+	$"Board/HBoxContainer/VBoxContainer/ID 3".set_text(id_array[2])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

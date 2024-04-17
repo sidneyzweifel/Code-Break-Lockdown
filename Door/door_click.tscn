@@ -1,23 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55mgrmskpgnp"]
+[gd_scene load_steps=4 format=3 uid="uid://c55mgrmskpgnp"]
 
 [ext_resource type="Script" path="res://Door/door.gd" id="1_gsyjb"]
-[ext_resource type="Texture2D" uid="uid://d4apniv1j3gaq" path="res://Sprites/door_temp2.png" id="2_cuni7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_836jx"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_cuni7")
-}],
+"frames": [],
 "loop": true,
 "name": &"default",
 "speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of82y"]
-size = Vector2(151, 311)
+size = Vector2(151, 588)
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door2" type="StaticBody2D"]
 position = Vector2(162, 129)
 disable_mode = 1
 script = ExtResource("1_gsyjb")
@@ -29,19 +25,22 @@ scale = Vector2(1.176, 1.85455)
 sprite_frames = SubResource("SpriteFrames_836jx")
 
 [node name="Button" type="Button" parent="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -62.5
-offset_top = -82.5
-offset_right = -62.5
-offset_bottom = -82.5
+offset_left = -66.0
+offset_top = -86.0
+offset_right = 65.0
+offset_bottom = 81.0
+offset_right = 64.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/icon_normal_color = Color(0.803922, 0.129412, 0.227451, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(137.5, 234.5)
+position = Vector2(174, 220)
 shape = SubResource("RectangleShape2D_of82y")
 
 [connection signal="pressed" from="AnimatedSprite2D/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dst1urd8iune6"]
+
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Textbox.gd" id="1_jmrs4"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="2_qeki1"]
+[ext_resource type="AudioStream" uid="uid://be1q677w0xyv4" path="res://SFX/text writing.mp3" id="3_8j76v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88ih2"]
+bg_color = Color(0.784314, 0.882353, 0.941176, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0627451, 0.611765, 0.819608, 1)
+
+[node name="textbox" type="CanvasLayer"]
+script = ExtResource("1_jmrs4")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 328.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_88ih2")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0156863, 0.364706, 0.494118, 1)
+theme_override_fonts/font = ExtResource("2_qeki1")
+theme_override_font_sizes/font_size = 60
+text = "placeholder text! the quick brown fox jumped over the lazy dog fjjdjfkkkkkkkkk"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text Noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8j76v")

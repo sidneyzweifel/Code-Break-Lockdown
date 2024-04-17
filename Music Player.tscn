@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsw4pj704pv4d"]
+
+[ext_resource type="AudioStream" uid="uid://docwww8egwyar" path="res://SFX/ambient music.mp3" id="1_5sxfm"]
+[ext_resource type="Script" path="res://Music Player.gd" id="1_uv5dn"]
+[ext_resource type="AudioStream" uid="uid://b50ubbbkknath" path="res://SFX/title music.mp3" id="3_hvv3i"]
+[ext_resource type="AudioStream" uid="uid://4rairieo28vl" path="res://SFX/title transition.mp3" id="4_yekhl"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_uv5dn")
+
+[node name="title" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_hvv3i")
+volume_db = -10.0
+
+[node name="ambient" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_5sxfm")
+volume_db = -20.0
+
+[node name="transition" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_yekhl")
+volume_db = -20.0
