@@ -13,27 +13,28 @@ func _ready():
 	
 func _on_prisoner_enrichment_screen__line_edit_text_submitted(new_text):
 
-	# put input to all lowercase to ensure no issues with case sensitivity
-	new_text = new_text.to_lower()
-	
 	# go to the correct scene based on inputted text
-	if new_text == "print enrichment image 1":
+	if new_text == "PRINT enrichment image 1":
 		#SceneTransition.change_scene_to_file(variable1) 
 		%enrichment.get_child(previousChild).hide()
 		%Window.show()
 		%enrichment.get_child(0).show()
 		previousChild = 0
-	elif new_text == "print enrichment image 2":
+	elif new_text == "PRINT enrichment image 2":
 		%enrichment.get_child(previousChild).hide()
 		%Window.show()
 		%enrichment.get_child(1).show()
 		previousChild = 1
-	elif new_text == "print enrichment image 3":
+	elif new_text == "PRINT enrichment image 3":
 		%enrichment.get_child(previousChild).hide()
 		%Window.show()
 		%enrichment.get_child(2).show()
 		previousChild = 2
-	elif new_text == "back":
+	elif new_text == "BACK":
 		SceneTransition.change_scene_to_file(previousScreen)
 	else:
 		WrongInput.change_scene_to_file(backToScreen) # if input doesn't work, play the wrong input animation
+
+
+func _on_window_close_requested():
+	%Window.hide()

@@ -20,11 +20,8 @@ func _ready():
 	
 func _on_line_edit_text_submitted(new_text):
 
-	# put input to all lowercase to ensure no issues with case sen````````````````````````````````````````````sitivity
-	new_text = new_text.to_lower()
-	
 	# go to the correct scene based on inputted text
-	if new_text == "print door 1 color":
+	if new_text == "PRINT door 1 color":
 		if door_pairs["1"] == "blue":
 			%colors.get_child(previousChild).hide()
 			%Window.show()
@@ -50,7 +47,7 @@ func _on_line_edit_text_submitted(new_text):
 			%Window.show()
 			%colors.get_child(4).show()
 			previousChild = 4
-	elif new_text == "print door 2 color":
+	elif new_text == "PRINT door 2 color":
 		if door_pairs["2"] == "blue":
 			%colors.get_child(previousChild).hide()
 			%Window.show()
@@ -76,7 +73,7 @@ func _on_line_edit_text_submitted(new_text):
 			%Window.show()
 			%colors.get_child(4).show()
 			previousChild = 4
-	elif new_text == "print door 3 color":
+	elif new_text == "PRINT door 3 color":
 		if door_pairs["3"] == "blue":
 			%colors.get_child(previousChild).hide()
 			%Window.show()
@@ -102,7 +99,7 @@ func _on_line_edit_text_submitted(new_text):
 			%Window.show()
 			%colors.get_child(4).show()
 			previousChild = 4
-	elif new_text == "print door 4 color":
+	elif new_text == "PRINT door 4 color":
 		if door_pairs["4"] == "blue":
 			%colors.get_child(previousChild).hide()
 			%Window.show()
@@ -128,7 +125,7 @@ func _on_line_edit_text_submitted(new_text):
 			%Window.show()
 			%colors.get_child(4).show()
 			previousChild = 4
-	elif new_text == "print door 5 color":
+	elif new_text == "PRINT door 5 color":
 		if door_pairs["5"] == "blue":
 			%colors.get_child(previousChild).hide()
 			%Window.show()
@@ -154,7 +151,7 @@ func _on_line_edit_text_submitted(new_text):
 			%Window.show()
 			%colors.get_child(4).show()
 			previousChild = 4
-	elif new_text == "back":
+	elif new_text == "BACK":
 		SceneTransition.change_scene_to_file(previousScreen)
 	else:
 		WrongInput.change_scene_to_file(backToScreen) # if input doesn't work, play the wrong input animation

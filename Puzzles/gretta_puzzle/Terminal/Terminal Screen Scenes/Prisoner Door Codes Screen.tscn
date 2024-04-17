@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bsn657fectlh8"]
+[gd_scene load_steps=31 format=3 uid="uid://bsn657fectlh8"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_01str"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Buttons/Prisoner Door Codes Screen.gd" id="1_nsrlq"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_jysrn"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_rtan8"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="21_u3mgj"]
+[ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scenes/post it.gd" id="22_ek8up"]
+[ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/post it note.png" id="23_y0hd8"]
+[ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/click post it.png" id="24_mrydp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ro82"]
 texture = ExtResource("1_01str")
@@ -654,7 +657,7 @@ offset_right = 852.444
 offset_bottom = 597.445
 theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
-text = "Door 1 Code"
+text = "door 1 code"
 
 [node name="door 2 - door codes" type="Node2D" parent="."]
 position = Vector2(200, 30)
@@ -672,7 +675,7 @@ offset_right = 921.333
 offset_bottom = 597.445
 theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
-text = "Door 2 Code"
+text = "door 2 code"
 
 [node name="door 3 - door codes" type="Node2D" parent="."]
 position = Vector2(310, 30)
@@ -690,7 +693,7 @@ offset_right = 991.333
 offset_bottom = 596.333
 theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
-text = "Door 3 Code"
+text = "door 3 code"
 
 [node name="door 4 - door codes" type="Node2D" parent="."]
 position = Vector2(90, 150)
@@ -708,7 +711,7 @@ offset_right = 849.111
 offset_bottom = 621.889
 theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
-text = "Door 4 Code"
+text = "door 4 code"
 
 [node name="door 5 - door codes" type="Node2D" parent="."]
 position = Vector2(200, 150)
@@ -726,7 +729,7 @@ offset_right = 920.222
 offset_bottom = 620.778
 theme_override_fonts/font = ExtResource("9_obn3q")
 theme_override_font_sizes/font_size = 16
-text = "Door 5 Code"
+text = "door 5 code"
 
 [node name="prisoner door codes screen - LineEdit" type="LineEdit" parent="."]
 unique_name_in_owner = true
@@ -841,8 +844,43 @@ theme_override_fonts/font = ExtResource("21_u3mgj")
 theme_override_font_sizes/font_size = 40
 text = "00000"
 
+[node name="post it" type="Node2D" parent="."]
+script = ExtResource("22_ek8up")
+
+[node name="Area2D" type="Area2D" parent="post it"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-95, -160, -98.3333, -155, -98.3333, -148.333, -95, -20, -90, -8.33331, -83.3333, 3.33337, -75, 15, -63.3333, 28.3334, -46.6667, 43.3334, -33.3333, 53.3334, -10, 68.3334, 20, 83.3334, 53.3333, 95, 85, 100, 125, 101.667, 163.333, 100, 165, 95, 165, 26.6667, 158.333, -146.667, 158.333, -163.333, 151.667, -166.667, 145, -168.333, 51.6667, -166.667, -35, -163.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="post it/Area2D"]
+position = Vector2(1318, 385)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("23_y0hd8")
+
+[node name="PostItWindow" type="Window" parent="."]
+unique_name_in_owner = true
+position = Vector2i(506, 49)
+size = Vector2i(550, 600)
+
+[node name="ColorRect" type="ColorRect" parent="PostItWindow"]
+offset_right = 550.0
+offset_bottom = 600.0
+color = Color(0.568627, 0.870588, 0.960784, 1)
+
+[node name="Node2D" type="Node2D" parent="PostItWindow/ColorRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PostItWindow/ColorRect/Node2D"]
+position = Vector2(250, 300)
+texture = ExtResource("24_mrydp")
+
 [connection signal="input_event" from="exit/Area2D" to="exit" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit/Area2D" to="exit" method="_on_area_2d_mouse_exited"]
 [connection signal="text_submitted" from="prisoner door codes screen - LineEdit" to="door 1 - door codes" method="_on_prisoner_door_codes_screen__line_edit_text_submitted"]
 [connection signal="close_requested" from="Window" to="door 1 - door codes" method="_on_window_close_requested"]
+[connection signal="input_event" from="post it/Area2D" to="post it" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="post it/Area2D" to="post it" method="_on_area_2d_mouse_exited"]
+[connection signal="close_requested" from="PostItWindow" to="post it" method="_on_post_it_window_close_requested"]

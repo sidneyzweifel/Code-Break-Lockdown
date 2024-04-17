@@ -18,9 +18,7 @@ func _ready():
 	
 func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 
-	new_text = new_text.to_lower()
-	
-	if new_text == "print door 1 code":
+	if new_text == "PRINT door 1 code":
 		if door_number == "1":
 			%"door 1 code".get_child(0).set_text(passcode)
 		pass
@@ -28,7 +26,7 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 		%Window.show()
 		%codes.get_child(0).show()
 		previousChild = 0
-	elif new_text == "print door 2 code":
+	elif new_text == "PRINT door 2 code":
 		if door_number == "2":
 			%"door 2 code".get_child(0).set_text(passcode)
 		pass
@@ -36,7 +34,7 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 		%Window.show()
 		%codes.get_child(1).show()
 		previousChild = 1
-	elif new_text == "print door 3 code":
+	elif new_text == "PRINT door 3 code":
 		if door_number == "3":
 			%"door 3 code".get_child(0).set_text(passcode)
 		pass
@@ -44,7 +42,7 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 		%Window.show()
 		%codes.get_child(2).show()
 		previousChild = 2
-	elif new_text == "print door 4 code":
+	elif new_text == "PRINT door 4 code":
 		if door_number == "4":
 			%"door 4 code".get_child(0).set_text(passcode)
 		pass
@@ -52,7 +50,7 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 		%Window.show()
 		%codes.get_child(3).show()
 		previousChild = 3
-	elif new_text == "print door 5 code":
+	elif new_text == "PRINT door 5 code":
 		if door_number == "5":
 			%"door 5 code".get_child(0).set_text(passcode)
 		pass
@@ -60,7 +58,7 @@ func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 		%Window.show()
 		%codes.get_child(4).show()
 		previousChild = 4
-	elif new_text == "back":
+	elif new_text == "BACK":
 		SceneTransition.change_scene_to_file(previousScreen)
 	else:
 		WrongInput.change_scene_to_file(backToScreen) # if input doesn't work, play the wrong input animation
