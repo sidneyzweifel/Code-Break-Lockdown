@@ -30,9 +30,13 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fontawesome/plugin.cfg")
+
 [gui]
 
-theme/custom_font="res://addons/fontawesome/fonts/fa-solid-900.woff2"
+theme/custom_font="res://addons/fontawesome/fonts/fa-regular-400.woff2"
 
 [input]
 

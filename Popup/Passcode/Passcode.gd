@@ -7,7 +7,7 @@ extends Label
 # passcode every time i left the terminal scene and went back to 
 # the puzzle 1 scene, so i added a check if there already is a passcode
 func _ready():
-	var passcode= Global.set_passcode()
+	var passcode =  await Global.set_passcode()
 	passcode_text.text = "PASSCODE: " + passcode
 	print("PASSCODE: " + passcode)
 	pass 

@@ -1,4 +1,4 @@
-class_name Door_Info extends Node
+class_name Door_Info_Puz4 extends Node2D
 
 var path_to_new_scene:String
 var passcode_scene:String
