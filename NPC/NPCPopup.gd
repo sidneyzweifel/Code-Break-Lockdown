@@ -18,14 +18,11 @@ func get_item_num(_item_num:int):
 	item_num = _item_num
 
 func _ready():
-	if(Puzzle4Autoload.loop_door_solved):
-		dialouge_cnt = 5
-		player_dia_cnt = 5
 	var dia = pick_next_dialouge_inmate(dialouge_cnt)
 	label_text.text = str(dia)
 	var response =  pick_next_player_response(player_dia_cnt)
 	next_option_button = popup.add_button(response, false, "custom action")
-	
+
 	
 
 
@@ -45,13 +42,6 @@ func pick_next_dialouge_inmate(cnt:int):
 			var color = Dialouge.speech_dict[inmate_key]["door_color"]
 			var pos = Dialouge.speech_dict[inmate_key]["door_location"]
 			return "The door is " + str(pos) + " and is " + str(color)
-		5:
-			return str(Dialouge.speech_dict[inmate_key]["inmate_thanks"])
-		6:
-			return str(Dialouge.speech_dict[inmate_key]["passcode_hint"])
-			
-		7:
-			return str("We're counting on you!")
 		_:
 			return str("Please get me item #") + str(item_num) + " from the machine beyond the door"
 			
@@ -65,10 +55,6 @@ func pick_next_player_response(cnt:int):
 			return str("Where?")
 		2:
 			return str("Okay")
-		5:
-			return "No problem.\nNow how do I get out of here?"
-		6:
-			return "Okay. Thanks!"
 		_:
 			remove_button(next_option_button)
 			return str("Got it")

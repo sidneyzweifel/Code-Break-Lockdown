@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpkuf0m6rqcn1"]
+
+[sub_resource type="GDScript" id="GDScript_fb44o"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+
+func _on_button_pressed():
+	$Timer.start(60)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_fb44o")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 155.0
+offset_bottom = 58.0
+text = "Start Timer"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

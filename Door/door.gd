@@ -22,7 +22,3 @@ func handle_access(door_access):
 
 func _on_button_pressed():
 	handle_access(false)
-
-
-func _on_door_puz_4_button_pressed():
-	_on_button_pressed()

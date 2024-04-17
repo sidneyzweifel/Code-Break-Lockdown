@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6q56gnckydfc"
-path="res://.godot/imported/inmate_C.png-c77fe0995bbbd9ed01e7cfada53364d3.ctex"
+path="res://.godot/imported/inmate1.png-89ab38411ca1933bd1525e180b988085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/inmate_C.png"
-dest_files=["res://.godot/imported/inmate_C.png-c77fe0995bbbd9ed01e7cfada53364d3.ctex"]
+source_file="res://Backgrounds/inmate1.png"
+dest_files=["res://.godot/imported/inmate1.png-89ab38411ca1933bd1525e180b988085.ctex"]
 
 [params]
 

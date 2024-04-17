@@ -22,11 +22,11 @@ func _on_custom_action(action):
 		remove_button(added_btn_1)
 		added_btn_1 = $".".add_button("Requested item > starting index", false, "larger")
 	if action == "smaller":
-		$Label.set_text("Use > or >= and --")
+		$Label.set_text("Use < or <= and ++")
 		added_btn_1.hide()
 		added_btn_2.hide()
 	if action == "larger":
-		$Label.set_text("Use < or <= and ++")
+		$Label.set_text("Use > or >= and --")
 		added_btn_1.hide()
 		added_btn_2.hide()
 		
