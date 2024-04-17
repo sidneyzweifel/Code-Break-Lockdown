@@ -61,6 +61,10 @@ func set_passcode():
 	else:
 		current_passcode = str(randi_range(10000, 99999))
 		return current_passcode
+		
+		
+func override_passcode_set():
+	pass
 
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
