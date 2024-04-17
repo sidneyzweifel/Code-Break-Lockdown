@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbp4xsnof0uob"]
+[gd_scene load_steps=6 format=3 uid="uid://dbp4xsnof0uob"]
 
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="1_5yyyo"]
 [ext_resource type="Script" path="res://Popup/Passcode/LineEdit.gd" id="1_46g5p"]
 [ext_resource type="Script" path="res://Popup/Passcode/exit_button.gd" id="2_06kqa"]
 [ext_resource type="FontFile" uid="uid://bpayi17r24x8p" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd.otf" id="3_ctyws"]
+[ext_resource type="AudioStream" uid="uid://davtqqekvkaou" path="res://SFX/success noise.mp3" id="5_30qo8"]
 
 [node name="ColorRect" type="ColorRect"]
 show_behind_parent = true
@@ -86,6 +87,10 @@ theme_override_fonts/font = ExtResource("3_ctyws")
 theme_override_font_sizes/font_size = 90
 text = "ACCESS GRANTED"
 horizontal_alignment = 1
+
+[node name="success" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_30qo8")
 
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

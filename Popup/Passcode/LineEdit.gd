@@ -33,6 +33,7 @@ func _on_text_submitted(new_text):
 		door_access = 1 #set door_access granted
 		Global.set_passcode()
 		print("in text submitted, new passcode is: "+Global.get_passcode())
+		%success.play()
 	else:
 		#stlying stuff that doesn't work when changing scenes
 		var red =  Color(1.0,0.0,0.0,1.0)

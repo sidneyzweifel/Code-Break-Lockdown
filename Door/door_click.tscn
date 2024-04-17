@@ -11,7 +11,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of82y"]
-size = Vector2(151, 311)
+size = Vector2(151, 588)
 
 [node name="Door" type="StaticBody2D"]
 position = Vector2(162, 129)
@@ -38,7 +38,7 @@ grow_vertical = 2
 theme_override_colors/icon_normal_color = Color(0.803922, 0.129412, 0.227451, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(137.5, 234.5)
+position = Vector2(174, 220)
 shape = SubResource("RectangleShape2D_of82y")
 
 [connection signal="pressed" from="AnimatedSprite2D/Button" to="." method="_on_button_pressed"]

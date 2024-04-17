@@ -1830,7 +1830,7 @@ texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 1.2
 
 [node name="Door2" parent="." instance=ExtResource("6_tpbfh")]
-position = Vector2(587, 196)
+position = Vector2(587, 240)
 rotation = 0.00349066
 scale = Vector2(0.7, 0.4)
 path_to_new_scene = "res://Puzzles/Puzzle2_TEST.tscn"
@@ -1964,6 +1964,7 @@ offset_right = 807.0
 offset_bottom = 218.0
 
 [node name="textbox" parent="." instance=ExtResource("9_t7sde")]
+visible = false
 offset = Vector2(550, 95)
 scale = Vector2(0.6, 0.6)
 transform = Transform2D(0.6, 0, 0, 0.6, 550, 95)

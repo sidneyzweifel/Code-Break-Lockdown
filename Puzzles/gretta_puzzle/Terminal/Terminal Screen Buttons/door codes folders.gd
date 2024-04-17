@@ -16,8 +16,6 @@ func _ready():
 	%codes.get_child(2).hide()
 	%codes.get_child(3).hide()
 	%codes.get_child(4).hide()
-	print("door passcodes") 
-	print(door_passcode)
 	
 func _on_prisoner_door_codes_screen__line_edit_text_submitted(new_text):
 
