@@ -1,10 +1,101 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtfaflr4ptvky"]
+[gd_scene load_steps=25 format=3 uid="uid://dtfaflr4ptvky"]
 
 [ext_resource type="Script" path="res://Menu/Start.gd" id="1_4xyal"]
+[ext_resource type="Texture2D" uid="uid://bvvpmiv28gfhw" path="res://Menu/Assets/menu screen background/tile000.png" id="1_5mtnm"]
+[ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/unispace bd it.otf" id="1_oimot"]
+[ext_resource type="Texture2D" uid="uid://bncvc7ffb13oj" path="res://Menu/Assets/menu screen background/tile001.png" id="2_fkf88"]
+[ext_resource type="Texture2D" uid="uid://cp7u06bb052op" path="res://Menu/Assets/menu screen background/tile002.png" id="3_3lycp"]
+[ext_resource type="Texture2D" uid="uid://p35dwyl6m1m1" path="res://Menu/Assets/menu screen background/tile003.png" id="4_l4lby"]
+[ext_resource type="Texture2D" uid="uid://ceyus665rjubx" path="res://Menu/Assets/menu screen background/tile004.png" id="5_81lhf"]
+[ext_resource type="Texture2D" uid="uid://8hc1toa4o27j" path="res://Menu/Assets/menu screen background/tile005.png" id="6_xmq3y"]
+[ext_resource type="Texture2D" uid="uid://berfagitwjxg6" path="res://Menu/Assets/menu screen background/tile006.png" id="7_jqv64"]
+[ext_resource type="Texture2D" uid="uid://bqvpkjc6hsup8" path="res://Menu/Assets/menu screen background/tile007.png" id="8_capkb"]
+[ext_resource type="Texture2D" uid="uid://dnhybt3bru5do" path="res://Menu/Assets/menu screen background/tile011.png" id="8_sqmc1"]
+[ext_resource type="Texture2D" uid="uid://dhn1tu8g0yfbp" path="res://Menu/Assets/menu screen background/tile008.png" id="9_p6tgg"]
+[ext_resource type="Texture2D" uid="uid://dnx6j2x3a58mm" path="res://Menu/Assets/menu screen background/tile010.png" id="11_0h0qt"]
+[ext_resource type="Texture2D" uid="uid://716hw1klkwdr" path="res://Menu/Assets/menu screen background/tile009.png" id="12_imyfg"]
+[ext_resource type="Texture2D" uid="uid://bprslojl75gq4" path="res://Menu/Assets/menu screen background/tile012.png" id="13_vkice"]
+[ext_resource type="Texture2D" uid="uid://ddle7qntl2dxa" path="res://Menu/Assets/menu screen background/tile013.png" id="14_7cg0v"]
+[ext_resource type="Texture2D" uid="uid://0pmkbtu3qvkg" path="res://Menu/Assets/menu screen background/tile015.png" id="15_rksco"]
+[ext_resource type="Texture2D" uid="uid://xav4t3udr0md" path="res://Menu/Assets/menu screen background/tile014.png" id="16_nagyr"]
+[ext_resource type="Texture2D" uid="uid://1m6oa1a1bqs7" path="res://Menu/Assets/menu screen background/tile016.png" id="17_4ixfv"]
+[ext_resource type="Texture2D" uid="uid://bgbql2skpq7ej" path="res://Menu/Assets/menu screen background/tile017.png" id="18_oio81"]
+[ext_resource type="Texture2D" uid="uid://g7c0yb1a2r41" path="res://Menu/Assets/menu screen background/tile018.png" id="19_0gkdu"]
+[ext_resource type="Texture2D" uid="uid://w2itu2sptlou" path="res://Menu/Assets/menu screen background/tile019.png" id="20_be3lh"]
+[ext_resource type="AudioStream" uid="uid://dbs8lvpeymvfm" path="res://Menu/Assets/title music.mp3" id="23_mrpth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxyi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5mtnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fkf88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3lycp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l4lby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81lhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xmq3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jqv64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sqmc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_capkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p6tgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0h0qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_imyfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vkice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7cg0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rksco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nagyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4ixfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oio81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0gkdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_be3lh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Menu" type="Node2D"]
 
 [node name="Window" type="Window" parent="."]
+mode = 3
 initial_position = 2
 size = Vector2i(1920, 1080)
 
@@ -14,36 +105,101 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.317647, 0.929412, 0.956863, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Window/ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -101.0
-offset_right = 218.0
-offset_bottom = 101.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
 alignment = 1
 
-[node name="Start" type="Button" parent="Window/ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 90
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/ColorRect/VBoxContainer"]
+modulate = Color(0.678431, 0, 0, 1)
+scale = Vector2(1.5975, 1.57704)
+sprite_frames = SubResource("SpriteFrames_kxyi5")
+autoplay = "default"
+frame_progress = 0.430074
+centered = false
+
+[node name="Start" type="Button" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.516
+anchor_bottom = 0.577
+offset_left = -178.5
+offset_top = -50.772
+offset_right = 142.988
+offset_bottom = 72.228
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 95
 text = "START"
 script = ExtResource("1_4xyal")
 puzzle_1 = "res://Puzzles/Puzzle1_TEST.tscn"
 puzzle_select = "res://Menu/PuzzleSelect.tscn"
 
-[node name="PuzzleSelect" type="Button" parent="Window/ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 90
+[node name="Start2" type="Label" parent="Window/ColorRect"]
+offset_left = 811.0
+offset_top = 527.0
+offset_right = 1163.0
+offset_bottom = 653.0
+theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 95
+text = "START"
+
+[node name="PuzzleSelect" type="Button" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.5
+offset_top = 730.0
+offset_right = 185.5
+offset_bottom = 834.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 76
 text = "PUZZLES"
 
-[connection signal="pressed" from="Window/ColorRect/VBoxContainer/Start" to="Window/ColorRect/VBoxContainer/Start" method="_on_pressed"]
-[connection signal="pressed" from="Window/ColorRect/VBoxContainer/PuzzleSelect" to="Window/ColorRect/VBoxContainer/Start" method="_on_puzzle_select_pressed"]
+[node name="PuzzleSelect2" type="Label" parent="Window/ColorRect"]
+offset_left = 797.0
+offset_top = 733.0
+offset_right = 1167.0
+offset_bottom = 837.0
+theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 76
+text = "PUZZLES"
+
+[node name="Label" type="Label" parent="Window/ColorRect"]
+offset_left = 378.0
+offset_top = 335.0
+offset_right = 1526.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 98
+text = "CODE BREAK LOCKDOWN"
+
+[node name="Label2" type="Label" parent="Window/ColorRect"]
+offset_left = 383.0
+offset_top = 331.0
+offset_right = 1531.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0.678431, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oimot")
+theme_override_font_sizes/font_size = 98
+text = "CODE BREAK LOCKDOWN"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_mrpth")
+autoplay = true
+
+[connection signal="pressed" from="Window/ColorRect/Start" to="Window/ColorRect/Start" method="_on_pressed"]
+[connection signal="pressed" from="Window/ColorRect/PuzzleSelect" to="Window/ColorRect/Start" method="_on_puzzle_select_pressed"]

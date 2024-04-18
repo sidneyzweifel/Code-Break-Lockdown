@@ -10,22 +10,23 @@ config_version=5
 
 [application]
 
-config/name="Senior Design Project"
+config/name="Senior-design-game-files"
 run/main_scene="res://Menu/Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://Sprites/icon.svg"
+config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Global/global.gd"
-Dialouge="*res://NPC/Dialouge/Dialouge.gd"
-Puzzle4Autoload="*res://Puzzles/loops_puzzle/puzzle4_autoload.gd"
+MusicPlayer="*res://Music Player.tscn"
+SceneTransition="*res://Puzzles/gretta_puzzle/Scene Transition.tscn"
+WrongInput="*res://Puzzles/gretta_puzzle/Wrong Input.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
@@ -64,11 +65,11 @@ down={
 }
 click={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(200, 16),"global_position":Vector2(204, 59),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.482353, 0.313726, 0.65098, 1)
+renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.133333, 0.133333, 0.133333, 1)

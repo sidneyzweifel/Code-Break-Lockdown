@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://djj84h5p3moj8"]
+
+[ext_resource type="FontFile" uid="uid://bqqpd4jj8rxqi" path="res://Puzzles/logic_puzzle/fonts/Unispace Bd.otf" id="1_gq4wb"]
+
+[resource]
+base_font = ExtResource("1_gq4wb")

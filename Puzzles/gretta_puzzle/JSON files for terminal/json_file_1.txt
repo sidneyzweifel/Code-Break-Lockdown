@@ -1,0 +1,46 @@
+{
+    "Home": {
+        "Prisoner Enrichment": {
+            "image1": "relaxing_picture.png",
+            "image2": "inspiring_picture.png",
+            "image3": "education_picture.png"
+        },
+        "EMPLOYEES ONLY - NO PRISONER ACCESS AT ALL TIME": {
+            "Lunch Menus": {
+                "Monday Lunch Menu": "Nutritious Chicken Water Boil",
+                "Tuesday Lunch Menu": "Nutritious Meat Cube",
+                "Wednesday Lunch Menu": "Nutritious Pizza Triangle",
+                "Thursday Lunch Menu": "Nutritious Raw Fish Roll",
+                "Friday Lunch Menu": "Nutritious Noodle Lines",
+                "Saturday Lunch Menu": "Nutritious Lettuce and Cheese",
+                "Sunday Lunch Menu": "Nutritious Meat Wrapped in Dough"
+            },
+            "Employee Salaries": {
+                "Employee1": "500$/week",
+                "Employee2": "500$/week",
+                "Employee3": "500$/week",
+                "Employee4": "500$/week",
+                "Norbit - Manager": "50000$/week"
+            },
+            "Security": {
+                "Prisoner Door Codes": {
+                    "Prisoner Door 1": {
+                        "Door 1 Passcode": "12345"
+                    },
+                    "Prisoner Door 2": {
+                        "Door 2 Passcode": "12345"
+                    },
+                    "Prisoner Door 3": {
+                        "Door 3 Passcode": "12345"
+                    },
+                    "Prisoner Door 4": {
+                        "Door 4 Passcode": "12345"
+                    },
+                    "Prisoner Door 5": {
+                        "Door 5 Passcode": "12345"
+                    }
+                }
+            }
+        }
+    }
+}
