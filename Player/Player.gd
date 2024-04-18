@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 450 #was going too slow for me so I changed speed
+@export var speed = 800 #was going too slow for me so I changed speed
 @export var has_door_access:bool = false
 
 @onready var player = $"."
@@ -32,12 +32,10 @@ func get_input():
 		animated_sprite.play("walking_side")
 		animated_sprite.flip_h = false
 		direction = "r"
-
 	
 	elif Input.is_action_pressed("up"):
 		animated_sprite.play("walking_back")
 		direction = "u"
-
 	
 	elif Input.is_action_pressed("down"):
 		animated_sprite.play("walking_front")

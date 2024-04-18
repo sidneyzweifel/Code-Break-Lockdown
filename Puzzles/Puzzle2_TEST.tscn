@@ -1175,12 +1175,11 @@ metadata/_edit_horizontal_guides_ = [-3815.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.521569, 0.705882, 0, 1)
-position = Vector2(2611.5, -803.002)
+position = Vector2(2595, -780)
 scale = Vector2(40.8203, 24.4375)
 texture = ExtResource("2_sgofu")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 scale = Vector2(1.05718, 0.946977)
 tile_set = SubResource("TileSet_1jthv")
 format = 2

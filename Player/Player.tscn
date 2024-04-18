@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_side",
-"speed": 9.0
+"speed": 15.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -183,5 +183,3 @@ animation = &"walking_side"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(12, -36)
 anchor_mode = 0
-
-[node name="Step" type="AudioStreamPlayer2D" parent="."]
