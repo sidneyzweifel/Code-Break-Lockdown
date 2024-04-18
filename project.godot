@@ -21,6 +21,8 @@ Global="*res://Global/global.gd"
 MusicPlayer="*res://Music Player.tscn"
 SceneTransition="*res://Puzzles/gretta_puzzle/Scene Transition.tscn"
 WrongInput="*res://Puzzles/gretta_puzzle/Wrong Input.tscn"
+Puzzle4Autoload="*res://Puzzles/loops_puzzle/puzzle4_autoload.gd"
+Dialouge="*res://NPC/Dialouge/Dialouge.gd"
 
 [display]
 
