@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjfgsk8blvymm"
-path="res://.godot/imported/manger.png-3537030ad751d92e217a79c992aa37dc.ctex"
+path="res://.godot/imported/Manger.png-5303dead660e041aa7cc8ef6ece83c68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/manger.png"
-dest_files=["res://.godot/imported/manger.png-3537030ad751d92e217a79c992aa37dc.ctex"]
+source_file="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Manger.png"
+dest_files=["res://.godot/imported/Manger.png-5303dead660e041aa7cc8ef6ece83c68.ctex"]
 
 [params]
 

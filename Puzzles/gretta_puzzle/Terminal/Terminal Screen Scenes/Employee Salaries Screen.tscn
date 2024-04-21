@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bfo4c6xoa1yqf"]
+[gd_scene load_steps=35 format=3 uid="uid://bfo4c6xoa1yqf"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Screen Scripts/Salaries Screen.gd" id="1_5ssdk"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="1_vsph1"]
@@ -20,10 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bjpb2jn3qnexl" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile007.png" id="18_hc454"]
 [ext_resource type="Texture2D" uid="uid://ba65w641l31qd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile008.png" id="19_3mu51"]
 [ext_resource type="Texture2D" uid="uid://dg3o3u70s0d67" path="res://Puzzles/gretta_puzzle/Terminal/Assets/static pictures/tile009.png" id="20_mudis"]
+[ext_resource type="Texture2D" uid="uid://bacc6fok5ejwx" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee1.png" id="21_ejmtf"]
 [ext_resource type="Texture2D" uid="uid://d35lbw87cmnk1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee2.png" id="21_otaas"]
-[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee3.png" id="22_6d2ry"]
-[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/employee4.png" id="23_8ptcr"]
-[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/manger.png" id="24_eby0o"]
+[ext_resource type="Texture2D" uid="uid://chrvlfjlydj42" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee3.png" id="22_6d2ry"]
+[ext_resource type="Texture2D" uid="uid://db47sukoukojd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Employee4.png" id="23_8ptcr"]
+[ext_resource type="Texture2D" uid="uid://bjfgsk8blvymm" path="res://Puzzles/gretta_puzzle/Terminal/Assets/employee salaries/Manger.png" id="24_eby0o"]
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Terminal/Terminal Screen Scripts/Post It.gd" id="25_ndslq"]
 [ext_resource type="Texture2D" uid="uid://v0qoayq4argd" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/postItNote.png" id="26_odggr"]
 [ext_resource type="Texture2D" uid="uid://dxh4ctmgcxfmh" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/clickPostIt.png" id="27_834ai"]
@@ -776,7 +777,7 @@ texture_scale = 1.2
 
 [node name="Window" type="Window" parent="."]
 unique_name_in_owner = true
-position = Vector2i(656, 241)
+position = Vector2i(550, 241)
 size = Vector2i(400, 300)
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
@@ -790,6 +791,7 @@ position = Vector2(200, 135)
 scale = Vector2(0.65, 0.65)
 
 [node name="employee 1 salary" type="Sprite2D" parent="Window/Salaries"]
+texture = ExtResource("21_ejmtf")
 
 [node name="employee 2 salary" type="Sprite2D" parent="Window/Salaries"]
 texture = ExtResource("21_otaas")
@@ -820,7 +822,7 @@ texture = ExtResource("26_odggr")
 
 [node name="PostItWindow" type="Window" parent="."]
 unique_name_in_owner = true
-position = Vector2i(506, 49)
+position = Vector2i(400, 49)
 size = Vector2i(550, 600)
 
 [node name="ColorRect" type="ColorRect" parent="PostItWindow"]
