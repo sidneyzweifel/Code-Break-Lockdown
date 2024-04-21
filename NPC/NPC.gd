@@ -16,8 +16,9 @@ var item_num = load("res://Puzzles/loops_puzzle/item_number/item_number.gd")
 func _ready():
 	button_.text = button_text
 	item_dict.add_item(inmate_key, num_item.item_num)
-	$InmateSprite.texture = load("res://Backgrounds/" + str(inmate_key)+ ".png")
-
+	#$InmateSprite.texture = load("res://Backgrounds/" + str(inmate_key)+ ".png")
+	$InmateSprite.texture = load("res://Backgrounds/" + "inmate_A"+ ".png")
+	
 func _on_button_pressed():
 	Puzzle4Autoload.inmate_clicked()
 	Dialouge.set_current_npc_key(inmate_key)
