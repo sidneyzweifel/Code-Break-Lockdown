@@ -74,7 +74,8 @@ func _on_enter_pressed():
 		else:
 			var error_txt:String = "With the parameters you have set the loop will not terminate or not run."
 			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
-	set_instruction_text("If you're happy with these parameters, press Next Step to continue:")
+	set_instruction_text("If you're happy with these parameters, press Next Step to continue.\n
+	If you would like to change the parameters, click Previous Step.")
 	$"Window/ColorRect/VBoxContainer/instruction/current step explained".show()
 
 
