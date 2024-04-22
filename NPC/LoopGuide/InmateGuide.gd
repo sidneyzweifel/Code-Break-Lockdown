@@ -49,11 +49,7 @@ func _on_change_pressed():
 	pass # Replace with function body.
 
 
-
-
-
 func _on_demo_pressed():
-	Puzzle4Autoload.handle_scene_changes_before_solving()
 	var cur = get_tree().current_scene
 	cur.queue_free()
 	get_tree().change_scene_to_file("res://NPC/LoopGuide/LoopsDemo.tscn")

@@ -1,11 +1,11 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+#button to open popup hint for second half of puzzle 4
+
+
 func _ready():
 	$Window.hide()
-
-
 
 
 

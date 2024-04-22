@@ -46,16 +46,14 @@ func return_to_puzzle():
 
 #Called in popup_test scene
 #passcode.gd
-
-signal override_passcode
+signal override_passcode #signal to overide passcode in puzzle 4
 func set_passcode():
 	if(Puzzle4Autoload.key_list.size() == 0 and current_puzz ==  "res://Puzzles/Puzzle4_TEST.tscn"):
 		print("In set_passcode")
-		#Puzzle4Autoload.puz4_ready()
-		override_passcode.connect(override_passcode_set)
+		check_if_signal_connected()
 		await override_passcode
 		current_passcode = Puzzle4Autoload.get_puzz4_passcode()
-		override_passcode.disconnect(override_passcode_set)
+		check_if_signal_disconnected()
 		return current_passcode
 	if(Puzzle4Autoload.loop_door_solved):
 		return current_passcode
@@ -68,7 +66,22 @@ func set_passcode():
 func get_passcode():
 	return current_passcode
 
+#emitted in puzzle 4 script in set_passcode
+#this function does nothing, but I just needed a signal
+#so I could wait until I set the new passcode before overidding it
 func override_passcode_set():
 	pass
 
-	
+#will get an error if don't check for connections 
+#before trying to connect or discconnnect
+func check_if_signal_connected():
+	if(override_passcode.is_connected(override_passcode_set)):
+		pass
+	else:
+		override_passcode.connect(override_passcode_set)	
+
+func check_if_signal_disconnected():
+	if(!override_passcode.is_connected(override_passcode_set)):
+		pass
+	else:
+		override_passcode.disconnect(override_passcode_set)	

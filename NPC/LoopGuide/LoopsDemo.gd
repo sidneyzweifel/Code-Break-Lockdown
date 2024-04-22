@@ -48,6 +48,8 @@ func _on_change_item_selected(index):
 
 
 func _on_enter_pressed():
+	#if the the user entered values match this case
+	#then set the loop text to for(int i = 0; i < (or <=) 3; i++)
 	if(inequality == "less_than" or inequality == "less_than_or_equal"):
 		if(change_val == "increment"):
 			paramters_set = true
@@ -61,6 +63,8 @@ func _on_enter_pressed():
 		else:
 			var error_txt:String = "With the parameters you have set the loop will not terminate or not run."
 			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
+	##if the the user entered values match this case
+	#then set the loop text to for(int i = 3; i < (or <=) 0; i++)
 	if(inequality == "more_than" or inequality == "more_than_or_equal"):
 		if(change_val == "decrement"):
 			paramters_set = true
@@ -80,10 +84,14 @@ func _on_enter_pressed():
 
 
 func _on_previous_step_pressed():
+	#allow the player to reset the parameters they chose if they want something different
 	if(paramters_set and !for_loop_set):
 		paramters_set = false
 		_ready()
 	else:
+		#previous button made into a button option to determine if loop should continue
+		#this is the case where the user said No when the loop should have continued
+		#will reset all the steps so the player has to start over with same paramater
 		if(loop_continue()):
 			set_instruction_text("Loop should continue. \nLet's go back and try again")
 			$"Window/ColorRect/VBoxContainer/nav_buttons/previous step".hide()
@@ -91,6 +99,7 @@ func _on_previous_step_pressed():
 			option_num = 0
 			loop_method.reset_i(for_loop_method_num)
 		else:
+			#case if look should have ended 
 			end_loop()
 	pass # Replace with function body.
 	
@@ -139,12 +148,17 @@ func next_option():
 			instruction_txt = "Let's get started!"
 			set_instruction_text(instruction_txt)
 		1:
+			#tell user what loop starts at
 			instruction_txt = instruction[0] + str(loop_method.start_val)
 			set_instruction_text(instruction_txt)
 		2:
+			#tells user next step
+			#check if the condtional statement is true or not
 			instruction_txt = instruction[1] + str(loop_method.check) + str(loop_method.end_val)
 			set_instruction_text("Now let's check if " + instruction_txt)
 		3:
+			#walks the player through conditional statement and asks for understanding
+			#by asking them if the loop should continue or not
 			instruction_txt = instruction[2] + str(loop_method.current_val_of_i)
 			instruction_txt += "\nIf the following statement makes sense, then the loop should continue: "
 			instruction_txt += "\n" + str(loop_method.current_val_of_i) + " is " + str(loop_method.check) + str(loop_method.end_val)
@@ -155,23 +169,28 @@ func next_option():
 			$"Window/ColorRect/VBoxContainer/nav_buttons/previous step".show()
 		4:
 			if(loop_continue()):
+				#option if player picked yes the loop should continue
 				$"Window/ColorRect/VBoxContainer/nav_buttons/next step".set_text("Next" + "\n" + "Step")
 				instruction_txt = str(loop_method.change_statement)
 				set_instruction_text("That's right! " + instruction_txt)
 			else:
+				#will run when the loop should not continue 
 				end_loop()
 		5: 
-			instruction_txt = instruction[2] + str(loop_method.change_i(for_loop_method_num, ))
+			#tells the player the current value of i
+			instruction_txt = instruction[2] + str(loop_method.change_i(for_loop_method_num))
 			set_instruction_text(instruction_txt)
 			option_num = 1
 			
 	pass
 
 
+#will return true or false depending on loop method and condtions
 func loop_continue():
 	return loop_method.check_loop_terminate(for_loop_method_num)
 	
-	
+
+#reset all loop parameters and all changed varibles and start again
 func end_loop():
 	$"Window/ColorRect/VBoxContainer/nav_buttons/previous step".set_text("Previous" + "\n" + "Step")
 	$"Window/ColorRect/VBoxContainer/nav_buttons/next step".set_text("Next" + "\n" + "Step")
@@ -185,7 +204,7 @@ func end_loop():
 	_ready()
 	set_instruction_text("Loop should end.\nFeel free to try again with different parameters!")
 
-
+#go back to puzzle 4 scene
 func _on_back_pressed():
 	var cur = get_tree().current_scene
 	cur.queue_free()

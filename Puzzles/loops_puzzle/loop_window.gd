@@ -16,6 +16,7 @@ var _inequality_index:int = 0
 
 var puzzle_solved:bool = false
 
+#need to make sure the there is a random item number for each inmate
 @onready var item_number = Item_Dict.new().get_item(Dialouge.get_current_inmate_key())
 
 var correct_index
@@ -34,9 +35,13 @@ func _ready():
 	if(item_number is String):
 		start_index_label.text = "Talk to Inmate"
 	else:
+		#set item number (randomization here controlled by inmate)
 		item_number_label.text = "ITEM #: " + str(item_number)
 		start_index = rng.randi_range(0, 999)
+		#randomize start index 
 		start_index_label.text = str(start_index)
+		#if the item_number is not equal to the start index
+		#then there is a 30% chance that the player only gets the option of < and >
 		if(item_number != start_index):
 			if(rng.randi_range(0, 100) % 3 == 0):
 				$ColorRect/LoopContriants/End/Inequality.set_item_disabled(2, true)
@@ -45,7 +50,7 @@ func _ready():
 
 	
 	
-	
+#take what the user entered and other set values to calculate loop	
 func calculate_loop(start, end_index, inequality_index, increment_index):
 	var item_selected:int = -1
 	var inequality:String = index_to_symbol_inequalities(inequality_index)
@@ -122,6 +127,11 @@ func _on_end_index_text_changed(new_text):
 	end_index = new_text
 
 
+#tell the autoload the loop puzzle is solved if it is
+#if not exit puzzle
+#this will determine what inmates can still show up
+#inmates don't show up again after their loop puzzle has been solved
+#(not until second half of the puzzle where the player needs passcode)
 func _on_exit_button_pressed():
 	if(puzzle_solved):
 		Puzzle4Autoload.loop_puzzle_solved(correct_index)

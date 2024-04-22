@@ -6,6 +6,9 @@ var end_val: int
 var check:String
 var change_statement:String
 
+#functions used in LoopsDemo 
+#each loop method treated like an Object
+
 func set_values(loop_method_num:int):
 	match loop_method_num:
 		1:
@@ -59,7 +62,7 @@ func check_loop_terminate(loop_method_num:int):
 			4:
 				return self.current_val_of_i >= self.end_val
 
-	
+#if player gets loop continue question incorrect need to reset i
 func reset_i(loop_method_num:int):
 	match loop_method_num:
 		1:

@@ -167,6 +167,7 @@ theme_override_font_sizes/font_size = 40
 placeholder_text = "END INDEX"
 alignment = 1
 max_length = 3
+expand_to_text_length = true
 virtual_keyboard_type = 2
 
 [node name="Change" type="HBoxContainer" parent="Window/ColorRect/LoopContriants"]

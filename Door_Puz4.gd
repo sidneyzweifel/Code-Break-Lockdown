@@ -1,5 +1,7 @@
 class_name Door_Puz4 extends Node2D
 
+#using different image for door so need this extra script and scene
+
 @onready var door = $Door
 
 #Script for each door
@@ -21,7 +23,6 @@ func _ready():
 
 #door group function to determine if player can move to next puzzle
 func handle_access(door_access):
-	Puzzle4Autoload.handle_scene_changes_before_solving()
 	door.handle_access(door_access)
 
 
