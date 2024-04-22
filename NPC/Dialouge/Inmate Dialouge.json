@@ -1,11 +1,11 @@
 {
   "inmate_A": {
 	"inmate_beckon": "You there!",
-	"inmate_ask": "I believe I know what you desire. Know the power of magic and get me the item I need from a magical door",
+	"inmate_ask": "I believe I know what you desire. Beware the power of magic and get me the item I need from a magical door",
 	"door_color": "purple",
 	"door_location": "north west",
-	"inmate_thanks": "Greatest thanks! I wish you luck on your travels.",
-	"passcode_hint": "The magic was too much to maintain. Sum these numbers here. That's what the passcode would be if were not for these challenges."
+	"inmate_thanks": "Thank you for the item, sire! You have proven yourself worthy!",
+	"passcode_hint": "Sum these numbers here. That will get you closer to the answers you seek."
   },
   "inmate_B": {
 	"inmate_beckon": "Excuse me!",
@@ -13,7 +13,7 @@
 	"door_color": "orange",
 	"door_location": "right of me",
 	"inmate_thanks": "Thank you so much for getting the item I needed!",
-	"passcode_hint": "I heard that the passcode was having some issues. I believe it is still at the starting index it was when you entered."
+	"passcode_hint": "I believe it is still at the starting index it was when you entered. Note that passcode only works with < or >"
   },
   "inmate_C": {
 	"inmate_beckon": "Over here!",
@@ -21,6 +21,6 @@
 	"door_color": "green",
 	"door_location": "straight ahead",
 	"inmate_thanks": "Much gratitude for this item! I have the final ingredient to turn me back into a human.",
-	"passcode_hint": "I have heard what the other inmates have told you. I'll give you a hint. Subtract the number of times you have repeated your path. This is listed in the upper left corner for you."
+	"passcode_hint": "Okay, I'll give you a hint. Subtract the number of times you have repeated your path. This is listed in the upper left corner for you."
   }
 }

@@ -183,7 +183,7 @@ func end_loop():
 	$"Window/ColorRect/VBoxContainer/instruction/current step explained".show()
 	$Window/ColorRect/VBoxContainer/nav_buttons/enter.show()
 	_ready()
-	set_instruction_text("Correct! Loop should end.\nFeel free to try again with different parameters!")
+	set_instruction_text("Loop should end.\nFeel free to try again with different parameters!")
 
 
 func _on_back_pressed():

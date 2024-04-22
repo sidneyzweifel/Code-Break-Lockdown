@@ -114,14 +114,14 @@ theme_override_constants/separation = 400
 alignment = 1
 
 [node name="previous step" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
-modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+modulate = Color(0, 1, 0.639216, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Previous
 Step"
 
 [node name="enter" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
-modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+modulate = Color(2.02149e-06, 0.998913, 0.637944, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -129,14 +129,14 @@ theme_override_font_sizes/font_size = 40
 text = "Enter values"
 
 [node name="next step" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
-modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+modulate = Color(2.02149e-06, 0.998913, 0.637944, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Next 
 Step"
 
 [node name="back" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
-modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+modulate = Color(0.941176, 0.721569, 0.0431373, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Go Back

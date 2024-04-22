@@ -125,8 +125,7 @@ grow_vertical = 2
 [node name="GuideMessage" type="Label" parent="Window/ColorRect/Start"]
 layout_mode = 2
 size_flags_stretch_ratio = 6.48
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "We're all counting on you!
 This is the last puzzle before you make 
 it out of here. But your journey is just getting
@@ -136,7 +135,7 @@ You've seen a for loop before. Surely.
 Well, it has been a long time.
 In case you need a refresher I have preapared some review material for you. 
 
-When you're ready. Track down an imate and they'll show you the magic loop door.
+When you're ready. Track down an imate and they'll show you that things have become other wordly here. 
 "
 horizontal_alignment = 1
 vertical_alignment = 1

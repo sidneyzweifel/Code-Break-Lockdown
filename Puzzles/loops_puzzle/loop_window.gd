@@ -123,9 +123,8 @@ func _on_end_index_text_changed(new_text):
 
 
 func _on_exit_button_pressed():
-	#Global.handle_door(true)
 	if(puzzle_solved):
 		Puzzle4Autoload.loop_puzzle_solved(correct_index)
 	else:
 		Puzzle4Autoload.loop_puzzle_exit()
-	#window.hide()
+
