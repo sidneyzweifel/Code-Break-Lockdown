@@ -40,6 +40,10 @@ func spawn_current_inmate():
 			inmate_temp = inmate
 			key_list.remove_at(current_inmate_pos)
 			return inmate
+
+func handle_scene_changes_before_solving():
+	if(!loop_door_solved):
+		key_list.append(inmate_temp)
 	
 func set_key_list():
 	var cnt:int = 0

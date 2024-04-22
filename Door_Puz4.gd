@@ -21,6 +21,7 @@ func _ready():
 
 #door group function to determine if player can move to next puzzle
 func handle_access(door_access):
+	Puzzle4Autoload.handle_scene_changes_before_solving()
 	door.handle_access(door_access)
 
 
