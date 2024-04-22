@@ -6986,7 +6986,6 @@ offset_right = 973.0
 offset_bottom = 2033.0
 
 [node name="Dialogue" parent="NPCGuide" instance=ExtResource("19_kfdlh")]
-visible = false
 
 [node name="BinaryPopUp" type="Node" parent="."]
 
