@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://u7loecx2w4p2"]
+
+[ext_resource type="Script" path="res://Puzzles/logic_puzzle/AudioManager.gd" id="1_j68cb"]
+[ext_resource type="AudioStream" uid="uid://d2wxh7fpcb6r0" path="res://Puzzles/logic_puzzle/sounds/mouseclick1.wav" id="2_gtcsl"]
+[ext_resource type="AudioStream" uid="uid://basa58iuqgs4u" path="res://Puzzles/logic_puzzle/sounds/mouserelease1.wav" id="3_v3bna"]
+[ext_resource type="AudioStream" uid="uid://djqyx431t51q1" path="res://Puzzles/logic_puzzle/sounds/switch19.wav" id="4_4v5ex"]
+[ext_resource type="AudioStream" uid="uid://be1q677w0xyv4" path="res://SFX/text writing.mp3" id="4_m0apr"]
+[ext_resource type="AudioStream" uid="uid://dr55l0gtxfyfw" path="res://Puzzles/logic_puzzle/sounds/switch20.wav" id="5_jdipg"]
+[ext_resource type="AudioStream" uid="uid://dpou3b4pdyht1" path="res://SFX/error noise.mp3" id="7_e2r1j"]
+[ext_resource type="AudioStream" uid="uid://davtqqekvkaou" path="res://SFX/success noise.mp3" id="8_irv6g"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_j68cb")
+
+[node name="ScreenClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gtcsl")
+
+[node name="ScreenExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v3bna")
+
+[node name="GuideClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4v5ex")
+
+[node name="GuideExit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jdipg")
+
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m0apr")
+
+[node name="IncorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_e2r1j")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_irv6g")

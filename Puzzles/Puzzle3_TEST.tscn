@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=66 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -18,12 +18,14 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicWindow.gd" id="8_n3uvp"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
+[ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate_C.png" id="12_bbc8a"]
 [ext_resource type="FontVariation" uid="uid://c47st61viycg2" path="res://Puzzles/logic_puzzle/Puzzle3Symbols.tres" id="13_m8y7e"]
 [ext_resource type="Texture2D" uid="uid://c8vlnrl3ds5qd" path="res://Puzzles/logic_puzzle/sprites/BinaryGuideSprite.jpg" id="15_vncwa"]
 [ext_resource type="Texture2D" uid="uid://bfq5h2lnowpei" path="res://Puzzles/logic_puzzle/sprites/LogicGuideSprite.jpg" id="16_4qcux"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/NoAccessButton.gd" id="17_ifd4h"]
 [ext_resource type="Texture2D" uid="uid://b3l0ni8dp3vgg" path="res://Puzzles/logic_puzzle/sprites/SymbolGuideSprite.jpg" id="17_v3kgf"]
 [ext_resource type="Texture2D" uid="uid://b6wd5w5h06adi" path="res://Tilesets/Cyber City/Decor/32x32_spr_fire_barrel_strip6.png" id="19_c8u2o"]
+[ext_resource type="PackedScene" uid="uid://xi0k4gyiqjal" path="res://Puzzles/logic_puzzle/Dialogue.tscn" id="19_kfdlh"]
 [ext_resource type="FontVariation" uid="uid://djj84h5p3moj8" path="res://Puzzles/logic_puzzle/Puzzle3_Default.tres" id="19_prs32"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
@@ -1010,7 +1012,7 @@ texture = ExtResource("2_cbdsy")
 24:10/0 = 0
 24:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:10/0/physics_layer_0/angular_velocity = 0.0
-24:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.9375, -3.625, 8, -3.625, 8, 8, -3.8125, 8)
+24:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.0625, -1.25, 8, -1.25, 8, 8, 4.6875, 8, -0.4375, 8, -1.1875, 0.375)
 25:10/0 = 0
 25:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1022,7 +1024,7 @@ texture = ExtResource("2_cbdsy")
 27:10/0 = 0
 27:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:10/0/physics_layer_0/angular_velocity = 0.0
-27:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.875, 3.0625, -2.75, 3.3125, 8, -8, 8)
+27:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, -0.4375, -2.875, 0.1875, 8, -4.1875, 8, -8, 8)
 32:10/0 = 0
 32:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1120,7 +1122,7 @@ texture = ExtResource("2_cbdsy")
 27:11/0 = 0
 27:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:11/0/physics_layer_0/angular_velocity = 0.0
-27:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.5625, -8, 1.0625, 0.5, -8, -1.75)
+27:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.1875, -8, -0.0625, -0.375, -6.1875, -0.125, -8, 0.375, -8, -3.5)
 32:11/0 = 0
 32:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:11/0/physics_layer_0/angular_velocity = 0.0
@@ -6299,6 +6301,26 @@ sources/15 = SubResource("TileSetAtlasSource_yasuw")
 sources/16 = SubResource("TileSetAtlasSource_kcs1e")
 sources/1 = SubResource("TileSetAtlasSource_68jis")
 
+[sub_resource type="Gradient" id="Gradient_0q8vf"]
+offsets = PackedFloat32Array(0, 0.832117, 0.989051)
+colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndm6q"]
+gradient = SubResource("Gradient_0q8vf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.912791, 0.0639535)
+
+[sub_resource type="Gradient" id="Gradient_1gl6h"]
+offsets = PackedFloat32Array(0, 0.832117, 0.989051)
+colors = PackedColorArray(1, 1, 1, 1, 0.0129151, 0.0129151, 0.0129151, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hu24s"]
+gradient = SubResource("Gradient_1gl6h")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.912791, 0.0639535)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxns6"]
 atlas = ExtResource("19_c8u2o")
 region = Rect2(0, 0, 32, 32)
@@ -6497,6 +6519,7 @@ scale = Vector2(24.2891, 21.3516)
 texture = ExtResource("2_eml7g")
 
 [node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0.812167, 0.77, 1, 1)
 position = Vector2(400, 200)
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_nm6v8")
@@ -6537,7 +6560,7 @@ layer_5/modulate = Color(1, 1, 1, 1)
 layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
 layer_5/z_index = 0
-layer_5/tile_data = PackedInt32Array(589820, 2228224, 14, 655356, 2228224, 15, 589821, 2293760, 14, 655357, 2293760, 15, 1114109, 2490368, 17, 1048574, 2555904, 16, 1114110, 2555904, 17, 1048573, 2490368, 16, 1310726, 1, 0, 1376262, 1, 1, 1310727, 65537, 0, 1376263, 65537, 1)
+layer_5/tile_data = PackedInt32Array(589820, 2228224, 14, 655356, 2228224, 15, 589821, 2293760, 14, 655357, 2293760, 15, 1114109, 2490368, 17, 1048574, 2555904, 16, 1114110, 2555904, 17, 1048573, 2490368, 16)
 layer_6/name = "other"
 layer_6/enabled = true
 layer_6/modulate = Color(1, 1, 1, 1)
@@ -6546,14 +6569,210 @@ layer_6/y_sort_origin = 0
 layer_6/z_index = 0
 layer_6/tile_data = PackedInt32Array(1048574, 2490368, 17, 1048575, 2555904, 17, 983038, 2490368, 16, 983039, 2555904, 16, 1048572, 2490368, 14, 1114108, 2490368, 15, 1048573, 2555904, 14, 1114109, 2555904, 15)
 
+[node name="Shadows" type="Node" parent="."]
+
+[node name="Shadow - top" type="PointLight2D" parent="Shadows"]
+position = Vector2(1697.5, 988.813)
+scale = Vector2(7.09635, 4.74447)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 1.44
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under table" type="PointLight2D" parent="Shadows"]
+position = Vector2(1318, -0.499989)
+scale = Vector2(60.9115, 6.10677)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.64
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under table2" type="PointLight2D" parent="Shadows"]
+position = Vector2(230, 940.812)
+scale = Vector2(6.64062, 5.16113)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 1.44
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under table3" type="PointLight2D" parent="Shadows"]
+position = Vector2(230, 1558.81)
+scale = Vector2(6.90104, 4.87468)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 1.44
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under table4" type="PointLight2D" parent="Shadows"]
+position = Vector2(1518, 1635)
+scale = Vector2(5.70313, 3.30729)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 1.51
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under table5" type="PointLight2D" parent="Shadows"]
+position = Vector2(1997, 1654)
+scale = Vector2(5.70313, 3.30729)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 1.51
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under paper" type="PointLight2D" parent="Shadows"]
+position = Vector2(1385.38, 849)
+scale = Vector2(1.33789, 1.43229)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 0.99
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - under trash" type="PointLight2D" parent="Shadows"]
+position = Vector2(2247, 469)
+scale = Vector2(2.44791, 2.57162)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 0.99
+blend_mode = 1
+texture = SubResource("GradientTexture2D_ndm6q")
+texture_scale = 1.2
+
+[node name="Shadow - right corner" type="PointLight2D" parent="Shadows"]
+position = Vector2(2851.25, 1157)
+scale = Vector2(21.8815, 40.5729)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - right corner3" type="PointLight2D" parent="Shadows"]
+position = Vector2(2213, 2111)
+scale = Vector2(3.55469, 17.3177)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - left wall" type="PointLight2D" parent="Shadows"]
+position = Vector2(-224, 1046.5)
+scale = Vector2(12.6563, 62.1224)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - left wall2" type="PointLight2D" parent="Shadows"]
+position = Vector2(6.74998, 1846)
+scale = Vector2(11.0742, 6.0026)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - center" type="PointLight2D" parent="Shadows"]
+position = Vector2(1040, 2245.31)
+scale = Vector2(41.25, 11.7269)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - center2" type="PointLight2D" parent="Shadows"]
+position = Vector2(2433, 2035.26)
+scale = Vector2(41.224, 22.012)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.18
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - center3" type="PointLight2D" parent="Shadows"]
+position = Vector2(-459.75, 1929.5)
+scale = Vector2(19.6549, 24.8047)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 0.83
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - center4" type="PointLight2D" parent="Shadows"]
+position = Vector2(399.5, 1818)
+scale = Vector2(9.49219, 7.00521)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.25
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Shadow - center5" type="PointLight2D" parent="Shadows"]
+position = Vector2(1507.5, 1808.25)
+scale = Vector2(15.013, 4.44661)
+color = Color(0.47451, 0.478431, 0.494118, 1)
+energy = 2.25
+blend_mode = 1
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Lighting - orange screen" type="PointLight2D" parent="Shadows"]
+position = Vector2(2498, 1021.5)
+scale = Vector2(3.88021, 6.83594)
+color = Color(0.996094, 0.253906, 0.0234375, 1)
+energy = 1.72
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Lighting - blue screen" type="PointLight2D" parent="Shadows"]
+position = Vector2(92.7501, 437)
+scale = Vector2(3.60026, 6.83594)
+color = Color(0.152941, 0.717647, 0.898039, 1)
+energy = 1.72
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Lighting - door handle" type="PointLight2D" parent="Shadows"]
+position = Vector2(443.75, 368.75)
+scale = Vector2(1.25651, 1.7513)
+color = Color(0, 1, 0.258824, 1)
+energy = 1.92
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Lighting - sign" type="PointLight2D" parent="Shadows"]
+position = Vector2(790, 148)
+scale = Vector2(5.61523, 2.45443)
+color = Color(0.984314, 0.439216, 0.65098, 1)
+energy = 1.72
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
+[node name="Lighting - fire" type="PointLight2D" parent="Shadows"]
+position = Vector2(2263, 322.375)
+scale = Vector2(4.01042, 5.00977)
+color = Color(0.682353, 0.141176, 0.172549, 1)
+energy = 2.24
+texture = SubResource("GradientTexture2D_hu24s")
+texture_scale = 1.2
+
 [node name="CodePopup" parent="." instance=ExtResource("6_8clto")]
-position = Vector2(502, -281)
+position = Vector2(-670, -659)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 
 [node name="Door" parent="." instance=ExtResource("5_lasnf")]
-position = Vector2(400, 266)
-scale = Vector2(0.3, 0.3)
+position = Vector2(391, 324)
+scale = Vector2(0.3, 0.1)
+disable_mode = 0
 path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
@@ -6609,6 +6828,19 @@ scale = Vector2(5.93891, 5.71981)
 texture = ExtResource("2_cbdsy")
 region_enabled = true
 region_rect = Rect2(198.353, 3.75548, 19.065, 25.0004)
+
+[node name="NPCPopUpHover" type="Node2D" parent="."]
+script = ExtResource("8_kktge")
+
+[node name="Area2D" type="Area2D" parent="NPCPopUpHover"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPCPopUpHover/Area2D"]
+polygon = PackedVector2Array(950, 1897, 924, 1967, 905, 1992, 930, 1990, 979, 2009, 962, 2031, 928, 2041, 871, 2024, 775, 2026, 730, 1963, 720, 1920, 754, 1916, 803, 1897, 809, 1935, 849, 1875, 915, 1873)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCPopUpHover/Area2D"]
+position = Vector2(888, 1980)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_bbc8a")
 
 [node name="BinaryGuide" type="Node" parent="."]
 
@@ -6717,18 +6949,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.5
-offset_top = -32.0
-offset_right = 139.5
-offset_bottom = 32.0
+offset_left = -276.0
+offset_top = -184.0
+offset_right = 276.0
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.72549, 0, 0, 1)
 theme_override_fonts/font = ExtResource("19_prs32")
-theme_override_font_sizes/font_size = 50
-text = "NO ACCESS"
+theme_override_font_sizes/font_size = 150
+text = "NO 
+ACCESS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NPCGuide" type="Node" parent="."]
+
+[node name="NPCButton" type="Button" parent="NPCGuide"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 721.0
+offset_top = 1863.0
+offset_right = 973.0
+offset_bottom = 2033.0
+
+[node name="Dialogue" parent="NPCGuide" instance=ExtResource("19_kfdlh")]
 
 [node name="BinaryPopUp" type="Node" parent="."]
 
@@ -6756,20 +7001,21 @@ grow_vertical = 2
 color = Color(0.0859375, 0.625, 0.800781, 1)
 
 [node name="BinaryLabel" type="Label" parent="BinaryPopUp/BinaryCodeWindow"]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.449
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.5
-offset_top = -13.0
-offset_right = 74.5
-offset_bottom = 13.0
+offset_left = -272.0
+offset_top = -252.0
+offset_right = 272.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.507813, 0.996094, 0.902344, 1)
 theme_override_fonts/font = ExtResource("13_m8y7e")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 150
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_prlxj")
@@ -6786,7 +7032,7 @@ text = "LOG"
 
 [node name="LogicWindow" type="Window" parent="LogicPopUp"]
 initial_position = 1
-size = Vector2i(900, 950)
+size = Vector2i(925, 975)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("8_n3uvp")
@@ -6801,18 +7047,20 @@ color = Color(0.996094, 0.457031, 0, 1)
 
 [node name="LogicLabel" type="Label" parent="LogicPopUp/LogicWindow"]
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.11
-anchor_right = 0.5
-anchor_bottom = 0.155
-offset_left = -169.0
-offset_right = 169.0
-offset_bottom = 94.0
+anchor_left = 0.52
+anchor_right = 0.566
+anchor_bottom = 0.591
+offset_left = -467.5
+offset_top = -56.0
+offset_right = 467.5
+offset_bottom = 56.0
 grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(0.996094, 0.996094, 0.453125, 1)
 theme_override_fonts/font = ExtResource("19_prs32")
 theme_override_font_sizes/font_size = 90
-text = "logic"
+text = "(2 | 0) & (9 & 9)"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("10_6grr2")
@@ -6861,13 +7109,12 @@ sprite_frames = SubResource("SpriteFrames_162ct")
 animation = &"binary_hint"
 frame_progress = 0.384693
 
-[node name="Player" parent="." instance=ExtResource("4_0gp5h")]
-position = Vector2(441, 1334)
-scale = Vector2(0.8, 0.8)
-speed = 500
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ggm2x")
+
+[node name="Player" parent="." instance=ExtResource("4_0gp5h")]
+position = Vector2(428, 1387)
+scale = Vector2(0.8, 0.8)
 
 [connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_exited"]
@@ -6875,6 +7122,8 @@ environment = SubResource("Environment_ggm2x")
 [connection signal="mouse_exited" from="LogicGuideHover/Area2D" to="LogicGuideHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="LogicPopUpHover/Area2D" to="LogicPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="LogicPopUpHover/Area2D" to="LogicPopUpHover" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="NPCPopUpHover/Area2D" to="NPCPopUpHover" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="NPCPopUpHover/Area2D" to="NPCPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="BinaryGuide/Button" to="BinaryGuide/BinaryGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="BinaryGuide/BinaryGuideWindow" to="BinaryGuide/BinaryGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicGuide/Button" to="LogicGuide/LogicGuideWindow" method="_on_button_pressed"]
@@ -6883,6 +7132,7 @@ environment = SubResource("Environment_ggm2x")
 [connection signal="close_requested" from="SymbolGuide/SymbolGuideWindow" to="SymbolGuide/SymbolGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="NoAccessGuide/NoAccessButton" to="NoAccessGuide/NoAccessGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="NoAccessGuide/NoAccessGuideWindow" to="NoAccessGuide/NoAccessGuideWindow" method="_on_close_requested"]
+[connection signal="pressed" from="NPCGuide/NPCButton" to="NPCGuide/Dialogue" method="_on_npc_button_pressed"]
 [connection signal="pressed" from="BinaryPopUp/BinaryButton" to="BinaryPopUp/BinaryCodeWindow" method="_on_binary_button_pressed"]
 [connection signal="close_requested" from="BinaryPopUp/BinaryCodeWindow" to="BinaryPopUp/BinaryCodeWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicPopUp/LogicButton" to="LogicPopUp/LogicWindow" method="_on_logic_button_pressed"]

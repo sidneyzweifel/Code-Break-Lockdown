@@ -7,6 +7,8 @@ func _ready():
 
 func _on_binary_button_pressed():
 	binary_popup_window.show()
+	AudioManager.screen_click.play()
 	
 func _on_close_requested():
 	binary_popup_window.hide()
+	AudioManager.screen_exit.play()
