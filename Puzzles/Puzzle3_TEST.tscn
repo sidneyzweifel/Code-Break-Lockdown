@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=67 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryLabel.gd" id="7_prlxj"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/PopUpHover.gd" id="8_kktge"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicWindow.gd" id="8_n3uvp"]
+[ext_resource type="Texture2D" uid="uid://6aac422wh13k" path="res://Puzzles/logic_puzzle/sprites/Scribble.png" id="9_ioqxi"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
 [ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate_C.png" id="12_bbc8a"]
@@ -6588,6 +6589,7 @@ energy = 2.64
 blend_mode = 1
 texture = SubResource("GradientTexture2D_ndm6q")
 texture_scale = 1.2
+metadata/_edit_lock_ = true
 
 [node name="Shadow - under table2" type="PointLight2D" parent="Shadows"]
 position = Vector2(230, 940.812)
@@ -6763,6 +6765,13 @@ color = Color(0.682353, 0.141176, 0.172549, 1)
 energy = 2.24
 texture = SubResource("GradientTexture2D_hu24s")
 texture_scale = 1.2
+
+[node name="Scribble" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Scribble"]
+position = Vector2(1765, 243.5)
+scale = Vector2(0.0670016, 0.016187)
+texture = ExtResource("9_ioqxi")
 
 [node name="CodePopup" parent="." instance=ExtResource("6_8clto")]
 position = Vector2(-670, -659)
@@ -6974,6 +6983,7 @@ offset_right = 973.0
 offset_bottom = 2033.0
 
 [node name="Dialogue" parent="NPCGuide" instance=ExtResource("19_kfdlh")]
+visible = false
 
 [node name="BinaryPopUp" type="Node" parent="."]
 
@@ -7032,7 +7042,7 @@ text = "LOG"
 
 [node name="LogicWindow" type="Window" parent="LogicPopUp"]
 initial_position = 1
-size = Vector2i(925, 975)
+size = Vector2i(1000, 1000)
 visible = false
 theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("8_n3uvp")
@@ -7047,9 +7057,9 @@ color = Color(0.996094, 0.457031, 0, 1)
 
 [node name="LogicLabel" type="Label" parent="LogicPopUp/LogicWindow"]
 anchors_preset = -1
-anchor_left = 0.52
-anchor_right = 0.566
-anchor_bottom = 0.591
+anchor_left = 0.54
+anchor_right = 0.541
+anchor_bottom = 0.541
 offset_left = -467.5
 offset_top = -56.0
 offset_right = 467.5
