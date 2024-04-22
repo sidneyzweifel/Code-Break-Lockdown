@@ -48,7 +48,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 3.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_side",
-"speed": 15.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -70,7 +70,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 3.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -93,7 +93,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_back",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_side",
-"speed": 9.0
+"speed": 15.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -178,7 +178,7 @@ shape = SubResource("RectangleShape2D_5wmke")
 position = Vector2(555, 247)
 scale = Vector2(0.238609, 0.17491)
 sprite_frames = SubResource("SpriteFrames_e3ews")
-animation = &"walking_side"
+animation = &"idle_up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(12, -36)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=68 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -6372,6 +6372,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5o0sr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ioqxi")
+}],
+"loop": true,
+"name": &"scribble",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmfx3"]
 atlas = ExtResource("6_mcwyx")
 region = Rect2(0, 0, 80, 32)
@@ -6589,7 +6600,6 @@ energy = 2.64
 blend_mode = 1
 texture = SubResource("GradientTexture2D_ndm6q")
 texture_scale = 1.2
-metadata/_edit_lock_ = true
 
 [node name="Shadow - under table2" type="PointLight2D" parent="Shadows"]
 position = Vector2(230, 940.812)
@@ -6637,8 +6647,8 @@ texture = SubResource("GradientTexture2D_ndm6q")
 texture_scale = 1.2
 
 [node name="Shadow - under trash" type="PointLight2D" parent="Shadows"]
-position = Vector2(2247, 469)
-scale = Vector2(2.44791, 2.57162)
+position = Vector2(2247, 428.875)
+scale = Vector2(2.44791, 3.61654)
 color = Color(0.47451, 0.478431, 0.494118, 1)
 energy = 0.99
 blend_mode = 1
@@ -6727,8 +6737,8 @@ texture = SubResource("GradientTexture2D_hu24s")
 texture_scale = 1.2
 
 [node name="Lighting - orange screen" type="PointLight2D" parent="Shadows"]
-position = Vector2(2498, 1021.5)
-scale = Vector2(3.88021, 6.83594)
+position = Vector2(2506, 1031)
+scale = Vector2(4.08854, 7.08333)
 color = Color(0.996094, 0.253906, 0.0234375, 1)
 energy = 1.72
 texture = SubResource("GradientTexture2D_hu24s")
@@ -6765,13 +6775,6 @@ color = Color(0.682353, 0.141176, 0.172549, 1)
 energy = 2.24
 texture = SubResource("GradientTexture2D_hu24s")
 texture_scale = 1.2
-
-[node name="Scribble" type="Node" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Scribble"]
-position = Vector2(1765, 243.5)
-scale = Vector2(0.0670016, 0.016187)
-texture = ExtResource("9_ioqxi")
 
 [node name="CodePopup" parent="." instance=ExtResource("6_8clto")]
 position = Vector2(-670, -659)
@@ -7092,11 +7095,16 @@ theme_override_fonts/font = ExtResource("19_prs32")
 theme_override_font_sizes/font_size = 60
 
 [node name="TrashFire" type="AnimatedSprite2D" parent="."]
-position = Vector2(2244, 347)
+position = Vector2(2251, 320)
 scale = Vector2(6.5586, 7.6211)
 sprite_frames = SubResource("SpriteFrames_j6djx")
 animation = &"trash_fire"
-frame_progress = 0.362964
+
+[node name="Scribble" type="AnimatedSprite2D" parent="."]
+position = Vector2(1763, 244)
+scale = Vector2(0.0670017, 0.0179856)
+sprite_frames = SubResource("SpriteFrames_5o0sr")
+animation = &"scribble"
 
 [node name="NeonSign" type="AnimatedSprite2D" parent="."]
 position = Vector2(798, 126)
@@ -7119,12 +7127,12 @@ sprite_frames = SubResource("SpriteFrames_162ct")
 animation = &"binary_hint"
 frame_progress = 0.384693
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ggm2x")
-
 [node name="Player" parent="." instance=ExtResource("4_0gp5h")]
 position = Vector2(428, 1387)
 scale = Vector2(0.8, 0.8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ggm2x")
 
 [connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_exited"]
