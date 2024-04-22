@@ -53,7 +53,9 @@ func _on_change_pressed():
 
 
 func _on_demo_pressed():
-	pass
+	var cur = get_tree().current_scene
+	cur.queue_free()
+	get_tree().change_scene_to_file("res://NPC/LoopGuide/LoopsDemo.tscn")
 
 
 func _on_review_for_loops_pressed():

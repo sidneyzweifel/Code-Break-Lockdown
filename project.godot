@@ -32,10 +32,6 @@ window/per_pixel_transparency/allowed=true
 
 enabled=PackedStringArray("res://addons/fontawesome/plugin.cfg")
 
-[gui]
-
-theme/custom_font="res://addons/fontawesome/fonts/fa-regular-400.woff2"
-
 [input]
 
 left={

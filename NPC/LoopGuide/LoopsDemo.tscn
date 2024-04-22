@@ -1,0 +1,146 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8jsdndjyssje"]
+
+[ext_resource type="Script" path="res://NPC/LoopGuide/LoopsDemo.gd" id="1_gvmg4"]
+
+[node name="LoopsDemo" type="Node2D"]
+script = ExtResource("1_gvmg4")
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+modulate = Color(0.794056, 0.751419, 0.948715, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.5
+offset_top = -402.0
+offset_right = 375.5
+offset_bottom = 402.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="loop" type="HBoxContainer" parent="Window/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="for_loop" type="Label" parent="Window/ColorRect/VBoxContainer/loop"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "for (int i = #; i "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="inequality" type="OptionButton" parent="Window/ColorRect/VBoxContainer/loop"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "<"
+popup/item_0/id = 0
+popup/item_1/text = ">"
+popup/item_1/id = 1
+popup/item_2/text = "<="
+popup/item_2/id = 2
+popup/item_3/text = ">="
+popup/item_3/id = 3
+
+[node name="i" type="Label" parent="Window/ColorRect/VBoxContainer/loop"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "#;  i "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="change" type="OptionButton" parent="Window/ColorRect/VBoxContainer/loop"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "++"
+popup/item_0/id = 0
+popup/item_1/text = "--"
+popup/item_1/id = 1
+
+[node name="end" type="Label" parent="Window/ColorRect/VBoxContainer/loop"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ")"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="for loop" type="HBoxContainer" parent="Window/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="for_loop" type="Label" parent="Window/ColorRect/VBoxContainer/for loop"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "for (int i = #; i < #; i ++)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruction" type="HBoxContainer" parent="Window/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="current step explained" type="Label" parent="Window/ColorRect/VBoxContainer/instruction"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Current step explained"
+
+[node name="nav_buttons" type="HBoxContainer" parent="Window/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 400
+
+[node name="previous step" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Previous
+Step"
+
+[node name="enter" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Enter values"
+
+[node name="next step" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Next 
+Step"
+
+[node name="back" type="Button" parent="Window/ColorRect/VBoxContainer/nav_buttons"]
+modulate = Color(0.0235294, 0.054902, 0.619608, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Go Back
+to Puzzle"
+
+[connection signal="item_selected" from="Window/ColorRect/VBoxContainer/loop/inequality" to="." method="_on_inequality_item_selected"]
+[connection signal="item_selected" from="Window/ColorRect/VBoxContainer/loop/change" to="." method="_on_change_item_selected"]
+[connection signal="pressed" from="Window/ColorRect/VBoxContainer/nav_buttons/previous step" to="." method="_on_previous_step_pressed"]
+[connection signal="pressed" from="Window/ColorRect/VBoxContainer/nav_buttons/enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="Window/ColorRect/VBoxContainer/nav_buttons/next step" to="." method="_on_next_step_pressed"]
+[connection signal="pressed" from="Window/ColorRect/VBoxContainer/nav_buttons/back" to="." method="_on_back_pressed"]
