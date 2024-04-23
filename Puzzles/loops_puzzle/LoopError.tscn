@@ -6,7 +6,10 @@
 initial_position = 2
 size = Vector2i(814, 243)
 visible = true
+always_on_top = true
+popup_window = true
 ok_button_text = "Try Again"
+dialog_autowrap = true
 script = ExtResource("1_yrjms")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -42,5 +45,12 @@ Please double check your enterted information.
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(0, 0, 814, 243)
+
+[connection signal="canceled" from="." to="." method="_on_canceled"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]
 [connection signal="custom_action" from="." to="." method="_on_custom_action"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

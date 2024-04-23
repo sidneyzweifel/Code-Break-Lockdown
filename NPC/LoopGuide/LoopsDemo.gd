@@ -60,6 +60,7 @@ func _on_enter_pressed():
 			$Window/ColorRect/VBoxContainer/nav_buttons/enter.hide()
 			$"Window/ColorRect/VBoxContainer/nav_buttons/previous step".show()
 			$"Window/ColorRect/VBoxContainer/nav_buttons/next step".show()
+			confirm_input()
 		else:
 			var error_txt:String = "With the parameters you have set the loop will not terminate or not run."
 			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
@@ -75,13 +76,22 @@ func _on_enter_pressed():
 			$Window/ColorRect/VBoxContainer/nav_buttons/enter.hide()
 			$"Window/ColorRect/VBoxContainer/nav_buttons/previous step".show()
 			$"Window/ColorRect/VBoxContainer/nav_buttons/next step".show()
+			confirm_input()
 		else:
-			var error_txt:String = "With the parameters you have set the loop will not terminate or not run."
+			var error_txt:String = "With the parameters you have set the loop will not terminate or run."
+			error_txt += "\n" + "Please enter one of the following combos:"
+			error_txt += "\n" + "<    ++"
+			error_txt += "\n" + "<=   ++"
+			error_txt += "\n" + ">    --"
+			error_txt += "\n" + "<=   --"
 			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
+	
+
+
+func confirm_input():
 	set_instruction_text("If you're happy with these parameters, press Next Step to continue.\n
 	If you would like to change the parameters, click Previous Step.")
 	$"Window/ColorRect/VBoxContainer/instruction/current step explained".show()
-
 
 func _on_previous_step_pressed():
 	#allow the player to reset the parameters they chose if they want something different
@@ -155,7 +165,7 @@ func next_option():
 			#tells user next step
 			#check if the condtional statement is true or not
 			instruction_txt = instruction[1] + str(loop_method.check) + str(loop_method.end_val)
-			set_instruction_text("Now let's check if " + instruction_txt)
+			set_instruction_text("Now let's " + instruction_txt)
 		3:
 			#walks the player through conditional statement and asks for understanding
 			#by asking them if the loop should continue or not
