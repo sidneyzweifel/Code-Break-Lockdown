@@ -10,3 +10,5 @@ extends Node
 
 @onready var incorrect_sound = $IncorrectSound
 @onready var correct_sound = $CorrectSound 
+
+@onready var return_main = $ReturnMain

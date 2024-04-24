@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://u7loecx2w4p2"]
+[gd_scene load_steps=10 format=3 uid="uid://u7loecx2w4p2"]
 
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/AudioManager.gd" id="1_j68cb"]
 [ext_resource type="AudioStream" uid="uid://d2wxh7fpcb6r0" path="res://Puzzles/logic_puzzle/sounds/mouseclick1.wav" id="2_gtcsl"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dr55l0gtxfyfw" path="res://Puzzles/logic_puzzle/sounds/switch20.wav" id="5_jdipg"]
 [ext_resource type="AudioStream" uid="uid://dpou3b4pdyht1" path="res://SFX/error noise.mp3" id="7_e2r1j"]
 [ext_resource type="AudioStream" uid="uid://davtqqekvkaou" path="res://SFX/success noise.mp3" id="8_irv6g"]
+[ext_resource type="AudioStream" uid="uid://b2mm03ehqhpem" path="res://Puzzles/logic_puzzle/sounds/switch37.wav" id="9_o3dyk"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_j68cb")
@@ -32,3 +33,6 @@ stream = ExtResource("7_e2r1j")
 
 [node name="CorrectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_irv6g")
+
+[node name="ReturnMain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_o3dyk")

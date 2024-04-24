@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=69 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b6wd5w5h06adi" path="res://Tilesets/Cyber City/Decor/32x32_spr_fire_barrel_strip6.png" id="19_c8u2o"]
 [ext_resource type="PackedScene" uid="uid://xi0k4gyiqjal" path="res://Puzzles/logic_puzzle/Dialogue.tscn" id="19_kfdlh"]
 [ext_resource type="FontVariation" uid="uid://djj84h5p3moj8" path="res://Puzzles/logic_puzzle/Puzzle3_Default.tres" id="19_prs32"]
+[ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="29_3cvci"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -7127,8 +7128,12 @@ animation = &"binary_hint"
 frame_progress = 0.384693
 
 [node name="Player" parent="." instance=ExtResource("4_0gp5h")]
-position = Vector2(428, 1387)
+position = Vector2(-133, 1165)
 scale = Vector2(0.8, 0.8)
+
+[node name="Return_To_Main" parent="Player" instance=ExtResource("29_3cvci")]
+position = Vector2(293.75, -37.5001)
+scale = Vector2(2.5, 2.5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ggm2x")
