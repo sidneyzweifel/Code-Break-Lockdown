@@ -6783,6 +6783,7 @@ rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 
 [node name="Door" parent="." instance=ExtResource("5_lasnf")]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(391, 324)
 scale = Vector2(0.3, 0.1)
 disable_mode = 0
