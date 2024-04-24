@@ -10,6 +10,8 @@ class_name Door extends StaticBody2D
 @export var passcode_scene:String
 @export var path_current_puzzle:String
 
+# store the original color of the modulator for the terminal
+var oldModulator = "fe7f00"
 
 #door group function to determine if player can move to next puzzle
 func handle_access(door_access):
@@ -26,3 +28,16 @@ func _on_button_pressed():
 
 func _on_door_puz_4_button_pressed():
 	_on_button_pressed()
+	
+func _on_button_mouse_entered():
+	var color = Color("fea600") # set color to white
+	color.v = 1.1 # changes the brightness of the color
+	%doorColor.color = color
+	print("mouse on door")
+
+
+func _on_button_mouse_exited():
+	var color = Color("fe7f00") # set color to white
+	color.v = 1.1 # changes the brightness of the color
+	%doorColor.color = color
+	print("mouse off door")

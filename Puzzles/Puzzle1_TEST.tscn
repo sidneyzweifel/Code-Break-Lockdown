@@ -1909,6 +1909,28 @@ path_to_new_scene = "res://Puzzles/Puzzle2_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
 
+[node name="doorColor" type="ColorRect" parent="Door2"]
+unique_name_in_owner = true
+offset_left = 97.0
+offset_top = -78.0
+offset_right = 250.0
+offset_bottom = 514.0
+color = Color(0.996078, 0.498039, 0, 1)
+
+[node name="Button" type="Button" parent="Door2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 94.0
+offset_top = -77.0
+offset_right = 253.0
+offset_bottom = 516.0
+
+[node name="ColorRect" type="ColorRect" parent="Door2"]
+offset_left = 252.0
+offset_top = 341.0
+offset_right = 287.0
+offset_bottom = 381.0
+color = Color(0.32549, 0.435294, 0.490196, 1)
+
 [node name="Terminal - Node2D" type="Node2D" parent="."]
 script = ExtResource("3_ay63j")
 
@@ -1955,6 +1977,7 @@ volume_db = -15.0
 autoplay = true
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="top wall" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(982, 183)
@@ -2095,6 +2118,9 @@ rotation = 0.322886
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_2xum5")
 
+[connection signal="mouse_entered" from="Door2/Button" to="Door2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Door2/Button" to="Door2" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Door2/Button" to="Door2" method="_on_button_pressed"]
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_exited"]
