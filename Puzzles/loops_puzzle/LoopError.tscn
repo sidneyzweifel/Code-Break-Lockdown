@@ -1,22 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx8cx1mjiisha"]
+[gd_scene load_steps=4 format=3 uid="uid://cx8cx1mjiisha"]
 
+[ext_resource type="Theme" uid="uid://dmlxr46m01byn" path="res://NPC/loop_popup_error.tres" id="1_wjj5r"]
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/LoopError.gd" id="1_yrjms"]
+[ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="2_2jv0m"]
 
 [node name="LoopError" type="AcceptDialog"]
 initial_position = 2
-size = Vector2i(814, 243)
+size = Vector2i(900, 350)
 visible = true
+always_on_top = true
+popup_window = true
+theme = ExtResource("1_wjj5r")
 ok_button_text = "Try Again"
+dialog_autowrap = true
 script = ExtResource("1_yrjms")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 806.0
-offset_bottom = 194.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 850.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.72549, 0.196078, 0.321569, 1)
@@ -25,22 +32,26 @@ color = Color(0.72549, 0.196078, 0.321569, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 806.0
-offset_bottom = 194.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 850.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2jv0m")
 theme_override_font_sizes/font_size = 20
 text = "Machine Constraints not valid.
 
 Either no item can be selected or the machine is unable to stop.
 
-Please double check your enterted information.
+Please double check your entered information.
 
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="canceled" from="." to="." method="_on_canceled"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]
 [connection signal="custom_action" from="." to="." method="_on_custom_action"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

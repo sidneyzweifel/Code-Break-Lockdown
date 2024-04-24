@@ -13,7 +13,6 @@ func _ready():
 
 
 
-
 func _on_increment_pressed():
 	current_item_int += 1
 	current_item.set_text("Current Item: " + str(current_item_int))
@@ -32,7 +31,7 @@ func _on_exit_pressed():
 func _on_enter_pressed():
 	if(wanted_item_int == current_item_int):
 		current_item.set_text("")
-		wanted_item.set_text("Congrats")
+		wanted_item.set_text("Congrats. This is the incorrect door.")
 		$Window/VBoxContainer/HBoxContainer.hide()
 	else:
 		current_item_int *= -10

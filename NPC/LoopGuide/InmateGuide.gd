@@ -31,7 +31,7 @@ func for_loop_button_pressed(button_type):
 		"Continuing condition":
 			$Window/ColorRect/Detail/Description.set_text("determines the condition for the loop to continue")
 		"Changing condition":
-			$Window/ColorRect/Detail/Description.set_text("determine what happens each time the loop interates")
+			$Window/ColorRect/Detail/Description.set_text("determines what happens each time the loop interates")
 
 
 func _on_start_pressed():
@@ -49,11 +49,10 @@ func _on_change_pressed():
 	pass # Replace with function body.
 
 
-
-
-
 func _on_demo_pressed():
-	pass
+	var cur = get_tree().current_scene
+	cur.queue_free()
+	get_tree().change_scene_to_file("res://NPC/LoopGuide/LoopsDemo.tscn")
 
 
 func _on_review_for_loops_pressed():
@@ -70,3 +69,7 @@ func _on_go_back_options_pressed():
 func _on_go_back_start_pressed():
 	$Window/ColorRect/Options.hide()
 	$Window/ColorRect/Start.show()
+
+
+func _on_start_scroll_started():
+	pass # Replace with function body.

@@ -1,5 +1,7 @@
 class_name Item_Dict extends Node
 
+#used in loop_window.gd to keep track of the item in relation 
+#to the key of the inmate
 
 static var item_dict = {}
 

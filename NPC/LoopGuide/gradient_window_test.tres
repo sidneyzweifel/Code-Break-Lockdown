@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dxvxrax5yufvw"]
+
+[ext_resource type="FontFile" uid="uid://kb77wbr73nsc" path="res://addons/unispace/Unispace Bd It.otf" id="1_wppwn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwakf"]
+bg_color = Color(0.741176, 0.572549, 0.0980392, 1)
+border_color = Color(0.976471, 0.772549, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uaffp"]
+bg_color = Color(0.670588, 0.0784314, 0.67451, 1)
+border_width_left = 10
+border_width_top = 23
+border_width_right = 10
+border_width_bottom = 50
+border_color = Color(1, 0.607843, 0.54902, 0.803922)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 34.0
+shadow_color = Color(0, 0, 0, 0.74902)
+shadow_size = 10
+shadow_offset = Vector2(10, 10)
+
+[resource]
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_jwakf")
+Window/colors/title_color = Color(1, 1, 1, 1)
+Window/constants/close_h_offset = 29
+Window/constants/close_v_offset = 29
+Window/constants/resize_margin = -1
+Window/constants/title_height = 37
+Window/constants/title_outline_size = 0
+Window/font_sizes/title_font_size = 20
+Window/fonts/title_font = ExtResource("1_wppwn")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_uaffp")

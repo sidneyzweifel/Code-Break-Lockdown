@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://4o0238b8uaf1"]
+[gd_scene load_steps=5 format=3 uid="uid://4o0238b8uaf1"]
 
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.gd" id="1_rqiq2"]
+[ext_resource type="Theme" uid="uid://dxvxrax5yufvw" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_nvok7"]
+[ext_resource type="FontFile" uid="uid://dbkjncyv5ynqv" path="res://addons/unispace/Unispace It.otf" id="3_6wxwq"]
+[ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="4_ykoat"]
 
 [node name="Board_GUI" type="Node2D"]
 script = ExtResource("1_rqiq2")
@@ -8,6 +11,7 @@ id_array = ["000", "000", "000"]
 index_array = ["999", "999", "999"]
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(0.380392, 1, 0, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -19,12 +23,13 @@ offset_right = 439.0
 offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "?"
+text = "Note from inmate"
 
 [node name="Board" type="Window" parent="."]
 initial_position = 2
 size = Vector2i(700, 300)
 visible = false
+theme = ExtResource("2_nvok7")
 
 [node name="ColorRect" type="ColorRect" parent="Board"]
 anchors_preset = 15
@@ -58,21 +63,25 @@ alignment = 1
 
 [node name="ID Title" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6wxwq")
 theme_override_font_sizes/font_size = 25
 text = "Inmate ID:"
 
 [node name="ID 1" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6wxwq")
 theme_override_font_sizes/font_size = 20
 text = "001"
 
 [node name="ID 2" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6wxwq")
 theme_override_font_sizes/font_size = 20
 text = "010"
 
 [node name="ID 3" type="Label" parent="Board/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6wxwq")
 theme_override_font_sizes/font_size = 20
 text = "011"
 
@@ -85,22 +94,26 @@ alignment = 1
 
 [node name="Index Title" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ykoat")
 theme_override_font_sizes/font_size = 25
 text = "Index:"
 horizontal_alignment = 2
 
 [node name="Index 1" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ykoat")
 theme_override_font_sizes/font_size = 20
 text = "999"
 
 [node name="Index 2" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ykoat")
 theme_override_font_sizes/font_size = 20
 text = "999"
 
 [node name="Index 3" type="Label" parent="Board/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ykoat")
 theme_override_font_sizes/font_size = 20
 text = "999
 "

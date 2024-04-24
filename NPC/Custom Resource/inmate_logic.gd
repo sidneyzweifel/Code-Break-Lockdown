@@ -8,6 +8,8 @@ var pos_A
 var pos_B
 var pos_C
 
+#never used, but needed according to Godot ref just in case this is ever called 
+#without anything
 func _init(inmate_ = null, loop_door_ = null):
 	inmate = inmate_
 	loop_door = loop_door_
@@ -29,6 +31,7 @@ func get_door_pos(key:String):
 
 func set_door_postion(key:String, inmate_pos, scalar_range):
 	var scalar = 2 * randf_range(1, 1.5)
+	#if the door is spawning out of range decrease the random scalar
 	match scalar_range:
 		"less":
 			scalar = 2 * randf()

@@ -11,15 +11,12 @@ func _ready():
 	board.hide()
 
 
-
+#functions called in Puzzle4 set_board()
 func set_ids(id_array:Array):
 	$"Board/HBoxContainer/VBoxContainer/ID 1".set_text(str(id_array[0]))
 	$"Board/HBoxContainer/VBoxContainer/ID 2".set_text(str(id_array[1]))
 	$"Board/HBoxContainer/VBoxContainer/ID 3".set_text(str(id_array[2]))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func set_index_array(index_array:Array):
 	$"Board/HBoxContainer/VBoxContainer2/Index 1".set_text(str(index_array[0]))

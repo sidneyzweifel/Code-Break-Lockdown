@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://uo6nb128f1l8"]
+
+[ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="1_e3bfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ava1"]
+bg_color = Color(0.715593, 0.587309, 0.0908104, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh1fv"]
+bg_color = Color(0.715593, 0.587309, 0.0908104, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_base_scale = 0.69
+OptionButton/colors/font_focus_color = Color(0, 0, 1, 1)
+OptionButton/colors/font_hover_color = Color(0, 0, 1, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 1, 1)
+OptionButton/constants/modulate_arrow = 9
+OptionButton/font_sizes/font_size = 36
+OptionButton/fonts/font = ExtResource("1_e3bfq")
+OptionButton/icons/arrow = null
+OptionButton/styles/hover = SubResource("StyleBoxFlat_1ava1")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_xh1fv")
+PopupMenu/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 1, 1)
+PopupMenu/constants/h_separation = 8
+PopupMenu/constants/v_separation = 6
+PopupMenu/font_sizes/font_size = 25
+PopupMenu/fonts/font = ExtResource("1_e3bfq")

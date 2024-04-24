@@ -1,32 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://beducpmxsj7ek"]
+[gd_scene load_steps=4 format=3 uid="uid://beducpmxsj7ek"]
 
-[ext_resource type="Theme" uid="uid://by2l1rqgrljkp" path="res://theme_testing/green.tres" id="1_4wf5t"]
+[ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="1_ecnyg"]
 [ext_resource type="Script" path="res://NPC/NPCPopup.gd" id="1_f2xbo"]
+[ext_resource type="Theme" uid="uid://cbntk67m54b51" path="res://NPC/NPCPopup.tres" id="1_ioxcm"]
 
 [node name="NPCPopup" type="AcceptDialog"]
 title = ""
 initial_position = 2
 size = Vector2i(700, 400)
 visible = true
-theme = ExtResource("1_4wf5t")
+content_scale_mode = 2
+theme = ExtResource("1_ioxcm")
+theme_override_constants/buttons_separation = 0
 ok_button_text = "Got it!"
 dialog_autowrap = true
 script = ExtResource("1_f2xbo")
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(0, 0.141176, 0.14902, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 700.0
-offset_bottom = 341.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 650.0
+offset_bottom = 331.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.952941, 0.952941, 0.952941, 1)
+theme_override_fonts/font = ExtResource("1_ecnyg")
 theme_override_font_sizes/font_size = 30
-text = "Listen HERE! I can give you what you seek if you go to that special machine and get the item I seek. "
+text = "Text text text hello
+"
 horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 3
 
 [connection signal="confirmed" from="." to="." method="_on_confirmed"]

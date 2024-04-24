@@ -1,5 +1,7 @@
 class_name Door_Puz4 extends Node2D
 
+#using different image for door so need this extra script and scene
+
 @onready var door = $Door
 
 #Script for each door

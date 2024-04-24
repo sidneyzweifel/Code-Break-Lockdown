@@ -3,6 +3,7 @@ extends Node
 
 ###USED FOLLOWING: https://www.youtube.com/watch?v=dDe0x1S2y64
 
+#Opens the JSON file and stores that data in a dictionary to be used in NPC_Popups.gd
 var speech_dict = {}
 var key:String
 
