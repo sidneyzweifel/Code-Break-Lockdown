@@ -1,10 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://b71656ykcqicn"]
+[gd_scene load_steps=43 format=3 uid="uid://b71656ykcqicn"]
 
 [ext_resource type="Script" path="res://Puzzles/gretta_puzzle/Click On Terminal.gd" id="3_ay63j"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
 [ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/puzzle1Terminal.png" id="4_vjmke"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
-[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_tpbfh"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
 [ext_resource type="AudioStream" uid="uid://dl4bf0ktnye1n" path="res://SFX/air vent.mp3" id="8_q0x8x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bga0humacbmau" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/noteBackground.png" id="13_upjvd"]
 [ext_resource type="Texture2D" uid="uid://1scl7repwxy4" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/wallScratches.png" id="14_2xum5"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="14_uroro"]
+[ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="16_rbwr6"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -2057,7 +2058,7 @@ autoplay = "symbol_hint"
 
 [node name="HintWindow" type="Window" parent="."]
 unique_name_in_owner = true
-position = Vector2i(506, 49)
+position = Vector2i(428, 36)
 size = Vector2i(500, 500)
 
 [node name="ColorRect" type="ColorRect" parent="HintWindow"]
@@ -2094,6 +2095,10 @@ position = Vector2(896, 380)
 rotation = 0.322886
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_2xum5")
+
+[node name="Return_To_Main" parent="." instance=ExtResource("16_rbwr6")]
+position = Vector2(237, 103)
+scale = Vector2(2, 2)
 
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]

@@ -19,7 +19,7 @@ var door_passcodes
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
 	var cur = get_tree().current_scene
-	if cur is ColorRect: #type of the passcode_enter scene
+	if cur is ColorRect or cur is Window or cur is Sprite2D: #type of the passcode_enter scene
 		cur.queue_free() #free scene from tree
 		if has_door_acess:
 			get_tree().change_scene_to_file(next_puzz)
@@ -183,8 +183,6 @@ func get_logic_question() -> String:
 	print("GLOBAL SCRIPT LOGIC QUESTION GETTER: " + logic_question)
 	return logic_question
 	
-func override_passcode_set():
-	pass
 
 # solves logic puzzle in Puzzle3_TEST
 func solve_logic_question(question: String) -> int:

@@ -133,8 +133,10 @@ func _on_end_index_text_changed(new_text):
 #inmates don't show up again after their loop puzzle has been solved
 #(not until second half of the puzzle where the player needs passcode)
 func _on_exit_button_pressed():
+	print("exit button pressed")
 	if(puzzle_solved):
 		Puzzle4Autoload.loop_puzzle_solved(correct_index)
+		print("HELLLO")
 	else:
 		Puzzle4Autoload.loop_puzzle_exit()
-
+		print("HELLLO2")

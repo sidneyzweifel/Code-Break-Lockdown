@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="4_0gp5h"]
 [ext_resource type="Texture2D" uid="uid://c3re6e0cfpky8" path="res://Tilesets/Cyber City/Tile/spr_tile_decor.png" id="4_2cupy"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="4_a3apy"]
-[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="5_lasnf"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="5_lasnf"]
 [ext_resource type="Texture2D" uid="uid://bqw8n6k84oqgk" path="res://Tilesets/Cyber City/Build.png" id="5_rn02g"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryCodeWindow.gd" id="6_0p8i5"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_8clto"]

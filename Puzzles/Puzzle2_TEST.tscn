@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://mgf4g7528wwx"]
+[gd_scene load_steps=13 format=3 uid="uid://mgf4g7528wwx"]
 
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_sgofu"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_7y0y0"]
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="4_im48q"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_3g1eq"]
 [ext_resource type="PackedScene" uid="uid://d2sn3lvmj1dsu" path="res://Robot/Robot.tscn" id="6_bh73d"]
-[ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_snv6m"]
+[ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="6_jroyh"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="6_snv6m"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -2182,6 +2183,10 @@ path_current_puzzle = "res://Puzzles/Puzzle2_TEST.tscn"
 
 [node name="Player" parent="Player" instance=ExtResource("4_im48q")]
 position = Vector2(2553, -1580)
+
+[node name="Return_To_Main" parent="Player/Player" instance=ExtResource("6_jroyh")]
+position = Vector2(304, -32)
+scale = Vector2(2.5, 2.5)
 
 [node name="Robot" type="Node2D" parent="."]
 

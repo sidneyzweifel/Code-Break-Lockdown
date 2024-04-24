@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
 [ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 [ext_resource type="PackedScene" uid="uid://cgpmmmq6efotm" path="res://Puzzles/loops_puzzle/loop_success.tscn" id="3_3vimy"]
-[ext_resource type="Theme" uid="uid://0dm2ewa76g8t" path="res://Puzzles/loops_puzzle/dropdown_larger.tres" id="5_75m4x"]
+[ext_resource type="Theme" path="res://Puzzles/loops_puzzle/dropdown_larger.tres" id="5_75m4x"]
 [ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="5_rt8fm"]
-[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="7_whcl3"]
+[ext_resource type="Theme" uid="uid://wdo1766xp43v" path="res://NPC/LoopGuide/button_round_glow.tres" id="7_whcl3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pevv3"]
 corner_radius_top_left = 10
