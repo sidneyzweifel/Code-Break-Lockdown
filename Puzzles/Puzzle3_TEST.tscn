@@ -7132,7 +7132,7 @@ position = Vector2(-133, 1165)
 scale = Vector2(0.8, 0.8)
 
 [node name="Return_To_Main" parent="Player" instance=ExtResource("29_3cvci")]
-position = Vector2(293.75, -37.5001)
+position = Vector2(303.75, -30)
 scale = Vector2(2.5, 2.5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

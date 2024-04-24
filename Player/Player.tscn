@@ -35,8 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://bc1yjsfpstkm" path="res://Sprites/Walking/Player/Side/Walking_side_12.png" id="33_0cghr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fpkl"]
-radius = 97.0
-height = 282.0
+radius = 105.0
+height = 354.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3ews"]
 animations = [{
@@ -176,7 +176,7 @@ position = Vector2(1249, 500)
 shape = SubResource("CapsuleShape2D_6fpkl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1236, 463)
+position = Vector2(1227, 502)
 scale = Vector2(0.238609, 0.17491)
 sprite_frames = SubResource("SpriteFrames_e3ews")
 animation = &"idle_up"
