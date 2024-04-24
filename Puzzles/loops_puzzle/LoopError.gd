@@ -42,9 +42,6 @@ func _on_mouse_exited():
 	queue_free()
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("nofity exit")
-	queue_free()
 
 
 func _on_confirmed():

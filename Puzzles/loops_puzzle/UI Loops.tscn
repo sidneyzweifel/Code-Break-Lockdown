@@ -1,57 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3kmp0451hi0"]
+[gd_scene load_steps=10 format=3 uid="uid://i3kmp0451hi0"]
 
 [ext_resource type="Texture2D" uid="uid://drsah5bbq72o0" path="res://Backgrounds/SDP_loop_background.png" id="1_5tqim"]
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_window.gd" id="1_hjv3k"]
 [ext_resource type="PackedScene" uid="uid://cx8cx1mjiisha" path="res://Puzzles/loops_puzzle/LoopError.tscn" id="2_e84ew"]
 [ext_resource type="PackedScene" uid="uid://cgpmmmq6efotm" path="res://Puzzles/loops_puzzle/loop_success.tscn" id="3_3vimy"]
+[ext_resource type="Theme" uid="uid://0dm2ewa76g8t" path="res://Puzzles/loops_puzzle/dropdown_larger.tres" id="5_75m4x"]
+[ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="5_rt8fm"]
+[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="7_whcl3"]
 
-[sub_resource type="FontFile" id="FontFile_a06hb"]
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pevv3"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="FontFile" id="FontFile_5knvj"]
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-
-[sub_resource type="FontFile" id="FontFile_5jcr8"]
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+[sub_resource type="Theme" id="Theme_1l53n"]
+Window/styles/embedded_border = SubResource("StyleBoxFlat_pevv3")
 
 [node name="Background" type="Sprite2D"]
 modulate = Color(0.639216, 0.713726, 0.564706, 1)
@@ -66,6 +30,7 @@ initial_position = 2
 size = Vector2i(1280, 720)
 unresizable = true
 borderless = true
+theme = SubResource("Theme_1l53n")
 script = ExtResource("1_hjv3k")
 error_popup = ExtResource("2_e84ew")
 success_popup = ExtResource("3_3vimy")
@@ -76,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.101961, 0.54902, 0.352941, 1)
+color = Color(0.101961, 0.54902, 0.490196, 1)
 
 [node name="ItemNumLabel" type="Label" parent="Window/ColorRect"]
 modulate = Color(1, 0.8, 0.196078, 1)
@@ -88,6 +53,7 @@ offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_rt8fm")
 theme_override_font_sizes/font_size = 70
 text = "ITEM #: "
 horizontal_alignment = 1
@@ -117,8 +83,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"HeaderSmall"
-theme_override_fonts/font = SubResource("FontFile_a06hb")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_rt8fm")
+theme_override_font_sizes/font_size = 39
 text = "i = "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -127,6 +93,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("5_rt8fm")
 theme_override_font_sizes/font_size = 40
 text = "Start INdex"
 horizontal_alignment = 1
@@ -138,14 +105,15 @@ theme_override_constants/separation = 30
 
 [node name="IInequality" type="Label" parent="Window/ColorRect/LoopContriants/End"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_5knvj")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_rt8fm")
+theme_override_font_sizes/font_size = 43
 text = "i"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Inequality" type="OptionButton" parent="Window/ColorRect/LoopContriants/End"]
 layout_mode = 2
+theme = ExtResource("5_75m4x")
 theme_override_font_sizes/font_size = 40
 item_count = 4
 selected = 0
@@ -163,7 +131,8 @@ modulate = Color(0.0784314, 0.964706, 1, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("5_rt8fm")
+theme_override_font_sizes/font_size = 38
 placeholder_text = "END INDEX"
 alignment = 1
 max_length = 3
@@ -176,13 +145,14 @@ theme_override_constants/separation = 20
 
 [node name="IChange" type="Label" parent="Window/ColorRect/LoopContriants/Change"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_5jcr8")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("5_rt8fm")
+theme_override_font_sizes/font_size = 43
 text = "i"
 horizontal_alignment = 1
 
 [node name="IncrementOrDecrement" type="OptionButton" parent="Window/ColorRect/LoopContriants/Change"]
 layout_mode = 2
+theme = ExtResource("5_75m4x")
 theme_override_font_sizes/font_size = 50
 item_count = 2
 selected = 0
@@ -196,6 +166,8 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 174.0
 grow_vertical = 2
+theme = ExtResource("7_whcl3")
+theme_override_fonts/font = ExtResource("5_rt8fm")
 theme_override_font_sizes/font_size = 60
 text = "EXIT"
 
@@ -207,6 +179,11 @@ anchor_bottom = 1.0
 offset_left = -212.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("7_whcl3")
+theme_override_colors/font_color = Color(0, 0.980392, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.976471, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.992157, 0, 1)
+theme_override_fonts/font = ExtResource("5_rt8fm")
 theme_override_font_sizes/font_size = 60
 text = "ENTER"
 

@@ -1,29 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bva68bpcjpk3b"]
+[gd_scene load_steps=6 format=3 uid="uid://bva68bpcjpk3b"]
 
 [ext_resource type="Script" path="res://NPC/LoopGuide/PasscodeHint.gd" id="1_kaqx6"]
+[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="2_e6bkg"]
+[ext_resource type="Theme" uid="uid://dxvxrax5yufvw" path="res://NPC/LoopGuide/gradient_window_test.tres" id="3_frytq"]
+[ext_resource type="FontFile" uid="uid://br8hwm7aywcge" path="res://addons/feltful/feltful_regular.otf" id="3_fukvr"]
+
+[sub_resource type="Theme" id="Theme_qcuod"]
 
 [node name="PasscodeHint" type="Node2D"]
 script = ExtResource("1_kaqx6")
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 0.698039, 0.564706, 1)
 offset_left = 82.0
 offset_top = 55.0
 offset_right = 132.0
 offset_bottom = 105.0
-theme_override_font_sizes/font_size = 30
-text = "???"
+theme = ExtResource("2_e6bkg")
+theme_override_colors/font_color = Color(0.72333, 0.432008, 0.0540678, 1)
+theme_override_font_sizes/font_size = 25
+text = "Guide hint"
 
 [node name="Window" type="Window" parent="."]
 initial_position = 2
 size = Vector2i(700, 800)
+theme = ExtResource("3_frytq")
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
-modulate = Color(0.811765, 0.564706, 0.537255, 1)
+modulate = Color(0.811765, 0.564706, 0.537255, 0.654902)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_qcuod")
 
 [node name="Label" type="Label" parent="Window"]
 modulate = Color(0.0745098, 0.0745098, 0.0745098, 1)
@@ -32,16 +42,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Now that you've gotten the inmates their items.
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fukvr")
+theme_override_font_sizes/font_size = 37
+text = "
+
+
+Now that you've gotten the inmates their items.
 They seem to be willing to help you get out of here.
+
 Let me give you a hint as well.
+
 The passcode to leave here is a count of how many times the prisoners have looped this worn down courtyard since the prison opened. 
+
 Although, you seem to have broken it today.
+
 Note that there is only one answer.
 "
 horizontal_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

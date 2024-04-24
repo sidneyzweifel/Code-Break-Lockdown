@@ -1,0 +1,66 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cbntk67m54b51"]
+
+[ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="1_bvj41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8f2l"]
+bg_color = Color(0.192157, 0.65098, 0.831373, 0.596078)
+border_width_left = 50
+border_width_top = 100
+border_width_right = 50
+border_width_bottom = 20
+border_color = Color(0.152941, 0.72549, 0.592157, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+shadow_offset = Vector2(10, 100)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g801s"]
+bg_color = Color(1, 1, 0.00784314, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjmf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.960784, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0.835294, 0.831373, 0.0901961, 0.239216)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vhqr"]
+bg_color = Color(0.152216, 0.725511, 0.592865, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+expand_margin_top = 26.0
+
+[resource]
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_h8f2l")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.133333, 0.113725, 0.380392, 1)
+Button/constants/h_separation = 12
+Button/font_sizes/font_size = 23
+Button/fonts/font = ExtResource("1_bvj41")
+Button/styles/hover = SubResource("StyleBoxFlat_g801s")
+Button/styles/normal = SubResource("StyleBoxFlat_pbjmf")
+Window/constants/close_h_offset = 21
+Window/constants/close_v_offset = 21
+Window/styles/embedded_border = SubResource("StyleBoxFlat_3vhqr")

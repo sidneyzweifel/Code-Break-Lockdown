@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://k36l72cy6xu"]
+[gd_scene load_steps=7 format=3 uid="uid://k36l72cy6xu"]
 
 [ext_resource type="Script" path="res://NPC/LoopGuide/InmateGuide.gd" id="1_p8rc5"]
+[ext_resource type="FontFile" uid="uid://br8hwm7aywcge" path="res://addons/feltful/feltful_regular.otf" id="2_7teop"]
+[ext_resource type="Theme" uid="uid://dxvxrax5yufvw" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_8kt0h"]
+[ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="2_xgkc4"]
+[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="3_djy0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_morkd"]
+bg_color = Color(0.901961, 0.462745, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0.0352941, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-1, 13)
@@ -21,6 +38,9 @@ title = "For Loop Guide"
 initial_position = 2
 size = Vector2i(700, 700)
 visible = false
+always_on_top = true
+popup_window = true
+theme = ExtResource("2_8kt0h")
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 anchors_preset = 15
@@ -28,7 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0470588, 0.113725, 0.235294, 0.490196)
+color = Color(0.819608, 0.572549, 0.933333, 1)
 
 [node name="Detail" type="VBoxContainer" parent="Window/ColorRect"]
 visible = false
@@ -38,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.5
-offset_top = -89.0
-offset_right = 42.5
-offset_bottom = 89.0
+offset_left = -94.0
+offset_top = -112.5
+offset_right = 94.0
+offset_bottom = 112.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
@@ -49,29 +69,33 @@ alignment = 1
 
 [node name="OptionSelectedTitle" type="Label" parent="Window/ColorRect/Detail"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xgkc4")
 theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="Window/ColorRect/Detail"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xgkc4")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
 [node name="Go Back Options" type="Button" parent="Window/ColorRect/Detail"]
 layout_mode = 2
+theme = ExtResource("3_djy0h")
 text = "Go back"
 
 [node name="Options" type="VBoxContainer" parent="Window/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.5
-offset_top = -47.0
-offset_right = 41.5
-offset_bottom = 47.0
+offset_left = -193.0
+offset_top = -300.5
+offset_right = 193.0
+offset_bottom = 300.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 45
@@ -80,52 +104,57 @@ alignment = 1
 [node name="Label" type="Label" parent="Window/ColorRect/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Learn about differnt parts of a for loop"
+text = "Learn about different parts of a for loop"
 horizontal_alignment = 1
 
 [node name="start" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "i = ###"
 
 [node name="condtion" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "i > ###"
 
 [node name="change" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0, 0.992157, 0, 1)
 text = "i ++"
 
 [node name="Demo" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "Get Demo
 "
 
 [node name="Go Back Start" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
+theme = ExtResource("3_djy0h")
 text = "Go Back"
 
 [node name="Start" type="VBoxContainer" parent="Window/ColorRect"]
-visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -239.5
-offset_top = -52.0
-offset_right = 239.5
-offset_bottom = 52.0
+anchors_preset = -1
+anchor_left = 0.139
+anchor_top = 0.095
+anchor_right = 0.832
+anchor_bottom = 0.92
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GuideMessage" type="Label" parent="Window/ColorRect/Start"]
 layout_mode = 2
 size_flags_stretch_ratio = 6.48
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7teop")
+theme_override_font_sizes/font_size = 28
 text = "We're all counting on you!
 This is the last puzzle before you make 
 it out of here. But your journey is just getting
@@ -133,18 +162,30 @@ started.
 You're a programmer right?
 You've seen a for loop before. Surely. 
 Well, it has been a long time.
-In case you need a refresher I have preapared some review material for you. 
-
-When you're ready. Track down an imate and they'll show you that things have become other wordly here. 
-"
+	   In case you need a refresher I have preapared some review material for you. "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Review For Loops" type="Button" parent="Window/ColorRect/Start"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0.847059, 0.898039, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_morkd")
 text = "Review For Loops"
+
+[node name="NextMessage" type="Label" parent="Window/ColorRect/Start"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7teop")
+theme_override_font_sizes/font_size = 28
+text = "
+
+When you're ready. Track down an inmate 
+and they'll show you that things have become other wordly here. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

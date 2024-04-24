@@ -62,8 +62,7 @@ func _on_enter_pressed():
 			$"Window/ColorRect/VBoxContainer/nav_buttons/next step".show()
 			confirm_input()
 		else:
-			var error_txt:String = "With the parameters you have set the loop will not terminate or not run."
-			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
+			set_error_txt()
 	##if the the user entered values match this case
 	#then set the loop text to for(int i = 3; i < (or <=) 0; i++)
 	if(inequality == "more_than" or inequality == "more_than_or_equal"):
@@ -78,6 +77,11 @@ func _on_enter_pressed():
 			$"Window/ColorRect/VBoxContainer/nav_buttons/next step".show()
 			confirm_input()
 		else:
+			set_error_txt()
+	
+
+
+func set_error_txt():
 			var error_txt:String = "With the parameters you have set the loop will not terminate or run."
 			error_txt += "\n" + "Please enter one of the following combos:"
 			error_txt += "\n" + "<    ++"
@@ -85,13 +89,15 @@ func _on_enter_pressed():
 			error_txt += "\n" + ">    --"
 			error_txt += "\n" + "<=   --"
 			$"Window/ColorRect/VBoxContainer/instruction/current step explained".set_text(error_txt)
-	
-
+			
 
 func confirm_input():
 	set_instruction_text("If you're happy with these parameters, press Next Step to continue.\n
 	If you would like to change the parameters, click Previous Step.")
 	$"Window/ColorRect/VBoxContainer/instruction/current step explained".show()
+	option_num = -1
+	_on_next_step_pressed()
+	
 
 func _on_previous_step_pressed():
 	#allow the player to reset the parameters they chose if they want something different
