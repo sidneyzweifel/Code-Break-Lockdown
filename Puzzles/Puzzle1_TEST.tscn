@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
 [ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/puzzle1Terminal.png" id="4_vjmke"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="6_tpbfh"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
 [ext_resource type="AudioStream" uid="uid://dl4bf0ktnye1n" path="res://SFX/air vent.mp3" id="8_q0x8x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]

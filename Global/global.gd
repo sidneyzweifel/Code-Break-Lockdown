@@ -16,6 +16,10 @@ var previous_terminal_window = "none"
 var textbox_shown = false
 var door_passcodes
 
+
+#SARAH ADDDED
+var passcode_set:bool = false
+
 #determines if player can go to next puzzle
 func handle_door(has_door_acess)-> void:
 	var cur = get_tree().current_scene
@@ -165,6 +169,7 @@ func get_door_passcodes():
 #called in LineEdit.gd in passcode_enter scene
 #make sure what the user enters and the set passcode match
 func get_passcode():
+	passcode_set = true
 	return current_passcode
 
 # logic puzzle called in Puzzle3_TEST
@@ -217,6 +222,8 @@ func solve_logic_question(question: String) -> int:
 	print("GLOBAL SCRIPT LOGIC ANSWER: ", result_str) # print logic result
 
 	return logic_result
+	
+
 #emitted in puzzle 4 script in set_passcode
 #this function does nothing, but I just needed a signal
 #so I could wait until I set the new passcode before overidding it

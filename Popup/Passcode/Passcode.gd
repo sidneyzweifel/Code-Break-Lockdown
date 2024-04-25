@@ -8,9 +8,10 @@ extends Label
 # the puzzle 1 scene, so i added a check if there already is a passcode
 func _ready():
 	var passcode
-	if Global.get_passcode() : # if there is a passcode do nothing
+	##SARAH: IS CHANGING THIS LIKE FROM Global.get_passcode()
+	if Global.passcode_set: # if there is a passcode do nothing
 		pass
 	else: # otherwise set a passcode
 		passcode= await Global.set_passcode() # await must be here or there will be an error
 		passcode_text.text = "PASSCODE: " + passcode
-		print(passcode)
+		print("PASSCODE  is" + passcode)

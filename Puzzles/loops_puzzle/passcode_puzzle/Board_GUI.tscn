@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://4o0238b8uaf1"]
 
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/passcode_puzzle/Board_GUI.gd" id="1_rqiq2"]
-[ext_resource type="Theme" uid="uid://dxvxrax5yufvw" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_nvok7"]
+[ext_resource type="Theme" uid="uid://snq2pun4i1hk" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_nvok7"]
 [ext_resource type="FontFile" uid="uid://dbkjncyv5ynqv" path="res://addons/unispace/Unispace It.otf" id="3_6wxwq"]
 [ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="4_ykoat"]
 

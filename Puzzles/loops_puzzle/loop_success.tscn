@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgpmmmq6efotm"]
 
 [ext_resource type="Script" path="res://Puzzles/loops_puzzle/loop_success.gd" id="1_120yq"]
-[ext_resource type="Theme" uid="uid://bh8ktmdjrjov8" path="res://NPC/loop_popup_success.tres" id="1_lkgn0"]
+[ext_resource type="Theme" uid="uid://bhc7itit2dco" path="res://NPC/loop_popup_success.tres" id="1_lkgn0"]
 [ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="2_am3sl"]
 
 [node name="LoopSuccess" type="AcceptDialog"]

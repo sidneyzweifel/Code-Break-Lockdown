@@ -34,3 +34,7 @@ func _on_pressed():
 func _on_puzzle_select_pressed():
 	# go to the puzzle select screen
 	SceneTransition.change_scene_to_file(puzzle_select)
+
+
+func _on_exit_pressed():
+	get_tree().quit()

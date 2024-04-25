@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://NPC/LoopGuide/LoopsDemo.gd" id="1_gvmg4"]
 [ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="2_arfa6"]
 [ext_resource type="Theme" uid="uid://uo6nb128f1l8" path="res://NPC/LoopGuide/drop_down_changes.tres" id="3_dlwpi"]
-[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="4_sbwis"]
+[ext_resource type="Theme" uid="uid://wdo1766xp43v" path="res://NPC/LoopGuide/button_round_glow.tres" id="4_sbwis"]
 
 [sub_resource type="Theme" id="Theme_h8eq1"]
 default_font = ExtResource("2_arfa6")
