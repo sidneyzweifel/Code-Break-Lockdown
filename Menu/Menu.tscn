@@ -202,10 +202,10 @@ text = "EXIT"
 [node name="Label3" type="Label" parent="ColorRect"]
 modulate = Color(0.678431, 0, 0, 1)
 layout_mode = 0
-offset_left = 843.0
-offset_top = 892.0
-offset_right = 1207.0
-offset_bottom = 1004.0
+offset_left = 855.0
+offset_top = 890.0
+offset_right = 1219.0
+offset_bottom = 1002.0
 theme_override_fonts/font = ExtResource("23_ec0yw")
 theme_override_font_sizes/font_size = 90
 text = "EXIT"
