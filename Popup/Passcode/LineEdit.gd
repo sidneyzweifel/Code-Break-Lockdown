@@ -39,7 +39,7 @@ func _on_text_submitted(new_text):
 		var red =  Color(1.0,0.0,0.0,1.0)
 		set("theme_override_colors/font_color", red)
 		label.show()
-		WrongInput.change_scene_to_file("res://Puzzles/Puzzle1_TEST.tscn")
+		WrongInput.change_scene_to_file(get_tree().current_scene.scene_file_path)
 		door_access = -1 #set to access denied 
 	
 

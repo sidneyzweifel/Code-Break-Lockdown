@@ -63,5 +63,7 @@ text = "Menu"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_6hv0b")
+volume_db = 12.381
+autoplay = true
 
 [connection signal="pressed" from="Window/VBoxContainer/Button" to="." method="_on_button_pressed"]
