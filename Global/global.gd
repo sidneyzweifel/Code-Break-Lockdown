@@ -179,21 +179,25 @@ func get_door_passcodes():
 # logic puzzle called in Puzzle3_TEST
 # generates and sets a random logic question to de displayed (eg: (3 & 2) ^ (5 | 7))
 func set_logic_question() -> String:
-	var a = randi_range(0, 10)
-	var b = randi_range(0, 10)
-	var c = randi_range(0, 10)
-	var operators = ["&", "|"] # Only bitwise AND and OR operators will be used
+	# Check if logic_question is empty
+	if logic_question == "":
+		var a = randi_range(0, 10)
+		var b = randi_range(0, 10)
+		var c = randi_range(0, 10)
+		var operators = ["&", "|"] 
 
-	# Choose the first operator randomly
-	var first_operator = operators[randi() % operators.size()]
+		# Choose the first operator randomly
+		var first_operator = operators[randi() % operators.size()]
 
-	# Choose the second operator randomly
-	var second_operator = operators[randi() % operators.size()]
+		# Choose the second operator randomly
+		var second_operator = operators[randi() % operators.size()]
 
-	# Construct the logic question string
-	logic_question = "(" + str(a) + " " + first_operator + " " + str(b) + ") " + second_operator + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
-	print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
+		# Construct the logic question string
+		logic_question = "(" + str(a) + " " + first_operator + " " + str(b) + ") " + second_operator + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
+		print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
+	
 	return logic_question
+
 
 # get last randomly generated logic question in Puzzle3_TEST
 func get_logic_question() -> String:
