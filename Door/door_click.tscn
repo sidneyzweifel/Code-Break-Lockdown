@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c55mgrmskpgnp"]
+[gd_scene load_steps=5 format=3 uid="uid://bi8x2wvn0x1vx"]
 
 [ext_resource type="Script" path="res://Door/door.gd" id="1_gsyjb"]
-[ext_resource type="Texture2D" uid="uid://d4apniv1j3gaq" path="res://Sprites/door_temp2.png" id="2_cuni7"]
 [ext_resource type="Texture2D" uid="uid://byxdlphwf1j0" path="res://Backgrounds/door_image_fix.png" id="3_tsdnh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_836jx"]
@@ -44,8 +43,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -172.0
 offset_top = -310.0
-offset_right = -177.0
-offset_bottom = -319.0
 offset_right = 64.0
 offset_bottom = 82.0
 grow_horizontal = 2
