@@ -74,6 +74,12 @@ func set_passcode():
 		current_passcode = str(randi_range(10000, 99999))
 		return current_passcode
 
+#called in LineEdit.gd in passcode_enter scene
+#make sure what the user enters and the set passcode match
+func get_passcode():
+	passcode_set = true
+	return current_passcode
+	
 # PUZZLE 1 -----------------------------------------------
 
 # sets a random color to the door light color in PUZZLE 1
@@ -166,11 +172,9 @@ func get_door_passcodes():
 
 #--------------------------------------------------------------
 
-#called in LineEdit.gd in passcode_enter scene
-#make sure what the user enters and the set passcode match
-func get_passcode():
-	passcode_set = true
-	return current_passcode
+
+
+# PUZZLE 3 -----------------------------------------------
 
 # logic puzzle called in Puzzle3_TEST
 # generates and sets a random logic question to de displayed (eg: (3 & 2) ^ (5 | 7))
@@ -178,8 +182,16 @@ func set_logic_question() -> String:
 	var a = randi_range(0, 10)
 	var b = randi_range(0, 10)
 	var c = randi_range(0, 10)
-	var operators = ["&", "|", "^"] #logic operators that will be used randomly
-	logic_question = "(" + str(a) + " " + operators[randi() % operators.size()] + " " + str(b) + ") " + operators[randi() % operators.size()] + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
+	var operators = ["&", "|"] # Only bitwise AND and OR operators will be used
+
+	# Choose the first operator randomly
+	var first_operator = operators[randi() % operators.size()]
+
+	# Choose the second operator randomly
+	var second_operator = operators[randi() % operators.size()]
+
+	# Construct the logic question string
+	logic_question = "(" + str(a) + " " + first_operator + " " + str(b) + ") " + second_operator + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
 	print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
 	return logic_question
 
@@ -210,19 +222,27 @@ func solve_logic_question(question: String) -> int:
 		var operator = components[i]
 		var operand = int(components[i + 1])
 
+		# add debug output to track intermediate results
+		print("Intermediate result before applying operator:", logic_result)
+
 		# apply the operator to the current result and operand
 		if operator == "&":
+			print("Applying bitwise AND with operand:", operand)
 			logic_result &= operand
 		elif operator == "|":
+			print("Applying bitwise OR with operand:", operand)
 			logic_result |= operand
-		elif operator == "^":
-			logic_result ^= operand
+
+		# add debug output to track the result after applying the operator
+		print("Intermediate result after applying operator:", logic_result)
 
 	var result_str = str(logic_result)
 	print("GLOBAL SCRIPT LOGIC ANSWER: ", result_str) # print logic result
 
 	return logic_result
-	
+
+#--------------------------------------------------------------
+
 
 #emitted in puzzle 4 script in set_passcode
 #this function does nothing, but I just needed a signal
