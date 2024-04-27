@@ -5,6 +5,7 @@ var current_puzz:String
 var current_passcode:String
 var logic_question:String = ""
 var logic_result = 0
+var logic_puzzle_solved = false
 
 # variables for puzzle 1 - gretta's puzzle
 var door_colors = ["blue", "red", "purple", "yellow", "green"]
@@ -245,6 +246,13 @@ func solve_logic_question(question: String) -> int:
 
 	return logic_result
 
+func logic_puzzle_flag_set_true():
+	logic_puzzle_solved = true
+	print(logic_puzzle_solved)
+
+func logic_puzzle_flag_set_false():
+	logic_puzzle_solved = false
+	print(logic_puzzle_solved)
 #--------------------------------------------------------------
 
 

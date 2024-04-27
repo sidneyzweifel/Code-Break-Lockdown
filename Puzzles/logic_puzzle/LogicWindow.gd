@@ -8,7 +8,6 @@ var number_input : LineEdit
 var binary_button : BinaryButton
 var no_access_button : NoAccessButton
 
-
 func _ready():
 	logic_popup_window.hide()
 	
@@ -39,10 +38,12 @@ func _on_line_edit_text_submitted(text: String) -> void:
 	print(user_answer)
 	
 	if user_answer == solvedQuestion: # check if input is correct
+		Global.logic_puzzle_flag_set_true() # sets logic_puzzle_solved variable to true
 		no_access_button.hide()
 		binary_button.show()
 		AudioManager.correct_sound.play()
 		hide()
+		
 	else:
 		no_access_button.show()
 		binary_button.hide()

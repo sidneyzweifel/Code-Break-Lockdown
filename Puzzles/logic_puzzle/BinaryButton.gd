@@ -4,4 +4,8 @@ class_name BinaryButton extends Button
 
 # called when the node enters the scene tree for the first time.
 func _ready():
-	binary_button.hide()
+	if Global.logic_puzzle_solved == true:
+		binary_button.show()
+		
+	else:
+		binary_button.hide()

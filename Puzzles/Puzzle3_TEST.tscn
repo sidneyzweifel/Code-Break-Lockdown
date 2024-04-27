@@ -45,6 +45,8 @@ func _ready():
 	neon_sign_animation.play(\"neon_sign\")
 	binary_hint_animation.play(\"binary_hint\")
 	symbol_hint_animation.play(\"symbol_hint\")
+	
+	print(Global.logic_puzzle_solved)
 
 
 "
