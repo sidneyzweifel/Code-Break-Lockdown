@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://NPC/LoopGuide/InmateGuide.gd" id="1_p8rc5"]
 [ext_resource type="FontFile" uid="uid://br8hwm7aywcge" path="res://addons/feltful/feltful_regular.otf" id="2_7teop"]
-[ext_resource type="Theme" uid="uid://dxvxrax5yufvw" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_8kt0h"]
+[ext_resource type="Theme" uid="uid://snq2pun4i1hk" path="res://NPC/LoopGuide/gradient_window_test.tres" id="2_8kt0h"]
 [ext_resource type="FontFile" uid="uid://b1r8watwvkf5r" path="res://addons/unispace/Unispace Rg.otf" id="2_xgkc4"]
-[ext_resource type="Theme" uid="uid://y66pyuidy883" path="res://NPC/LoopGuide/button_round_glow.tres" id="3_djy0h"]
+[ext_resource type="Theme" uid="uid://wdo1766xp43v" path="res://NPC/LoopGuide/button_round_glow.tres" id="3_djy0h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_morkd"]
 bg_color = Color(0.901961, 0.462745, 0, 1)

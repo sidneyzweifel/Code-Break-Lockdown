@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_3g1eq"]
 [ext_resource type="PackedScene" uid="uid://d2sn3lvmj1dsu" path="res://Robot/Robot.tscn" id="6_bh73d"]
 [ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="6_jroyh"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="6_snv6m"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="6_snv6m"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -17,6 +17,10 @@ script/source = "extends Node2D
 #func _ready():
 #	popup.show()
 
+func _ready():
+	##SARAH ADDED THIS
+	Global.passcode_set = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

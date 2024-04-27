@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dtfaflr4ptvky"]
+[gd_scene load_steps=25 format=3 uid="uid://dtfaflr4ptvky"]
 
 [ext_resource type="Script" path="res://Menu/Start.gd" id="1_4xyal"]
 [ext_resource type="Texture2D" uid="uid://bvvpmiv28gfhw" path="res://Menu/Assets/menu screen background/tile000.png" id="1_5mtnm"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://g7c0yb1a2r41" path="res://Menu/Assets/menu screen background/tile018.png" id="19_0gkdu"]
 [ext_resource type="Texture2D" uid="uid://w2itu2sptlou" path="res://Menu/Assets/menu screen background/tile019.png" id="20_be3lh"]
 [ext_resource type="FontFile" uid="uid://13b537clfjwp" path="res://Puzzles/gretta_puzzle/Terminal/Assets/font/unispace bd it.otf" id="21_xeo4o"]
+[ext_resource type="FontFile" uid="uid://kb77wbr73nsc" path="res://addons/unispace/Unispace Bd It.otf" id="23_ec0yw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxyi5"]
 animations = [{
@@ -188,5 +189,27 @@ theme_override_fonts/font = ExtResource("21_xeo4o")
 theme_override_font_sizes/font_size = 98
 text = "CODE BREAK LOCKDOWN"
 
+[node name="Exit" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 889.0
+offset_right = 1135.0
+offset_bottom = 974.0
+theme_override_fonts/font = ExtResource("23_ec0yw")
+theme_override_font_sizes/font_size = 90
+text = "EXIT"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+modulate = Color(0.678431, 0, 0, 1)
+layout_mode = 0
+offset_left = 855.0
+offset_top = 890.0
+offset_right = 1219.0
+offset_bottom = 1002.0
+theme_override_fonts/font = ExtResource("23_ec0yw")
+theme_override_font_sizes/font_size = 90
+text = "EXIT"
+
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
 [connection signal="pressed" from="ColorRect/PuzzleSelect" to="ColorRect/Start" method="_on_puzzle_select_pressed"]
+[connection signal="pressed" from="ColorRect/Exit" to="ColorRect/Start" method="_on_exit_pressed"]

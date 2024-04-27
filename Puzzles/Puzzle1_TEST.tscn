@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="4_mmwtb"]
 [ext_resource type="Texture2D" uid="uid://dhbrk3bqordx1" path="res://Puzzles/gretta_puzzle/Terminal/Assets/terminal images/puzzle1Terminal.png" id="4_vjmke"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_6xh31"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="6_tpbfh"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="6_tpbfh"]
 [ext_resource type="PackedScene" uid="uid://dxq4sx0alr6pi" path="res://Player/player_no_cam.tscn" id="6_ypr61"]
 [ext_resource type="AudioStream" uid="uid://dl4bf0ktnye1n" path="res://SFX/air vent.mp3" id="8_q0x8x"]
 [ext_resource type="AudioStream" uid="uid://dfpex8rcldebh" path="res://SFX/electric buzzing.mp3" id="8_xhcw0"]
@@ -23,7 +23,7 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -1903,12 +1903,34 @@ texture = SubResource("GradientTexture2D_gy4c3")
 texture_scale = 1.2
 
 [node name="Door2" parent="." instance=ExtResource("6_tpbfh")]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(560, 250)
 rotation = 0.00349066
 scale = Vector2(0.7, 0.4)
 path_to_new_scene = "res://Puzzles/Puzzle2_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle1_TEST.tscn"
+
+[node name="doorColor" type="ColorRect" parent="."]
+offset_left = 631.0
+offset_top = 225.0
+offset_right = 732.0
+offset_bottom = 454.0
+color = Color(0.996078, 0.498039, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 631.0
+offset_top = 225.0
+offset_right = 733.0
+offset_bottom = 453.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 736.0
+offset_top = 373.0
+offset_right = 760.0
+offset_bottom = 413.0
+color = Color(0.321569, 0.427451, 0.498039, 1)
 
 [node name="Terminal - Node2D" type="Node2D" parent="."]
 script = ExtResource("3_ay63j")
@@ -1956,6 +1978,7 @@ volume_db = -15.0
 autoplay = true
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="top wall" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(982, 183)
@@ -2036,6 +2059,7 @@ offset_right = 807.0
 offset_bottom = 218.0
 
 [node name="textbox" parent="." instance=ExtResource("9_t7sde")]
+visible = false
 offset = Vector2(550, 95)
 scale = Vector2(0.6, 0.6)
 transform = Transform2D(0.6, 0, 0, 0.6, 550, 95)
@@ -2060,6 +2084,7 @@ autoplay = "symbol_hint"
 unique_name_in_owner = true
 position = Vector2i(428, 36)
 size = Vector2i(500, 500)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="HintWindow"]
 offset_right = 550.0
@@ -2083,7 +2108,7 @@ text = "  I don't have much time so I have to make this brief.
 
   I was the prisoner that inhabited this room before you, whoever you are. You don't know me and I don't know you, however, I wish to aid your escape from this place. The robotic guards here don't check the terminals as often as they should, allowing me to gain access to security files that can secure your freedom. 
 
-  The door is locked by a mere passcode that can be found in the files I uncovered, my only clue is to pay attention to the color of the light by the door. For further assistance with the terminal, refer to the post-it note I've left. May your escape be as triumphant as I hope mine will be. 
+  The door is locked by a mere passcode that can be found in the files I uncovered, my only clue is to pay attention to the color of the light by the door. For further assistance with the terminal, refer to the blue post-it note I've left on the side of the terminal. May your escape be as triumphant as I hope mine will be. 
 
   Best of luck—fortune favors the brave."
 autowrap_mode = 2
@@ -2100,6 +2125,9 @@ texture = ExtResource("14_2xum5")
 position = Vector2(237, 103)
 scale = Vector2(2, 2)
 
+[connection signal="mouse_entered" from="Button" to="Door2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Door2" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="Door2" method="_on_button_pressed"]
 [connection signal="input_event" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Terminal - Node2D/Area2D" to="Terminal - Node2D" method="_on_area_2d_mouse_exited"]
