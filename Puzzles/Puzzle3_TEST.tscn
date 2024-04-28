@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgd4ovv7nkstl" path="res://Player/Player.tscn" id="4_0gp5h"]
 [ext_resource type="Texture2D" uid="uid://c3re6e0cfpky8" path="res://Tilesets/Cyber City/Tile/spr_tile_decor.png" id="4_2cupy"]
 [ext_resource type="Texture2D" uid="uid://2ciix0e1oro2" path="res://Tilesets/industrial.v1.png" id="4_a3apy"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door_click.tscn" id="5_lasnf"]
+[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="5_lasnf"]
 [ext_resource type="Texture2D" uid="uid://bqw8n6k84oqgk" path="res://Tilesets/Cyber City/Build.png" id="5_rn02g"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/BinaryCodeWindow.gd" id="6_0p8i5"]
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_8clto"]
@@ -6786,12 +6786,28 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Door" parent="." instance=ExtResource("5_lasnf")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(391, 324)
+position = Vector2(212, -319)
 scale = Vector2(0.3, 0.1)
 disable_mode = 0
 path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
 passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 296.0
+offset_right = 492.0
+offset_bottom = 422.0
+
+[node name="DoorPopUpHover" type="Node2D" parent="."]
+script = ExtResource("8_kktge")
+
+[node name="Area2D" type="Area2D" parent="DoorPopUpHover"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorPopUpHover/Area2D"]
+position = Vector2(-2, -12)
+polygon = PackedVector2Array(432, 322, 458, 311, 492, 361, 489, 417, 425, 433, 405, 385, 404, 349)
 
 [node name="BinaryPopUpHover" type="Node2D" parent="."]
 script = ExtResource("8_kktge")
@@ -7141,6 +7157,9 @@ scale = Vector2(2.5, 2.5)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ggm2x")
 
+[connection signal="pressed" from="Button" to="Door" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="DoorPopUpHover/Area2D" to="DoorPopUpHover" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DoorPopUpHover/Area2D" to="DoorPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="LogicGuideHover/Area2D" to="LogicGuideHover" method="_on_area_2d_mouse_entered"]
