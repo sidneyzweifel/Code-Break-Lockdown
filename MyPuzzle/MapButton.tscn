@@ -10,3 +10,5 @@ theme = ExtResource("2_07tn7")
 text = "col #
 row #"
 script = ExtResource("1_cnasd")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
