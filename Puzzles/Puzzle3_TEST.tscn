@@ -6758,8 +6758,8 @@ texture_scale = 1.2
 [node name="Lighting - door handle" type="PointLight2D" parent="Shadows"]
 position = Vector2(443.75, 368.75)
 scale = Vector2(1.25651, 1.7513)
-color = Color(0, 1, 0.258824, 1)
-energy = 1.92
+color = Color(0.894118, 0.00392157, 0.12549, 1)
+energy = 3.99
 texture = SubResource("GradientTexture2D_hu24s")
 texture_scale = 1.2
 
@@ -6784,30 +6784,20 @@ position = Vector2(-670, -659)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 
-[node name="Door" parent="." instance=ExtResource("5_lasnf")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(212, -319)
-scale = Vector2(0.3, 0.1)
-disable_mode = 0
-path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
-passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
-path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
-
-[node name="Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = 400.0
-offset_top = 296.0
-offset_right = 492.0
-offset_bottom = 422.0
-
 [node name="DoorPopUpHover" type="Node2D" parent="."]
 script = ExtResource("8_kktge")
 
 [node name="Area2D" type="Area2D" parent="DoorPopUpHover"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorPopUpHover/Area2D"]
-position = Vector2(-2, -12)
-polygon = PackedVector2Array(432, 322, 458, 311, 492, 361, 489, 417, 425, 433, 405, 385, 404, 349)
+polygon = PackedVector2Array(258, 212, 448, 214, 465, 230, 467, 437, 257, 439)
+
+[node name="DoorSprite" type="Sprite2D" parent="DoorPopUpHover/Area2D/CollisionPolygon2D"]
+position = Vector2(359, 324.5)
+scale = Vector2(5.04545, 4.97917)
+texture = ExtResource("2_cbdsy")
+region_enabled = true
+region_rect = Rect2(193.479, 240.86, 44.7129, 48.4719)
 
 [node name="BinaryPopUpHover" type="Node2D" parent="."]
 script = ExtResource("8_kktge")
@@ -6873,6 +6863,22 @@ polygon = PackedVector2Array(950, 1897, 924, 1967, 905, 1992, 930, 1990, 979, 20
 position = Vector2(888, 1980)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("12_bbc8a")
+
+[node name="Door" parent="." instance=ExtResource("5_lasnf")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(212, -319)
+scale = Vector2(0.3, 0.1)
+disable_mode = 0
+path_to_new_scene = "res://Puzzles/Puzzle4_TEST.tscn"
+passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
+path_current_puzzle = "res://Puzzles/Puzzle3_TEST.tscn"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 253.0
+offset_top = 212.0
+offset_right = 464.0
+offset_bottom = 443.0
 
 [node name="BinaryGuide" type="Node" parent="."]
 
@@ -6971,8 +6977,11 @@ theme_override_fonts/title_font = ExtResource("19_prs32")
 script = ExtResource("11_w13ow")
 
 [node name="ColorRect" type="ColorRect" parent="NoAccessGuide/NoAccessGuideWindow"]
-offset_right = 950.0
-offset_bottom = 1050.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.0859375, 0.625, 0.800781, 1)
 
 [node name="Label" type="Label" parent="NoAccessGuide/NoAccessGuideWindow"]
@@ -7157,7 +7166,6 @@ scale = Vector2(2.5, 2.5)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ggm2x")
 
-[connection signal="pressed" from="Button" to="Door" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="DoorPopUpHover/Area2D" to="DoorPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DoorPopUpHover/Area2D" to="DoorPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="BinaryPopUpHover/Area2D" to="BinaryPopUpHover" method="_on_area_2d_mouse_entered"]
@@ -7168,6 +7176,7 @@ environment = SubResource("Environment_ggm2x")
 [connection signal="mouse_exited" from="LogicPopUpHover/Area2D" to="LogicPopUpHover" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="NPCPopUpHover/Area2D" to="NPCPopUpHover" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="NPCPopUpHover/Area2D" to="NPCPopUpHover" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Button" to="Door" method="_on_button_pressed"]
 [connection signal="pressed" from="BinaryGuide/Button" to="BinaryGuide/BinaryGuideWindow" method="_on_button_pressed"]
 [connection signal="close_requested" from="BinaryGuide/BinaryGuideWindow" to="BinaryGuide/BinaryGuideWindow" method="_on_close_requested"]
 [connection signal="pressed" from="LogicGuide/Button" to="LogicGuide/LogicGuideWindow" method="_on_button_pressed"]
