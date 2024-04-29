@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://yuf6jslkvlm5"]
+
+[ext_resource type="Theme" uid="uid://bh8ktmdjrjov8" path="res://NPC/loop_popup_success.tres" id="1_p13wl"]
+[ext_resource type="Script" path="res://MyPuzzle/MapButton.gd" id="2_615rb"]
+
+[node name="MapButton" type="Button"]
+theme = ExtResource("1_p13wl")
+text = "col #
+row #"
+script = ExtResource("2_615rb")
