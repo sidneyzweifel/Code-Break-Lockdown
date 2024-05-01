@@ -662,10 +662,40 @@ offset_left = 760.0
 offset_top = 588.235
 offset_right = 885.0
 offset_bottom = 606.235
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "monday lunch menu"
+
+[node name="tuesday - Label" type="Label" parent="monday - lunch menus"]
+offset_left = 902.353
+offset_top = 587.059
+offset_right = 1034.35
+offset_bottom = 605.059
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 12
+text = "tuesday lunch menu"
+
+[node name="wednesday - Label" type="Label" parent="monday - lunch menus"]
+offset_left = 1045.88
+offset_top = 589.412
+offset_right = 1180.88
+offset_bottom = 606.412
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 11
+text = "wednesday lunch menu"
+
+[node name="thursday - Label" type="Label" parent="."]
+offset_left = 1103.0
+offset_top = 549.0
+offset_right = 1243.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8hl2")
+theme_override_font_sizes/font_size = 12
+text = "thursday lunch menu"
 
 [node name="tuesday - lunch menus" type="Node2D" parent="."]
 modulate = Color(0.592157, 0, 0, 1)
@@ -677,16 +707,6 @@ position = Vector2(860, 540)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_rfvi4")
 
-[node name="tuesday - Label" type="Label" parent="tuesday - lunch menus"]
-offset_left = 790.588
-offset_top = 587.059
-offset_right = 922.588
-offset_bottom = 605.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_a8hl2")
-theme_override_font_sizes/font_size = 12
-text = "tuesday lunch menu"
-
 [node name="wednesday - lunch menus" type="Node2D" parent="."]
 modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(280, 50)
@@ -697,16 +717,6 @@ position = Vector2(895, 540)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_rfvi4")
 
-[node name="wednesday - Label" type="Label" parent="wednesday - lunch menus"]
-offset_left = 822.353
-offset_top = 587.059
-offset_right = 960.353
-offset_bottom = 605.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_a8hl2")
-theme_override_font_sizes/font_size = 11
-text = "wednesday lunch menu"
-
 [node name="thursday - lunch menus" type="Node2D" parent="."]
 modulate = Color(0.592157, 0, 0, 1)
 position = Vector2(375, 50)
@@ -716,16 +726,6 @@ scale = Vector2(0.85, 0.85)
 position = Vector2(930, 540)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_rfvi4")
-
-[node name="thursday - Label" type="Label" parent="thursday - lunch menus"]
-offset_left = 856.47
-offset_top = 587.059
-offset_right = 996.47
-offset_bottom = 605.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_a8hl2")
-theme_override_font_sizes/font_size = 12
-text = "thursday lunch menu"
 
 [node name="friday - lunch menus" type="Node2D" parent="."]
 position = Vector2(90, 150)
@@ -742,7 +742,7 @@ offset_left = 758.823
 offset_top = 627.059
 offset_right = 883.823
 offset_bottom = 645.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "friday lunch menu"
@@ -762,7 +762,7 @@ offset_left = 785.882
 offset_top = 627.059
 offset_right = 925.882
 offset_bottom = 645.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "saturday lunch menu"
@@ -782,7 +782,7 @@ offset_left = 829.412
 offset_top = 627.059
 offset_right = 954.412
 offset_bottom = 645.059
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_a8hl2")
 theme_override_font_sizes/font_size = 12
 text = "sunday lunch menu"
@@ -801,6 +801,7 @@ volume_db = 12.0
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.0705882)
 position = Vector2(977.329, 605.41)
 scale = Vector2(1.33131, 2.78236)
@@ -809,6 +810,7 @@ sprite_frames = SubResource("SpriteFrames_yq8tr")
 autoplay = "default"
 
 [node name="Computer Light" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(971, 569)
 scale = Vector2(15.4297, 10.9766)
 color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -820,6 +822,7 @@ texture_scale = 1.2
 unique_name_in_owner = true
 position = Vector2i(656, 241)
 size = Vector2i(400, 300)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 offset_right = 500.0
@@ -1032,6 +1035,7 @@ texture = ExtResource("29_xxogd")
 unique_name_in_owner = true
 position = Vector2i(506, 49)
 size = Vector2i(550, 600)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PostItWindow"]
 offset_right = 550.0

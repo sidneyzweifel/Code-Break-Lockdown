@@ -650,7 +650,7 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("7_wakd3")
 
 [node name="folder_default" type="Sprite2D" parent="employee 1 - salaries"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(800, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -660,7 +660,7 @@ offset_left = 725.556
 offset_top = 573.333
 offset_right = 871.556
 offset_bottom = 594.333
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 1 salary"
@@ -670,7 +670,7 @@ position = Vector2(200, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 2 - salaries"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(870, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -680,7 +680,7 @@ offset_left = 794.444
 offset_top = 574.445
 offset_right = 940.444
 offset_bottom = 595.445
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 2 salary"
@@ -690,7 +690,7 @@ position = Vector2(310, 30)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 3 - salaries"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(940, 525)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -700,7 +700,7 @@ offset_left = 862.222
 offset_top = 574.445
 offset_right = 1008.22
 offset_bottom = 595.445
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 3 salary"
@@ -710,7 +710,7 @@ position = Vector2(90, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="employee 4 - salaries"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(800, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -720,7 +720,7 @@ offset_left = 723.333
 offset_top = 598.889
 offset_right = 869.333
 offset_bottom = 619.889
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "employee 4 salary"
@@ -730,7 +730,7 @@ position = Vector2(200, 150)
 scale = Vector2(0.9, 0.9)
 
 [node name="folder_default" type="Sprite2D" parent="manager - salaries"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(870, 550)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_pry7o")
@@ -740,7 +740,7 @@ offset_left = 777.778
 offset_top = 600.0
 offset_right = 957.778
 offset_bottom = 621.0
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_mhkel")
 theme_override_font_sizes/font_size = 14
 text = "manager norbit salary"
@@ -767,7 +767,6 @@ sprite_frames = SubResource("SpriteFrames_kicdq")
 autoplay = "default"
 
 [node name="Computer Light" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(971, 569)
 scale = Vector2(15.4297, 10.9766)
 color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -779,6 +778,7 @@ texture_scale = 1.2
 unique_name_in_owner = true
 position = Vector2i(656, 241)
 size = Vector2i(400, 300)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 offset_right = 500.0
@@ -824,6 +824,7 @@ texture = ExtResource("26_odggr")
 unique_name_in_owner = true
 position = Vector2i(506, 49)
 size = Vector2i(550, 600)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PostItWindow"]
 offset_right = 550.0

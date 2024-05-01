@@ -727,6 +727,7 @@ texture_scale = 1.2
 unique_name_in_owner = true
 position = Vector2i(656, 241)
 size = Vector2i(400, 300)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 offset_right = 40.0
@@ -770,6 +771,7 @@ texture = ExtResource("25_18jn1")
 unique_name_in_owner = true
 position = Vector2i(506, 49)
 size = Vector2i(550, 600)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PostItWindow"]
 offset_right = 550.0

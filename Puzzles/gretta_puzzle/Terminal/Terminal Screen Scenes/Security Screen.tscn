@@ -115,7 +115,7 @@ position = Vector2(50, 0)
 script = ExtResource("7_cetem")
 
 [node name="folder_default" type="Sprite2D" parent="folder 1 - prisoner door codes"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(760, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_kkvmb")
@@ -125,7 +125,7 @@ offset_left = 690.0
 offset_top = 569.0
 offset_right = 848.0
 offset_bottom = 591.0
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_kxnps")
 theme_override_font_sizes/font_size = 13
 text = "prisoner door codes"
@@ -134,7 +134,7 @@ text = "prisoner door codes"
 position = Vector2(200, 0)
 
 [node name="folder_default" type="Sprite2D" parent="folder 2 - prisoner door colors"]
-modulate = Color(0.592157, 0, 0, 1)
+modulate = Color(0.976471, 0, 0, 0.945098)
 position = Vector2(800, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_kkvmb")
@@ -144,7 +144,7 @@ offset_left = 724.0
 offset_top = 568.0
 offset_right = 890.0
 offset_bottom = 590.0
-theme_override_colors/font_color = Color(0.592157, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_kxnps")
 theme_override_font_sizes/font_size = 13
 text = "prisoner door colors"
@@ -197,6 +197,7 @@ texture = ExtResource("22_ifna8")
 unique_name_in_owner = true
 position = Vector2i(506, 49)
 size = Vector2i(550, 600)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PostItWindow"]
 offset_right = 550.0
