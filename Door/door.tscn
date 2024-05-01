@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bi8x2wvn0x1vx"]
 
 [ext_resource type="Script" path="res://Door/door.gd" id="1_usjy0"]
-[ext_resource type="Texture2D" uid="uid://d4apniv1j3gaq" path="res://Sprites/door_temp2.png" id="2_5fqlr"]
+[ext_resource type="Texture2D" uid="uid://d4apniv1j3gaq" path="res://Sprites/door_temp2.png" id="2_nrluu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awmda"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5fqlr")
+"texture": ExtResource("2_nrluu")
 }],
 "loop": true,
 "name": &"new_animation",
