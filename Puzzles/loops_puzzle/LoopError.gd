@@ -12,7 +12,6 @@ func _ready():
 
 
 func _on_close_requested():
-	print("on close rewuated")
 	queue_free()
 
 
