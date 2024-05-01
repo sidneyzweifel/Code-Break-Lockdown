@@ -23,6 +23,7 @@ WrongInput="*res://Puzzles/gretta_puzzle/Wrong Input.tscn"
 Dialouge="*res://NPC/Dialouge/Dialouge.gd"
 Puzzle4Autoload="*res://Puzzles/loops_puzzle/puzzle4_autoload.gd"
 AudioManager="*res://Puzzles/logic_puzzle/AudioManager.tscn"
+Ifelseglobal="*res://Puzzles/ifelse_puzzle/ifelseglobal.gd"
 
 [display]
 
