@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://mgf4g7528wwx"]
+[gd_scene load_steps=15 format=3 uid="uid://mgf4g7528wwx"]
 
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_i4hgl"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_7y0y0"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://yd5bkrb3kivj" path="res://Popup/popup.tscn" id="6_3g1eq"]
 [ext_resource type="PackedScene" uid="uid://d2sn3lvmj1dsu" path="res://Robot/Robot.tscn" id="6_bh73d"]
 [ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="6_jroyh"]
-[ext_resource type="PackedScene" uid="uid://bi8x2wvn0x1vx" path="res://Door/door.tscn" id="6_snv6m"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_snv6m"]
 [ext_resource type="Script" path="res://Puzzles/ifelsepasscode.gd" id="7_cwfw1"]
 
@@ -5445,9 +5444,11 @@ passcode_scene = "res://Popup/Passcode/passcode_enter.tscn"
 path_current_puzzle = "res://Puzzles/Puzzle2_TEST.tscn"
 
 [node name="Player" type="Node2D" parent="."]
+position = Vector2(-700, -650)
+scale = Vector2(0.55, 0.55)
 
 [node name="Player" parent="Player" instance=ExtResource("4_im48q")]
-position = Vector2(653, -801)
+position = Vector2(1410.91, -918.182)
 
 [node name="Return_To_Main" parent="Player/Player" instance=ExtResource("6_jroyh")]
 position = Vector2(304, -32)

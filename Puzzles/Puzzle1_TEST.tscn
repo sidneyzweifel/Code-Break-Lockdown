@@ -2059,7 +2059,6 @@ offset_right = 807.0
 offset_bottom = 218.0
 
 [node name="textbox" parent="." instance=ExtResource("9_t7sde")]
-visible = false
 offset = Vector2(550, 95)
 scale = Vector2(0.6, 0.6)
 transform = Transform2D(0.6, 0, 0, 0.6, 550, 95)
