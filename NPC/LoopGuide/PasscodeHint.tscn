@@ -46,18 +46,17 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_fukvr")
 theme_override_font_sizes/font_size = 37
 text = "
-
-
 Now that you've gotten the inmates their items.
 They seem to be willing to help you get out of here.
 
-Let me give you a hint as well.
+The passcode to leave here is a count of how many times inmates have looped this courtyard. Although, it has seemed to stop counting since you entered. 
 
-The passcode to leave here is a count of how many times the prisoners have looped this worn down courtyard since the prison opened. 
+To find the passcode, do the following:
 
-Although, you seem to have broken it today.
+-Listen to the each of the inmate's hints
 
-Note that there is only one answer.
+-Find the starting index of the for-loop and enter it as the passcode in the door at the far end of the courtyard. 
+
 "
 horizontal_alignment = 1
 autowrap_mode = 2

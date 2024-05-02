@@ -31,13 +31,12 @@ offset_right = 608.0
 offset_bottom = 355.0
 theme_override_colors/font_color = Color(0.803922, 0.262745, 0.584314, 1)
 theme_override_font_sizes/font_size = 25
-text = "GUIDE"
+text = "START"
 
 [node name="Window" type="Window" parent="."]
 title = "For Loop Guide"
 initial_position = 2
 size = Vector2i(700, 700)
-visible = false
 always_on_top = true
 popup_window = true
 theme = ExtResource("2_8kt0h")
@@ -179,10 +178,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_7teop")
 theme_override_font_sizes/font_size = 28
-text = "
+text = "When you're ready. There are 3 inmates to track down. Click them to get their attention. They are quick and move around a lot, so it might take a little before you find one.
+They'll show you that things have become unusual here, but that's the just the begininning. You will be seeing me again very soon. 
 
-When you're ready. Track down an inmate 
-and they'll show you that things have become other wordly here. "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
