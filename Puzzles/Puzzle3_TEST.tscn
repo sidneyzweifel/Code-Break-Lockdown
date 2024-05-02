@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bsoqfhr04p41t"]
+[gd_scene load_steps=71 format=3 uid="uid://bsoqfhr04p41t"]
 
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="2_cbdsy"]
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="2_eml7g"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/LogicLabel.gd" id="10_6grr2"]
 [ext_resource type="Script" path="res://Puzzles/logic_puzzle/GuideWindowPopUp.gd" id="11_w13ow"]
 [ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate_C.png" id="12_bbc8a"]
+[ext_resource type="Texture2D" uid="uid://dmc7tkpidrduy" path="res://Backgrounds/inmate_C_copy.png" id="12_yuvoc"]
 [ext_resource type="FontVariation" uid="uid://c47st61viycg2" path="res://Puzzles/logic_puzzle/Puzzle3Symbols.tres" id="13_m8y7e"]
 [ext_resource type="Texture2D" uid="uid://c8vlnrl3ds5qd" path="res://Puzzles/logic_puzzle/sprites/BinaryGuideSprite.jpg" id="15_vncwa"]
 [ext_resource type="Texture2D" uid="uid://bfq5h2lnowpei" path="res://Puzzles/logic_puzzle/sprites/LogicGuideSprite.jpg" id="16_4qcux"]
@@ -37,6 +38,7 @@ script/source = "extends Node2D
 @onready var neon_sign_animation = $NeonSign
 @onready var binary_hint_animation = $BinaryHint
 @onready var symbol_hint_animation = $SymbolHint
+@onready var slug_npc_naimation = $NPCPopUpHover/Area2D/SlugNPC
 
 func _ready():
 
@@ -45,6 +47,7 @@ func _ready():
 	neon_sign_animation.play(\"neon_sign\")
 	binary_hint_animation.play(\"binary_hint\")
 	symbol_hint_animation.play(\"symbol_hint\")
+	slug_npc_naimation.play(\"slug_npc\")
 	
 	print(Global.logic_puzzle_solved)
 
@@ -6325,6 +6328,20 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.912791, 0.0639535)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3m46y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bbc8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yuvoc")
+}],
+"loop": true,
+"name": &"slug_npc",
+"speed": 2.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxns6"]
 atlas = ExtResource("19_c8u2o")
 region = Rect2(0, 0, 32, 32)
@@ -6859,10 +6876,13 @@ script = ExtResource("8_kktge")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPCPopUpHover/Area2D"]
 polygon = PackedVector2Array(950, 1897, 924, 1967, 905, 1992, 930, 1990, 979, 2009, 962, 2031, 928, 2041, 871, 2024, 775, 2026, 730, 1963, 720, 1920, 754, 1916, 803, 1897, 809, 1935, 849, 1875, 915, 1873)
 
-[node name="Sprite2D" type="Sprite2D" parent="NPCPopUpHover/Area2D"]
+[node name="SlugNPC" type="AnimatedSprite2D" parent="NPCPopUpHover/Area2D"]
+modulate = Color(0.601223, 0.601223, 0.601223, 1)
 position = Vector2(888, 1980)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("12_bbc8a")
+sprite_frames = SubResource("SpriteFrames_3m46y")
+animation = &"slug_npc"
+frame_progress = 0.274856
 
 [node name="Door" parent="." instance=ExtResource("5_lasnf")]
 modulate = Color(1, 1, 1, 0)
