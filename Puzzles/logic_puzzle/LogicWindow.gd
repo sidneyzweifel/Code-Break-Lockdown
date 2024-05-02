@@ -2,7 +2,7 @@ extends Window
 
 @onready var logic_popup_window = $"."
 @onready var logicQuestion = Global.get_logic_question()
-@onready var solvedQuestion = Global.solve_logic_question(logicQuestion)
+@onready var solvedQuestion = Global.get_logic_result()
 
 var number_input : LineEdit
 var binary_button : BinaryButton

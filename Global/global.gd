@@ -3,7 +3,16 @@ extends Node
 var next_puzz:String 
 var current_puzz:String
 var current_passcode:String
+
+# variables for puzzle 3:
 var logic_question:String = ""
+var a
+var b
+var c
+var d
+var first_operator
+var second_operator
+var third_operator
 var logic_result = 0
 var logic_puzzle_solved = false
 
@@ -182,21 +191,29 @@ func get_door_passcodes():
 func set_logic_question() -> String:
 	# Check if logic_question is empty
 	if logic_question == "":
-		var a = randi_range(0, 10)
-		var b = randi_range(0, 10)
-		var c = randi_range(0, 10)
+		# Set global variables
+		a = randi_range(0, 10)
+		b = randi_range(0, 10)
+		c = randi_range(0, 10)
+		d = randi_range(0, 10)
 		var operators = ["&", "|"] 
 
 		# Choose the first operator randomly
-		var first_operator = operators[randi() % operators.size()]
+		first_operator = operators[randi() % operators.size()]
 
 		# Choose the second operator randomly
-		var second_operator = operators[randi() % operators.size()]
+		second_operator = operators[randi() % operators.size()]
+
+		# Choose the third operator randomly
+		third_operator = operators[randi() % operators.size()]
 
 		# Construct the logic question string
-		logic_question = "(" + str(a) + " " + first_operator + " " + str(b) + ") " + second_operator + " (" + str(c) + " " + operators[randi() % operators.size()] + " " + str(randi_range(0, 10)) + ")"
+		logic_question = "(" + str(a) + " " + first_operator + " " + str(b) + ") " + second_operator + " (" + str(c) + " " + third_operator + " " + str(d) + ")"
 		print("GLOBAL SCRIPT LOGIC QUESTION SETTER: " + logic_question)
-	
+		
+		# Call solve_logic_question to get the result
+		solve_logic_question()
+
 	return logic_question
 
 
@@ -207,44 +224,38 @@ func get_logic_question() -> String:
 	
 
 # solves logic puzzle in Puzzle3_TEST
-func solve_logic_question(question: String) -> int:
-	var logic_result = 0
+func solve_logic_question() -> int:
+	# Evaluate group 1: (a operator1 b)
+	var group_1_result = 0
 
-	# remove parentheses and split the logic question string into separate components
-	var cleaned_question = question.replace("(", "").replace(")", "")
-	var components = cleaned_question.split(" ")
+	if first_operator == "&":
+		group_1_result = a & b
+	elif first_operator == "|":
+		group_1_result = a | b
 
-	# ensure that components array has enough elements
-	if components.size() % 2 != 1:
-		print("Error: Invalid logic question format") # game crashes if array is too small
-		return 0
+	# Evaluate group 2: (c operator3 d)
+	var group_2_result = 0
 
-	# initialize the result with the first operand
-	logic_result = int(components[0])
+	if third_operator == "&":
+		group_2_result = c & d
+	elif third_operator == "|":
+		group_2_result = c | d
 
-	# iterate over the rest of the components and operators
-	for i in range(1, components.size(), 2):
-		var operator = components[i]
-		var operand = int(components[i + 1])
+	# Combine the results of group 1 and group 2 using second_operator
+	if second_operator == "&":
+		logic_result = group_1_result & group_2_result
+	elif second_operator == "|":
+		logic_result = group_1_result | group_2_result
 
-		# add debug output to track intermediate results
-		print("Intermediate result before applying operator:", logic_result)
-
-		# apply the operator to the current result and operand
-		if operator == "&":
-			print("Applying bitwise AND with operand:", operand)
-			logic_result &= operand
-		elif operator == "|":
-			print("Applying bitwise OR with operand:", operand)
-			logic_result |= operand
-
-		# add debug output to track the result after applying the operator
-		print("Intermediate result after applying operator:", logic_result)
-
-	var result_str = str(logic_result)
-	print("GLOBAL SCRIPT LOGIC ANSWER: ", result_str) # print logic result
+	print("Final logic result:", logic_result)
 
 	return logic_result
+
+
+func get_logic_result() -> int:
+	print("GLOBAL SCRIPT LOGIC RESULT GETTER: " + str(logic_result))
+	return logic_result
+
 
 func logic_puzzle_flag_set_true():
 	logic_puzzle_solved = true
