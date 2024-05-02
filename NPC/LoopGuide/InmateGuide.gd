@@ -6,6 +6,7 @@ extends Node2D
 func _ready():
 	p.hide()
 	detail.hide()
+	$Window/ColorRect/Detail/ItemNumDes.hide()
 	pass # Replace with function body.
 
 
@@ -32,6 +33,9 @@ func for_loop_button_pressed(button_type):
 			$Window/ColorRect/Detail/Description.set_text("determines the condition for the loop to continue")
 		"Changing condition":
 			$Window/ColorRect/Detail/Description.set_text("determines what happens each time the loop interates")
+		"What does the Item Number mean here?":
+			$Window/ColorRect/Detail/Description.hide()
+			$Window/ColorRect/Detail/ItemNumDes.show()
 
 
 func _on_start_pressed():
@@ -49,6 +53,11 @@ func _on_change_pressed():
 	pass # Replace with function body.
 
 
+func _on_note_pressed():
+	for_loop_button_pressed("What does the Item Number mean here?")
+	pass # Replace with function body.
+
+
 func _on_demo_pressed():
 	var cur = get_tree().current_scene
 	cur.queue_free()
@@ -61,6 +70,8 @@ func _on_review_for_loops_pressed():
 
 
 func _on_go_back_options_pressed():
+	$Window/ColorRect/Detail/ItemNumDes.hide()
+	$Window/ColorRect/Detail/Description.show()
 	$Window/ColorRect/Detail.hide()
 	$Window/ColorRect/Options.show()
 
@@ -69,7 +80,10 @@ func _on_go_back_options_pressed():
 func _on_go_back_start_pressed():
 	$Window/ColorRect/Options.hide()
 	$Window/ColorRect/Start.show()
+	
 
 
 func _on_start_scroll_started():
 	pass # Replace with function body.
+
+

@@ -50,7 +50,6 @@ grow_vertical = 2
 color = Color(0.819608, 0.572549, 0.933333, 1)
 
 [node name="Detail" type="VBoxContainer" parent="Window/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,6 +77,21 @@ theme_override_fonts/font = ExtResource("2_xgkc4")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
+[node name="ItemNumDes" type="Label" parent="Window/ColorRect/Detail"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0941176, 0.0156863, 0.0156863, 1)
+text = "Imagine the item number as being the following:
+int itemNum = 0;
+			for(int i = 0; i <= 3; i++){
+		              itemNum = i
+			}
+
+We see in the loop above that at the end 
+of the loop i will have a value of 4, but this could be a possible 
+answer for a requested item number of 3 in the loop
+puzzles that you are about to encounter.
+This is because the item number is what index the loop would stop at."
+
 [node name="Go Back Options" type="Button" parent="Window/ColorRect/Detail"]
 layout_mode = 2
 theme = ExtResource("3_djy0h")
@@ -97,7 +111,7 @@ offset_right = 193.0
 offset_bottom = 300.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 45
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Label" type="Label" parent="Window/ColorRect/Options"]
@@ -124,10 +138,16 @@ theme = ExtResource("3_djy0h")
 theme_override_colors/font_color = Color(0, 0.992157, 0, 1)
 text = "i ++"
 
-[node name="Demo" type="Button" parent="Window/ColorRect/Options"]
+[node name="Note" type="Button" parent="Window/ColorRect/Options"]
 layout_mode = 2
 theme = ExtResource("3_djy0h")
 theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Item Number?"
+
+[node name="Demo" type="Button" parent="Window/ColorRect/Options"]
+layout_mode = 2
+theme = ExtResource("3_djy0h")
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "Get Demo
 "
 
@@ -137,6 +157,7 @@ theme = ExtResource("3_djy0h")
 text = "Go Back"
 
 [node name="Start" type="VBoxContainer" parent="Window/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.139
@@ -192,6 +213,7 @@ autowrap_mode = 2
 [connection signal="pressed" from="Window/ColorRect/Options/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/condtion" to="." method="_on_condtion_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/change" to="." method="_on_change_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Options/Note" to="." method="_on_note_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/Demo" to="." method="_on_demo_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Options/Go Back Start" to="." method="_on_go_back_start_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Start/Review For Loops" to="." method="_on_review_for_loops_pressed"]
