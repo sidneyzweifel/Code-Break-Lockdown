@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55mgrmskpgnp"]
+[gd_scene load_steps=6 format=3 uid="uid://c55mgrmskpgnp"]
 
 [ext_resource type="Script" path="res://Door/door.gd" id="1_gsyjb"]
+[ext_resource type="Texture2D" uid="uid://h6atv6b54fw4" path="res://Backgrounds/2_door_image_fix.png" id="3_14b3f"]
 [ext_resource type="Texture2D" uid="uid://byxdlphwf1j0" path="res://Backgrounds/door_image_fix.png" id="3_tsdnh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_836jx"]
@@ -13,10 +14,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_tsdnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_14b3f")
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of82y"]
@@ -29,11 +33,11 @@ script = ExtResource("1_gsyjb")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.870588, 0.878431, 0.905882, 1)
 position = Vector2(139.372, 239.107)
 scale = Vector2(0.566987, 0.564936)
 sprite_frames = SubResource("SpriteFrames_836jx")
 animation = &"new_animation"
+frame_progress = 0.522797
 metadata/_edit_group_ = true
 
 [node name="Button" type="Button" parent="AnimatedSprite2D"]

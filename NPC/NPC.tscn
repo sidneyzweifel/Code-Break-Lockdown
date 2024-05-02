@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://uq3soatunpx7"]
+[gd_scene load_steps=7 format=3 uid="uid://uq3soatunpx7"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_oropo"]
 [ext_resource type="Texture2D" uid="uid://6q56gnckydfc" path="res://Backgrounds/inmate_C.png" id="2_56ga0"]
 [ext_resource type="Theme" uid="uid://wdo1766xp43v" path="res://NPC/LoopGuide/button_round_glow.tres" id="3_m5q2t"]
+[ext_resource type="FontFile" uid="uid://dfa2iipfihb1k" path="res://addons/unispace/Unispace Bd.otf" id="4_ewnu3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0urd8"]
 friction = 0.53
@@ -33,10 +34,24 @@ texture = ExtResource("2_56ga0")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 0.0431373, 1, 0)
-offset_left = 145.0
+offset_left = 147.0
 offset_top = 59.0
-offset_right = 408.0
+offset_right = 398.0
 offset_bottom = 220.0
 theme = ExtResource("3_m5q2t")
+
+[node name="Inmate ID" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 162.0
+offset_right = 397.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ewnu3")
+text = "Inmate ID: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -17,6 +17,7 @@ var item_num = load("res://Puzzles/loops_puzzle/item_number/item_number.gd")
 #also set sprite texture based on inmate key
 func _ready():
 	button_.text = button_text
+	$"Inmate ID".text = "Inmate " + button_text
 	item_dict.add_item(inmate_key, num_item.item_num)
 	$InmateSprite.texture = load("res://Backgrounds/" + str(inmate_key)+ ".png")
 	#$InmateSprite.texture = load("res://Backgrounds/" + "inmate_A"+ ".png")

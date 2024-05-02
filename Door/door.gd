@@ -10,6 +10,9 @@ class_name Door extends StaticBody2D
 @export var passcode_scene:String
 @export var path_current_puzzle:String
 
+@onready var aninmated = $AnimatedSprite2D
+func _ready():
+	$AnimatedSprite2D.play("new_animation")
 
 #door group function to determine if player can move to next puzzle
 func handle_access(door_access):
