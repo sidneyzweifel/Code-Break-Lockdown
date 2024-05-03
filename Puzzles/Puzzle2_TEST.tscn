@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://mgf4g7528wwx"]
+[gd_scene load_steps=13 format=3 uid="uid://mgf4g7528wwx"]
 
 [ext_resource type="Texture2D" uid="uid://dm1tb800msyge" path="res://Sprites/icon.svg" id="1_i4hgl"]
 [ext_resource type="Texture2D" uid="uid://b3nergmcotjq2" path="res://Tilesets/pixel-cyberpunk-interior.png" id="3_7y0y0"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2sn3lvmj1dsu" path="res://Robot/Robot.tscn" id="6_bh73d"]
 [ext_resource type="PackedScene" uid="uid://cqsh3l6y1tk2x" path="res://Menu/Return_To_Main.tscn" id="6_jroyh"]
 [ext_resource type="PackedScene" uid="uid://c55mgrmskpgnp" path="res://Door/door_click.tscn" id="6_snv6m"]
-[ext_resource type="Script" path="res://Puzzles/ifelsepasscode.gd" id="7_cwfw1"]
+[ext_resource type="Script" path="res://Puzzles/ifelse_puzzle/ifelsepasscode.gd" id="7_ehdna"]
 
 [sub_resource type="GDScript" id="GDScript_dxlop"]
 script/source = "extends Node2D
@@ -5368,13 +5368,6 @@ physics_layer_1/collision_layer = 1
 physics_layer_2/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k21be")
 
-[sub_resource type="Environment" id="Environment_mfolm"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 2.0
-glow_strength = 0.95
-glow_blend_mode = 1
-
 [node name="Puzzle2" type="Node2D" groups=["puzzle"]]
 script = SubResource("GDScript_dxlop")
 metadata/_edit_horizontal_guides_ = [-3815.0]
@@ -5520,31 +5513,28 @@ visible = false
 offset_right = 40.0
 offset_bottom = 16.0
 theme_override_font_sizes/font_size = 25
-script = ExtResource("7_cwfw1")
+script = ExtResource("7_ehdna")
 
 [node name="P1" type="Button" parent="."]
-show_behind_parent = true
-offset_left = 1568.0
-offset_top = -1001.0
-offset_right = 1632.0
-offset_bottom = -933.0
+offset_left = 1551.0
+offset_top = -1012.0
+offset_right = 1649.0
+offset_bottom = -908.0
+text = "Terminal"
 
 [node name="P2" type="Button" parent="."]
-show_behind_parent = true
-offset_left = 2465.0
-offset_top = -979.0
-offset_right = 2529.0
-offset_bottom = -936.0
+offset_left = 2458.0
+offset_top = -987.0
+offset_right = 2533.0
+offset_bottom = -928.0
+text = "Door"
 
 [node name="P3" type="Button" parent="."]
-show_behind_parent = true
-offset_left = 2913.0
-offset_top = -979.0
-offset_right = 2973.0
-offset_bottom = -932.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mfolm")
+offset_left = 2894.0
+offset_top = -986.0
+offset_right = 2992.0
+offset_bottom = -928.0
+text = "Passcode"
 
 [connection signal="close_requested" from="Puzzle1" to="." method="_on_puzzle_1_close_requested"]
 [connection signal="close_requested" from="Puzzle2" to="." method="_on_puzzle_2_close_requested"]
