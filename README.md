@@ -14,7 +14,7 @@ This game was developed by a group of undergraduate computer science students as
 ### Science, Technology, Art, Engineering & Mathematics Project
 * This project blends visual art with computer science to provide a comprehensive gaming experience
 * This aligns with CSU’s pursuit of offering integrated STEM degrees
-* Aims to inspire students to build on to our project and create their projects
+* Aims to inspire students to build on to our project and create their own projects
 
 ## System Design
 ### Specifications
@@ -36,14 +36,17 @@ This game was developed by a group of undergraduate computer science students as
 * Puzzles include finding the output of conditional statements to find the passcode
 * Statements will be generated with different values and conditions for replayability
 
-## Level 3: Binary Conversion and Bitwise Logic
+### Level 3: Binary Conversion and Bitwise Logic
 * Focuses on binary and bitwise logic in computer science                        
 * The player uses hints around the room and their knowledge of bitwise operations and binary conversions to solve puzzles to get the passcode and advance to the next level
 
-## Level 4: Loops
+### Level 4: Loops
 * The level allows the player to practice setting the starting index, the conditional statement, and update rules of a for-loop
 * The player must learn how all the different components of a for-loop work together by setting the remaining non-randomized components 
 * Includes a demo that shows players how for-loops work step by step and some hints to guide them
 
-
-
+## Future Work
+* Revamping the programming for the game so that components developed early in development are built more gracefully
+* Creating more levels that cover more advanced computer science topics
+    * Intermediate Concepts: arrays, objects, inheritance, simple data structures
+    * Advanced Concepts: algorithms, polymorphism, binary search trees, complex data structures
