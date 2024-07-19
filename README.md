@@ -78,4 +78,4 @@ This game was developed by a group of undergraduate computer science students as
     * Advanced Concepts: algorithms, polymorphism, binary search trees, complex data structures
 
  ## References
-![References Doc] (https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/References%20-%20Code%20Break%20Lockdown.pdf)
+[References Doc](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/References%20-%20Code%20Break%20Lockdown.pdf)
