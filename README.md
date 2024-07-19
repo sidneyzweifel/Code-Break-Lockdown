@@ -24,6 +24,7 @@ This game was developed by a group of undergraduate computer science students as
 * Controls player progression using a passcode system, advancing with the correct passcode and resetting the level otherwise
 * Uses a door asset with exported paths to manage scene transitions; key functions include *handle_door()*, *go_to_passcode()*, and *return_to_puzzle()*
 * The main limitation is the lack of saved player data between scenes, which resets the player's position
+  
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/manager_screenshot.png)
 ### Global Randomization
 * Ensures replayability by randomizing game features, focusing on concept learning over memorization
