@@ -19,7 +19,15 @@ This game was developed by a group of undergraduate computer science students as
 ## System Design
 ### Specifications
 * Created in [Godot](https://godotengine.org/download/windows/) with GDScript 
-* All assets are open-source or original creations made by contributors 
+* All assets are open-source or original creations made by contributors
+### Scene Manager
+* Controls player progression using a passcode system, advancing with the correct passcode and resetting the level otherwise
+* Uses a door asset with exported paths to manage scene transitions; key functions include *handle_door()*, *go_to_passcode()*, and *return_to_puzzle()*
+* The main limitation is the lack of saved player data between scenes, which resets the player's position.
+* ### Global Randomization
+* Ensures replayability by randomizing game features, focusing on concept learning over memorization
+* The *set_passcode()* function in **global.gd** generates random five-digit codes using Godot's random number generation function
+* The *get_passcode()* function verifies user inputs against the randomized passcode to control level advancement
 
 ### Game Structure
 * Four levels that explore novice-level computer science concepts
