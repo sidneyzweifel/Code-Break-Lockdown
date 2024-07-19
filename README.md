@@ -40,6 +40,7 @@ This game was developed by a group of undergraduate computer science students as
 * Introduces the topic of variables and how to print them to display their value
 * The player searches through a mock file system and prints variables to find the passcode to unlock the door 
 * Encourages replayability by ensuring the passcode's value and location are different every time
+  
   ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz1_screenshot1.png)
   ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz1_screenshot2.png)
 
@@ -47,6 +48,7 @@ This game was developed by a group of undergraduate computer science students as
 * Covers the basics of if-else statement implementation
 * Puzzles include finding the output of conditional statements to find the passcode
 * Statements will be generated with different values and conditions for replayability
+  
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz2_screenshot1.png)
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz2_screenshot2.png)
 
@@ -54,15 +56,17 @@ This game was developed by a group of undergraduate computer science students as
 * Focuses on binary and bitwise logic in computer science                        
 * The player uses hints around the room and their knowledge of bitwise operations and binary conversions two different puzzles
 * A door passcode to advance to the next level is obtained after solving all puzzles
-![alt text]()
-![alt text]()
+  
+![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz3_screenshot1.png)
+![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz3_screenshot2.png)
 
 ### Level 4: Loops
 * The level allows the player to practice setting the starting index, the conditional statement, and update rules of a for-loop
 * The player must learn how all the different components of a for-loop work together by setting the remaining non-randomized components 
 * Includes a demo that shows players how for-loops work step by step and some hints to guide them
-![alt text]()
-![alt text]()
+  
+![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz4_screenshot1.png)
+![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz4_screenshot2.png)
 
 ## Future Work
 * Revamping the programming for the game so that components developed early in development are built more gracefully
