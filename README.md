@@ -76,3 +76,6 @@ This game was developed by a group of undergraduate computer science students as
 * Creating more levels that cover more advanced computer science topics
     * Intermediate Concepts: arrays, objects, inheritance, simple data structures
     * Advanced Concepts: algorithms, polymorphism, binary search trees, complex data structures
+
+ ## References
+![References Doc] (https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/References%20-%20Code%20Break%20Lockdown.pdf)
