@@ -2,7 +2,7 @@
 
 Code Break Lockdown is a beginner-friendly, educational computer science game that is designed to enhance learning and engagement for students at Cleveland State University (CSU). Developed using the open-source game engine Godot, the game employs an escape room format where players solve computer science-themed puzzles to progress and escape. The game features a scene manager with a passcode-based system for level progression and global randomization to encourage concept learning over memorization. The game’s puzzles focus on using CIS concepts such as variables, if-else statements, bitwise operations, binary conversion, and loops to beat levels. Emphasizing intuitive gameplay, visual appeal, and educational effectiveness, Code Break Lockdown aims to serve as an interactive learning resource to complement traditional Computer Science Information (CIS) courses.
 
-This game was developed by a group of undergraduate computer science students as a final senior design project.
+This game was developed by a group of undergraduate computer science students as a final senior design project. [Presentation Slides](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/Final%20Senior%20Design%20Presentation.pdf)
 
 ## Background
 ### Educational Video Games & Learning
@@ -48,6 +48,7 @@ This game was developed by a group of undergraduate computer science students as
 * Covers the basics of if-else statement implementation
 * Puzzles include finding the output of conditional statements to find the passcode
 * Statements will be generated with different values and conditions for replayability
+* [Level 2 Documentation](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/Level%20Two%20(Puzzle2_TEST.tscn)%20Documentation%20-%20Sheet1.pdf)
   
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz2_screenshot1.png)
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz2_screenshot2.png)
@@ -56,6 +57,7 @@ This game was developed by a group of undergraduate computer science students as
 * Focuses on binary and bitwise logic in computer science                        
 * The player uses hints around the room and their knowledge of bitwise operations and binary conversions two different puzzles
 * A door passcode to advance to the next level is obtained after solving all puzzles
+* [Level 3 Documentation](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Senior%20Design%20Documents/Level%20Three%20(Puzzle3_TEST.tscn)%20Documentation%20-%20Sheet1.pdf)
   
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz3_screenshot1.png)
 ![alt text](https://github.com/sidneyzweifel/Senior-Design-Game-Files/blob/main/Images/puzz3_screenshot2.png)
